@@ -5,17 +5,25 @@
  */
 package cocam;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 /**
  *
  * @author PSUANZES
  */
 public class Cocam {
-
+    @SuppressWarnings("NonConstantFieldWithUpperCaseName")
+    private static final Logger logger
+        = LogManager.getLogger(Cocam.class);
+    
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        
+        logger.debug("Vamos Cocam!");
+
     }
     
 }

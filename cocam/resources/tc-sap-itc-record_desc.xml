@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+TC - FIJO - SAP_FRA - Registro ITC
+-->
+<fixedLengthColRecordDesc>
+    <fieldDesc fieldNo="1"  fieldName="Campo1"     fieldLength="5"  />
+    <fieldDesc fieldNo="2"  fieldName="Factura"    fieldLength="10" />
+    <fieldDesc fieldNo="3"  fieldName="Signo3"     fieldLength="19"  />
+    <fieldDesc fieldNo="4"  fieldName="Importe3"   fieldLength="13" />
+    <fieldDesc fieldNo="5"  fieldName="Impuesto3"  fieldLength="2" />
+    <fieldDesc fieldNo="6"  fieldName="Vacio"      fieldLength="60" />
+    <fieldDesc fieldNo="7"  fieldName="Signo4"     fieldLength="2"  />
+    <fieldDesc fieldNo="8"  fieldName="Importe4"   fieldLength="13" />
+    <fieldDesc fieldNo="9"  fieldName="Impuesto4"  fieldLength="3" />
+    <fieldDesc fieldNo="10" fieldName="STA"        fieldLength="1"  />
+    <fieldDesc fieldNo="11" fieldName="TPV"        fieldLength="1"  />
+</fixedLengthColRecordDesc>
