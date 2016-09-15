@@ -34,4 +34,11 @@ public class StringUtil {
         sb.append(ENCLOSE_RIGHT_DELIM);
         return sb.toString();
     }
+    
+    public static String enclose(final Integer value) {
+        if (value == null) {
+            return enclose(NULL_LIT);
+        }
+        return enclose(value.toString());
+    }
 }
