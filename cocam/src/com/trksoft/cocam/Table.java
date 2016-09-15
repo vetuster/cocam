@@ -16,8 +16,6 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 /**
  *
@@ -34,10 +32,6 @@ import org.apache.logging.log4j.Logger;
 })
 @XmlRootElement
 public class Table {
-     
-    @SuppressWarnings("NonConstantFieldWithUpperCaseName")
-    private static final Logger logger
-        = LogManager.getLogger(Table.class);
     
     @XmlAttribute
     private Integer tableId;
@@ -146,7 +140,6 @@ public class Table {
             Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
             table = (Table) jaxbUnmarshaller.unmarshal(tableFile);
         } catch (JAXBException jaxbex) {
-            logger.fatal(jaxbex);
             throw new CocamException(jaxbex);
         }
         return table;

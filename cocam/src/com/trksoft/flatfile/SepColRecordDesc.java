@@ -19,8 +19,6 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 /**
  *
@@ -32,10 +30,6 @@ import org.apache.logging.log4j.Logger;
 })
 @XmlRootElement
 public class SepColRecordDesc {
-     
-    @SuppressWarnings("NonConstantFieldWithUpperCaseName")
-    private static final Logger logger
-        = LogManager.getLogger(SepColRecordDesc.class);
     
     @XmlAttribute
     private String charSep;
@@ -76,7 +70,6 @@ public class SepColRecordDesc {
             scrd = (SepColRecordDesc)
                 jaxbUnmarshaller.unmarshal(sepColRecordDescFile);
         } catch (JAXBException jaxbex) {
-            logger.fatal(jaxbex);
             throw new FlatFileException(jaxbex);
         }
         return scrd;

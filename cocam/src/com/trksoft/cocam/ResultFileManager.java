@@ -9,15 +9,12 @@ import com.trksoft.flatfile.FlatFileException;
 import com.trksoft.flatfile.SepColRecordDesc;
 import com.trksoft.util.StringUtil;
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.FilenameFilter;
 import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.stream.Collectors;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -57,35 +54,67 @@ public class ResultFileManager {
             throw new CocamException(ffex);
         }
         List<ResultRecord> resultRecordList = new LinkedList();
-        String[] fileList = getFileList();
-        for (String fileName:fileList) {
-            logger.debug("procesing" + StringUtil.enclose(fileName));
-            
-        try (BufferedReader mainBufferedReader =
-                new BufferedReader(new FileReader(fileName));
-                ) {
-            String inputRecord;
-            int recordCount = 0;
-            boolean fileEND = false;
-            while ((inputRecord = mainBufferedReader.readLine()) != null
-                && !fileEND) {
-                recordCount++;
-                resultRecordList.add(ResultRecord.build(inputRecord, scrd));
+        File[] fileList = getFileList();
+        for (File inFile : fileList) {
+            logger.debug("procesing" + StringUtil.enclose(inFile.getName()));
+
+            try (BufferedReader mainBufferedReader
+                = new BufferedReader(new FileReader(inFile));)
+                /*= new BufferedReader(
+                    new InputStreamReader(
+                        new FileInputStream(inFile), "UTF-8"));)*/
+            {
+                String inputRecord;
+                int recordCount = 0;
+                boolean hasContent = true;
+                while ((inputRecord = mainBufferedReader.readLine()) != null
+                    && hasContent) {
+                    logger.debug("inputRecord"
+                        + StringUtil.enclose(inputRecord));
+                    recordCount++;
+                    String recordType = inputRecord.substring(0, 3);
+                    //logger.debug("recordType" + StringUtil.enclose(recordType));
+                    switch (recordType) {
+                        case ResultRecord.INFO_TYPE: {
+                            ResultRecord resultRecord = new ResultRecord();
+                            resultRecordList.add(
+                               resultRecord.build(inputRecord, scrd));
+                            break;
+                        }
+                            
+                        case ResultRecord.COMMENT_TYPE:
+                            // nada, es un registro-comentario
+                            break;
+                            
+                        case ResultRecord.END_TYPE:
+                            hasContent = false;
+                            break;
+                            
+                        default: {
+                            String errText = "UNKNOWN RECORD TYPE"
+                                + StringUtil.enclose(recordType);
+                            logger.fatal(errText);
+                            throw new CocamException(errText);
+                        }
+                    } //switch
+                } //while
+            } catch (IOException ioex) {
+                logger.fatal(ioex);
+                throw new CocamException(ioex);
             }
-        } catch (IOException ioex) {
-            logger.fatal(ioex);
-            throw new CocamException(ioex);
-        }
+        } //for
+        for (ResultRecord resultRecord : resultRecordList) {
+           logger.debug(resultRecord); 
         }
         return resultRecordList;
     }
     
     
-    private String[] getFileList() {
+    private File[] getFileList() {
         File dir = new File(RESULT_PATH);
         //String[] fileList = dir.list();
         
-        String[] fileList = dir.list(new FilenameFilter() {
+        File[] fileList = dir.listFiles(new FilenameFilter() {
             @Override
             public boolean accept(File dir, String name) {
                 return name.toLowerCase().startsWith(RESULT_FILE_PATTERN);

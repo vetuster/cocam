@@ -17,8 +17,6 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 /**
  *
@@ -30,10 +28,6 @@ import org.apache.logging.log4j.Logger;
 })
 @XmlRootElement
 public class FixedLengthColRecordDesc {
-     
-    @SuppressWarnings("NonConstantFieldWithUpperCaseName")
-    private static final Logger logger
-        = LogManager.getLogger(FixedLengthColRecordDesc.class);
     
     @XmlElement(required = true)
     private final SortedSet<FieldDesc> fieldDesc;
@@ -63,7 +57,6 @@ public class FixedLengthColRecordDesc {
             flcrd = (FixedLengthColRecordDesc)
                 jaxbUnmarshaller.unmarshal(fixedLengthColRecordDescFile);
         } catch (JAXBException jaxbex) {
-            logger.fatal(jaxbex);
             throw new FlatFileException(jaxbex);
         }
         return flcrd;

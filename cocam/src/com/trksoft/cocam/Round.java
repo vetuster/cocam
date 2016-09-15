@@ -21,8 +21,6 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 /**
  *
@@ -34,10 +32,6 @@ import org.apache.logging.log4j.Logger;
 })
 @XmlRootElement
 public class Round {
-     
-    @SuppressWarnings("NonConstantFieldWithUpperCaseName")
-    private static final Logger logger
-        = LogManager.getLogger(Round.class);
     
     @XmlAttribute
     private Integer roundId;
@@ -94,7 +88,6 @@ public class Round {
             Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
             round = (Round) jaxbUnmarshaller.unmarshal(roundFile);
         } catch (JAXBException jaxbex) {
-            logger.fatal(jaxbex);
             throw new CocamException(jaxbex);
         }
         return round;
