@@ -276,7 +276,6 @@ public class ResultRecord {
 
     public ResultRecord build(String record,
         SepColRecordDesc sepColRecordDesc) throws CocamException {
-        logger.debug("build");
         String[] fieldContent = record.split(sepColRecordDesc.getCharSep());
         for (FieldDesc fieldDesc : sepColRecordDesc.getFieldDesc()) {
             String fieldName = fieldDesc.getFieldName();
@@ -285,8 +284,8 @@ public class ResultRecord {
             try {
                 fieldValue = fieldContent[fieldDesc.getFieldNo()-1];
             } catch (ArrayIndexOutOfBoundsException aioobex) {
-                logger.debug("record" + record);
-                logger.debug("fieldNo" + fieldDesc.getFieldNo());
+                logger.fatal("record" + record);
+                logger.fatal("fieldNo" + fieldDesc.getFieldNo());
                 logger.fatal(aioobex);
                 throw new CocamException(aioobex);
             }

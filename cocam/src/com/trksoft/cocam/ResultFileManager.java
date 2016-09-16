@@ -27,28 +27,15 @@ public class ResultFileManager {
     private static final Logger logger
         = LogManager.getLogger(ResultFileManager.class);
     
-    private static final String SEPCOL_RECORD_DESC_FILENAME = 
+    private static final String SEPCOL_RECORD_DESC_PATH = 
         "resources/cocam-result_record-desc.xml";
      
-    private static final String RESULT_PATH = 
-        "resources/";
-    
-    private static final String RESULT_FILE_PATTERN = 
-        "cocam-2016_17-result";
-
-
-    public static void main(String[] args) throws Exception {
-        ResultFileManager rfm = new ResultFileManager();
-        List<ResultRecord> resultRecordList = rfm.getResultRecord();
-    }
-    
 
     public List<ResultRecord> getResultRecord() throws CocamException {
-        logger.debug("getResultRecord");
         SepColRecordDesc scrd = null;
         try {
             scrd = SepColRecordDesc.unmarshall(
-            new File(SEPCOL_RECORD_DESC_FILENAME));
+                new File(SEPCOL_RECORD_DESC_PATH));
         } catch (FlatFileException ffex) {
             logger.fatal(ffex);
             throw new CocamException(ffex);
@@ -56,8 +43,8 @@ public class ResultFileManager {
         List<ResultRecord> resultRecordList = new LinkedList();
         File[] fileList = getFileList();
         for (File inFile : fileList) {
-            logger.debug("procesing" + StringUtil.enclose(inFile.getName()));
-
+            logger.info("procesing" + StringUtil.enclose(inFile.getName()));
+            int recordCount = 0;
             try (BufferedReader mainBufferedReader
                 = new BufferedReader(new FileReader(inFile));)
                 /*= new BufferedReader(
@@ -65,7 +52,6 @@ public class ResultFileManager {
                         new FileInputStream(inFile), "UTF-8"));)*/
             {
                 String inputRecord;
-                int recordCount = 0;
                 boolean hasContent = true;
                 while ((inputRecord = mainBufferedReader.readLine()) != null
                     && hasContent) {
@@ -101,26 +87,27 @@ public class ResultFileManager {
             } catch (IOException ioex) {
                 logger.fatal(ioex);
                 throw new CocamException(ioex);
-            }
+            } // try
+            logger.info("Procesado" + StringUtil.enclose(inFile.getName())
+            + ",registros" + StringUtil.enclose(recordCount)
+            + ",partidas" + StringUtil.enclose(resultRecordList.size()));
         } //for
-        for (ResultRecord resultRecord : resultRecordList) {
-           logger.debug(resultRecord); 
-        }
         return resultRecordList;
     }
     
     
     private File[] getFileList() {
-        File dir = new File(RESULT_PATH);
-        //String[] fileList = dir.list();
+        CocamProps comcaProps = CocamProps.getInstance();
+        File dir = new File(comcaProps.getResultFilesDir());
         
+        String resultFilePattern = comcaProps.getResultFilePattern();
         File[] fileList = dir.listFiles(new FilenameFilter() {
             @Override
             public boolean accept(File dir, String name) {
-                return name.toLowerCase().startsWith(RESULT_FILE_PATTERN);
+                return name.startsWith(resultFilePattern);
             }
         });
-        logger.debug("fileList->length"+ StringUtil.enclose(fileList.length));
+        logger.info("fileList->length"+ StringUtil.enclose(fileList.length));
         return fileList;
     }
     

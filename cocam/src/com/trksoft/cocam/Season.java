@@ -32,17 +32,17 @@ import javax.xml.bind.annotation.XmlType;
 public class Season {
     
     @XmlAttribute
-    private Integer seasonId;
+    private String seasonId;
     
     @XmlElement(required = true)
     private final SortedSet<Round> round;
     
     
-    public Integer getSeasonId() {
+    public String getSeasonId() {
         return seasonId;
     }
 
-    public void setSeasonId(Integer seasonId) {
+    public void setSeasonId(String seasonId) {
         this.seasonId = seasonId;
     }
 
