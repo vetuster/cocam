@@ -33,14 +33,13 @@ public class ResultRecord {
     private String leagueType;
     private Integer roundId;
     private LocalDate roundDate;
-    private String resultTypeTeam;
+    private Boolean matchHead;
     private String localTeamId;
     private String localTeamName;
     private Integer localTeamScore;
     private Integer visitingTeamScore;
     private String visitingTeamId;
     private String visitingTeamName;
-    private String resultTypeSingle;
     private Integer tableId;
     private String localPayerNameOne;
     private String localPayerNameTwo;
@@ -119,12 +118,18 @@ public class ResultRecord {
     }
     
     
-    public String getResultTypeTeam() {
-        return resultTypeTeam;
+    public Boolean getMatchHead() {
+        return matchHead;
+    }
+    public Boolean isMatchHead() {
+        return matchHead;
     }
 
-    public void setResultTypeTeam(String resultTypeTeam) {
-        this.resultTypeTeam = resultTypeTeam;
+    public void setMatchHead(Boolean matchHead) {
+        this.matchHead = matchHead;
+    }
+    public void setMatchHead(String matchHead) {
+        setMatchHead(Boolean.parseBoolean(matchHead));
     }
 
     public String getLocalTeamId() {
@@ -187,14 +192,6 @@ public class ResultRecord {
 
     public void setVisitingTeamName(String visitingTeamName) {
         this.visitingTeamName = visitingTeamName;
-    }
-
-    public String getResultTypeSingle() {
-        return resultTypeSingle;
-    }
-
-    public void setResultTypeSingle(String resultTypeSingle) {
-        this.resultTypeSingle = resultTypeSingle;
     }
 
     public Integer getTableId() {
@@ -282,7 +279,7 @@ public class ResultRecord {
             String methodName = "set" + fieldName;
             String fieldValue = null;
             try {
-                fieldValue = fieldContent[fieldDesc.getFieldNo()-1];
+                fieldValue = fieldContent[fieldDesc.getFieldNo()-1].trim();
             } catch (ArrayIndexOutOfBoundsException aioobex) {
                 logger.fatal("record" + record);
                 logger.fatal("fieldNo" + fieldDesc.getFieldNo());
@@ -296,7 +293,7 @@ public class ResultRecord {
                 logger.fatal(nsmex);
                 throw new CocamException(nsmex);
             }
-            logger.debug("field" + StringUtil.enclose(fieldName)
+            logger.trace("field" + StringUtil.enclose(fieldName)
                 + ",method" + StringUtil.enclose(method.getName())
                 + ",value->" + StringUtil.enclose(fieldValue));
             try {
@@ -311,7 +308,8 @@ public class ResultRecord {
     
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder("recordType");
+        StringBuilder sb = new StringBuilder("ResultRecord->");
+        sb.append("recordType");
         sb.append(StringUtil.enclose(recordType));
         sb.append(",recordId");
         sb.append(StringUtil.enclose(recordId));
@@ -319,17 +317,15 @@ public class ResultRecord {
         sb.append(StringUtil.enclose(seasonId));
         sb.append(",leagueType");
         sb.append(StringUtil.enclose(leagueType));
-        sb.append(",recordType");
-        sb.append(StringUtil.enclose(recordType)); 
-        sb.append(",roundNumber");
+        sb.append(",roundId");
         sb.append(StringUtil.enclose(roundId));
         sb.append(",roundDate");
         sb.append((roundDate == null?
             "NULL"
             : StringUtil.enclose(
                 CocamDatatypeConverter.printLocalDate(roundDate))));
-        sb.append(",resultTypeTeam");
-        sb.append(StringUtil.enclose(resultTypeTeam));
+        sb.append(",matchHead");
+        sb.append(StringUtil.enclose(matchHead));
         sb.append(",localTeamId");
         sb.append(StringUtil.enclose(localTeamId));
         sb.append(",localTeamName");
@@ -342,8 +338,6 @@ public class ResultRecord {
         sb.append(StringUtil.enclose(visitingTeamId));
         sb.append(",visitingTeamName");
         sb.append(StringUtil.enclose(visitingTeamName));
-        sb.append(",resultTypeSingle");
-        sb.append(StringUtil.enclose(resultTypeSingle));
         sb.append(",tableId");
         sb.append(StringUtil.enclose(tableId));
         sb.append(",localPayerNameOne");

@@ -23,6 +23,7 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
+    "tableId",
     "localPlayerNameOne",
     "localPlayerNameTwo",
     "localPairScore",
@@ -31,7 +32,7 @@ import javax.xml.bind.annotation.XmlType;
     "visitingPairScore"
 })
 @XmlRootElement
-public class Table {
+public class Table implements Comparable<Table> {
     
     @XmlAttribute
     private Integer tableId;
@@ -112,22 +113,30 @@ public class Table {
     public void setVisitingPairScore(Integer visitingPairScore) {
         this.visitingPairScore = visitingPairScore;
     }
+
+    
+    @Override
+    public int compareTo(Table table) {
+        return tableId.compareTo(table.getTableId());
+    }
+    
     
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder("tableId");
+        StringBuilder sb = new StringBuilder("Table->");
+        sb.append("tableId");
         sb.append(StringUtil.enclose(tableId));
-        sb.append("localPlayerNameOne");
+        sb.append(",localPlayerNameOne");
         sb.append(StringUtil.enclose(localPlayerNameOne));
-        sb.append("localPlayerNameTwo");
+        sb.append(",localPlayerNameTwo");
         sb.append(StringUtil.enclose(localPlayerNameTwo));
-        sb.append("localPairScore");
+        sb.append(",localPairScore");
         sb.append(StringUtil.enclose(localPairScore));
-        sb.append("visitingPlayerNameOne");
+        sb.append(",visitingPlayerNameOne");
         sb.append(StringUtil.enclose(visitingPlayerNameOne));
-        sb.append("visitingPlayerNameTwo");
+        sb.append(",visitingPlayerNameTwo");
         sb.append(StringUtil.enclose(visitingPlayerNameTwo));
-        sb.append("visitingPairScore");
+        sb.append(",visitingPairScore");
         sb.append(StringUtil.enclose(visitingPairScore));
         return sb.toString();
     }

@@ -20,7 +20,9 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "teamCode",
-    "teamName"
+    "teamName",
+    "teamDenom",
+    "teamSize"
 })
 @XmlRootElement
 public class Team implements Comparable<Team>{
@@ -29,6 +31,10 @@ public class Team implements Comparable<Team>{
     private String teamCode;
     @XmlAttribute(required = true)
     private String teamName;
+    @XmlAttribute(required = true)
+    private String teamDenom;
+    @XmlAttribute(required = true)
+    private Integer teamSize;
 
     public String getTeamCode() {
         return teamCode;
@@ -46,6 +52,22 @@ public class Team implements Comparable<Team>{
         this.teamName = teamName;
     }
 
+    public String getTeamDenom() {
+        return teamDenom;
+    }
+
+    public void setTeamDenom(String teamDenom) {
+        this.teamDenom = teamDenom;
+    }
+
+    public Integer getTeamSize() {
+        return teamSize;
+    }
+
+    public void setTeamSize(Integer teamSize) {
+        this.teamSize = teamSize;
+    }
+
 
     @Override
     public int compareTo(Team otherTeam) {
@@ -57,6 +79,8 @@ public class Team implements Comparable<Team>{
         int hash = 7;
         hash = 79 * hash + Objects.hashCode(this.teamCode);
         hash = 79 * hash + Objects.hashCode(this.teamName);
+        hash = 79 * hash + Objects.hashCode(this.teamDenom);
+        hash = 79 * hash + Objects.hashCode(this.teamSize);
         return hash;
     }
 
@@ -75,14 +99,21 @@ public class Team implements Comparable<Team>{
         if (!Objects.equals(this.teamName, other.teamName)) {
             return false;
         }
+        if (!Objects.equals(this.teamDenom, other.teamDenom)) {
+            return false;
+        }
+        if (!Objects.equals(this.teamSize, other.teamSize)) {
+            return false;
+        }
         return true;
     }
 
     @Override
     public String toString() {
-        return "Team->"
-            + "teamCode" + StringUtil.enclose(teamCode)
-            + ",teamName" + StringUtil.enclose(teamName);
+        return "teamCode" + StringUtil.enclose(teamCode)
+            + ",teamName" + StringUtil.enclose(teamName)
+            + ",teamDenom" + StringUtil.enclose(teamDenom)
+            + ",teamSize" + StringUtil.enclose(teamSize);
     }
     
     

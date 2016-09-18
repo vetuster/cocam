@@ -26,6 +26,7 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
+    "matchId",
     "localTeamId",
     "localTeamName",
     "localTeamScore",
@@ -35,7 +36,7 @@ import javax.xml.bind.annotation.XmlType;
     "table"
 })
 @XmlRootElement
-public class Match {
+public class Match  implements Comparable<Match> {
 
     @XmlAttribute
     private String matchId;
@@ -127,20 +128,27 @@ public class Match {
     }
     
     @Override
+    public int compareTo(Match match) {
+        return matchId.compareTo(match.getMatchId());
+    }
+    
+    
+    @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder("matchId");
+        StringBuilder sb = new StringBuilder("Match->");
+        sb.append("matchId");
         sb.append(StringUtil.enclose(matchId));
-        sb.append("localTeamId");
+        sb.append(",localTeamId");
         sb.append(StringUtil.enclose(localTeamId));
-        sb.append("localTeamName");
+        sb.append(",localTeamName");
         sb.append(StringUtil.enclose(localTeamName));
-        sb.append("localTeamScore");
+        sb.append(",localTeamScore");
         sb.append(StringUtil.enclose(localTeamScore));
-        sb.append("visitingTeamId");
+        sb.append(",visitingTeamId");
         sb.append(StringUtil.enclose(visitingTeamId));
-        sb.append("visitingTeamName");
+        sb.append(",visitingTeamName");
         sb.append(StringUtil.enclose(visitingTeamName));
-        sb.append("visitingTeamScore");
+        sb.append(",visitingTeamScore");
         sb.append(StringUtil.enclose(visitingTeamScore));
         sb.append(table.stream().map(Object::toString).
             collect(Collectors.joining("->")));

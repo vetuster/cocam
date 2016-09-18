@@ -41,4 +41,11 @@ public class StringUtil {
         }
         return enclose(value.toString());
     }
+    
+    public static String enclose(final Boolean value) {
+        if (value == null) {
+            return enclose(NULL_LIT);
+        }
+        return enclose(value.toString());
+    }
 }

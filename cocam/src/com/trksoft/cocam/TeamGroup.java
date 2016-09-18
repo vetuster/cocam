@@ -5,18 +5,15 @@
  */
 package com.trksoft.cocam;
 
-import com.trksoft.util.StringUtil;
 import java.io.File;
 import java.util.SortedSet;
 import java.util.TreeSet;
 import java.util.stream.Collectors;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
-import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
@@ -27,54 +24,41 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "seasonId",
-    "round"
+    "team"
 })
 @XmlRootElement
-public class Season {
-    
-    @XmlAttribute
-    private String seasonId;
+public class TeamGroup {
     
     @XmlElement(required = true)
-    private final SortedSet<Round> round;
-    
-    
-    public String getSeasonId() {
-        return seasonId;
+    private final SortedSet<Team> team;
+
+    public TeamGroup() {
+        team = new TreeSet<>();
     }
 
-    public void setSeasonId(String seasonId) {
-        this.seasonId = seasonId;
-    }
-
-    public Season() {
-        round = new TreeSet<>();
-    }
-
-    public SortedSet<Round> getRound() {
-        return round;
+    public SortedSet<Team> getTeam() {
+        return team;
     }
     
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder("Season->");
-        sb.append("seasonId");
-        sb.append(StringUtil.enclose(seasonId));
-        sb.append(round.stream().map(Object::toString).
-            collect(Collectors.joining("->")));
-        return sb.toString();
+        return team.stream().map(Object::toString).
+            collect(Collectors.joining("->"));
     }
-
-   public static Season unmarshall(File seasonFile) throws CocamException {
-        Season season = null;
+    
+    public static TeamGroup unmarshall(
+        File fixedLengthColRecordDescFile) throws CocamException {
+        TeamGroup flcrd = null;
         try {
-            JAXBContext jaxbContext = JAXBContext.newInstance(Season.class);
+            JAXBContext jaxbContext = 
+                JAXBContext.newInstance(TeamGroup.class);
+
             Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
-            season = (Season) jaxbUnmarshaller.unmarshal(seasonFile);
+            flcrd = (TeamGroup)
+                jaxbUnmarshaller.unmarshal(fixedLengthColRecordDescFile);
         } catch (JAXBException jaxbex) {
             throw new CocamException(jaxbex);
         }
-        return season;
+        return flcrd;
     }
 }

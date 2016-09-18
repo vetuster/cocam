@@ -28,10 +28,12 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
+    "roundId",
+    "roundDate",
     "match"
 })
 @XmlRootElement
-public class Round {
+public class Round implements Comparable<Round> {
     
     @XmlAttribute
     private Integer roundId;
@@ -67,12 +69,20 @@ public class Round {
     public SortedSet<Match> getMatch() {
         return match;
     }
+
+    
+    @Override
+    public int compareTo(Round round) {
+        return roundId.compareTo(round.getRoundId());
+    }
+
     
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder("roundId");
+        StringBuilder sb = new StringBuilder("Round->");
+        sb.append("roundId");
         sb.append(StringUtil.enclose(roundId));
-        sb.append("roundDate");
+        sb.append(",roundDate");
         sb.append(StringUtil.enclose(
             CocamDatatypeConverter.printLocalDate(roundDate)));
         sb.append(match.stream().map(Object::toString).

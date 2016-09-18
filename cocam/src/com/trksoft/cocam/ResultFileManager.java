@@ -10,9 +10,11 @@ import com.trksoft.flatfile.SepColRecordDesc;
 import com.trksoft.util.StringUtil;
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.FilenameFilter;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.LinkedList;
 import java.util.List;
 import org.apache.logging.log4j.LogManager;
@@ -40,7 +42,7 @@ public class ResultFileManager {
             logger.fatal(ffex);
             throw new CocamException(ffex);
         }
-        List<ResultRecord> resultRecordList = new LinkedList();
+        List<ResultRecord> resultRecordList = new LinkedList<>();
         File[] fileList = getFileList();
         for (File inFile : fileList) {
             logger.info("procesing" + StringUtil.enclose(inFile.getName()));
@@ -55,11 +57,11 @@ public class ResultFileManager {
                 boolean hasContent = true;
                 while ((inputRecord = mainBufferedReader.readLine()) != null
                     && hasContent) {
-                    logger.debug("inputRecord"
+                    logger.trace("inputRecord"
                         + StringUtil.enclose(inputRecord));
                     recordCount++;
                     String recordType = inputRecord.substring(0, 3);
-                    //logger.debug("recordType" + StringUtil.enclose(recordType));
+                    logger.trace("recordType" + StringUtil.enclose(recordType));
                     switch (recordType) {
                         case ResultRecord.INFO_TYPE: {
                             ResultRecord resultRecord = new ResultRecord();
