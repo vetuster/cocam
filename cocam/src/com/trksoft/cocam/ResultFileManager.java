@@ -11,7 +11,6 @@ import com.trksoft.util.StringUtil;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileReader;
 import java.io.FilenameFilter;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -43,15 +42,18 @@ public class ResultFileManager {
             throw new CocamException(ffex);
         }
         List<ResultRecord> resultRecordList = new LinkedList<>();
+        CocamProps comcaProps = CocamProps.getInstance();
+        String charset = comcaProps.getResultFilesCharset();
         File[] fileList = getFileList();
         for (File inFile : fileList) {
             logger.info("procesing" + StringUtil.enclose(inFile.getName()));
             int recordCount = 0;
             try (BufferedReader mainBufferedReader
-                = new BufferedReader(new FileReader(inFile));)
-                /*= new BufferedReader(
+                //= new BufferedReader(new FileReader(inFile));)
+                = new BufferedReader(
                     new InputStreamReader(
-                        new FileInputStream(inFile), "UTF-8"));)*/
+                        new FileInputStream(inFile), charset));)
+                        //new FileInputStream(inFile), "UTF-8"));)
             {
                 String inputRecord;
                 boolean hasContent = true;
@@ -82,7 +84,7 @@ public class ResultFileManager {
                             String errText = "UNKNOWN RECORD TYPE"
                                 + StringUtil.enclose(recordType);
                             logger.fatal(errText);
-                            throw new CocamException(errText);
+                            throw new RuntimeException(errText);
                         }
                     } //switch
                 } //while

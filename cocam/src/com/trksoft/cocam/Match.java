@@ -7,6 +7,7 @@ package com.trksoft.cocam;
 
 import com.trksoft.util.StringUtil;
 import java.io.File;
+import java.time.LocalDate;
 import java.util.SortedSet;
 import java.util.TreeSet;
 import java.util.stream.Collectors;
@@ -19,6 +20,7 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  *
@@ -26,6 +28,8 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
+    "roundId",
+    "roundDate",
     "matchId",
     "localTeamId",
     "localTeamName",
@@ -37,7 +41,14 @@ import javax.xml.bind.annotation.XmlType;
 })
 @XmlRootElement
 public class Match  implements Comparable<Match> {
-
+    
+    @XmlAttribute
+    private Integer roundId;
+    
+    @XmlAttribute
+    @XmlJavaTypeAdapter(CocamAdapter.class)
+    private LocalDate roundDate;
+    
     @XmlAttribute
     private String matchId;
     
@@ -67,6 +78,22 @@ public class Match  implements Comparable<Match> {
         table = new TreeSet<>();
     }
 
+    public Integer getRoundId() {
+        return roundId;
+    }
+
+    public void setRoundId(Integer roundId) {
+        this.roundId = roundId;
+    }
+    
+    public LocalDate getRoundDate() {
+        return roundDate;
+    }
+
+    public void setRoundDate(LocalDate roundDate) {
+        this.roundDate = roundDate;
+    }
+    
     public String getMatchId() {
         return matchId;
     }
@@ -127,8 +154,22 @@ public class Match  implements Comparable<Match> {
         return table;
     }
     
+    
+    public ResultType getResultType() {
+        if (localTeamScore == null || visitingTeamScore == null) {
+            return null;
+        }
+        // devuelve el tipo de resultado correspondiente
+        return ResultType.valueOf(localTeamScore * 10 + visitingTeamScore);
+    }
+    
+    
     @Override
     public int compareTo(Match match) {
+        int i = roundId.compareTo(match.getRoundId());
+        if (i!=0) return i;
+        i = roundDate.compareTo(match.getRoundDate());
+        if (i!=0) return i;
         return matchId.compareTo(match.getMatchId());
     }
     
@@ -136,6 +177,11 @@ public class Match  implements Comparable<Match> {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder("Match->");
+        sb.append("roundId");
+        sb.append(StringUtil.enclose(roundId));
+        sb.append(",roundDate");
+        sb.append(StringUtil.enclose(
+            CocamDatatypeConverter.printLocalDate(roundDate)));
         sb.append("matchId");
         sb.append(StringUtil.enclose(matchId));
         sb.append(",localTeamId");
@@ -166,5 +212,28 @@ public class Match  implements Comparable<Match> {
             throw new CocamException(jaxbex);
         }
         return match;
+    }
+    
+    public enum ResultType {
+        R04(4), R13(13), R22(22), R31(31), R40(40);
+
+        private int resultTypeNo;
+
+        private static final java.util.Map<Integer, ResultType> map
+            = new java.util.HashMap<>();
+
+        static {
+            for (ResultType resultType : ResultType.values()) {
+                map.put(resultType.resultTypeNo, resultType);
+            }
+        }
+
+        private ResultType(final int resultTypeNo) {
+            this.resultTypeNo = resultTypeNo;
+        }
+
+        public static ResultType valueOf(final int resultTypeNo) {
+            return map.get(resultTypeNo);
+        }
     }
 }

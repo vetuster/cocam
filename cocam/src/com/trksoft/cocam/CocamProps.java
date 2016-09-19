@@ -19,6 +19,7 @@ public class CocamProps extends AbstractProps {
         LogManager.getLogger(CocamProps.class);
     
     private static final String PROPERTIES_FILE_NAME = "cocam.properties";
+    private static final String RESULT_FILES_CHARSET_KEY = "result.files.charset";
     private static final String RESULT_FILES_DIR_KEY = "result.files.dir";
     private static final String RESULT_FILE_PATTERN_KEY = "result.file.pattern";
     
@@ -39,6 +40,10 @@ public class CocamProps extends AbstractProps {
     @Override
     protected String getPropertiesFileName() {
         return PROPERTIES_FILE_NAME;
+    }
+    
+    public String getResultFilesCharset() {
+        return getString(RESULT_FILES_CHARSET_KEY);
     }
     
     public String getResultFilesDir() {

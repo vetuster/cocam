@@ -19,7 +19,7 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "teamCode",
+    "teamId",
     "teamName",
     "teamDenom",
     "teamSize"
@@ -28,7 +28,7 @@ import javax.xml.bind.annotation.XmlType;
 public class Team implements Comparable<Team>{
     
     @XmlAttribute(required = true)    
-    private String teamCode;
+    private String teamId;
     @XmlAttribute(required = true)
     private String teamName;
     @XmlAttribute(required = true)
@@ -36,12 +36,12 @@ public class Team implements Comparable<Team>{
     @XmlAttribute(required = true)
     private Integer teamSize;
 
-    public String getTeamCode() {
-        return teamCode;
+    public String getTeamId() {
+        return teamId;
     }
 
-    public void setTeamCode(String teamCode) {
-        this.teamCode = teamCode;
+    public void setTeamId(String teamId) {
+        this.teamId = teamId;
     }
 
     public String getTeamName() {
@@ -71,13 +71,13 @@ public class Team implements Comparable<Team>{
 
     @Override
     public int compareTo(Team otherTeam) {
-        return this.teamName.compareTo(otherTeam.getTeamName());
+        return this.teamId.compareTo(otherTeam.getTeamId());
     }
 
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 79 * hash + Objects.hashCode(this.teamCode);
+        hash = 79 * hash + Objects.hashCode(this.teamId);
         hash = 79 * hash + Objects.hashCode(this.teamName);
         hash = 79 * hash + Objects.hashCode(this.teamDenom);
         hash = 79 * hash + Objects.hashCode(this.teamSize);
@@ -93,7 +93,7 @@ public class Team implements Comparable<Team>{
             return false;
         }
         final Team other = (Team) obj;
-        if (!Objects.equals(this.teamCode, other.teamCode)) {
+        if (!Objects.equals(this.teamId, other.teamId)) {
             return false;
         }
         if (!Objects.equals(this.teamName, other.teamName)) {
@@ -110,7 +110,7 @@ public class Team implements Comparable<Team>{
 
     @Override
     public String toString() {
-        return "teamCode" + StringUtil.enclose(teamCode)
+        return "teamId" + StringUtil.enclose(teamId)
             + ",teamName" + StringUtil.enclose(teamName)
             + ",teamDenom" + StringUtil.enclose(teamDenom)
             + ",teamSize" + StringUtil.enclose(teamSize);

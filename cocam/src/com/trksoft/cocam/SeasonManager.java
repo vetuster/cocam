@@ -5,8 +5,10 @@
  */
 package com.trksoft.cocam;
 
+import com.trksoft.util.StringUtil;
 import java.io.File;
 import java.util.List;
+import java.util.Set;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
@@ -22,13 +24,63 @@ public class SeasonManager {
     private static final Logger logger
         = LogManager.getLogger(SeasonManager.class);
     
-    public static void main(String[] args) throws Exception {
-        SeasonManager seasonManager = new SeasonManager();
-        //seasonManager.buildTeamGroup();
-        Season season = seasonManager.builFromFiles();
+    public TeamStatGroup loadTeamStats()  throws Exception {
+        TeamGroup teamGroup = loadTeamGroup();
+        /*
+        try {
+            JAXBContext jaxbContext
+                = JAXBContext.newInstance(TeamGroup.class);
+            Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
+            jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT,
+                true);
+            jaxbMarshaller.marshal(teamGroup, System.out);
+        } catch (JAXBException jaxbex) {
+            logger.fatal(jaxbex);
+            throw new CocamException(jaxbex);
+        }*/
+        Season season = builFromResultFiles();
+        TeamStatGroup teamStatGroup = new TeamStatGroup();
+        // iniciar las estadísticas - así el equipo que descansa consta con 0
+        // y siempre existe el equipo en la busqueda
+        teamGroup.getTeam().stream().forEach((team) -> {
+            TeamStat teamStat = new TeamStat();
+            teamStat.setTeamId(team.getTeamId());
+            teamStat.setTeamDenom(team.getTeamDenom());
+            teamStatGroup.getTeamStat().put(team.getTeamId(), teamStat);
+        });
+
+        
+        Set<Match> matchSet = season.getMatch();
+        for (Match match : matchSet) {
+            //obtener las estadisticas en curso del equipo local
+            TeamStat localTeamStat = teamStatGroup.getTeamStat()
+                .get(match.getLocalTeamId());
+            //obtener las estadisticas en curso del equipo visitante
+            TeamStat visitingTeamStat = teamStatGroup.getTeamStat()
+                .get(match.getVisitingTeamId());
+            
+            //actualizar estadisticas
+            localTeamStat.update(match);
+            visitingTeamStat.update(match);
+        }
+        
+        try {
+            File teamStatGroupFile = new File("resources/teamStatGroup-J01.xml");
+            JAXBContext jaxbContext
+                = JAXBContext.newInstance(TeamStatGroup.class);
+            Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
+            jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT,
+                true);
+            jaxbMarshaller.marshal(teamStatGroup, teamStatGroupFile);
+            jaxbMarshaller.marshal(teamStatGroup, System.out);
+        } catch (JAXBException jaxbex) {
+            logger.fatal(jaxbex);
+            throw new CocamException(jaxbex);
+        }
+        return teamStatGroup;
     }
     
-    public Season builFromFiles() throws CocamException {
+    private Season builFromResultFiles() throws CocamException {
         Season season = new Season();
         ResultFileManager rfm = new ResultFileManager();
         List<ResultRecord> resultRecordList = rfm.getResultRecord();
@@ -39,7 +91,6 @@ public class SeasonManager {
         }
         
         Integer lastRoundId = Integer.MAX_VALUE;
-        Round currentRound = null;
         Match currentMatch = null;
         for (ResultRecord resultRecord : resultRecordList) {
             logger.info("loading->" + resultRecord);
@@ -48,18 +99,10 @@ public class SeasonManager {
                 season.setSeasonId(resultRecord.getSeasonId());
             }
             
-            logger.trace("Round");
-            if (!resultRecord.getRoundId().equals(lastRoundId)) {
-                lastRoundId = resultRecord.getRoundId();
-                currentRound = new Round();
-                currentRound.setRoundId(resultRecord.getRoundId());
-                currentRound.setRoundDate(resultRecord.getRoundDate());
-                season.getRound().add(currentRound);
-            }
-            
-            logger.trace("Match");
             if (resultRecord.isMatchHead()) {
                 currentMatch = new Match();
+                currentMatch.setRoundId(resultRecord.getRoundId());
+                currentMatch.setRoundDate(resultRecord.getRoundDate());
                 currentMatch.setMatchId(resultRecord.getLocalTeamId()
                     + resultRecord.getVisitingTeamId());
                 currentMatch.setLocalTeamId(resultRecord.getLocalTeamId());
@@ -72,13 +115,9 @@ public class SeasonManager {
                     resultRecord.getVisitingTeamName());
                 currentMatch.setVisitingTeamScore(
                     resultRecord.getVisitingTeamScore());
-                currentRound.getMatch().add(currentMatch);
+                season.getMatch().add(currentMatch);
             }
-            logger.trace("currentMatch->"
-                + (currentMatch == null?
-                    "NULL": "currentMatch OK"));
             
-            logger.trace("Table");
             Table currentTable = new Table();
             currentTable.setTableId(resultRecord.getTableId());
             currentTable.setLocalPlayerNameOne(
@@ -94,8 +133,8 @@ public class SeasonManager {
                 resultRecord.getVisitingPairScore());
             currentMatch.getTable().add(currentTable);
         }
-        marshall(season, new File("resources/season_55-R01.xml"));
-        
+        marshall(season,
+            new File("resources/season_2016_17-J01.xml"));
         return season;
     }
     
@@ -107,12 +146,10 @@ public class SeasonManager {
             Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
 
             // output pretty printed
-            jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT,
-                true);
+            jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 
             jaxbMarshaller.marshal(season, seasonFile);
             jaxbMarshaller.marshal(season, System.out);
-
         } catch (JAXBException jaxbex) {
             logger.error(jaxbex);
             throw  new CocamException(jaxbex);

@@ -12,7 +12,6 @@ import java.util.TreeSet;
 import java.util.stream.Collectors;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
-import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -28,7 +27,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "seasonId",
-    "round"
+    "match"
 })
 @XmlRootElement
 public class Season {
@@ -37,7 +36,7 @@ public class Season {
     private String seasonId;
     
     @XmlElement(required = true)
-    private final SortedSet<Round> round;
+    private final SortedSet<Match> match;
     
     
     public String getSeasonId() {
@@ -49,11 +48,11 @@ public class Season {
     }
 
     public Season() {
-        round = new TreeSet<>();
+        match = new TreeSet<>();
     }
 
-    public SortedSet<Round> getRound() {
-        return round;
+    public SortedSet<Match> getMatch() {
+        return match;
     }
     
     @Override
@@ -61,7 +60,7 @@ public class Season {
         StringBuilder sb = new StringBuilder("Season->");
         sb.append("seasonId");
         sb.append(StringUtil.enclose(seasonId));
-        sb.append(round.stream().map(Object::toString).
+        sb.append(match.stream().map(Object::toString).
             collect(Collectors.joining("->")));
         return sb.toString();
     }
