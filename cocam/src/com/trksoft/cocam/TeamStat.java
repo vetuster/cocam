@@ -7,7 +7,6 @@ package com.trksoft.cocam;
 
 import com.trksoft.util.StringUtil;
 import java.util.Objects;
-import java.util.Set;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -49,10 +48,10 @@ public class TeamStat {
     private static final Logger logger
         = LogManager.getLogger(TeamStat.class);
     
-    private static int ONE_POINT = 1;
-    private static int TWO_POINTS = 2;
-    private static int THREE_POINTS = 3;
-    private static int FOUR_POINTS = 4;
+    private static final int ONE_POINT = 1;
+    private static final int TWO_POINTS = 2;
+    private static final int THREE_POINTS = 3;
+    private static final int FOUR_POINTS = 4;
     
     @XmlAttribute(required = true)    
     private String teamId;
@@ -339,39 +338,41 @@ public class TeamStat {
         StringBuilder sb = new StringBuilder("TeamStat->");
         sb.append("teamId");
         sb.append(StringUtil.enclose(teamId));
-        sb.append("teamDenom");
+        sb.append(",teamDenom");
         sb.append(StringUtil.enclose(teamDenom));
-        sb.append("matchPlayed");
+        sb.append(",matchPlayed");
         sb.append(StringUtil.enclose(matchPlayed));
-        sb.append("matchWon");
+        sb.append(",matchWon");
         sb.append(StringUtil.enclose(matchWon));
-        sb.append("matchLost");
+        sb.append(",matchLost");
         sb.append(StringUtil.enclose(matchLost));
-        sb.append("matchPlayedLocal");
+        sb.append(",matchPlayedLocal");
         sb.append(StringUtil.enclose(matchPlayedLocal));
-        sb.append("matchWonLocal");
+        sb.append(",matchWonLocal");
         sb.append(StringUtil.enclose(matchWonLocal));
-        sb.append("matchLostLocal");
+        sb.append(",matchLostLocal");
         sb.append(StringUtil.enclose(matchLostLocal));
-        sb.append("matchPlayedVisiting");
+        sb.append(",matchPlayedVisiting");
         sb.append(StringUtil.enclose(matchPlayedVisiting));
-        sb.append("matchWonVisiting");
+        sb.append(",matchWonVisiting");
         sb.append(StringUtil.enclose(matchWonVisiting));
-        sb.append("matchLostVisiting");
+        sb.append(",matchLostVisiting");
         sb.append(StringUtil.enclose(matchLostVisiting));
-        sb.append("tableResult40");
+        sb.append(",tableResult40");
         sb.append(StringUtil.enclose(tableResult40));
-        sb.append("tableResult31");
+        sb.append(",tableResult31");
         sb.append(StringUtil.enclose(tableResult31));
-        sb.append("tableResult22");
+        sb.append(",tableResult22");
         sb.append(StringUtil.enclose(tableResult22));
-        sb.append("tableResult13");
+        sb.append(",tableResult13");
         sb.append(StringUtil.enclose(tableResult13));
         sb.append("tableResult04");
         sb.append(StringUtil.enclose(tableResult04));
-        sb.append("goalsFavor");
+        sb.append(",points");
+        sb.append(StringUtil.enclose(points));
+        sb.append(",goalsFavor");
         sb.append(StringUtil.enclose(goalsFavor));
-        sb.append("goalsAgainst");
+        sb.append(",goalsAgainst");
         sb.append(StringUtil.enclose(goalsAgainst));
         return sb.toString();
     }
@@ -467,8 +468,7 @@ public class TeamStat {
             }
         } // switch
         
-        Set<Table> tableSet = match.getTable();
-        for (Table table : tableSet) {
+        match.getTable().stream().forEach((table) -> {
             if (local) {
                 setGoalsFavor(getGoalsFavor() + table.getLocalPairScore());
                 setGoalsAgainst(getGoalsAgainst()
@@ -477,6 +477,6 @@ public class TeamStat {
                 setGoalsFavor(getGoalsFavor() + table.getVisitingPairScore());
                 setGoalsAgainst(getGoalsAgainst() + table.getLocalPairScore());
             }
-        }
+        });
     }
 }

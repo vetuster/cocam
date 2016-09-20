@@ -19,9 +19,13 @@ public class CocamProps extends AbstractProps {
         LogManager.getLogger(CocamProps.class);
     
     private static final String PROPERTIES_FILE_NAME = "cocam.properties";
-    private static final String RESULT_FILES_CHARSET_KEY = "result.files.charset";
-    private static final String RESULT_FILES_DIR_KEY = "result.files.dir";
-    private static final String RESULT_FILE_PATTERN_KEY = "result.file.pattern";
+    private static final String CHAMPIONSHIP_EDITION_ID_KEY = "championship.edition.id";
+    private static final String DATA_FILE_DIR_KEY = "data.file.dir";
+    private static final String DATA_FILE_PREFIX_KEY = "data.file.prefix";
+    private static final String RESULT_FILE_CHARSET_KEY = "result.file.charset";
+    private static final String RESULT_FILE_DIR_KEY = "result.file.dir";
+    private static final String RESULT_FILE_PREFIX_KEY = "result.file.prefix";
+
     
     
     private CocamProps() {
@@ -42,16 +46,27 @@ public class CocamProps extends AbstractProps {
         return PROPERTIES_FILE_NAME;
     }
     
-    public String getResultFilesCharset() {
-        return getString(RESULT_FILES_CHARSET_KEY);
+    public String getChampionshipEditionId() {
+        return getString(CHAMPIONSHIP_EDITION_ID_KEY);
     }
     
-    public String getResultFilesDir() {
-        return getString(RESULT_FILES_DIR_KEY);
+    public String getDataFilePrefix() {
+        return getString(DATA_FILE_PREFIX_KEY);
     }
     
-    public String getResultFilePattern() {
-        return getString(RESULT_FILE_PATTERN_KEY);
+    public String getDataFileDir() {
+        return getString(DATA_FILE_DIR_KEY);
     }
     
+    public String getResultFileCharset() {
+        return getString(RESULT_FILE_CHARSET_KEY);
+    }
+    
+    public String getResultFileDir() {
+        return getString(RESULT_FILE_DIR_KEY);
+    }
+    
+    public String getResultFilePrefix() {
+        return getString(RESULT_FILE_PREFIX_KEY);
+    }
 }

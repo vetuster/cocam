@@ -11,11 +11,12 @@ import java.util.Comparator;
  *
  * @author PSUANZES
  */
-public class TeamStatRoun1Comparator implements Comparator<TeamStat> {
+public class TeamStatRound1Comparator implements Comparator<TeamStat> {
 
     @Override
     public int compare(TeamStat one, TeamStat other) {
-        int i = one.getPoints().compareTo(other.getPoints());
+        // de mayor a menor
+        int i = other.getPoints().compareTo(one.getPoints());
         if (i!=0) return i;
         return one.getTeamDenom().compareTo(other.getTeamDenom());
     }

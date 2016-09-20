@@ -17,6 +17,8 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 /**
  *
@@ -28,6 +30,9 @@ import javax.xml.bind.annotation.XmlType;
 })
 @XmlRootElement
 public class TeamGroup {
+    @SuppressWarnings("NonConstantFieldWithUpperCaseName")
+    private static final Logger logger
+        = LogManager.getLogger(TeamGroup.class);
     
     @XmlElement(required = true)
     private final SortedSet<Team> team;
@@ -47,7 +52,7 @@ public class TeamGroup {
     }
     
     public static TeamGroup unmarshall(
-        File fixedLengthColRecordDescFile) throws CocamException {
+        File fixedLengthColRecordDescFile) throws JAXBException {
         TeamGroup flcrd = null;
         try {
             JAXBContext jaxbContext = 
@@ -57,7 +62,8 @@ public class TeamGroup {
             flcrd = (TeamGroup)
                 jaxbUnmarshaller.unmarshal(fixedLengthColRecordDescFile);
         } catch (JAXBException jaxbex) {
-            throw new CocamException(jaxbex);
+            logger.fatal(jaxbex);
+            throw jaxbex;
         }
         return flcrd;
     }

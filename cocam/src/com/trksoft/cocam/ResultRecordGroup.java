@@ -5,8 +5,9 @@
  */
 package com.trksoft.cocam;
 
-import com.trksoft.util.StringUtil;
 import java.io.File;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.SortedSet;
 import java.util.TreeSet;
 import java.util.stream.Collectors;
@@ -16,7 +17,6 @@ import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
@@ -29,85 +29,58 @@ import org.apache.logging.log4j.Logger;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "seasonId",
-    "lastRoundId",
-    "match"
+    "resultRecord"
 })
 @XmlRootElement
-public class Season {
+public class ResultRecordGroup {
     @SuppressWarnings("NonConstantFieldWithUpperCaseName")
     private static final Logger logger
-        = LogManager.getLogger(Season.class);
-    
-    @XmlAttribute
-    private String seasonId;
-    
-    @XmlAttribute
-    private Integer lastRoundId;
+        = LogManager.getLogger(ResultRecordGroup.class);
     
     @XmlElement(required = true)
-    private final SortedSet<Match> match;
-    
-    
-    public String getSeasonId() {
-        return seasonId;
+    private final List<ResultRecord> resultRecord;
+
+    public ResultRecordGroup() {
+        resultRecord = new LinkedList<>();
     }
 
-    public void setSeasonId(String seasonId) {
-        this.seasonId = seasonId;
-    }
-
-    public Integer getLastRoundId() {
-        return lastRoundId;
-    }
-
-    public void setLastRoundId(Integer lastRoundId) {
-        this.lastRoundId = lastRoundId;
-    }
-
-    public Season() {
-        match = new TreeSet<>();
-    }
-
-    public SortedSet<Match> getMatch() {
-        return match;
+    public List<ResultRecord> getResultRecord() {
+        return resultRecord;
     }
     
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder("Season->");
-        sb.append("seasonId");
-        sb.append(StringUtil.enclose(seasonId));
-        sb.append("lastRoundId");
-        sb.append(StringUtil.enclose(lastRoundId));
-        sb.append(match.stream().map(Object::toString).
-            collect(Collectors.joining("->")));
-        return sb.toString();
+        return resultRecord.stream().map(Object::toString).
+            collect(Collectors.joining("->"));
     }
-
-    public void marshall(File seasonFile) throws JAXBException {
+    
+    public void marshall(File resultRecordGroupFile) throws JAXBException {
         try {
             JAXBContext jaxbContext
-                = JAXBContext.newInstance(Season.class);
+                = JAXBContext.newInstance(ResultRecordGroup.class);
             Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
             jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-            jaxbMarshaller.marshal(this, seasonFile);
+            jaxbMarshaller.marshal(this, resultRecordGroupFile);
         } catch (JAXBException jaxbex) {
             logger.fatal(jaxbex);
             throw jaxbex;
         }
     }
     
-   public static Season unmarshall(File seasonFile) throws JAXBException {
-        Season season = null;
+    public static ResultRecordGroup unmarshall(
+        File fixedLengthColRecordDescFile) throws JAXBException {
+        ResultRecordGroup resultRecordGroup = null;
         try {
-            JAXBContext jaxbContext = JAXBContext.newInstance(Season.class);
+            JAXBContext jaxbContext = 
+                JAXBContext.newInstance(ResultRecordGroup.class);
+
             Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
-            season = (Season) jaxbUnmarshaller.unmarshal(seasonFile);
+            resultRecordGroup = (ResultRecordGroup)
+                jaxbUnmarshaller.unmarshal(fixedLengthColRecordDescFile);
         } catch (JAXBException jaxbex) {
             logger.fatal(jaxbex);
             throw jaxbex;
         }
-        return season;
+        return resultRecordGroup;
     }
 }

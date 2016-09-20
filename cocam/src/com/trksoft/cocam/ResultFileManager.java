@@ -28,23 +28,20 @@ public class ResultFileManager {
     private static final Logger logger
         = LogManager.getLogger(ResultFileManager.class);
     
-    private static final String SEPCOL_RECORD_DESC_PATH = 
-        "resources/cocam-result_record-desc.xml";
-     
-
+    
     public List<ResultRecord> getResultRecord() throws CocamException {
         SepColRecordDesc scrd = null;
         try {
             scrd = SepColRecordDesc.unmarshall(
-                new File(SEPCOL_RECORD_DESC_PATH));
+                new File(FileNameManager.getResultRecordDescFilename()));
         } catch (FlatFileException ffex) {
             logger.fatal(ffex);
             throw new CocamException(ffex);
         }
         List<ResultRecord> resultRecordList = new LinkedList<>();
         CocamProps comcaProps = CocamProps.getInstance();
-        String charset = comcaProps.getResultFilesCharset();
-        File[] fileList = getFileList();
+        String charset = comcaProps.getResultFileCharset();
+        File[] fileList = getResultFileList();
         for (File inFile : fileList) {
             logger.info("procesing" + StringUtil.enclose(inFile.getName()));
             int recordCount = 0;
@@ -95,16 +92,19 @@ public class ResultFileManager {
             logger.info("Procesado" + StringUtil.enclose(inFile.getName())
             + ",registros" + StringUtil.enclose(recordCount)
             + ",partidas" + StringUtil.enclose(resultRecordList.size()));
-        } //for
+        String resultRecordFilename = FileNameManager.getResultRecordFilename(
+            resultRecord.getLastRoundId());
+        season.marshall(new File(seasonFilename));
+        } //for ficheros de resultdos
         return resultRecordList;
     }
     
     
-    private File[] getFileList() {
+    private File[] getResultFileList() {
         CocamProps comcaProps = CocamProps.getInstance();
-        File dir = new File(comcaProps.getResultFilesDir());
+        File dir = new File(comcaProps.getResultFileDir());
         
-        String resultFilePattern = comcaProps.getResultFilePattern();
+        String resultFilePattern = comcaProps.getResultFilePrefix();
         File[] fileList = dir.listFiles(new FilenameFilter() {
             @Override
             public boolean accept(File dir, String name) {

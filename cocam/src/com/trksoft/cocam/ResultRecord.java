@@ -8,9 +8,19 @@ package com.trksoft.cocam;
 import com.trksoft.flatfile.FieldDesc;
 import com.trksoft.flatfile.SepColRecordDesc;
 import com.trksoft.util.StringUtil;
+import java.io.File;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.time.LocalDate;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -18,6 +28,31 @@ import org.apache.logging.log4j.Logger;
  *
  * @author PSUANZES
  */
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "", propOrder = {
+    "recordType",
+    "recordId",
+    "seasonId",
+    "leagueType",
+    "roundId",
+    "roundDate",
+    "matchHead",
+    "localTeamId",
+    "localTeamName",
+    "localTeamScore",
+    "visitingTeamId",
+    "visitingTeamName",
+    "visitingTeamScore",
+    "matchLostVisiting",
+    "tableId",
+    "localPayerNameOne",
+    "localPayerNameTwo",
+    "localPairScore",
+    "visitingPairScore",
+    "visitingPayerNameOne",
+    "visitingPayerNameTwo"
+})
+@XmlRootElement
 public class ResultRecord {
     @SuppressWarnings("NonConstantFieldWithUpperCaseName")
     private static final Logger logger
@@ -27,25 +62,46 @@ public class ResultRecord {
     public static final String COMMENT_TYPE = "COM";
     public static final String INFO_TYPE = "INF";
 
+    @XmlElement(required = true)
     private String recordType;
+    @XmlElement(required = true)
     private Integer recordId;
+    @XmlElement(required = false)
     private String seasonId;
+    @XmlElement(required = true)
     private String leagueType;
+    @XmlElement(required = false)
     private Integer roundId;
+    @XmlElement(required = false)
+    @XmlJavaTypeAdapter(CocamAdapter.class)
     private LocalDate roundDate;
+    @XmlElement(required = true)
     private Boolean matchHead;
+    @XmlElement(required = true)
     private String localTeamId;
+    @XmlElement(required = false)
     private String localTeamName;
+    @XmlElement(required = false)
     private Integer localTeamScore;
+    @XmlElement(required = false)
     private Integer visitingTeamScore;
+    @XmlElement(required = true)
     private String visitingTeamId;
+    @XmlElement(required = false)
     private String visitingTeamName;
+    @XmlElement(required = true)
     private Integer tableId;
+    @XmlElement(required = true)
     private String localPayerNameOne;
+    @XmlElement(required = true)
     private String localPayerNameTwo;
+    @XmlElement(required = true)
     private Integer localPairScore;
+    @XmlElement(required = true)
     private Integer visitingPairScore;
+    @XmlElement(required = true)
     private String visitingPayerNameOne;
+    @XmlElement(required = true)
     private String visitingPayerNameTwo;
 
     public ResultRecord() {
@@ -67,7 +123,11 @@ public class ResultRecord {
         this.recordId = recordId;
     }
     public void setRecordId(String recordId) {
-        setRecordId(Integer.valueOf(recordId));
+        if (StringUtil.isNullOrEmpty(recordId)) {
+            this.recordId = null;
+        } else {
+            setRecordId(Integer.valueOf(recordId));
+        }
     }
     
     public String getSeasonId() {
@@ -94,7 +154,7 @@ public class ResultRecord {
         this.roundId = roundId;
     }
     public void setRoundId(String roundId) {
-        if (roundId == null) {
+        if (StringUtil.isNullOrEmpty(roundId)) {
             this.roundId = null;
         } else {
             setRoundId(Integer.valueOf(roundId));
@@ -110,7 +170,7 @@ public class ResultRecord {
         this.roundDate = roundDate;
     }
     public void setRoundDate(String roundDate) {
-        if (roundDate == null) {
+        if (StringUtil.isNullOrEmpty(roundDate)) {
             this.roundDate = null;
         } else {
             setRoundDate(CocamDatatypeConverter.parseLocalDate(roundDate));
@@ -129,7 +189,11 @@ public class ResultRecord {
         this.matchHead = matchHead;
     }
     public void setMatchHead(String matchHead) {
-        setMatchHead(Boolean.parseBoolean(matchHead));
+        if (StringUtil.isNullOrEmpty(matchHead)) {
+            this.matchHead = null;
+        } else {
+            setMatchHead(Boolean.parseBoolean(matchHead));
+        }
     }
 
     public String getLocalTeamId() {
@@ -156,7 +220,7 @@ public class ResultRecord {
         this.localTeamScore = localTeamScore;
     }
     public void setLocalTeamScore(String localTeamScore) {
-        if (localTeamScore == null) {
+        if (StringUtil.isNullOrEmpty(localTeamScore)) {
             this.localTeamScore = null;
         } else {
             setLocalTeamScore(Integer.valueOf(localTeamScore));
@@ -171,7 +235,7 @@ public class ResultRecord {
         this.visitingTeamScore = visitingTeamScore;
     }
     public void setVisitingTeamScore(String visitingTeamScore) {
-        if (visitingTeamScore == null) {
+        if (StringUtil.isNullOrEmpty(visitingTeamScore)) {
             this.visitingTeamScore = null;
         } else {
             setVisitingTeamScore(Integer.valueOf(visitingTeamScore));
@@ -202,7 +266,7 @@ public class ResultRecord {
         this.tableId = tableId;
     }
     public void setTableId(String tableId) {
-        if (tableId == null) {
+        if (StringUtil.isNullOrEmpty(tableId)) {
             this.tableId = null;
         } else {
             setTableId(Integer.valueOf(tableId));
@@ -233,7 +297,7 @@ public class ResultRecord {
         this.localPairScore = localPairScore;
     }
     public void setLocalPairScore(String localPairScore) {
-        if (localPairScore == null) {
+        if (StringUtil.isNullOrEmpty(localPairScore)) {
             this.localPairScore = null;
         } else {
             setLocalPairScore(Integer.valueOf(localPairScore));
@@ -248,7 +312,7 @@ public class ResultRecord {
         this.visitingPairScore = visitingPairScore;
     }
     public void setVisitingPairScore(String visitingPairScore) {
-        if (visitingPairScore == null) {
+        if (StringUtil.isNullOrEmpty(visitingPairScore)) {
             this.visitingPairScore = null;
         } else {
             setVisitingPairScore(Integer.valueOf(visitingPairScore));
@@ -271,41 +335,19 @@ public class ResultRecord {
         this.visitingPayerNameTwo = visitingPayerNameTwo;
     }
 
-    public ResultRecord build(String record,
-        SepColRecordDesc sepColRecordDesc) throws CocamException {
-        String[] fieldContent = record.split(sepColRecordDesc.getCharSep());
-        for (FieldDesc fieldDesc : sepColRecordDesc.getFieldDesc()) {
-            String fieldName = fieldDesc.getFieldName();
-            String methodName = "set" + fieldName;
-            String fieldValue = null;
-            try {
-                fieldValue = fieldContent[fieldDesc.getFieldNo()-1].trim();
-            } catch (ArrayIndexOutOfBoundsException aioobex) {
-                logger.fatal("record" + record);
-                logger.fatal("fieldNo" + fieldDesc.getFieldNo());
-                logger.fatal(aioobex);
-                throw new CocamException(aioobex);
-            }
-            Method method = null;
-            try {
-                method = getClass().getMethod(methodName, String.class);
-            } catch (NoSuchMethodException nsmex) {
-                logger.fatal(nsmex);
-                throw new CocamException(nsmex);
-            }
-            logger.trace("field" + StringUtil.enclose(fieldName)
-                + ",method" + StringUtil.enclose(method.getName())
-                + ",value->" + StringUtil.enclose(fieldValue));
-            try {
-                method.invoke(this, fieldValue);
-            } catch(IllegalAccessException | InvocationTargetException iatex) {
-                logger.fatal(iatex);
-                throw new CocamException(iatex);
-            }
+    public void marshall(File seasonFile) throws JAXBException {
+        try {
+            JAXBContext jaxbContext
+                = JAXBContext.newInstance(ResultRecord.class);
+            Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
+            jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+            jaxbMarshaller.marshal(this, seasonFile);
+        } catch (JAXBException jaxbex) {
+            logger.fatal(jaxbex);
+            throw jaxbex;
         }
-        return this;
     }
-    
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder("ResultRecord->");
@@ -353,6 +395,44 @@ public class ResultRecord {
         sb.append(",visitingPayerNameTwo");
         sb.append(StringUtil.enclose(visitingPayerNameTwo));        
         return sb.toString();
+    }
+    
+    public ResultRecord build(String record,
+        SepColRecordDesc sepColRecordDesc) throws CocamException {
+        String[] fieldContent = record.split(sepColRecordDesc.getCharSep());
+        for (FieldDesc fieldDesc : sepColRecordDesc.getFieldDesc()) {
+            String fieldName = fieldDesc.getFieldName();
+            String methodName = "set" + fieldName;
+            String fieldValue = null;
+            try {
+                fieldValue = fieldContent[fieldDesc.getFieldNo()-1].trim();
+            } catch (ArrayIndexOutOfBoundsException aioobex) {
+                logger.fatal("record" + record);
+                logger.fatal("fieldNo" + fieldDesc.getFieldNo());
+                logger.fatal(aioobex);
+                throw new CocamException(aioobex);
+            }
+            Method method = null;
+            try {
+                method = getClass().getMethod(methodName, String.class);
+            } catch (NoSuchMethodException nsmex) {
+                logger.fatal(nsmex);
+                throw new CocamException(nsmex);
+            }
+            logger.trace("field" + StringUtil.enclose(fieldName)
+                + ",method" + StringUtil.enclose(method.getName())
+                + ",value->" + StringUtil.enclose(fieldValue));
+            try {
+                method.invoke(this, fieldValue);
+            } catch(IllegalAccessException | InvocationTargetException iatex) {
+                logger.fatal("field" + StringUtil.enclose(fieldName)
+                    + ",method" + StringUtil.enclose(method.getName())
+                    + ",value->" + StringUtil.enclose(fieldValue));
+                logger.fatal(iatex);
+                throw new CocamException(iatex);
+            }
+        }
+        return this;
     }
     
 }

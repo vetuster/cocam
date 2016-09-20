@@ -5,7 +5,7 @@
  */
 package com.trksoft.cocam;
 
-import java.util.Collection;
+import java.io.File;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
@@ -29,11 +29,32 @@ public class Cocam {
     public static void main(String[] args) throws Exception {
         logger.debug("Vamos Cocam!");
         
+        // carga lista de equipos
+        String teamGroupFilename = FileNameManager.getTeamGroupFilename();
+        TeamGroup teamGroup = TeamGroup.unmarshall(new File(teamGroupFilename));
+        
+        // carga la temporada con los resultados de las jornadas hasta el 
+        // momento (ficheros de resultado disponibles)
         SeasonManager seasonManager = new SeasonManager();
-        TeamStatGroup teamStatGroup =  seasonManager.loadTeamStats();
+        Season season = seasonManager.builFromResultFiles();
+        String seasonFilename = FileNameManager.getSeasonFilename(
+            season.getLastRoundId());
+        season.marshall(new File(seasonFilename));
+        
+        // cargar las estadisticas de cada equipo
+        TeamStatGroup teamStatGroup =  new TeamStatGroup();
+        teamStatGroup.load(teamGroup, season);
+        String teamStatGroupFilename = FileNameManager.getTeamStatGroupFilename(
+            season.getLastRoundId());
+        teamStatGroup.marshall(new File(teamStatGroupFilename));
+        
+        // ordenar las estadisticas para obtener la clasificacion ordenada
         List<TeamStat> teamStatList = 
             new LinkedList<>(teamStatGroup.getTeamStat().values());
-        Collections.sort(teamStatList, new TeamStatRoun1Comparator());
+        Collections.sort(teamStatList, new TeamStatRound1Comparator());
+        for (TeamStat teamStat : teamStatList) {
+            logger.debug(teamStat);
+        }
     }
     
 }
