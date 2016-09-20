@@ -48,6 +48,10 @@ public class Season {
     @XmlElement(required = true)
     private final SortedSet<Match> match;
     
+
+    public Season() {
+        match = new TreeSet<>();
+    }
     
     public String getSeasonId() {
         return seasonId;
@@ -63,10 +67,6 @@ public class Season {
 
     public void setLastRoundId(Integer lastRoundId) {
         this.lastRoundId = lastRoundId;
-    }
-
-    public Season() {
-        match = new TreeSet<>();
     }
 
     public SortedSet<Match> getMatch() {

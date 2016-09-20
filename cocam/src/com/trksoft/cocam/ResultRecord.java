@@ -43,7 +43,6 @@ import org.apache.logging.log4j.Logger;
     "visitingTeamId",
     "visitingTeamName",
     "visitingTeamScore",
-    "matchLostVisiting",
     "tableId",
     "localPayerNameOne",
     "localPayerNameTwo",
@@ -53,7 +52,7 @@ import org.apache.logging.log4j.Logger;
     "visitingPayerNameTwo"
 })
 @XmlRootElement
-public class ResultRecord {
+public class ResultRecord implements Comparable<ResultRecord>{
     @SuppressWarnings("NonConstantFieldWithUpperCaseName")
     private static final Logger logger
         = LogManager.getLogger(ResultRecord.class);
@@ -347,7 +346,14 @@ public class ResultRecord {
             throw jaxbex;
         }
     }
-
+    
+    @Override
+    public int compareTo(ResultRecord other) {
+        int i = this.roundId.compareTo(other.getRoundId());
+        if (i!=0) return i;
+        return this.recordId.compareTo(other.getRecordId());
+    }
+    
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder("ResultRecord->");
@@ -434,5 +440,5 @@ public class ResultRecord {
         }
         return this;
     }
-    
+
 }

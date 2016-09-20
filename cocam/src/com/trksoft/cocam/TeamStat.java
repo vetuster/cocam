@@ -6,7 +6,10 @@
 package com.trksoft.cocam;
 
 import com.trksoft.util.StringUtil;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Objects;
+import java.util.stream.Collectors;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -24,6 +27,7 @@ import org.apache.logging.log4j.Logger;
 @XmlType(name = "", propOrder = {
     "teamId",
     "teamDenom",
+    "points",
     "matchPlayed",
     "matchWon",
     "matchLost",
@@ -38,7 +42,6 @@ import org.apache.logging.log4j.Logger;
     "tableResult22",
     "tableResult13",
     "tableResult04",
-    "points",
     "goalsFavor",
     "goalsAgainst"
 })
@@ -57,6 +60,8 @@ public class TeamStat {
     private String teamId;
     @XmlAttribute(required = true)    
     private String teamDenom;
+    @XmlElement(required = true)
+    private Integer points;
     @XmlElement(required = true)
     private Integer matchPlayed;
     @XmlElement(required = true)
@@ -86,13 +91,12 @@ public class TeamStat {
     @XmlElement(required = true)
     private Integer tableResult04;
     @XmlElement(required = true)
-    private Integer points;
-    @XmlElement(required = true)
     private Integer goalsFavor;
     @XmlElement(required = true)
     private Integer goalsAgainst;
     
     public TeamStat() {
+        this.points = 0;
         this.matchPlayed = 0;
         this.matchWon = 0;
         this.matchLost = 0;
@@ -107,7 +111,6 @@ public class TeamStat {
         this.tableResult22 = 0;
         this.tableResult13 = 0;
         this.tableResult04 = 0;
-        this.points = 0;
         this.goalsFavor = 0;
         this.goalsAgainst = 0;
     }
@@ -340,6 +343,8 @@ public class TeamStat {
         sb.append(StringUtil.enclose(teamId));
         sb.append(",teamDenom");
         sb.append(StringUtil.enclose(teamDenom));
+        sb.append(",points");
+        sb.append(StringUtil.enclose(points));
         sb.append(",matchPlayed");
         sb.append(StringUtil.enclose(matchPlayed));
         sb.append(",matchWon");
@@ -368,8 +373,6 @@ public class TeamStat {
         sb.append(StringUtil.enclose(tableResult13));
         sb.append("tableResult04");
         sb.append(StringUtil.enclose(tableResult04));
-        sb.append(",points");
-        sb.append(StringUtil.enclose(points));
         sb.append(",goalsFavor");
         sb.append(StringUtil.enclose(goalsFavor));
         sb.append(",goalsAgainst");
@@ -478,5 +481,20 @@ public class TeamStat {
                 setGoalsAgainst(getGoalsAgainst() + table.getLocalPairScore());
             }
         });
+    }
+    
+    public String getRankingRecord(final String charSep) {
+        List<String> rankingField = new LinkedList<>();
+        rankingField.add(getTeamDenom());
+        rankingField.add(getMatchPlayed().toString());
+        rankingField.add(getTableResult40().toString());
+        rankingField.add(getTableResult31().toString());
+        rankingField.add(getTableResult22().toString());
+        rankingField.add(getTableResult13().toString());
+        rankingField.add(getTableResult04().toString());
+        rankingField.add(getPoints().toString());
+        
+        return rankingField.stream().map(Object::toString).
+            collect(Collectors.joining(charSep));
     }
 }

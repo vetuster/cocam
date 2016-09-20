@@ -14,20 +14,22 @@ import java.time.format.DateTimeFormatter;
  * @author jasuarez
  */
 public final class CocamDatatypeConverter {
-    public static final String COCAM_DATE_PATTERN = "dd/MM/yyyy";
+    public static final String COCAM_DATE_PATTERN_PARSE = "dd/MM/yyyy";
+    public static final String COCAM_DATE_PATTERN_PRINT = "yyyy-MM-dd";
     
     public static final String COCAM_HOUR_PATTERN = "HH:mm:ss";
     
-
+    // marshall
     public static LocalDate parseLocalDate(String dateString) {
         DateTimeFormatter formatter = 
-            DateTimeFormatter.ofPattern(COCAM_DATE_PATTERN);
+            DateTimeFormatter.ofPattern(COCAM_DATE_PATTERN_PARSE);
         return LocalDate.parse(dateString, formatter);
     }
     
+    //unmarshall
     public static String printLocalDate(LocalDate localDate) {
         DateTimeFormatter formatter = 
-            DateTimeFormatter.ofPattern(COCAM_DATE_PATTERN);
+            DateTimeFormatter.ofPattern(COCAM_DATE_PATTERN_PRINT);
         return formatter.format(localDate);
     }
     

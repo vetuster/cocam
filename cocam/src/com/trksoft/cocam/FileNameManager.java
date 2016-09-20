@@ -13,18 +13,28 @@ public class FileNameManager {
     private static final String UNDERSCORE = "_";
     private static final String HYPEN = "-";
     private static final String XML_EXT = ".xml";
+    private static final String CSV_EXT = ".csv";
+    
     private static final String SEPCOL_RECORD_DESC_PATH = 
         "resources/cocam-result_record-desc.xml";
+    private static final String RESULT_RECORD_GROUP_SCHEMA_PATH = 
+        "resources/cocam-ResultRecordGroup.xsd";
+    
     private static final String TEAM_GROUP = "TeamGroup";
-    private static final String RESULT_RECORD = "ResultRecord";
+    private static final String RESULT_RECORD_GROUP = "ResultRecordGroup";
     private static final String SEASON = "Season";
     private static final String TEAM_STAT_GROUP = "TeamStatGroup";
+    private static final String RANKING_TEAM = "RankingTeam";
     
-    public static String getResultRecordDescFilename() {
+    protected static String getResultRecordDescFilename() {
         return SEPCOL_RECORD_DESC_PATH;
     }
     
-    public static String getTeamGroupFilename() {
+    protected static String getResultRecordGroupSchemaFilename() {
+        return RESULT_RECORD_GROUP_SCHEMA_PATH;
+    }
+    
+    protected static String getTeamGroupFilename() {
         StringBuilder teamGroupFilename = new StringBuilder();
         CocamProps cocamProps = CocamProps.getInstance();
         //path - resources/
@@ -44,13 +54,13 @@ public class FileNameManager {
         return teamGroupFilename.toString();
     }
     
-    public static String getResultRecordFilename(final int roundId) {
+    protected static String getResultRecordGroupFilename(final int roundId) {
         StringBuilder seasonFilename = new StringBuilder();
         CocamProps cocamProps = CocamProps.getInstance();
         //path - resources/
         seasonFilename.append(cocamProps.getDataFileDir());
         // Season
-        seasonFilename.append(RESULT_RECORD);
+        seasonFilename.append(RESULT_RECORD_GROUP);
         // hypen
         seasonFilename.append(HYPEN);
         // round - jornada - R99
@@ -60,7 +70,7 @@ public class FileNameManager {
         return seasonFilename.toString();
     }
     
-    public static String getSeasonFilename(final int roundId) {
+    protected static String getSeasonFilename(final int roundId) {
         StringBuilder seasonFilename = new StringBuilder();
         CocamProps cocamProps = CocamProps.getInstance();
         //path - resources/
@@ -76,7 +86,7 @@ public class FileNameManager {
         return seasonFilename.toString();
     }
     
-    public static String getTeamStatGroupFilename(final int roundId) {
+    protected static String getTeamStatGroupFilename(final int roundId) {
         StringBuilder teamStatGroupFilename = new StringBuilder();
         CocamProps cocamProps = CocamProps.getInstance();
         //path - resources/
@@ -90,5 +100,22 @@ public class FileNameManager {
         // xml ext
         teamStatGroupFilename.append(XML_EXT);
         return teamStatGroupFilename.toString();
+    }
+    
+    
+    protected static String getRankingFilename(final int roundId) {
+        StringBuilder rankingTeamFilename = new StringBuilder();
+        CocamProps cocamProps = CocamProps.getInstance();
+        //path - resources/
+        rankingTeamFilename.append(cocamProps.getDataFileDir());
+        // TeamStatGroup
+        rankingTeamFilename.append(RANKING_TEAM);
+        // hypen
+        rankingTeamFilename.append(HYPEN);
+        // round - jornada - R99
+        rankingTeamFilename.append(Round.getRoundIdOutput(roundId));
+        // xml ext
+        rankingTeamFilename.append(CSV_EXT);
+        return rankingTeamFilename.toString();
     }
 }

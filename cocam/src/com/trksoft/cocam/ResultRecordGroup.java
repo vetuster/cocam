@@ -5,23 +5,27 @@
  */
 package com.trksoft.cocam;
 
+import com.trksoft.util.StringUtil;
 import java.io.File;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.SortedSet;
-import java.util.TreeSet;
 import java.util.stream.Collectors;
+import javax.xml.XMLConstants;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.validation.Schema;
+import javax.xml.validation.SchemaFactory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.xml.sax.SAXException;
 
 /**
  *
@@ -29,6 +33,7 @@ import org.apache.logging.log4j.Logger;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
+    "roundId",
     "resultRecord"
 })
 @XmlRootElement
@@ -37,11 +42,22 @@ public class ResultRecordGroup {
     private static final Logger logger
         = LogManager.getLogger(ResultRecordGroup.class);
     
+    @XmlAttribute
+    private Integer roundId;
+    
     @XmlElement(required = true)
     private final List<ResultRecord> resultRecord;
 
     public ResultRecordGroup() {
         resultRecord = new LinkedList<>();
+    }
+
+    public Integer getRoundId() {
+        return roundId;
+    }
+
+    public void setRoundId(Integer roundId) {
+        this.roundId = roundId;
     }
 
     public List<ResultRecord> getResultRecord() {
@@ -50,8 +66,12 @@ public class ResultRecordGroup {
     
     @Override
     public String toString() {
-        return resultRecord.stream().map(Object::toString).
-            collect(Collectors.joining("->"));
+        StringBuilder sb = new StringBuilder("ResultRecordGroup->");
+        sb.append("roundId");
+        sb.append(StringUtil.enclose(roundId));
+        sb.append(resultRecord.stream().map(Object::toString).
+            collect(Collectors.joining("->")));
+        return sb.toString();
     }
     
     public void marshall(File resultRecordGroupFile) throws JAXBException {
@@ -68,7 +88,7 @@ public class ResultRecordGroup {
     }
     
     public static ResultRecordGroup unmarshall(
-        File fixedLengthColRecordDescFile) throws JAXBException {
+        File resultRecordGroupFile) throws JAXBException {
         ResultRecordGroup resultRecordGroup = null;
         try {
             JAXBContext jaxbContext = 
@@ -76,8 +96,29 @@ public class ResultRecordGroup {
 
             Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
             resultRecordGroup = (ResultRecordGroup)
-                jaxbUnmarshaller.unmarshal(fixedLengthColRecordDescFile);
+                jaxbUnmarshaller.unmarshal(resultRecordGroupFile);
         } catch (JAXBException jaxbex) {
+            logger.fatal(jaxbex);
+            throw jaxbex;
+        }
+        return resultRecordGroup;
+    }
+    
+    public static ResultRecordGroup unmarshall(File resultRecordGroupFile,
+        File resultRecordGroupSchema) throws JAXBException, SAXException {
+        ResultRecordGroup resultRecordGroup = null;
+        try {
+            JAXBContext jaxbContext = 
+                JAXBContext.newInstance(ResultRecordGroup.class);
+
+            Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
+            SchemaFactory schemaFactory = SchemaFactory.newInstance(
+                XMLConstants.W3C_XML_SCHEMA_NS_URI); 
+            Schema schema = schemaFactory.newSchema(resultRecordGroupSchema); 
+            jaxbUnmarshaller.setSchema(schema);
+            resultRecordGroup = (ResultRecordGroup)
+                jaxbUnmarshaller.unmarshal(resultRecordGroupFile);
+        } catch (JAXBException | SAXException jaxbex) {
             logger.fatal(jaxbex);
             throw jaxbex;
         }

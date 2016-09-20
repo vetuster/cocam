@@ -5,11 +5,7 @@
  */
 package com.trksoft.cocam;
 
-import java.io.File;
 import java.util.List;
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
-import javax.xml.bind.Marshaller;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -22,19 +18,12 @@ public class SeasonManager {
     private static final Logger logger
         = LogManager.getLogger(SeasonManager.class);
     
-    public Season builFromResultFiles() throws CocamException {
+    public Season build(final List<ResultRecord> resultRecordList)
+        throws CocamException {
         Season season = new Season();
-        ResultFileManager rfm = new ResultFileManager();
-        List<ResultRecord> resultRecordList = rfm.getResultRecord();
-        if (logger.isTraceEnabled()) {
-            resultRecordList.stream().forEach((resultRecord) -> {
-                logger.trace(resultRecord);
-            });
-        }
-        
         Match currentMatch = null;
         for (ResultRecord resultRecord : resultRecordList) {
-            logger.info("loading->" + resultRecord);
+            logger.trace("loading->" + resultRecord);
             
             if (season.getSeasonId() == null) {
                 season.setSeasonId(resultRecord.getSeasonId());

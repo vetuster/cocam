@@ -25,7 +25,8 @@ public class CocamProps extends AbstractProps {
     private static final String RESULT_FILE_CHARSET_KEY = "result.file.charset";
     private static final String RESULT_FILE_DIR_KEY = "result.file.dir";
     private static final String RESULT_FILE_PREFIX_KEY = "result.file.prefix";
-
+    private static final String RANKING_FILE_CHARSET_KEY = "ranking.file.charset";
+    private static final String RANKING_FILE_CHARSEP_KEY = "ranking.file.charsep";
     
     
     private CocamProps() {
@@ -68,5 +69,13 @@ public class CocamProps extends AbstractProps {
     
     public String getResultFilePrefix() {
         return getString(RESULT_FILE_PREFIX_KEY);
+    }
+    
+    public String getRankingFileCharset() {
+        return getString(RANKING_FILE_CHARSET_KEY);
+    }
+    
+    public String getRankingFileCharsep() {
+        return getString(RANKING_FILE_CHARSEP_KEY);
     }
 }
