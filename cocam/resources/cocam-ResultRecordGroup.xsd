@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
-    <xs:complexType name="ResultRecordGroup">
+
+    <xs:element name="resultRecordGroup">
+    <xs:complexType>
         <xs:sequence>
-            <xs:element name="recordType" type="ResultRecord" minOccurs="1" maxOccurs="52"/>
+            <xs:element name="resultRecord" type="ResultRecordType" minOccurs="1" maxOccurs="52"/>
         </xs:sequence>
+        <xs:attribute name="roundId" type="xs:integer" use="required"/>
     </xs:complexType>
+    </xs:element>
     
-    <xs:complexType name="ResultRecord">
+    <xs:complexType name="ResultRecordType">
         <xs:sequence>
             <xs:element name="recordType"           type="xs:string"   minOccurs="1" maxOccurs="1"/>
             <xs:element name="recordId"             type="xs:integer"  minOccurs="1" maxOccurs="1"/>
@@ -18,9 +22,9 @@
             <xs:element name="localTeamId"          type="xs:string"   minOccurs="1" maxOccurs="1"/>
             <xs:element name="localTeamName"        type="xs:string"   minOccurs="0" maxOccurs="1"/>
             <xs:element name="localTeamScore"       type="xs:integer"  minOccurs="0" maxOccurs="1"/>
-            <xs:element name="visitingTeamScore"    type="xs:integer"  minOccurs="0" maxOccurs="1"/>
             <xs:element name="visitingTeamId"       type="xs:string"   minOccurs="1" maxOccurs="1"/>
             <xs:element name="visitingTeamName"     type="xs:string"   minOccurs="0" maxOccurs="1"/>
+            <xs:element name="visitingTeamScore"    type="xs:integer"  minOccurs="0" maxOccurs="1"/>
             <xs:element name="tableId"              type="xs:integer"  minOccurs="1" maxOccurs="1"/>
             <xs:element name="localPayerNameOne"    type="xs:string"   minOccurs="1" maxOccurs="1"/>
             <xs:element name="localPayerNameTwo"    type="xs:string"   minOccurs="1" maxOccurs="1"/>

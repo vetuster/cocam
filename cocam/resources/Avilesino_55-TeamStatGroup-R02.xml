@@ -4,12 +4,13 @@
         <entry>
             <key>albora</key>
             <value teamId="albora" teamDenom="SIDRERÍA ALBORADA">
-                <matchPlayed>1</matchPlayed>
+                <points>2</points>
+                <matchPlayed>2</matchPlayed>
                 <matchWon>0</matchWon>
-                <matchLost>0</matchLost>
-                <matchPlayedLocal>0</matchPlayedLocal>
+                <matchLost>1</matchLost>
+                <matchPlayedLocal>1</matchPlayedLocal>
                 <matchWonLocal>0</matchWonLocal>
-                <matchLostLocal>0</matchLostLocal>
+                <matchLostLocal>1</matchLostLocal>
                 <matchPlayedVisiting>1</matchPlayedVisiting>
                 <matchWonVisiting>0</matchWonVisiting>
                 <matchLostVisiting>0</matchLostVisiting>
@@ -17,21 +18,21 @@
                 <tableResult31>0</tableResult31>
                 <tableResult22>1</tableResult22>
                 <tableResult13>0</tableResult13>
-                <tableResult04>0</tableResult04>
-                <points>2</points>
-                <goalsFavor>16</goalsFavor>
-                <goalsAgainst>22</goalsAgainst>
+                <tableResult04>1</tableResult04>
+                <goalsFavor>31</goalsFavor>
+                <goalsAgainst>46</goalsAgainst>
             </value>
         </entry>
         <entry>
             <key>4vient</key>
             <value teamId="4vient" teamDenom="4 VIENTOS">
-                <matchPlayed>1</matchPlayed>
+                <points>2</points>
+                <matchPlayed>2</matchPlayed>
                 <matchWon>0</matchWon>
-                <matchLost>0</matchLost>
-                <matchPlayedLocal>0</matchPlayedLocal>
+                <matchLost>1</matchLost>
+                <matchPlayedLocal>1</matchPlayedLocal>
                 <matchWonLocal>0</matchWonLocal>
-                <matchLostLocal>0</matchLostLocal>
+                <matchLostLocal>1</matchLostLocal>
                 <matchPlayedVisiting>1</matchPlayedVisiting>
                 <matchWonVisiting>0</matchWonVisiting>
                 <matchLostVisiting>0</matchLostVisiting>
@@ -39,85 +40,85 @@
                 <tableResult31>0</tableResult31>
                 <tableResult22>1</tableResult22>
                 <tableResult13>0</tableResult13>
-                <tableResult04>0</tableResult04>
-                <points>2</points>
-                <goalsFavor>17</goalsFavor>
-                <goalsAgainst>21</goalsAgainst>
+                <tableResult04>1</tableResult04>
+                <goalsFavor>32</goalsFavor>
+                <goalsAgainst>45</goalsAgainst>
             </value>
         </entry>
         <entry>
             <key>capiol</key>
             <value teamId="capiol" teamDenom="CAFÉ BAR PIOL">
-                <matchPlayed>1</matchPlayed>
+                <points>4</points>
+                <matchPlayed>2</matchPlayed>
                 <matchWon>0</matchWon>
                 <matchLost>0</matchLost>
                 <matchPlayedLocal>1</matchPlayedLocal>
                 <matchWonLocal>0</matchWonLocal>
                 <matchLostLocal>0</matchLostLocal>
-                <matchPlayedVisiting>0</matchPlayedVisiting>
+                <matchPlayedVisiting>1</matchPlayedVisiting>
                 <matchWonVisiting>0</matchWonVisiting>
                 <matchLostVisiting>0</matchLostVisiting>
                 <tableResult40>0</tableResult40>
                 <tableResult31>0</tableResult31>
-                <tableResult22>1</tableResult22>
+                <tableResult22>2</tableResult22>
                 <tableResult13>0</tableResult13>
                 <tableResult04>0</tableResult04>
-                <points>2</points>
-                <goalsFavor>22</goalsFavor>
-                <goalsAgainst>16</goalsAgainst>
+                <goalsFavor>38</goalsFavor>
+                <goalsAgainst>36</goalsAgainst>
             </value>
         </entry>
         <entry>
             <key>cebano</key>
             <value teamId="cebano" teamDenom="CAFÉ BAR ÉBANO">
-                <matchPlayed>1</matchPlayed>
-                <matchWon>1</matchWon>
+                <points>7</points>
+                <matchPlayed>2</matchPlayed>
+                <matchWon>2</matchWon>
                 <matchLost>0</matchLost>
                 <matchPlayedLocal>1</matchPlayedLocal>
                 <matchWonLocal>1</matchWonLocal>
                 <matchLostLocal>0</matchLostLocal>
-                <matchPlayedVisiting>0</matchPlayedVisiting>
-                <matchWonVisiting>0</matchWonVisiting>
+                <matchPlayedVisiting>1</matchPlayedVisiting>
+                <matchWonVisiting>1</matchWonVisiting>
                 <matchLostVisiting>0</matchLostVisiting>
                 <tableResult40>1</tableResult40>
-                <tableResult31>0</tableResult31>
+                <tableResult31>1</tableResult31>
                 <tableResult22>0</tableResult22>
                 <tableResult13>0</tableResult13>
                 <tableResult04>0</tableResult04>
-                <points>4</points>
-                <goalsFavor>24</goalsFavor>
-                <goalsAgainst>15</goalsAgainst>
+                <goalsFavor>46</goalsFavor>
+                <goalsAgainst>28</goalsAgainst>
             </value>
         </entry>
         <entry>
             <key>andrea</key>
             <value teamId="andrea" teamDenom="BAR D'ANDREA">
-                <matchPlayed>1</matchPlayed>
+                <points>6</points>
+                <matchPlayed>2</matchPlayed>
                 <matchWon>1</matchWon>
                 <matchLost>0</matchLost>
                 <matchPlayedLocal>1</matchPlayedLocal>
                 <matchWonLocal>1</matchWonLocal>
                 <matchLostLocal>0</matchLostLocal>
-                <matchPlayedVisiting>0</matchPlayedVisiting>
+                <matchPlayedVisiting>1</matchPlayedVisiting>
                 <matchWonVisiting>0</matchWonVisiting>
                 <matchLostVisiting>0</matchLostVisiting>
                 <tableResult40>1</tableResult40>
                 <tableResult31>0</tableResult31>
-                <tableResult22>0</tableResult22>
+                <tableResult22>1</tableResult22>
                 <tableResult13>0</tableResult13>
                 <tableResult04>0</tableResult04>
-                <points>4</points>
-                <goalsFavor>24</goalsFavor>
-                <goalsAgainst>11</goalsAgainst>
+                <goalsFavor>44</goalsFavor>
+                <goalsAgainst>30</goalsAgainst>
             </value>
         </entry>
         <entry>
             <key>churre</key>
             <value teamId="churre" teamDenom="CHURRERÍA">
-                <matchPlayed>1</matchPlayed>
+                <points>2</points>
+                <matchPlayed>2</matchPlayed>
                 <matchWon>0</matchWon>
                 <matchLost>1</matchLost>
-                <matchPlayedLocal>0</matchPlayedLocal>
+                <matchPlayedLocal>1</matchPlayedLocal>
                 <matchWonLocal>0</matchWonLocal>
                 <matchLostLocal>0</matchLostLocal>
                 <matchPlayedVisiting>1</matchPlayedVisiting>
@@ -125,109 +126,87 @@
                 <matchLostVisiting>1</matchLostVisiting>
                 <tableResult40>0</tableResult40>
                 <tableResult31>0</tableResult31>
-                <tableResult22>0</tableResult22>
+                <tableResult22>1</tableResult22>
                 <tableResult13>0</tableResult13>
                 <tableResult04>1</tableResult04>
-                <points>0</points>
-                <goalsFavor>17</goalsFavor>
-                <goalsAgainst>24</goalsAgainst>
+                <goalsFavor>37</goalsFavor>
+                <goalsAgainst>40</goalsAgainst>
             </value>
         </entry>
         <entry>
             <key>sagcel</key>
             <value teamId="sagcel" teamDenom="S.AG.-CÉLTICA">
-                <matchPlayed>1</matchPlayed>
-                <matchWon>0</matchWon>
+                <points>5</points>
+                <matchPlayed>2</matchPlayed>
+                <matchWon>1</matchWon>
                 <matchLost>0</matchLost>
                 <matchPlayedLocal>1</matchPlayedLocal>
                 <matchWonLocal>0</matchWonLocal>
                 <matchLostLocal>0</matchLostLocal>
-                <matchPlayedVisiting>0</matchPlayedVisiting>
-                <matchWonVisiting>0</matchWonVisiting>
+                <matchPlayedVisiting>1</matchPlayedVisiting>
+                <matchWonVisiting>1</matchWonVisiting>
                 <matchLostVisiting>0</matchLostVisiting>
                 <tableResult40>0</tableResult40>
-                <tableResult31>0</tableResult31>
+                <tableResult31>1</tableResult31>
                 <tableResult22>1</tableResult22>
                 <tableResult13>0</tableResult13>
                 <tableResult04>0</tableResult04>
-                <points>2</points>
-                <goalsFavor>21</goalsFavor>
-                <goalsAgainst>17</goalsAgainst>
+                <goalsFavor>41</goalsFavor>
+                <goalsAgainst>37</goalsAgainst>
             </value>
         </entry>
         <entry>
             <key>rcarol</key>
             <value teamId="rcarol" teamDenom="RINCÓN DE CAROL">
-                <matchPlayed>1</matchPlayed>
-                <matchWon>0</matchWon>
+                <points>4</points>
+                <matchPlayed>2</matchPlayed>
+                <matchWon>1</matchWon>
                 <matchLost>1</matchLost>
                 <matchPlayedLocal>1</matchPlayedLocal>
                 <matchWonLocal>0</matchWonLocal>
                 <matchLostLocal>1</matchLostLocal>
-                <matchPlayedVisiting>0</matchPlayedVisiting>
-                <matchWonVisiting>0</matchWonVisiting>
+                <matchPlayedVisiting>1</matchPlayedVisiting>
+                <matchWonVisiting>1</matchWonVisiting>
                 <matchLostVisiting>0</matchLostVisiting>
                 <tableResult40>0</tableResult40>
-                <tableResult31>0</tableResult31>
+                <tableResult31>1</tableResult31>
                 <tableResult22>0</tableResult22>
                 <tableResult13>1</tableResult13>
                 <tableResult04>0</tableResult04>
-                <points>1</points>
-                <goalsFavor>17</goalsFavor>
-                <goalsAgainst>23</goalsAgainst>
+                <goalsFavor>36</goalsFavor>
+                <goalsAgainst>38</goalsAgainst>
             </value>
         </entry>
         <entry>
             <key>sagrib</key>
             <value teamId="sagrib" teamDenom="S.AG.-RÍAS BAIXAS">
-                <matchPlayed>1</matchPlayed>
+                <points>4</points>
+                <matchPlayed>2</matchPlayed>
                 <matchWon>1</matchWon>
-                <matchLost>0</matchLost>
-                <matchPlayedLocal>0</matchPlayedLocal>
+                <matchLost>1</matchLost>
+                <matchPlayedLocal>1</matchPlayedLocal>
                 <matchWonLocal>0</matchWonLocal>
-                <matchLostLocal>0</matchLostLocal>
+                <matchLostLocal>1</matchLostLocal>
                 <matchPlayedVisiting>1</matchPlayedVisiting>
                 <matchWonVisiting>1</matchWonVisiting>
                 <matchLostVisiting>0</matchLostVisiting>
                 <tableResult40>0</tableResult40>
                 <tableResult31>1</tableResult31>
                 <tableResult22>0</tableResult22>
-                <tableResult13>0</tableResult13>
+                <tableResult13>1</tableResult13>
                 <tableResult04>0</tableResult04>
-                <points>3</points>
-                <goalsFavor>21</goalsFavor>
-                <goalsAgainst>15</goalsAgainst>
+                <goalsFavor>41</goalsFavor>
+                <goalsAgainst>35</goalsAgainst>
             </value>
         </entry>
         <entry>
             <key>habana</key>
             <value teamId="habana" teamDenom="BAR HABANA">
-                <matchPlayed>1</matchPlayed>
-                <matchWon>0</matchWon>
-                <matchLost>0</matchLost>
-                <matchPlayedLocal>1</matchPlayedLocal>
-                <matchWonLocal>0</matchWonLocal>
-                <matchLostLocal>0</matchLostLocal>
-                <matchPlayedVisiting>0</matchPlayedVisiting>
-                <matchWonVisiting>0</matchWonVisiting>
-                <matchLostVisiting>0</matchLostVisiting>
-                <tableResult40>0</tableResult40>
-                <tableResult31>0</tableResult31>
-                <tableResult22>1</tableResult22>
-                <tableResult13>0</tableResult13>
-                <tableResult04>0</tableResult04>
                 <points>2</points>
-                <goalsFavor>16</goalsFavor>
-                <goalsAgainst>18</goalsAgainst>
-            </value>
-        </entry>
-        <entry>
-            <key>monchi</key>
-            <value teamId="monchi" teamDenom="PEÑA MUS MONCHI">
-                <matchPlayed>1</matchPlayed>
+                <matchPlayed>2</matchPlayed>
                 <matchWon>0</matchWon>
                 <matchLost>1</matchLost>
-                <matchPlayedLocal>0</matchPlayedLocal>
+                <matchPlayedLocal>1</matchPlayedLocal>
                 <matchWonLocal>0</matchWonLocal>
                 <matchLostLocal>0</matchLostLocal>
                 <matchPlayedVisiting>1</matchPlayedVisiting>
@@ -235,127 +214,127 @@
                 <matchLostVisiting>1</matchLostVisiting>
                 <tableResult40>0</tableResult40>
                 <tableResult31>0</tableResult31>
-                <tableResult22>0</tableResult22>
+                <tableResult22>1</tableResult22>
                 <tableResult13>0</tableResult13>
                 <tableResult04>1</tableResult04>
+                <goalsFavor>29</goalsFavor>
+                <goalsAgainst>42</goalsAgainst>
+            </value>
+        </entry>
+        <entry>
+            <key>monchi</key>
+            <value teamId="monchi" teamDenom="PEÑA MUS MONCHI">
                 <points>0</points>
-                <goalsFavor>11</goalsFavor>
-                <goalsAgainst>24</goalsAgainst>
+                <matchPlayed>2</matchPlayed>
+                <matchWon>0</matchWon>
+                <matchLost>2</matchLost>
+                <matchPlayedLocal>1</matchPlayedLocal>
+                <matchWonLocal>0</matchWonLocal>
+                <matchLostLocal>1</matchLostLocal>
+                <matchPlayedVisiting>1</matchPlayedVisiting>
+                <matchWonVisiting>0</matchWonVisiting>
+                <matchLostVisiting>1</matchLostVisiting>
+                <tableResult40>0</tableResult40>
+                <tableResult31>0</tableResult31>
+                <tableResult22>0</tableResult22>
+                <tableResult13>0</tableResult13>
+                <tableResult04>2</tableResult04>
+                <goalsFavor>22</goalsFavor>
+                <goalsAgainst>48</goalsAgainst>
             </value>
         </entry>
         <entry>
             <key>sagkam</key>
             <value teamId="sagkam" teamDenom="S.AG.-KAME.NET">
-                <matchPlayed>1</matchPlayed>
-                <matchWon>1</matchWon>
+                <points>7</points>
+                <matchPlayed>2</matchPlayed>
+                <matchWon>2</matchWon>
                 <matchLost>0</matchLost>
-                <matchPlayedLocal>0</matchPlayedLocal>
-                <matchWonLocal>0</matchWonLocal>
+                <matchPlayedLocal>1</matchPlayedLocal>
+                <matchWonLocal>1</matchWonLocal>
                 <matchLostLocal>0</matchLostLocal>
                 <matchPlayedVisiting>1</matchPlayedVisiting>
                 <matchWonVisiting>1</matchWonVisiting>
                 <matchLostVisiting>0</matchLostVisiting>
-                <tableResult40>0</tableResult40>
+                <tableResult40>1</tableResult40>
                 <tableResult31>1</tableResult31>
                 <tableResult22>0</tableResult22>
                 <tableResult13>0</tableResult13>
                 <tableResult04>0</tableResult04>
-                <points>3</points>
-                <goalsFavor>23</goalsFavor>
-                <goalsAgainst>17</goalsAgainst>
+                <goalsFavor>47</goalsFavor>
+                <goalsAgainst>29</goalsAgainst>
             </value>
         </entry>
         <entry>
             <key>calolo</key>
             <value teamId="calolo" teamDenom="C'LOLO">
-                <matchPlayed>1</matchPlayed>
+                <points>3</points>
+                <matchPlayed>2</matchPlayed>
                 <matchWon>0</matchWon>
-                <matchLost>0</matchLost>
-                <matchPlayedLocal>0</matchPlayedLocal>
+                <matchLost>1</matchLost>
+                <matchPlayedLocal>1</matchPlayedLocal>
                 <matchWonLocal>0</matchWonLocal>
-                <matchLostLocal>0</matchLostLocal>
+                <matchLostLocal>1</matchLostLocal>
                 <matchPlayedVisiting>1</matchPlayedVisiting>
                 <matchWonVisiting>0</matchWonVisiting>
                 <matchLostVisiting>0</matchLostVisiting>
                 <tableResult40>0</tableResult40>
                 <tableResult31>0</tableResult31>
                 <tableResult22>1</tableResult22>
-                <tableResult13>0</tableResult13>
+                <tableResult13>1</tableResult13>
                 <tableResult04>0</tableResult04>
-                <points>2</points>
-                <goalsFavor>18</goalsFavor>
-                <goalsAgainst>16</goalsAgainst>
+                <goalsFavor>34</goalsFavor>
+                <goalsAgainst>39</goalsAgainst>
             </value>
         </entry>
         <entry>
             <key>acveig</key>
             <value teamId="acveig" teamDenom="AC MUS VEIGA">
-                <matchPlayed>1</matchPlayed>
-                <matchWon>1</matchWon>
+                <points>8</points>
+                <matchPlayed>2</matchPlayed>
+                <matchWon>2</matchWon>
                 <matchLost>0</matchLost>
                 <matchPlayedLocal>1</matchPlayedLocal>
                 <matchWonLocal>1</matchWonLocal>
                 <matchLostLocal>0</matchLostLocal>
-                <matchPlayedVisiting>0</matchPlayedVisiting>
-                <matchWonVisiting>0</matchWonVisiting>
+                <matchPlayedVisiting>1</matchPlayedVisiting>
+                <matchWonVisiting>1</matchWonVisiting>
                 <matchLostVisiting>0</matchLostVisiting>
-                <tableResult40>1</tableResult40>
+                <tableResult40>2</tableResult40>
                 <tableResult31>0</tableResult31>
                 <tableResult22>0</tableResult22>
                 <tableResult13>0</tableResult13>
                 <tableResult04>0</tableResult04>
-                <points>4</points>
-                <goalsFavor>24</goalsFavor>
-                <goalsAgainst>17</goalsAgainst>
+                <goalsFavor>48</goalsFavor>
+                <goalsAgainst>32</goalsAgainst>
             </value>
         </entry>
         <entry>
             <key>barena</key>
             <value teamId="barena" teamDenom="BAR LA ARENA">
-                <matchPlayed>1</matchPlayed>
-                <matchWon>0</matchWon>
+                <points>6</points>
+                <matchPlayed>2</matchPlayed>
+                <matchWon>1</matchWon>
                 <matchLost>0</matchLost>
-                <matchPlayedLocal>0</matchPlayedLocal>
-                <matchWonLocal>0</matchWonLocal>
+                <matchPlayedLocal>1</matchPlayedLocal>
+                <matchWonLocal>1</matchWonLocal>
                 <matchLostLocal>0</matchLostLocal>
                 <matchPlayedVisiting>1</matchPlayedVisiting>
                 <matchWonVisiting>0</matchWonVisiting>
                 <matchLostVisiting>0</matchLostVisiting>
-                <tableResult40>0</tableResult40>
+                <tableResult40>1</tableResult40>
                 <tableResult31>0</tableResult31>
                 <tableResult22>1</tableResult22>
                 <tableResult13>0</tableResult13>
                 <tableResult04>0</tableResult04>
-                <points>2</points>
-                <goalsFavor>22</goalsFavor>
-                <goalsAgainst>18</goalsAgainst>
+                <goalsFavor>46</goalsFavor>
+                <goalsAgainst>31</goalsAgainst>
             </value>
         </entry>
         <entry>
             <key>picosa</key>
             <value teamId="picosa" teamDenom="LA PICOSA">
-                <matchPlayed>0</matchPlayed>
-                <matchWon>0</matchWon>
-                <matchLost>0</matchLost>
-                <matchPlayedLocal>0</matchPlayedLocal>
-                <matchWonLocal>0</matchWonLocal>
-                <matchLostLocal>0</matchLostLocal>
-                <matchPlayedVisiting>0</matchPlayedVisiting>
-                <matchWonVisiting>0</matchWonVisiting>
-                <matchLostVisiting>0</matchLostVisiting>
-                <tableResult40>0</tableResult40>
-                <tableResult31>0</tableResult31>
-                <tableResult22>0</tableResult22>
-                <tableResult13>0</tableResult13>
-                <tableResult04>0</tableResult04>
-                <points>0</points>
-                <goalsFavor>0</goalsFavor>
-                <goalsAgainst>0</goalsAgainst>
-            </value>
-        </entry>
-        <entry>
-            <key>8villa</key>
-            <value teamId="8villa" teamDenom="8 VILLAS">
+                <points>1</points>
                 <matchPlayed>1</matchPlayed>
                 <matchWon>0</matchWon>
                 <matchLost>1</matchLost>
@@ -368,66 +347,66 @@
                 <tableResult40>0</tableResult40>
                 <tableResult31>0</tableResult31>
                 <tableResult22>0</tableResult22>
+                <tableResult13>1</tableResult13>
+                <tableResult04>0</tableResult04>
+                <goalsFavor>13</goalsFavor>
+                <goalsAgainst>22</goalsAgainst>
+            </value>
+        </entry>
+        <entry>
+            <key>8villa</key>
+            <value teamId="8villa" teamDenom="8 VILLAS">
+                <points>2</points>
+                <matchPlayed>2</matchPlayed>
+                <matchWon>0</matchWon>
+                <matchLost>1</matchLost>
+                <matchPlayedLocal>1</matchPlayedLocal>
+                <matchWonLocal>0</matchWonLocal>
+                <matchLostLocal>1</matchLostLocal>
+                <matchPlayedVisiting>1</matchPlayedVisiting>
+                <matchWonVisiting>0</matchWonVisiting>
+                <matchLostVisiting>0</matchLostVisiting>
+                <tableResult40>0</tableResult40>
+                <tableResult31>0</tableResult31>
+                <tableResult22>1</tableResult22>
                 <tableResult13>0</tableResult13>
                 <tableResult04>1</tableResult04>
-                <points>0</points>
-                <goalsFavor>14</goalsFavor>
-                <goalsAgainst>24</goalsAgainst>
+                <goalsFavor>33</goalsFavor>
+                <goalsAgainst>45</goalsAgainst>
             </value>
         </entry>
         <entry>
             <key>bcarba</key>
             <value teamId="bcarba" teamDenom="BAR CARBAYEDO">
-                <matchPlayed>1</matchPlayed>
-                <matchWon>1</matchWon>
+                <points>7</points>
+                <matchPlayed>2</matchPlayed>
+                <matchWon>2</matchWon>
                 <matchLost>0</matchLost>
                 <matchPlayedLocal>1</matchPlayedLocal>
                 <matchWonLocal>1</matchWonLocal>
                 <matchLostLocal>0</matchLostLocal>
-                <matchPlayedVisiting>0</matchPlayedVisiting>
-                <matchWonVisiting>0</matchWonVisiting>
+                <matchPlayedVisiting>1</matchPlayedVisiting>
+                <matchWonVisiting>1</matchWonVisiting>
                 <matchLostVisiting>0</matchLostVisiting>
-                <tableResult40>0</tableResult40>
+                <tableResult40>1</tableResult40>
                 <tableResult31>1</tableResult31>
                 <tableResult22>0</tableResult22>
                 <tableResult13>0</tableResult13>
                 <tableResult04>0</tableResult04>
-                <points>3</points>
-                <goalsFavor>21</goalsFavor>
-                <goalsAgainst>14</goalsAgainst>
+                <goalsFavor>45</goalsFavor>
+                <goalsAgainst>25</goalsAgainst>
             </value>
         </entry>
         <entry>
             <key>chalan</key>
             <value teamId="chalan" teamDenom="MUS EL CHALANÍN">
-                <matchPlayed>1</matchPlayed>
+                <points>1</points>
+                <matchPlayed>2</matchPlayed>
                 <matchWon>0</matchWon>
-                <matchLost>1</matchLost>
-                <matchPlayedLocal>0</matchPlayedLocal>
+                <matchLost>2</matchLost>
+                <matchPlayedLocal>1</matchPlayedLocal>
                 <matchWonLocal>0</matchWonLocal>
-                <matchLostLocal>0</matchLostLocal>
-                <matchPlayedVisiting>1</matchPlayedVisiting>
-                <matchWonVisiting>0</matchWonVisiting>
-                <matchLostVisiting>1</matchLostVisiting>
-                <tableResult40>0</tableResult40>
-                <tableResult31>0</tableResult31>
-                <tableResult22>0</tableResult22>
-                <tableResult13>0</tableResult13>
-                <tableResult04>1</tableResult04>
-                <points>0</points>
-                <goalsFavor>15</goalsFavor>
-                <goalsAgainst>24</goalsAgainst>
-            </value>
-        </entry>
-        <entry>
-            <key>bcampy</key>
-            <value teamId="bcampy" teamDenom="BAR CAMPY">
-                <matchPlayed>1</matchPlayed>
-                <matchWon>0</matchWon>
-                <matchLost>1</matchLost>
-                <matchPlayedLocal>0</matchPlayedLocal>
-                <matchWonLocal>0</matchWonLocal>
-                <matchLostLocal>0</matchLostLocal>
+                <matchLostLocal>1</matchLostLocal>
                 <matchPlayedVisiting>1</matchPlayedVisiting>
                 <matchWonVisiting>0</matchWonVisiting>
                 <matchLostVisiting>1</matchLostVisiting>
@@ -435,19 +414,41 @@
                 <tableResult31>0</tableResult31>
                 <tableResult22>0</tableResult22>
                 <tableResult13>1</tableResult13>
+                <tableResult04>1</tableResult04>
+                <goalsFavor>30</goalsFavor>
+                <goalsAgainst>43</goalsAgainst>
+            </value>
+        </entry>
+        <entry>
+            <key>bcampy</key>
+            <value teamId="bcampy" teamDenom="BAR CAMPY">
+                <points>5</points>
+                <matchPlayed>2</matchPlayed>
+                <matchWon>1</matchWon>
+                <matchLost>1</matchLost>
+                <matchPlayedLocal>0</matchPlayedLocal>
+                <matchWonLocal>0</matchWonLocal>
+                <matchLostLocal>0</matchLostLocal>
+                <matchPlayedVisiting>2</matchPlayedVisiting>
+                <matchWonVisiting>1</matchWonVisiting>
+                <matchLostVisiting>1</matchLostVisiting>
+                <tableResult40>1</tableResult40>
+                <tableResult31>0</tableResult31>
+                <tableResult22>0</tableResult22>
+                <tableResult13>1</tableResult13>
                 <tableResult04>0</tableResult04>
-                <points>1</points>
-                <goalsFavor>15</goalsFavor>
-                <goalsAgainst>21</goalsAgainst>
+                <goalsFavor>39</goalsFavor>
+                <goalsAgainst>36</goalsAgainst>
             </value>
         </entry>
         <entry>
             <key>ccelti</key>
             <value teamId="ccelti" teamDenom="CAFETERÍA CÉLTICA">
-                <matchPlayed>1</matchPlayed>
+                <points>5</points>
+                <matchPlayed>2</matchPlayed>
                 <matchWon>1</matchWon>
                 <matchLost>0</matchLost>
-                <matchPlayedLocal>0</matchPlayedLocal>
+                <matchPlayedLocal>1</matchPlayedLocal>
                 <matchWonLocal>0</matchWonLocal>
                 <matchLostLocal>0</matchLostLocal>
                 <matchPlayedVisiting>1</matchPlayedVisiting>
@@ -455,17 +456,17 @@
                 <matchLostVisiting>0</matchLostVisiting>
                 <tableResult40>0</tableResult40>
                 <tableResult31>1</tableResult31>
-                <tableResult22>0</tableResult22>
+                <tableResult22>1</tableResult22>
                 <tableResult13>0</tableResult13>
                 <tableResult04>0</tableResult04>
-                <points>3</points>
-                <goalsFavor>19</goalsFavor>
-                <goalsAgainst>15</goalsAgainst>
+                <goalsFavor>40</goalsFavor>
+                <goalsAgainst>34</goalsAgainst>
             </value>
         </entry>
         <entry>
             <key>cgerma</key>
             <value teamId="cgerma" teamDenom="CASA GERMÁN">
+                <points>1</points>
                 <matchPlayed>1</matchPlayed>
                 <matchWon>0</matchWon>
                 <matchLost>1</matchLost>
@@ -480,7 +481,6 @@
                 <tableResult22>0</tableResult22>
                 <tableResult13>1</tableResult13>
                 <tableResult04>0</tableResult04>
-                <points>1</points>
                 <goalsFavor>14</goalsFavor>
                 <goalsAgainst>21</goalsAgainst>
             </value>
@@ -488,32 +488,33 @@
         <entry>
             <key>valmus</key>
             <value teamId="valmus" teamDenom="VALSA MUS">
-                <matchPlayed>1</matchPlayed>
+                <points>1</points>
+                <matchPlayed>2</matchPlayed>
                 <matchWon>0</matchWon>
-                <matchLost>1</matchLost>
+                <matchLost>2</matchLost>
                 <matchPlayedLocal>1</matchPlayedLocal>
                 <matchWonLocal>0</matchWonLocal>
                 <matchLostLocal>1</matchLostLocal>
-                <matchPlayedVisiting>0</matchPlayedVisiting>
+                <matchPlayedVisiting>1</matchPlayedVisiting>
                 <matchWonVisiting>0</matchWonVisiting>
-                <matchLostVisiting>0</matchLostVisiting>
+                <matchLostVisiting>1</matchLostVisiting>
                 <tableResult40>0</tableResult40>
                 <tableResult31>0</tableResult31>
                 <tableResult22>0</tableResult22>
                 <tableResult13>1</tableResult13>
-                <tableResult04>0</tableResult04>
-                <points>1</points>
-                <goalsFavor>15</goalsFavor>
-                <goalsAgainst>21</goalsAgainst>
+                <tableResult04>1</tableResult04>
+                <goalsFavor>27</goalsFavor>
+                <goalsAgainst>45</goalsAgainst>
             </value>
         </entry>
         <entry>
             <key>cvalsa</key>
             <value teamId="cvalsa" teamDenom="CAFETERÍA VALSA">
-                <matchPlayed>1</matchPlayed>
+                <points>6</points>
+                <matchPlayed>2</matchPlayed>
                 <matchWon>1</matchWon>
                 <matchLost>0</matchLost>
-                <matchPlayedLocal>0</matchPlayedLocal>
+                <matchPlayedLocal>1</matchPlayedLocal>
                 <matchWonLocal>0</matchWonLocal>
                 <matchLostLocal>0</matchLostLocal>
                 <matchPlayedVisiting>1</matchPlayedVisiting>
@@ -521,65 +522,21 @@
                 <matchLostVisiting>0</matchLostVisiting>
                 <tableResult40>1</tableResult40>
                 <tableResult31>0</tableResult31>
-                <tableResult22>0</tableResult22>
+                <tableResult22>1</tableResult22>
                 <tableResult13>0</tableResult13>
                 <tableResult04>0</tableResult04>
-                <points>4</points>
-                <goalsFavor>24</goalsFavor>
-                <goalsAgainst>14</goalsAgainst>
+                <goalsFavor>43</goalsFavor>
+                <goalsAgainst>34</goalsAgainst>
             </value>
         </entry>
         <entry>
             <key>brenya</key>
             <value teamId="brenya" teamDenom="LA BREÑA">
-                <matchPlayed>1</matchPlayed>
-                <matchWon>0</matchWon>
-                <matchLost>0</matchLost>
-                <matchPlayedLocal>1</matchPlayedLocal>
-                <matchWonLocal>0</matchWonLocal>
-                <matchLostLocal>0</matchLostLocal>
-                <matchPlayedVisiting>0</matchPlayedVisiting>
-                <matchWonVisiting>0</matchWonVisiting>
-                <matchLostVisiting>0</matchLostVisiting>
-                <tableResult40>0</tableResult40>
-                <tableResult31>0</tableResult31>
-                <tableResult22>1</tableResult22>
-                <tableResult13>0</tableResult13>
-                <tableResult04>0</tableResult04>
                 <points>2</points>
-                <goalsFavor>18</goalsFavor>
-                <goalsAgainst>22</goalsAgainst>
-            </value>
-        </entry>
-        <entry>
-            <key>bxareu</key>
-            <value teamId="bxareu" teamDenom="XAREU">
-                <matchPlayed>1</matchPlayed>
-                <matchWon>1</matchWon>
-                <matchLost>0</matchLost>
-                <matchPlayedLocal>1</matchPlayedLocal>
-                <matchWonLocal>1</matchWonLocal>
-                <matchLostLocal>0</matchLostLocal>
-                <matchPlayedVisiting>0</matchPlayedVisiting>
-                <matchWonVisiting>0</matchWonVisiting>
-                <matchLostVisiting>0</matchLostVisiting>
-                <tableResult40>0</tableResult40>
-                <tableResult31>1</tableResult31>
-                <tableResult22>0</tableResult22>
-                <tableResult13>0</tableResult13>
-                <tableResult04>0</tableResult04>
-                <points>3</points>
-                <goalsFavor>21</goalsFavor>
-                <goalsAgainst>15</goalsAgainst>
-            </value>
-        </entry>
-        <entry>
-            <key>catere</key>
-            <value teamId="catere" teamDenom="CASA TERE">
-                <matchPlayed>1</matchPlayed>
+                <matchPlayed>2</matchPlayed>
                 <matchWon>0</matchWon>
                 <matchLost>1</matchLost>
-                <matchPlayedLocal>1</matchPlayedLocal>
+                <matchPlayedLocal>2</matchPlayedLocal>
                 <matchWonLocal>0</matchWonLocal>
                 <matchLostLocal>1</matchLostLocal>
                 <matchPlayedVisiting>0</matchPlayedVisiting>
@@ -587,12 +544,55 @@
                 <matchLostVisiting>0</matchLostVisiting>
                 <tableResult40>0</tableResult40>
                 <tableResult31>0</tableResult31>
+                <tableResult22>1</tableResult22>
+                <tableResult13>0</tableResult13>
+                <tableResult04>1</tableResult04>
+                <goalsFavor>27</goalsFavor>
+                <goalsAgainst>46</goalsAgainst>
+            </value>
+        </entry>
+        <entry>
+            <key>bxareu</key>
+            <value teamId="bxareu" teamDenom="XAREU">
+                <points>7</points>
+                <matchPlayed>2</matchPlayed>
+                <matchWon>2</matchWon>
+                <matchLost>0</matchLost>
+                <matchPlayedLocal>1</matchPlayedLocal>
+                <matchWonLocal>1</matchWonLocal>
+                <matchLostLocal>0</matchLostLocal>
+                <matchPlayedVisiting>1</matchPlayedVisiting>
+                <matchWonVisiting>1</matchWonVisiting>
+                <matchLostVisiting>0</matchLostVisiting>
+                <tableResult40>1</tableResult40>
+                <tableResult31>1</tableResult31>
+                <tableResult22>0</tableResult22>
+                <tableResult13>0</tableResult13>
+                <tableResult04>0</tableResult04>
+                <goalsFavor>45</goalsFavor>
+                <goalsAgainst>24</goalsAgainst>
+            </value>
+        </entry>
+        <entry>
+            <key>catere</key>
+            <value teamId="catere" teamDenom="CASA TERE">
+                <points>4</points>
+                <matchPlayed>2</matchPlayed>
+                <matchWon>1</matchWon>
+                <matchLost>1</matchLost>
+                <matchPlayedLocal>1</matchPlayedLocal>
+                <matchWonLocal>0</matchWonLocal>
+                <matchLostLocal>1</matchLostLocal>
+                <matchPlayedVisiting>1</matchPlayedVisiting>
+                <matchWonVisiting>1</matchWonVisiting>
+                <matchLostVisiting>0</matchLostVisiting>
+                <tableResult40>0</tableResult40>
+                <tableResult31>1</tableResult31>
                 <tableResult22>0</tableResult22>
                 <tableResult13>1</tableResult13>
                 <tableResult04>0</tableResult04>
-                <points>1</points>
-                <goalsFavor>15</goalsFavor>
-                <goalsAgainst>19</goalsAgainst>
+                <goalsFavor>38</goalsFavor>
+                <goalsAgainst>35</goalsAgainst>
             </value>
         </entry>
     </teamStat>
