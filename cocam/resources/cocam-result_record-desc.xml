@@ -3,24 +3,24 @@
 COCAM - ARCHIVO DE RESULTADOS
 -->
 <sepColRecordDesc charSep=";">
-    <fieldDesc fieldNo="01" fieldName="RecordType"           />
-    <fieldDesc fieldNo="02" fieldName="RecordId"             />
-    <fieldDesc fieldNo="03" fieldName="SeasonId"             />
-    <fieldDesc fieldNo="04" fieldName="LeagueType"           />
-    <fieldDesc fieldNo="05" fieldName="RoundId"              />
-    <fieldDesc fieldNo="06" fieldName="RoundDate"            />
-    <fieldDesc fieldNo="07" fieldName="MatchHead"            />
-    <fieldDesc fieldNo="08" fieldName="LocalTeamId"          />
-    <fieldDesc fieldNo="09" fieldName="LocalTeamName"        />
-    <fieldDesc fieldNo="10" fieldName="LocalTeamScore"       />
-    <fieldDesc fieldNo="11" fieldName="VisitingTeamScore"    />
-    <fieldDesc fieldNo="12" fieldName="VisitingTeamId"       />
-    <fieldDesc fieldNo="13" fieldName="VisitingTeamName"     />
-    <fieldDesc fieldNo="14" fieldName="TableId"              />
-    <fieldDesc fieldNo="15" fieldName="LocalPayerNameOne"    />
-    <fieldDesc fieldNo="16" fieldName="LocalPayerNameTwo"    />
-    <fieldDesc fieldNo="17" fieldName="LocalPairScore"       />
-    <fieldDesc fieldNo="18" fieldName="VisitingPairScore"    />
-    <fieldDesc fieldNo="19" fieldName="VisitingPayerNameOne" />
-    <fieldDesc fieldNo="20" fieldName="VisitingPayerNameTwo" />
+    <fieldDesc fieldNo="01" fieldName="RecordType"            />
+    <fieldDesc fieldNo="02" fieldName="RecordId"              />
+    <fieldDesc fieldNo="03" fieldName="SeasonId"              />
+    <fieldDesc fieldNo="04" fieldName="LeagueType"            />
+    <fieldDesc fieldNo="05" fieldName="RoundId"               />
+    <fieldDesc fieldNo="06" fieldName="RoundDate"             />
+    <fieldDesc fieldNo="07" fieldName="MatchHead"             />
+    <fieldDesc fieldNo="08" fieldName="LocalTeamId"           />
+    <fieldDesc fieldNo="09" fieldName="LocalTeamName"         />
+    <fieldDesc fieldNo="10" fieldName="LocalTeamScore"        />
+    <fieldDesc fieldNo="11" fieldName="VisitingTeamScore"     />
+    <fieldDesc fieldNo="12" fieldName="VisitingTeamId"        />
+    <fieldDesc fieldNo="13" fieldName="VisitingTeamName"      />
+    <fieldDesc fieldNo="14" fieldName="TableId"               />
+    <fieldDesc fieldNo="15" fieldName="LocalPlayerNickOne"    />
+    <fieldDesc fieldNo="16" fieldName="LocalPlayerNickTwo"    />
+    <fieldDesc fieldNo="17" fieldName="LocalPairScore"        />
+    <fieldDesc fieldNo="18" fieldName="VisitingPairScore"     />
+    <fieldDesc fieldNo="19" fieldName="VisitingPlayerNickOne" />
+    <fieldDesc fieldNo="20" fieldName="VisitingPlayerNickTwo" />
 </sepColRecordDesc>

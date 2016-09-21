@@ -15,11 +15,11 @@
     <team teamId="cgerma" teamName="Casa Germán" teamDenom="CASA GERMÁN" teamSize="11"/>
     <team teamId="catere" teamName="Casa Tere" teamDenom="CASA TERE" teamSize="13"/>
     <team teamId="churre" teamName="Churrería" teamDenom="CHURRERÍA" teamSize="12"/>
-    <team teamId="ccelti" teamName="Céltica" teamDenom="CAFETERÍA CÉLTICA" teamSize="10"/>
+    <team teamId="ccelti" teamName="Céltica" teamDenom="CÉLTICA" teamSize="10"/>
     <team teamId="rcarol" teamName="El Rincón de Carol" teamDenom="RINCÓN DE CAROL" teamSize="14"/>
     <team teamId="brenya" teamName="La Breña" teamDenom="LA BREÑA" teamSize="12"/>
     <team teamId="chalan" teamName="Mus El Chalanín" teamDenom="MUS EL CHALANÍN" teamSize="18"/>
-    <team teamId="bcarba" teamName="Peña Carbayedo" teamDenom="BAR CARBAYEDO" teamSize="13"/>
+    <team teamId="bcarba" teamName="Peña Carbayedo" teamDenom="PEÑA CARBAYEDO" teamSize="13"/>
     <team teamId="monchi" teamName="Peña de Mus Monchi" teamDenom="PEÑA MUS MONCHI" teamSize="12"/>
     <team teamId="sagcel" teamName="San Agustín - Céltica" teamDenom="S.AG.-CÉLTICA" teamSize="12"/>
     <team teamId="sagkam" teamName="San Agustín - Kame.Net" teamDenom="S.AG.-KAME.NET" teamSize="12"/>

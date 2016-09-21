@@ -1,0 +1,1563 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<season seasonId="2016/17" lastRoundId="3">
+    <match roundId="1" roundDate="2016-09-12" matchId="8villacvalsa">
+        <localTeamId>8villa</localTeamId>
+        <localTeamName>8 VILLAS</localTeamName>
+        <localTeamScore>0</localTeamScore>
+        <visitingTeamId>cvalsa</visitingTeamId>
+        <visitingTeamName>CAFETERÍA VALSA</visitingTeamName>
+        <visitingTeamScore>4</visitingTeamScore>
+        <table tableId="1">
+            <localPlayerNameOne>ALVARO</localPlayerNameOne>
+            <localPlayerNameTwo>HUMBERTO</localPlayerNameTwo>
+            <localPairScore>2</localPairScore>
+            <visitingPlayerNameOne>GABI</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>CAMPANA</visitingPlayerNameTwo>
+            <visitingPairScore>6</visitingPairScore>
+        </table>
+        <table tableId="2">
+            <localPlayerNameOne>URE</localPlayerNameOne>
+            <localPlayerNameTwo>JOSE ENRIQUE</localPlayerNameTwo>
+            <localPairScore>5</localPairScore>
+            <visitingPlayerNameOne>PARAMIO</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>GENARO</visitingPlayerNameTwo>
+            <visitingPairScore>6</visitingPairScore>
+        </table>
+        <table tableId="3">
+            <localPlayerNameOne>NACHO</localPlayerNameOne>
+            <localPlayerNameTwo>JUAN</localPlayerNameTwo>
+            <localPairScore>5</localPairScore>
+            <visitingPlayerNameOne>MARCOS</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>MURAS</visitingPlayerNameTwo>
+            <visitingPairScore>6</visitingPairScore>
+        </table>
+        <table tableId="4">
+            <localPlayerNameOne>Mª JESUS</localPlayerNameOne>
+            <localPlayerNameTwo>RAFA</localPlayerNameTwo>
+            <localPairScore>2</localPairScore>
+            <visitingPlayerNameOne>LUIS</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>PEREZ</visitingPlayerNameTwo>
+            <visitingPairScore>6</visitingPairScore>
+        </table>
+    </match>
+    <match roundId="1" roundDate="2016-09-12" matchId="acveigchurre">
+        <localTeamId>acveig</localTeamId>
+        <localTeamName>AC VEIGA</localTeamName>
+        <localTeamScore>4</localTeamScore>
+        <visitingTeamId>churre</visitingTeamId>
+        <visitingTeamName>LA CHURRERÍA</visitingTeamName>
+        <visitingTeamScore>0</visitingTeamScore>
+        <table tableId="1">
+            <localPlayerNameOne>ADAN</localPlayerNameOne>
+            <localPlayerNameTwo>EMILIO</localPlayerNameTwo>
+            <localPairScore>6</localPairScore>
+            <visitingPlayerNameOne>JUAN</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>JAVI</visitingPlayerNameTwo>
+            <visitingPairScore>3</visitingPairScore>
+        </table>
+        <table tableId="2">
+            <localPlayerNameOne>ZURDO</localPlayerNameOne>
+            <localPlayerNameTwo>HERRERO</localPlayerNameTwo>
+            <localPairScore>6</localPairScore>
+            <visitingPlayerNameOne>RAMON</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>JOSE</visitingPlayerNameTwo>
+            <visitingPairScore>5</visitingPairScore>
+        </table>
+        <table tableId="3">
+            <localPlayerNameOne>ZICO</localPlayerNameOne>
+            <localPlayerNameTwo>SARRI</localPlayerNameTwo>
+            <localPairScore>6</localPairScore>
+            <visitingPlayerNameOne>PACO</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>RICHARD</visitingPlayerNameTwo>
+            <visitingPairScore>4</visitingPairScore>
+        </table>
+        <table tableId="4">
+            <localPlayerNameOne>TINO</localPlayerNameOne>
+            <localPlayerNameTwo>ELOY</localPlayerNameTwo>
+            <localPairScore>6</localPairScore>
+            <visitingPlayerNameOne>AZA</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>LUIS</visitingPlayerNameTwo>
+            <visitingPairScore>5</visitingPairScore>
+        </table>
+    </match>
+    <match roundId="1" roundDate="2016-09-12" matchId="andreamonchi">
+        <localTeamId>andrea</localTeamId>
+        <localTeamName>ANDREA</localTeamName>
+        <localTeamScore>4</localTeamScore>
+        <visitingTeamId>monchi</visitingTeamId>
+        <visitingTeamName>MONCHI</visitingTeamName>
+        <visitingTeamScore>0</visitingTeamScore>
+        <table tableId="1">
+            <localPlayerNameOne>DANI</localPlayerNameOne>
+            <localPlayerNameTwo>ISMA</localPlayerNameTwo>
+            <localPairScore>6</localPairScore>
+            <visitingPlayerNameOne>RABADAN</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>BERNARDO</visitingPlayerNameTwo>
+            <visitingPairScore>2</visitingPairScore>
+        </table>
+        <table tableId="2">
+            <localPlayerNameOne>DELMI</localPlayerNameOne>
+            <localPlayerNameTwo>FERRE</localPlayerNameTwo>
+            <localPairScore>6</localPairScore>
+            <visitingPlayerNameOne>DAVID</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>JUANJO</visitingPlayerNameTwo>
+            <visitingPairScore>2</visitingPairScore>
+        </table>
+        <table tableId="3">
+            <localPlayerNameOne>KIKE</localPlayerNameOne>
+            <localPlayerNameTwo>OCTAVIO</localPlayerNameTwo>
+            <localPairScore>6</localPairScore>
+            <visitingPlayerNameOne>MONCHI</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>ALFONSO</visitingPlayerNameTwo>
+            <visitingPairScore>3</visitingPairScore>
+        </table>
+        <table tableId="4">
+            <localPlayerNameOne>TINO</localPlayerNameOne>
+            <localPlayerNameTwo>JUAN</localPlayerNameTwo>
+            <localPairScore>6</localPairScore>
+            <visitingPlayerNameOne>VALENTIN</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>MATEOS</visitingPlayerNameTwo>
+            <visitingPairScore>4</visitingPairScore>
+        </table>
+    </match>
+    <match roundId="1" roundDate="2016-09-12" matchId="bcarbacgerma">
+        <localTeamId>bcarba</localTeamId>
+        <localTeamName>BAR CARBAYEDO</localTeamName>
+        <localTeamScore>3</localTeamScore>
+        <visitingTeamId>cgerma</visitingTeamId>
+        <visitingTeamName>CASA GERMÁN</visitingTeamName>
+        <visitingTeamScore>1</visitingTeamScore>
+        <table tableId="1">
+            <localPlayerNameOne>CHE</localPlayerNameOne>
+            <localPlayerNameTwo>HOMERO</localPlayerNameTwo>
+            <localPairScore>6</localPairScore>
+            <visitingPlayerNameOne>TOÑO</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>ESPINA</visitingPlayerNameTwo>
+            <visitingPairScore>4</visitingPairScore>
+        </table>
+        <table tableId="2">
+            <localPlayerNameOne>JAVI</localPlayerNameOne>
+            <localPlayerNameTwo>TOÑO</localPlayerNameTwo>
+            <localPairScore>6</localPairScore>
+            <visitingPlayerNameOne>VIÑA</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>MORAN</visitingPlayerNameTwo>
+            <visitingPairScore>2</visitingPairScore>
+        </table>
+        <table tableId="3">
+            <localPlayerNameOne>LUIGI</localPlayerNameOne>
+            <localPlayerNameTwo>ABLANEDO</localPlayerNameTwo>
+            <localPairScore>6</localPairScore>
+            <visitingPlayerNameOne>GABI</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>JOAQUIN</visitingPlayerNameTwo>
+            <visitingPairScore>2</visitingPairScore>
+        </table>
+        <table tableId="4">
+            <localPlayerNameOne>CHUS</localPlayerNameOne>
+            <localPlayerNameTwo>JOSE LUIS</localPlayerNameTwo>
+            <localPairScore>3</localPairScore>
+            <visitingPlayerNameOne>ALLENDE</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>ESPINA</visitingPlayerNameTwo>
+            <visitingPairScore>6</visitingPairScore>
+        </table>
+    </match>
+    <match roundId="1" roundDate="2016-09-12" matchId="brenyabarena">
+        <localTeamId>brenya</localTeamId>
+        <localTeamName>LA BREÑA</localTeamName>
+        <localTeamScore>2</localTeamScore>
+        <visitingTeamId>barena</visitingTeamId>
+        <visitingTeamName>BAR LA ARENA</visitingTeamName>
+        <visitingTeamScore>2</visitingTeamScore>
+        <table tableId="1">
+            <localPlayerNameOne>VIGIL</localPlayerNameOne>
+            <localPlayerNameTwo>GLORIA</localPlayerNameTwo>
+            <localPairScore>6</localPairScore>
+            <visitingPlayerNameOne>OMAR</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>PEPE</visitingPlayerNameTwo>
+            <visitingPairScore>5</visitingPairScore>
+        </table>
+        <table tableId="2">
+            <localPlayerNameOne>KARLOS</localPlayerNameOne>
+            <localPlayerNameTwo>FRANCISCO</localPlayerNameTwo>
+            <localPairScore>6</localPairScore>
+            <visitingPlayerNameOne>LUIS</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>RODRIGO</visitingPlayerNameTwo>
+            <visitingPairScore>5</visitingPairScore>
+        </table>
+        <table tableId="3">
+            <localPlayerNameOne>CARY</localPlayerNameOne>
+            <localPlayerNameTwo>ZANCAS</localPlayerNameTwo>
+            <localPairScore>2</localPairScore>
+            <visitingPlayerNameOne>FELIPE</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>JOACO</visitingPlayerNameTwo>
+            <visitingPairScore>6</visitingPairScore>
+        </table>
+        <table tableId="4">
+            <localPlayerNameOne>SERA</localPlayerNameOne>
+            <localPlayerNameTwo>SALVA</localPlayerNameTwo>
+            <localPairScore>4</localPairScore>
+            <visitingPlayerNameOne>FERMIN</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>TURBO</visitingPlayerNameTwo>
+            <visitingPairScore>6</visitingPairScore>
+        </table>
+    </match>
+    <match roundId="1" roundDate="2016-09-12" matchId="bxareubcampy">
+        <localTeamId>bxareu</localTeamId>
+        <localTeamName>XAREU</localTeamName>
+        <localTeamScore>3</localTeamScore>
+        <visitingTeamId>bcampy</visitingTeamId>
+        <visitingTeamName>BAR CAMPY</visitingTeamName>
+        <visitingTeamScore>1</visitingTeamScore>
+        <table tableId="1">
+            <localPlayerNameOne>ROSA</localPlayerNameOne>
+            <localPlayerNameTwo>BAO</localPlayerNameTwo>
+            <localPairScore>3</localPairScore>
+            <visitingPlayerNameOne>RUBIO</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>ANTONIO</visitingPlayerNameTwo>
+            <visitingPairScore>6</visitingPairScore>
+        </table>
+        <table tableId="2">
+            <localPlayerNameOne>ARIAS</localPlayerNameOne>
+            <localPlayerNameTwo>ESTEBAN</localPlayerNameTwo>
+            <localPairScore>6</localPairScore>
+            <visitingPlayerNameOne>LLORENTE</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>PACO</visitingPlayerNameTwo>
+            <visitingPairScore>1</visitingPairScore>
+        </table>
+        <table tableId="3">
+            <localPlayerNameOne>NANDO</localPlayerNameOne>
+            <localPlayerNameTwo>GASPAR</localPlayerNameTwo>
+            <localPairScore>6</localPairScore>
+            <visitingPlayerNameOne>J CARLOS</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>YIMI</visitingPlayerNameTwo>
+            <visitingPairScore>3</visitingPairScore>
+        </table>
+        <table tableId="4">
+            <localPlayerNameOne>CARLOS</localPlayerNameOne>
+            <localPlayerNameTwo>LOLO</localPlayerNameTwo>
+            <localPairScore>6</localPairScore>
+            <visitingPlayerNameOne>JUAN</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>PEPE</visitingPlayerNameTwo>
+            <visitingPairScore>5</visitingPairScore>
+        </table>
+    </match>
+    <match roundId="1" roundDate="2016-09-12" matchId="capiolalbora">
+        <localTeamId>capiol</localTeamId>
+        <localTeamName>PIOL</localTeamName>
+        <localTeamScore>2</localTeamScore>
+        <visitingTeamId>albora</visitingTeamId>
+        <visitingTeamName>ALBORADA</visitingTeamName>
+        <visitingTeamScore>2</visitingTeamScore>
+        <table tableId="1">
+            <localPlayerNameOne>CARMEN</localPlayerNameOne>
+            <localPlayerNameTwo>PEPE</localPlayerNameTwo>
+            <localPairScore>6</localPairScore>
+            <visitingPlayerNameOne>GUELO</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>JOSE</visitingPlayerNameTwo>
+            <visitingPairScore>2</visitingPairScore>
+        </table>
+        <table tableId="2">
+            <localPlayerNameOne>AZU</localPlayerNameOne>
+            <localPlayerNameTwo>PILI</localPlayerNameTwo>
+            <localPairScore>5</localPairScore>
+            <visitingPlayerNameOne>GELO</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>GAN</visitingPlayerNameTwo>
+            <visitingPairScore>6</visitingPairScore>
+        </table>
+        <table tableId="3">
+            <localPlayerNameOne>FELIX</localPlayerNameOne>
+            <localPlayerNameTwo>PILUCA</localPlayerNameTwo>
+            <localPairScore>5</localPairScore>
+            <visitingPlayerNameOne>OMAR</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>CALVETE</visitingPlayerNameTwo>
+            <visitingPairScore>6</visitingPairScore>
+        </table>
+        <table tableId="4">
+            <localPlayerNameOne>NINO</localPlayerNameOne>
+            <localPlayerNameTwo>ANTONIO</localPlayerNameTwo>
+            <localPairScore>6</localPairScore>
+            <visitingPlayerNameOne>PABLO</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>FALO</visitingPlayerNameTwo>
+            <visitingPairScore>2</visitingPairScore>
+        </table>
+    </match>
+    <match roundId="1" roundDate="2016-09-12" matchId="catereccelti">
+        <localTeamId>catere</localTeamId>
+        <localTeamName>CASA TERE</localTeamName>
+        <localTeamScore>1</localTeamScore>
+        <visitingTeamId>ccelti</visitingTeamId>
+        <visitingTeamName>CAFETERÍA CELTICA</visitingTeamName>
+        <visitingTeamScore>3</visitingTeamScore>
+        <table tableId="1">
+            <localPlayerNameOne>JAVI</localPlayerNameOne>
+            <localPlayerNameTwo>POPI</localPlayerNameTwo>
+            <localPairScore>3</localPairScore>
+            <visitingPlayerNameOne>PICHINA</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>BUSTO</visitingPlayerNameTwo>
+            <visitingPairScore>6</visitingPairScore>
+        </table>
+        <table tableId="2">
+            <localPlayerNameOne>PICHI</localPlayerNameOne>
+            <localPlayerNameTwo>VILA</localPlayerNameTwo>
+            <localPairScore>3</localPairScore>
+            <visitingPlayerNameOne>LUNA</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>FELIX</visitingPlayerNameTwo>
+            <visitingPairScore>6</visitingPairScore>
+        </table>
+        <table tableId="3">
+            <localPlayerNameOne>PEPE</localPlayerNameOne>
+            <localPlayerNameTwo>CLETO</localPlayerNameTwo>
+            <localPairScore>3</localPairScore>
+            <visitingPlayerNameOne>CHININ</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>CHINI</visitingPlayerNameTwo>
+            <visitingPairScore>6</visitingPairScore>
+        </table>
+        <table tableId="4">
+            <localPlayerNameOne>BELLANCO</localPlayerNameOne>
+            <localPlayerNameTwo>GENI</localPlayerNameTwo>
+            <localPairScore>6</localPairScore>
+            <visitingPlayerNameOne>MAITE</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>FALO</visitingPlayerNameTwo>
+            <visitingPairScore>1</visitingPairScore>
+        </table>
+    </match>
+    <match roundId="1" roundDate="2016-09-12" matchId="cebanochalan">
+        <localTeamId>cebano</localTeamId>
+        <localTeamName>ÉBANO</localTeamName>
+        <localTeamScore>4</localTeamScore>
+        <visitingTeamId>chalan</visitingTeamId>
+        <visitingTeamName>EL CHALANÍN</visitingTeamName>
+        <visitingTeamScore>0</visitingTeamScore>
+        <table tableId="1">
+            <localPlayerNameOne>TOÑO</localPlayerNameOne>
+            <localPlayerNameTwo>MUÑIZ</localPlayerNameTwo>
+            <localPairScore>6</localPairScore>
+            <visitingPlayerNameOne>SILVI</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>FELIPE</visitingPlayerNameTwo>
+            <visitingPairScore>2</visitingPairScore>
+        </table>
+        <table tableId="2">
+            <localPlayerNameOne>FRAN</localPlayerNameOne>
+            <localPlayerNameTwo>LUIS</localPlayerNameTwo>
+            <localPairScore>6</localPairScore>
+            <visitingPlayerNameOne>DOLO</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>CHEMA</visitingPlayerNameTwo>
+            <visitingPairScore>4</visitingPairScore>
+        </table>
+        <table tableId="3">
+            <localPlayerNameOne>ANGEL RAMON</localPlayerNameOne>
+            <localPlayerNameTwo>JULIO</localPlayerNameTwo>
+            <localPairScore>6</localPairScore>
+            <visitingPlayerNameOne>GORI</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>KIYO</visitingPlayerNameTwo>
+            <visitingPairScore>4</visitingPairScore>
+        </table>
+        <table tableId="4">
+            <localPlayerNameOne>CARLON</localPlayerNameOne>
+            <localPlayerNameTwo>NICO</localPlayerNameTwo>
+            <localPairScore>6</localPairScore>
+            <visitingPlayerNameOne>KUKI</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>DIEGO</visitingPlayerNameTwo>
+            <visitingPairScore>5</visitingPairScore>
+        </table>
+    </match>
+    <match roundId="1" roundDate="2016-09-12" matchId="habanacalolo">
+        <localTeamId>habana</localTeamId>
+        <localTeamName>HABANA</localTeamName>
+        <localTeamScore>2</localTeamScore>
+        <visitingTeamId>calolo</visitingTeamId>
+        <visitingTeamName>CA'LOLO</visitingTeamName>
+        <visitingTeamScore>2</visitingTeamScore>
+        <table tableId="1">
+            <localPlayerNameOne>PANA</localPlayerNameOne>
+            <localPlayerNameTwo>PANAKAS</localPlayerNameTwo>
+            <localPairScore>6</localPairScore>
+            <visitingPlayerNameOne>ISIDORO</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>PARAMIO</visitingPlayerNameTwo>
+            <visitingPairScore>3</visitingPairScore>
+        </table>
+        <table tableId="2">
+            <localPlayerNameOne>JUANJO</localPlayerNameOne>
+            <localPlayerNameTwo>SIXTO</localPlayerNameTwo>
+            <localPairScore>2</localPairScore>
+            <visitingPlayerNameOne>ELOY</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>HUGO</visitingPlayerNameTwo>
+            <visitingPairScore>6</visitingPairScore>
+        </table>
+        <table tableId="3">
+            <localPlayerNameOne>MANOLO</localPlayerNameOne>
+            <localPlayerNameTwo>EVA</localPlayerNameTwo>
+            <localPairScore>2</localPairScore>
+            <visitingPlayerNameOne>MARCOS</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>JUSTO</visitingPlayerNameTwo>
+            <visitingPairScore>6</visitingPairScore>
+        </table>
+        <table tableId="4">
+            <localPlayerNameOne>PESTONI II</localPlayerNameOne>
+            <localPlayerNameTwo>MARGA</localPlayerNameTwo>
+            <localPairScore>6</localPairScore>
+            <visitingPlayerNameOne>COTE</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>MANU</visitingPlayerNameTwo>
+            <visitingPairScore>3</visitingPairScore>
+        </table>
+    </match>
+    <match roundId="1" roundDate="2016-09-12" matchId="rcarolsagkam">
+        <localTeamId>rcarol</localTeamId>
+        <localTeamName>RINCÓN DE CAROL</localTeamName>
+        <localTeamScore>1</localTeamScore>
+        <visitingTeamId>sagkam</visitingTeamId>
+        <visitingTeamName>S. AG.-KAME.NET</visitingTeamName>
+        <visitingTeamScore>3</visitingTeamScore>
+        <table tableId="1">
+            <localPlayerNameOne>GABI</localPlayerNameOne>
+            <localPlayerNameTwo>CHUS</localPlayerNameTwo>
+            <localPairScore>6</localPairScore>
+            <visitingPlayerNameOne>ANGEL</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>MENOTI</visitingPlayerNameTwo>
+            <visitingPairScore>5</visitingPairScore>
+        </table>
+        <table tableId="2">
+            <localPlayerNameOne>DANI</localPlayerNameOne>
+            <localPlayerNameTwo>BELLO</localPlayerNameTwo>
+            <localPairScore>5</localPairScore>
+            <visitingPlayerNameOne>ISIDRO</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>JUANI</visitingPlayerNameTwo>
+            <visitingPairScore>6</visitingPairScore>
+        </table>
+        <table tableId="3">
+            <localPlayerNameOne>TEO</localPlayerNameOne>
+            <localPlayerNameTwo>CHEMA</localPlayerNameTwo>
+            <localPairScore>5</localPairScore>
+            <visitingPlayerNameOne>PINTO</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>GAYOL</visitingPlayerNameTwo>
+            <visitingPairScore>6</visitingPairScore>
+        </table>
+        <table tableId="4">
+            <localPlayerNameOne>DEME</localPlayerNameOne>
+            <localPlayerNameTwo>ALFREDO</localPlayerNameTwo>
+            <localPairScore>1</localPairScore>
+            <visitingPlayerNameOne>LUIS</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>ROBERTO</visitingPlayerNameTwo>
+            <visitingPairScore>6</visitingPairScore>
+        </table>
+    </match>
+    <match roundId="1" roundDate="2016-09-12" matchId="sagcel4vient">
+        <localTeamId>sagcel</localTeamId>
+        <localTeamName>S. AG.-CÉLTICA</localTeamName>
+        <localTeamScore>2</localTeamScore>
+        <visitingTeamId>4vient</visitingTeamId>
+        <visitingTeamName>LOS 4 VIENTOS</visitingTeamName>
+        <visitingTeamScore>2</visitingTeamScore>
+        <table tableId="1">
+            <localPlayerNameOne>IÑAKI</localPlayerNameOne>
+            <localPlayerNameTwo>JAVI</localPlayerNameTwo>
+            <localPairScore>4</localPairScore>
+            <visitingPlayerNameOne>JOSE LUIS</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>PRIETO</visitingPlayerNameTwo>
+            <visitingPairScore>6</visitingPairScore>
+        </table>
+        <table tableId="2">
+            <localPlayerNameOne>TRIKI</localPlayerNameOne>
+            <localPlayerNameTwo>CHEMA</localPlayerNameTwo>
+            <localPairScore>6</localPairScore>
+            <visitingPlayerNameOne>CARLOTO</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>KIRIKI</visitingPlayerNameTwo>
+            <visitingPairScore>3</visitingPairScore>
+        </table>
+        <table tableId="3">
+            <localPlayerNameOne>ALICIA</localPlayerNameOne>
+            <localPlayerNameTwo>FA</localPlayerNameTwo>
+            <localPairScore>6</localPairScore>
+            <visitingPlayerNameOne>GARRIDO</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>PERFE</visitingPlayerNameTwo>
+            <visitingPairScore>2</visitingPairScore>
+        </table>
+        <table tableId="4">
+            <localPlayerNameOne>CARLOS</localPlayerNameOne>
+            <localPlayerNameTwo>ANDRES</localPlayerNameTwo>
+            <localPairScore>5</localPairScore>
+            <visitingPlayerNameOne>RAMON</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>ANTONIO</visitingPlayerNameTwo>
+            <visitingPairScore>6</visitingPairScore>
+        </table>
+    </match>
+    <match roundId="1" roundDate="2016-09-12" matchId="valmussagrib">
+        <localTeamId>valmus</localTeamId>
+        <localTeamName>VALSA MUS</localTeamName>
+        <localTeamScore>1</localTeamScore>
+        <visitingTeamId>sagrib</visitingTeamId>
+        <visitingTeamName>S. AG.-RÍAS BAIXAS</visitingTeamName>
+        <visitingTeamScore>3</visitingTeamScore>
+        <table tableId="1">
+            <localPlayerNameOne>MEDINA</localPlayerNameOne>
+            <localPlayerNameTwo>JULIO</localPlayerNameTwo>
+            <localPairScore>2</localPairScore>
+            <visitingPlayerNameOne>CHEMI</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>VITI</visitingPlayerNameTwo>
+            <visitingPairScore>6</visitingPairScore>
+        </table>
+        <table tableId="2">
+            <localPlayerNameOne>ITO</localPlayerNameOne>
+            <localPlayerNameTwo>PABLO</localPlayerNameTwo>
+            <localPairScore>2</localPairScore>
+            <visitingPlayerNameOne>ARTURO</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>TONI</visitingPlayerNameTwo>
+            <visitingPairScore>6</visitingPairScore>
+        </table>
+        <table tableId="3">
+            <localPlayerNameOne>BARCIA</localPlayerNameOne>
+            <localPlayerNameTwo>JAVI</localPlayerNameTwo>
+            <localPairScore>5</localPairScore>
+            <visitingPlayerNameOne>ALVARO</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>COLLADO</visitingPlayerNameTwo>
+            <visitingPairScore>6</visitingPairScore>
+        </table>
+        <table tableId="4">
+            <localPlayerNameOne>FELIPE</localPlayerNameOne>
+            <localPlayerNameTwo>ROBERT</localPlayerNameTwo>
+            <localPairScore>6</localPairScore>
+            <visitingPlayerNameOne>GERARDO</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>OSCAR</visitingPlayerNameTwo>
+            <visitingPairScore>3</visitingPairScore>
+        </table>
+    </match>
+    <match roundId="2" roundDate="2016-09-15" matchId="4vientacveig">
+        <localTeamId>4vient</localTeamId>
+        <localTeamName>LOS 4 VIENTOS</localTeamName>
+        <localTeamScore>0</localTeamScore>
+        <visitingTeamId>acveig</visitingTeamId>
+        <visitingTeamName>AC VEIGA</visitingTeamName>
+        <visitingTeamScore>4</visitingTeamScore>
+        <table tableId="1">
+            <localPlayerNameOne>PRIETO</localPlayerNameOne>
+            <localPlayerNameTwo>CALVO</localPlayerNameTwo>
+            <localPairScore>1</localPairScore>
+            <visitingPlayerNameOne>ADAN</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>EMILIO</visitingPlayerNameTwo>
+            <visitingPairScore>6</visitingPairScore>
+        </table>
+        <table tableId="2">
+            <localPlayerNameOne>GARRIDO</localPlayerNameOne>
+            <localPlayerNameTwo>PERFE</localPlayerNameTwo>
+            <localPairScore>5</localPairScore>
+            <visitingPlayerNameOne>ZICO</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>SARRI</visitingPlayerNameTwo>
+            <visitingPairScore>6</visitingPairScore>
+        </table>
+        <table tableId="3">
+            <localPlayerNameOne>KIRIKI</localPlayerNameOne>
+            <localPlayerNameTwo>CARLOTO</localPlayerNameTwo>
+            <localPairScore>4</localPairScore>
+            <visitingPlayerNameOne>TINO</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>ELOY</visitingPlayerNameTwo>
+            <visitingPairScore>6</visitingPairScore>
+        </table>
+        <table tableId="4">
+            <localPlayerNameOne>RAMON</localPlayerNameOne>
+            <localPlayerNameTwo>ANTONIO</localPlayerNameTwo>
+            <localPairScore>5</localPairScore>
+            <visitingPlayerNameOne>HERRERO</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>ZURDO</visitingPlayerNameTwo>
+            <visitingPairScore>6</visitingPairScore>
+        </table>
+    </match>
+    <match roundId="2" roundDate="2016-09-15" matchId="alborabcampy">
+        <localTeamId>albora</localTeamId>
+        <localTeamName>ALBORADA</localTeamName>
+        <localTeamScore>0</localTeamScore>
+        <visitingTeamId>bcampy</visitingTeamId>
+        <visitingTeamName>BAR CAMPY</visitingTeamName>
+        <visitingTeamScore>4</visitingTeamScore>
+        <table tableId="1">
+            <localPlayerNameOne>GAN</localPlayerNameOne>
+            <localPlayerNameTwo>GELO</localPlayerNameTwo>
+            <localPairScore>2</localPairScore>
+            <visitingPlayerNameOne>J CARLOS</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>JOSE</visitingPlayerNameTwo>
+            <visitingPairScore>6</visitingPairScore>
+        </table>
+        <table tableId="2">
+            <localPlayerNameOne>PABLO</localPlayerNameOne>
+            <localPlayerNameTwo>LUIS</localPlayerNameTwo>
+            <localPairScore>5</localPairScore>
+            <visitingPlayerNameOne>ANTONIO</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>LLORENTE</visitingPlayerNameTwo>
+            <visitingPairScore>6</visitingPairScore>
+        </table>
+        <table tableId="3">
+            <localPlayerNameOne>OMAR</localPlayerNameOne>
+            <localPlayerNameTwo>CALVETE</localPlayerNameTwo>
+            <localPairScore>5</localPairScore>
+            <visitingPlayerNameOne>TITI</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>PEPE</visitingPlayerNameTwo>
+            <visitingPairScore>6</visitingPairScore>
+        </table>
+        <table tableId="4">
+            <localPlayerNameOne>GUELO</localPlayerNameOne>
+            <localPlayerNameTwo>JOSE</localPlayerNameTwo>
+            <localPairScore>3</localPairScore>
+            <visitingPlayerNameOne>PACO</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>JIMI</visitingPlayerNameTwo>
+            <visitingPairScore>6</visitingPairScore>
+        </table>
+    </match>
+    <match roundId="2" roundDate="2016-09-15" matchId="barenahabana">
+        <localTeamId>barena</localTeamId>
+        <localTeamName>BAR LA ARENA</localTeamName>
+        <localTeamScore>4</localTeamScore>
+        <visitingTeamId>habana</visitingTeamId>
+        <visitingTeamName>HABANA</visitingTeamName>
+        <visitingTeamScore>0</visitingTeamScore>
+        <table tableId="1">
+            <localPlayerNameOne>DAVID</localPlayerNameOne>
+            <localPlayerNameTwo>PEPE</localPlayerNameTwo>
+            <localPairScore>6</localPairScore>
+            <visitingPlayerNameOne>PANA</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>PANAKAS</visitingPlayerNameTwo>
+            <visitingPairScore>2</visitingPairScore>
+        </table>
+        <table tableId="2">
+            <localPlayerNameOne>OMAR</localPlayerNameOne>
+            <localPlayerNameTwo>TURBO</localPlayerNameTwo>
+            <localPairScore>6</localPairScore>
+            <visitingPlayerNameOne>SIXTO</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>PANCHIN</visitingPlayerNameTwo>
+            <visitingPairScore>2</visitingPairScore>
+        </table>
+        <table tableId="3">
+            <localPlayerNameOne>RODRIGO</localPlayerNameOne>
+            <localPlayerNameTwo>JUANMA</localPlayerNameTwo>
+            <localPairScore>6</localPairScore>
+            <visitingPlayerNameOne>MARGA</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>PESTONI</visitingPlayerNameTwo>
+            <visitingPairScore>4</visitingPairScore>
+        </table>
+        <table tableId="4">
+            <localPlayerNameOne>JOACO</localPlayerNameOne>
+            <localPlayerNameTwo>FELIPE</localPlayerNameTwo>
+            <localPairScore>6</localPairScore>
+            <visitingPlayerNameOne>JOSE</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>MANOLO</visitingPlayerNameTwo>
+            <visitingPairScore>5</visitingPairScore>
+        </table>
+    </match>
+    <match roundId="2" roundDate="2016-09-15" matchId="brenyabxareu">
+        <localTeamId>brenya</localTeamId>
+        <localTeamName>LA BREÑA</localTeamName>
+        <localTeamScore>0</localTeamScore>
+        <visitingTeamId>bxareu</visitingTeamId>
+        <visitingTeamName>XAREU</visitingTeamName>
+        <visitingTeamScore>4</visitingTeamScore>
+        <table tableId="1">
+            <localPlayerNameOne>VIGIL</localPlayerNameOne>
+            <localPlayerNameTwo>ZANCAS</localPlayerNameTwo>
+            <localPairScore>4</localPairScore>
+            <visitingPlayerNameOne>NANDO</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>GASPAR</visitingPlayerNameTwo>
+            <visitingPairScore>6</visitingPairScore>
+        </table>
+        <table tableId="2">
+            <localPlayerNameOne>CARY</localPlayerNameOne>
+            <localPlayerNameTwo>BERTO</localPlayerNameTwo>
+            <localPairScore>3</localPairScore>
+            <visitingPlayerNameOne>ROSA</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>BAO</visitingPlayerNameTwo>
+            <visitingPairScore>6</visitingPairScore>
+        </table>
+        <table tableId="3">
+            <localPlayerNameOne>MORA</localPlayerNameOne>
+            <localPlayerNameTwo>FRANCISCO</localPlayerNameTwo>
+            <localPairScore>2</localPairScore>
+            <visitingPlayerNameOne>ARIAS</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>EULOGIO</visitingPlayerNameTwo>
+            <visitingPairScore>6</visitingPairScore>
+        </table>
+        <table tableId="4">
+            <localPlayerNameOne>TRUJILLO</localPlayerNameOne>
+            <localPlayerNameTwo>SALVA</localPlayerNameTwo>
+            <localPairScore>0</localPairScore>
+            <visitingPlayerNameOne>CARLOS</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>LOLO</visitingPlayerNameTwo>
+            <visitingPairScore>6</visitingPairScore>
+        </table>
+    </match>
+    <match roundId="2" roundDate="2016-09-15" matchId="calolocatere">
+        <localTeamId>calolo</localTeamId>
+        <localTeamName>CA'LOLO</localTeamName>
+        <localTeamScore>1</localTeamScore>
+        <visitingTeamId>catere</visitingTeamId>
+        <visitingTeamName>CASA TERE</visitingTeamName>
+        <visitingTeamScore>3</visitingTeamScore>
+        <table tableId="1">
+            <localPlayerNameOne>COTE</localPlayerNameOne>
+            <localPlayerNameTwo>MANU</localPlayerNameTwo>
+            <localPairScore>6</localPairScore>
+            <visitingPlayerNameOne>JAVI</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>PUPI</visitingPlayerNameTwo>
+            <visitingPairScore>5</visitingPairScore>
+        </table>
+        <table tableId="2">
+            <localPlayerNameOne>DANI</localPlayerNameOne>
+            <localPlayerNameTwo>PARAMIO</localPlayerNameTwo>
+            <localPairScore>3</localPairScore>
+            <visitingPlayerNameOne>PEPE</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>CLETO</visitingPlayerNameTwo>
+            <visitingPairScore>6</visitingPairScore>
+        </table>
+        <table tableId="3">
+            <localPlayerNameOne>HUGO</localPlayerNameOne>
+            <localPlayerNameTwo>ELOY</localPlayerNameTwo>
+            <localPairScore>2</localPairScore>
+            <visitingPlayerNameOne>VILA</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>PICHI</visitingPlayerNameTwo>
+            <visitingPairScore>6</visitingPairScore>
+        </table>
+        <table tableId="4">
+            <localPlayerNameOne>SOPEÑA</localPlayerNameOne>
+            <localPlayerNameTwo>EDU</localPlayerNameTwo>
+            <localPairScore>5</localPairScore>
+            <visitingPlayerNameOne>BELLANCO</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>ARNIELLA</visitingPlayerNameTwo>
+            <visitingPairScore>6</visitingPairScore>
+        </table>
+    </match>
+    <match roundId="2" roundDate="2016-09-15" matchId="ccelti8villa">
+        <localTeamId>ccelti</localTeamId>
+        <localTeamName>CAFETERÍA CELTICA</localTeamName>
+        <localTeamScore>2</localTeamScore>
+        <visitingTeamId>8villa</visitingTeamId>
+        <visitingTeamName>8 VILLAS</visitingTeamName>
+        <visitingTeamScore>2</visitingTeamScore>
+        <table tableId="1">
+            <localPlayerNameOne>MAITE</localPlayerNameOne>
+            <localPlayerNameTwo>FALO</localPlayerNameTwo>
+            <localPairScore>6</localPairScore>
+            <visitingPlayerNameOne>J ENRIQUE</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>URE</visitingPlayerNameTwo>
+            <visitingPairScore>4</visitingPairScore>
+        </table>
+        <table tableId="2">
+            <localPlayerNameOne>CHININ</localPlayerNameOne>
+            <localPlayerNameTwo>CHININ  II</localPlayerNameTwo>
+            <localPairScore>5</localPairScore>
+            <visitingPlayerNameOne>NACHO</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>CHUS</visitingPlayerNameTwo>
+            <visitingPairScore>6</visitingPairScore>
+        </table>
+        <table tableId="3">
+            <localPlayerNameOne>PICHI</localPlayerNameOne>
+            <localPlayerNameTwo>BUSTO</localPlayerNameTwo>
+            <localPairScore>6</localPairScore>
+            <visitingPlayerNameOne>M JESUS</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>HUMBERTO</visitingPlayerNameTwo>
+            <visitingPairScore>3</visitingPairScore>
+        </table>
+        <table tableId="4">
+            <localPlayerNameOne>LUNA</localPlayerNameOne>
+            <localPlayerNameTwo>FELIX</localPlayerNameTwo>
+            <localPairScore>4</localPairScore>
+            <visitingPlayerNameOne>ALVARO</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>MANOLO</visitingPlayerNameTwo>
+            <visitingPairScore>6</visitingPairScore>
+        </table>
+    </match>
+    <match roundId="2" roundDate="2016-09-15" matchId="chalanrcarol">
+        <localTeamId>chalan</localTeamId>
+        <localTeamName>EL CHALANÍN</localTeamName>
+        <localTeamScore>1</localTeamScore>
+        <visitingTeamId>rcarol</visitingTeamId>
+        <visitingTeamName>RINCÓN DE CAROL</visitingTeamName>
+        <visitingTeamScore>3</visitingTeamScore>
+        <table tableId="1">
+            <localPlayerNameOne>DIEGO</localPlayerNameOne>
+            <localPlayerNameTwo>LUEJE</localPlayerNameTwo>
+            <localPairScore>6</localPairScore>
+            <visitingPlayerNameOne>DEME</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>CHUS</visitingPlayerNameTwo>
+            <visitingPairScore>1</visitingPairScore>
+        </table>
+        <table tableId="2">
+            <localPlayerNameOne>SILVI</localPlayerNameOne>
+            <localPlayerNameTwo>DANI</localPlayerNameTwo>
+            <localPairScore>5</localPairScore>
+            <visitingPlayerNameOne>ALFONSO</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>ISRA</visitingPlayerNameTwo>
+            <visitingPairScore>6</visitingPairScore>
+        </table>
+        <table tableId="3">
+            <localPlayerNameOne>DOLO</localPlayerNameOne>
+            <localPlayerNameTwo>LASTRA</localPlayerNameTwo>
+            <localPairScore>0</localPairScore>
+            <visitingPlayerNameOne>ALFREDO</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>BELLO</visitingPlayerNameTwo>
+            <visitingPairScore>6</visitingPairScore>
+        </table>
+        <table tableId="4">
+            <localPlayerNameOne>KIYO</localPlayerNameOne>
+            <localPlayerNameTwo>GORI</localPlayerNameTwo>
+            <localPairScore>4</localPairScore>
+            <visitingPlayerNameOne>ROCIO</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>JAVI</visitingPlayerNameTwo>
+            <visitingPairScore>6</visitingPairScore>
+        </table>
+    </match>
+    <match roundId="2" roundDate="2016-09-15" matchId="churrecapiol">
+        <localTeamId>churre</localTeamId>
+        <localTeamName>LA CHURRERÍA</localTeamName>
+        <localTeamScore>2</localTeamScore>
+        <visitingTeamId>capiol</visitingTeamId>
+        <visitingTeamName>PIOL</visitingTeamName>
+        <visitingTeamScore>2</visitingTeamScore>
+        <table tableId="1">
+            <localPlayerNameOne>JAVI</localPlayerNameOne>
+            <localPlayerNameTwo>PACO</localPlayerNameTwo>
+            <localPairScore>6</localPairScore>
+            <visitingPlayerNameOne>FELIX</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>PILUCA</visitingPlayerNameTwo>
+            <visitingPairScore>1</visitingPairScore>
+        </table>
+        <table tableId="2">
+            <localPlayerNameOne>RAMON</localPlayerNameOne>
+            <localPlayerNameTwo>VIERO</localPlayerNameTwo>
+            <localPairScore>6</localPairScore>
+            <visitingPlayerNameOne>PILI</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>AZU</visitingPlayerNameTwo>
+            <visitingPairScore>3</visitingPairScore>
+        </table>
+        <table tableId="3">
+            <localPlayerNameOne>AZA</localPlayerNameOne>
+            <localPlayerNameTwo>JOSE</localPlayerNameTwo>
+            <localPairScore>5</localPairScore>
+            <visitingPlayerNameOne>CARMEN</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>PEPE</visitingPlayerNameTwo>
+            <visitingPairScore>6</visitingPairScore>
+        </table>
+        <table tableId="4">
+            <localPlayerNameOne>DIONI</localPlayerNameOne>
+            <localPlayerNameTwo>LUIS</localPlayerNameTwo>
+            <localPairScore>3</localPairScore>
+            <visitingPlayerNameOne>ANTONIO</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>NINO</visitingPlayerNameTwo>
+            <visitingPairScore>6</visitingPairScore>
+        </table>
+    </match>
+    <match roundId="2" roundDate="2016-09-15" matchId="cvalsaandrea">
+        <localTeamId>cvalsa</localTeamId>
+        <localTeamName>CAFETERÍA VALSA</localTeamName>
+        <localTeamScore>2</localTeamScore>
+        <visitingTeamId>andrea</visitingTeamId>
+        <visitingTeamName>ANDREA</visitingTeamName>
+        <visitingTeamScore>2</visitingTeamScore>
+        <table tableId="1">
+            <localPlayerNameOne>PARAMIO</localPlayerNameOne>
+            <localPlayerNameTwo>JOSE</localPlayerNameTwo>
+            <localPairScore>3</localPairScore>
+            <visitingPlayerNameOne>DANI</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>ISMA</visitingPlayerNameTwo>
+            <visitingPairScore>6</visitingPairScore>
+        </table>
+        <table tableId="2">
+            <localPlayerNameOne>MURAS</localPlayerNameOne>
+            <localPlayerNameTwo>PEREZ</localPlayerNameTwo>
+            <localPairScore>6</localPairScore>
+            <visitingPlayerNameOne>DELMI</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>FERRE</visitingPlayerNameTwo>
+            <visitingPairScore>4</visitingPairScore>
+        </table>
+        <table tableId="3">
+            <localPlayerNameOne>GABY</localPlayerNameOne>
+            <localPlayerNameTwo>CAMPANA</localPlayerNameTwo>
+            <localPairScore>4</localPairScore>
+            <visitingPlayerNameOne>TINO</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>JUAN</visitingPlayerNameTwo>
+            <visitingPairScore>6</visitingPairScore>
+        </table>
+        <table tableId="4">
+            <localPlayerNameOne>IÑAKI</localPlayerNameOne>
+            <localPlayerNameTwo>BENI</localPlayerNameTwo>
+            <localPairScore>6</localPairScore>
+            <visitingPlayerNameOne>KIKE</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>OCTAVIO</visitingPlayerNameTwo>
+            <visitingPairScore>4</visitingPairScore>
+        </table>
+    </match>
+    <match roundId="2" roundDate="2016-09-15" matchId="monchibcarba">
+        <localTeamId>monchi</localTeamId>
+        <localTeamName>MONCHI</localTeamName>
+        <localTeamScore>0</localTeamScore>
+        <visitingTeamId>bcarba</visitingTeamId>
+        <visitingTeamName>BAR CARBAYEDO</visitingTeamName>
+        <visitingTeamScore>4</visitingTeamScore>
+        <table tableId="1">
+            <localPlayerNameOne>MONCHI</localPlayerNameOne>
+            <localPlayerNameTwo>FONSO</localPlayerNameTwo>
+            <localPairScore>2</localPairScore>
+            <visitingPlayerNameOne>TOÑO</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>JAVI</visitingPlayerNameTwo>
+            <visitingPairScore>6</visitingPairScore>
+        </table>
+        <table tableId="2">
+            <localPlayerNameOne>RABADAN</localPlayerNameOne>
+            <localPlayerNameTwo>BERNARDO</localPlayerNameTwo>
+            <localPairScore>4</localPairScore>
+            <visitingPlayerNameOne>XAVI</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>MIGUEL</visitingPlayerNameTwo>
+            <visitingPairScore>6</visitingPairScore>
+        </table>
+        <table tableId="3">
+            <localPlayerNameOne>VALENTÍN</localPlayerNameOne>
+            <localPlayerNameTwo>MATEOS</localPlayerNameTwo>
+            <localPairScore>3</localPairScore>
+            <visitingPlayerNameOne>CHUS</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>JOSÉ LUIS</visitingPlayerNameTwo>
+            <visitingPairScore>6</visitingPairScore>
+        </table>
+        <table tableId="4">
+            <localPlayerNameOne>JUANJO</localPlayerNameOne>
+            <localPlayerNameTwo>DAVID</localPlayerNameTwo>
+            <localPairScore>2</localPairScore>
+            <visitingPlayerNameOne>LUIS</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>ABLANEDO</visitingPlayerNameTwo>
+            <visitingPairScore>6</visitingPairScore>
+        </table>
+    </match>
+    <match roundId="2" roundDate="2016-09-15" matchId="picosacebano">
+        <localTeamId>picosa</localTeamId>
+        <localTeamName>LA PICOSA</localTeamName>
+        <localTeamScore>1</localTeamScore>
+        <visitingTeamId>cebano</visitingTeamId>
+        <visitingTeamName>ÉBANO</visitingTeamName>
+        <visitingTeamScore>3</visitingTeamScore>
+        <table tableId="1">
+            <localPlayerNameOne>PITI</localPlayerNameOne>
+            <localPlayerNameTwo>ANIA</localPlayerNameTwo>
+            <localPairScore>6</localPairScore>
+            <visitingPlayerNameOne>NICO</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>CARLON</visitingPlayerNameTwo>
+            <visitingPairScore>4</visitingPairScore>
+        </table>
+        <table tableId="2">
+            <localPlayerNameOne>CARLOS</localPlayerNameOne>
+            <localPlayerNameTwo>CHORI</localPlayerNameTwo>
+            <localPairScore>3</localPairScore>
+            <visitingPlayerNameOne>FIAN</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>LUIS</visitingPlayerNameTwo>
+            <visitingPairScore>6</visitingPairScore>
+        </table>
+        <table tableId="3">
+            <localPlayerNameOne>CHUS</localPlayerNameOne>
+            <localPlayerNameTwo>GELO</localPlayerNameTwo>
+            <localPairScore>1</localPairScore>
+            <visitingPlayerNameOne>TINO</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>BARREIROS</visitingPlayerNameTwo>
+            <visitingPairScore>6</visitingPairScore>
+        </table>
+        <table tableId="4">
+            <localPlayerNameOne>KIKE</localPlayerNameOne>
+            <localPlayerNameTwo>DAMIAN</localPlayerNameTwo>
+            <localPairScore>3</localPairScore>
+            <visitingPlayerNameOne>TOÑO</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>MUÑIZ</visitingPlayerNameTwo>
+            <visitingPairScore>6</visitingPairScore>
+        </table>
+    </match>
+    <match roundId="2" roundDate="2016-09-15" matchId="sagkamvalmus">
+        <localTeamId>sagkam</localTeamId>
+        <localTeamName>S. AG.-KAME.NET</localTeamName>
+        <localTeamScore>4</localTeamScore>
+        <visitingTeamId>valmus</visitingTeamId>
+        <visitingTeamName>VALSA MUS</visitingTeamName>
+        <visitingTeamScore>0</visitingTeamScore>
+        <table tableId="1">
+            <localPlayerNameOne>ANGEL</localPlayerNameOne>
+            <localPlayerNameTwo>MARCO</localPlayerNameTwo>
+            <localPairScore>6</localPairScore>
+            <visitingPlayerNameOne>JOSÉ LUIS</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>JULIO</visitingPlayerNameTwo>
+            <visitingPairScore>5</visitingPairScore>
+        </table>
+        <table tableId="2">
+            <localPlayerNameOne>MENOTY</localPlayerNameOne>
+            <localPlayerNameTwo>ALFONSO</localPlayerNameTwo>
+            <localPairScore>6</localPairScore>
+            <visitingPlayerNameOne>ITO</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>PABLO</visitingPlayerNameTwo>
+            <visitingPairScore>1</visitingPairScore>
+        </table>
+        <table tableId="3">
+            <localPlayerNameOne>GAYOL</localPlayerNameOne>
+            <localPlayerNameTwo>PINTO</localPlayerNameTwo>
+            <localPairScore>6</localPairScore>
+            <visitingPlayerNameOne>ROBER</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>FELIPE</visitingPlayerNameTwo>
+            <visitingPairScore>2</visitingPairScore>
+        </table>
+        <table tableId="4">
+            <localPlayerNameOne>ISIDRO</localPlayerNameOne>
+            <localPlayerNameTwo>JUANI</localPlayerNameTwo>
+            <localPairScore>6</localPairScore>
+            <visitingPlayerNameOne>JAVI</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>TANO</visitingPlayerNameTwo>
+            <visitingPairScore>4</visitingPairScore>
+        </table>
+    </match>
+    <match roundId="2" roundDate="2016-09-15" matchId="sagribsagcel">
+        <localTeamId>sagrib</localTeamId>
+        <localTeamName>S. AG.-RÍAS BAIXAS</localTeamName>
+        <localTeamScore>1</localTeamScore>
+        <visitingTeamId>sagcel</visitingTeamId>
+        <visitingTeamName>S. AG.-CÉLTICA</visitingTeamName>
+        <visitingTeamScore>3</visitingTeamScore>
+        <table tableId="1">
+            <localPlayerNameOne>COLLADO</localPlayerNameOne>
+            <localPlayerNameTwo>ALVARO</localPlayerNameTwo>
+            <localPairScore>4</localPairScore>
+            <visitingPlayerNameOne>TRIKI</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>ANDRES</visitingPlayerNameTwo>
+            <visitingPairScore>6</visitingPairScore>
+        </table>
+        <table tableId="2">
+            <localPlayerNameOne>GERARDO</localPlayerNameOne>
+            <localPlayerNameTwo>FRAN</localPlayerNameTwo>
+            <localPairScore>6</localPairScore>
+            <visitingPlayerNameOne>SONIA</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>JOSE</visitingPlayerNameTwo>
+            <visitingPairScore>2</visitingPairScore>
+        </table>
+        <table tableId="3">
+            <localPlayerNameOne>ARTURO</localPlayerNameOne>
+            <localPlayerNameTwo>TONI</localPlayerNameTwo>
+            <localPairScore>5</localPairScore>
+            <visitingPlayerNameOne>IÑAKI</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>MARIAN</visitingPlayerNameTwo>
+            <visitingPairScore>6</visitingPairScore>
+        </table>
+        <table tableId="4">
+            <localPlayerNameOne>CHEMI</localPlayerNameOne>
+            <localPlayerNameTwo>VITI</localPlayerNameTwo>
+            <localPairScore>5</localPairScore>
+            <visitingPlayerNameOne>CHEMA</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>MANU</visitingPlayerNameTwo>
+            <visitingPairScore>6</visitingPairScore>
+        </table>
+    </match>
+    <match roundId="3" roundDate="2016-09-19" matchId="8villacalolo">
+        <localTeamId>8villa</localTeamId>
+        <localTeamName>8 VILLAS</localTeamName>
+        <localTeamScore>3</localTeamScore>
+        <visitingTeamId>calolo</visitingTeamId>
+        <visitingTeamName>CA'LOLO</visitingTeamName>
+        <visitingTeamScore>1</visitingTeamScore>
+        <table tableId="1">
+            <localPlayerNameOne>AURE</localPlayerNameOne>
+            <localPlayerNameTwo>KIKE</localPlayerNameTwo>
+            <localPairScore>3</localPairScore>
+            <visitingPlayerNameOne>DANI</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>MARCOS</visitingPlayerNameTwo>
+            <visitingPairScore>6</visitingPairScore>
+        </table>
+        <table tableId="2">
+            <localPlayerNameOne>M JESUS</localPlayerNameOne>
+            <localPlayerNameTwo>CHICO</localPlayerNameTwo>
+            <localPairScore>6</localPairScore>
+            <visitingPlayerNameOne>MANU</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>COTE</visitingPlayerNameTwo>
+            <visitingPairScore>3</visitingPairScore>
+        </table>
+        <table tableId="3">
+            <localPlayerNameOne>NACHO</localPlayerNameOne>
+            <localPlayerNameTwo>MOSCALIN</localPlayerNameTwo>
+            <localPairScore>6</localPairScore>
+            <visitingPlayerNameOne>SOPEÑA</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>HUGO</visitingPlayerNameTwo>
+            <visitingPairScore>4</visitingPairScore>
+        </table>
+        <table tableId="4">
+            <localPlayerNameOne>ALVARO</localPlayerNameOne>
+            <localPlayerNameTwo>HUMBERTO</localPlayerNameTwo>
+            <localPairScore>6</localPairScore>
+            <visitingPlayerNameOne>ISIDORO</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>PARAMIO</visitingPlayerNameTwo>
+            <visitingPairScore>4</visitingPairScore>
+        </table>
+    </match>
+    <match roundId="3" roundDate="2016-09-19" matchId="acveigsagrib">
+        <localTeamId>acveig</localTeamId>
+        <localTeamName>AC VEIGA</localTeamName>
+        <localTeamScore>1</localTeamScore>
+        <visitingTeamId>sagrib</visitingTeamId>
+        <visitingTeamName>S. AG.-RÍAS BAIXAS</visitingTeamName>
+        <visitingTeamScore>3</visitingTeamScore>
+        <table tableId="1">
+            <localPlayerNameOne>MILLAN</localPlayerNameOne>
+            <localPlayerNameTwo>GUTI</localPlayerNameTwo>
+            <localPairScore>6</localPairScore>
+            <visitingPlayerNameOne>TONI</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>ARTURO</visitingPlayerNameTwo>
+            <visitingPairScore>3</visitingPairScore>
+        </table>
+        <table tableId="2">
+            <localPlayerNameOne>ZURDO</localPlayerNameOne>
+            <localPlayerNameTwo>HERRERO</localPlayerNameTwo>
+            <localPairScore>5</localPairScore>
+            <visitingPlayerNameOne>COLLADO</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>ALVARO</visitingPlayerNameTwo>
+            <visitingPairScore>6</visitingPairScore>
+        </table>
+        <table tableId="3">
+            <localPlayerNameOne>ZICO</localPlayerNameOne>
+            <localPlayerNameTwo>SARRY</localPlayerNameTwo>
+            <localPairScore>1</localPairScore>
+            <visitingPlayerNameOne>CHEMI</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>VITI</visitingPlayerNameTwo>
+            <visitingPairScore>6</visitingPairScore>
+        </table>
+        <table tableId="4">
+            <localPlayerNameOne>TINO</localPlayerNameOne>
+            <localPlayerNameTwo>ELOY</localPlayerNameTwo>
+            <localPairScore>4</localPairScore>
+            <visitingPlayerNameOne>GERARDO</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>FRAN</visitingPlayerNameTwo>
+            <visitingPairScore>6</visitingPairScore>
+        </table>
+    </match>
+    <match roundId="3" roundDate="2016-09-19" matchId="andreaccelti">
+        <localTeamId>andrea</localTeamId>
+        <localTeamName>ANDREA</localTeamName>
+        <localTeamScore>1</localTeamScore>
+        <visitingTeamId>ccelti</visitingTeamId>
+        <visitingTeamName>CAFETERÍA CELTICA</visitingTeamName>
+        <visitingTeamScore>3</visitingTeamScore>
+        <table tableId="1">
+            <localPlayerNameOne>DANI</localPlayerNameOne>
+            <localPlayerNameTwo>ISMA</localPlayerNameTwo>
+            <localPairScore>2</localPairScore>
+            <visitingPlayerNameOne>PICHINA</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>BUSTO</visitingPlayerNameTwo>
+            <visitingPairScore>6</visitingPairScore>
+        </table>
+        <table tableId="2">
+            <localPlayerNameOne>KIKE</localPlayerNameOne>
+            <localPlayerNameTwo>FERRE</localPlayerNameTwo>
+            <localPairScore>6</localPairScore>
+            <visitingPlayerNameOne>LUNA</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>ZELUAN</visitingPlayerNameTwo>
+            <visitingPairScore>3</visitingPairScore>
+        </table>
+        <table tableId="3">
+            <localPlayerNameOne>LITRI</localPlayerNameOne>
+            <localPlayerNameTwo>OCTAVIO</localPlayerNameTwo>
+            <localPairScore>4</localPairScore>
+            <visitingPlayerNameOne>CHININ</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>CHININ II</visitingPlayerNameTwo>
+            <visitingPairScore>6</visitingPairScore>
+        </table>
+        <table tableId="4">
+            <localPlayerNameOne>TINO</localPlayerNameOne>
+            <localPlayerNameTwo>JUAN</localPlayerNameTwo>
+            <localPairScore>0</localPairScore>
+            <visitingPlayerNameOne>MAITE</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>FALO</visitingPlayerNameTwo>
+            <visitingPairScore>6</visitingPairScore>
+        </table>
+    </match>
+    <match roundId="3" roundDate="2016-09-19" matchId="bcampychurre">
+        <localTeamId>bcampy</localTeamId>
+        <localTeamName>BAR CAMPY</localTeamName>
+        <localTeamScore>3</localTeamScore>
+        <visitingTeamId>churre</visitingTeamId>
+        <visitingTeamName>LA CHURRERÍA</visitingTeamName>
+        <visitingTeamScore>1</visitingTeamScore>
+        <table tableId="1">
+            <localPlayerNameOne>LLORENTE</localPlayerNameOne>
+            <localPlayerNameTwo>ANTONIO</localPlayerNameTwo>
+            <localPairScore>6</localPairScore>
+            <visitingPlayerNameOne>JUAN</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>JAVI</visitingPlayerNameTwo>
+            <visitingPairScore>3</visitingPairScore>
+        </table>
+        <table tableId="2">
+            <localPlayerNameOne>PEPE</localPlayerNameOne>
+            <localPlayerNameTwo>JULIAN</localPlayerNameTwo>
+            <localPairScore>6</localPairScore>
+            <visitingPlayerNameOne>AZA</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>LUIS</visitingPlayerNameTwo>
+            <visitingPairScore>5</visitingPairScore>
+        </table>
+        <table tableId="3">
+            <localPlayerNameOne>PACO</localPlayerNameOne>
+            <localPlayerNameTwo>YIMI</localPlayerNameTwo>
+            <localPairScore>4</localPairScore>
+            <visitingPlayerNameOne>JANO</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>JOSE</visitingPlayerNameTwo>
+            <visitingPairScore>6</visitingPairScore>
+        </table>
+        <table tableId="4">
+            <localPlayerNameOne>J CARLOS</localPlayerNameOne>
+            <localPlayerNameTwo>RUBIO</localPlayerNameTwo>
+            <localPairScore>6</localPairScore>
+            <visitingPlayerNameOne>JAVIER</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>RAMON</visitingPlayerNameTwo>
+            <visitingPairScore>3</visitingPairScore>
+        </table>
+    </match>
+    <match roundId="3" roundDate="2016-09-19" matchId="bcarbacvalsa">
+        <localTeamId>bcarba</localTeamId>
+        <localTeamName>BAR CARBAYEDO</localTeamName>
+        <localTeamScore>3</localTeamScore>
+        <visitingTeamId>cvalsa</visitingTeamId>
+        <visitingTeamName>CAFETERÍA VALSA</visitingTeamName>
+        <visitingTeamScore>1</visitingTeamScore>
+        <table tableId="1">
+            <localPlayerNameOne>CHE</localPlayerNameOne>
+            <localPlayerNameTwo>HOMERO</localPlayerNameTwo>
+            <localPairScore>4</localPairScore>
+            <visitingPlayerNameOne>GABY</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>CAMPANA</visitingPlayerNameTwo>
+            <visitingPairScore>6</visitingPairScore>
+        </table>
+        <table tableId="2">
+            <localPlayerNameOne>TOÑO</localPlayerNameOne>
+            <localPlayerNameTwo>JAVI</localPlayerNameTwo>
+            <localPairScore>6</localPairScore>
+            <visitingPlayerNameOne>LUIS</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>PEREZ</visitingPlayerNameTwo>
+            <visitingPairScore>5</visitingPairScore>
+        </table>
+        <table tableId="3">
+            <localPlayerNameOne>LUIGI</localPlayerNameOne>
+            <localPlayerNameTwo>ABLANEDO</localPlayerNameTwo>
+            <localPairScore>6</localPairScore>
+            <visitingPlayerNameOne>JENARO</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>NACHO</visitingPlayerNameTwo>
+            <visitingPairScore>5</visitingPairScore>
+        </table>
+        <table tableId="4">
+            <localPlayerNameOne>CHUS</localPlayerNameOne>
+            <localPlayerNameTwo>JOSE LUIS</localPlayerNameTwo>
+            <localPairScore>6</localPairScore>
+            <visitingPlayerNameOne>MARCOS</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>FERNANDO</visitingPlayerNameTwo>
+            <visitingPairScore>0</visitingPairScore>
+        </table>
+    </match>
+    <match roundId="3" roundDate="2016-09-19" matchId="brenyaalbora">
+        <localTeamId>brenya</localTeamId>
+        <localTeamName>LA BREÑA</localTeamName>
+        <localTeamScore>2</localTeamScore>
+        <visitingTeamId>albora</visitingTeamId>
+        <visitingTeamName>ALBORADA</visitingTeamName>
+        <visitingTeamScore>2</visitingTeamScore>
+        <table tableId="1">
+            <localPlayerNameOne>VIGIL</localPlayerNameOne>
+            <localPlayerNameTwo>ZANCAS</localPlayerNameTwo>
+            <localPairScore>5</localPairScore>
+            <visitingPlayerNameOne>OMAR</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>CALVETE</visitingPlayerNameTwo>
+            <visitingPairScore>6</visitingPairScore>
+        </table>
+        <table tableId="2">
+            <localPlayerNameOne>BERTO</localPlayerNameOne>
+            <localPlayerNameTwo>TRUJILLO</localPlayerNameTwo>
+            <localPairScore>5</localPairScore>
+            <visitingPlayerNameOne>GUELO</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>JOSE</visitingPlayerNameTwo>
+            <visitingPairScore>6</visitingPairScore>
+        </table>
+        <table tableId="3">
+            <localPlayerNameOne>SALVA</localPlayerNameOne>
+            <localPlayerNameTwo>SERA</localPlayerNameTwo>
+            <localPairScore>6</localPairScore>
+            <visitingPlayerNameOne>LUIS</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>FALO</visitingPlayerNameTwo>
+            <visitingPairScore>3</visitingPairScore>
+        </table>
+        <table tableId="4">
+            <localPlayerNameOne>FRANCISCO</localPlayerNameOne>
+            <localPlayerNameTwo>VAQUERO II</localPlayerNameTwo>
+            <localPairScore>6</localPairScore>
+            <visitingPlayerNameOne>GAN</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>GELO</visitingPlayerNameTwo>
+            <visitingPairScore>2</visitingPairScore>
+        </table>
+    </match>
+    <match roundId="3" roundDate="2016-09-19" matchId="bxareuhabana">
+        <localTeamId>bxareu</localTeamId>
+        <localTeamName>XAREU</localTeamName>
+        <localTeamScore>3</localTeamScore>
+        <visitingTeamId>habana</visitingTeamId>
+        <visitingTeamName>HABANA</visitingTeamName>
+        <visitingTeamScore>1</visitingTeamScore>
+        <table tableId="1">
+            <localPlayerNameOne>ROSA</localPlayerNameOne>
+            <localPlayerNameTwo>BAO</localPlayerNameTwo>
+            <localPairScore>6</localPairScore>
+            <visitingPlayerNameOne>SIXTO</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>JUANJO</visitingPlayerNameTwo>
+            <visitingPairScore>1</visitingPairScore>
+        </table>
+        <table tableId="2">
+            <localPlayerNameOne>ARIAS</localPlayerNameOne>
+            <localPlayerNameTwo>EULOGIO</localPlayerNameTwo>
+            <localPairScore>6</localPairScore>
+            <visitingPlayerNameOne>MARGA</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>PESTONI</visitingPlayerNameTwo>
+            <visitingPairScore>3</visitingPairScore>
+        </table>
+        <table tableId="3">
+            <localPlayerNameOne>NANDO</localPlayerNameOne>
+            <localPlayerNameTwo>GASPAR</localPlayerNameTwo>
+            <localPairScore>6</localPairScore>
+            <visitingPlayerNameOne>PANA</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>PANAKAS</visitingPlayerNameTwo>
+            <visitingPairScore>5</visitingPairScore>
+        </table>
+        <table tableId="4">
+            <localPlayerNameOne>LOLO</localPlayerNameOne>
+            <localPlayerNameTwo>MARAVILLAS</localPlayerNameTwo>
+            <localPairScore>5</localPairScore>
+            <visitingPlayerNameOne>JOSE</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>MANOLO</visitingPlayerNameTwo>
+            <visitingPairScore>6</visitingPairScore>
+        </table>
+    </match>
+    <match roundId="3" roundDate="2016-09-19" matchId="capiol4vient">
+        <localTeamId>capiol</localTeamId>
+        <localTeamName>PIOL</localTeamName>
+        <localTeamScore>1</localTeamScore>
+        <visitingTeamId>4vient</visitingTeamId>
+        <visitingTeamName>LOS 4 VIENTOS</visitingTeamName>
+        <visitingTeamScore>3</visitingTeamScore>
+        <table tableId="1">
+            <localPlayerNameOne>NINO</localPlayerNameOne>
+            <localPlayerNameTwo>ANTONIO</localPlayerNameTwo>
+            <localPairScore>5</localPairScore>
+            <visitingPlayerNameOne>PRIETO</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>VALLEDOR</visitingPlayerNameTwo>
+            <visitingPairScore>6</visitingPairScore>
+        </table>
+        <table tableId="2">
+            <localPlayerNameOne>OVIES</localPlayerNameOne>
+            <localPlayerNameTwo>ORTIZ</localPlayerNameTwo>
+            <localPairScore>3</localPairScore>
+            <visitingPlayerNameOne>PERFE</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>GARRIDO</visitingPlayerNameTwo>
+            <visitingPairScore>6</visitingPairScore>
+        </table>
+        <table tableId="3">
+            <localPlayerNameOne>AZU</localPlayerNameOne>
+            <localPlayerNameTwo>PILI</localPlayerNameTwo>
+            <localPairScore>5</localPairScore>
+            <visitingPlayerNameOne>KIRIKI</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>ANTONIO</visitingPlayerNameTwo>
+            <visitingPairScore>6</visitingPairScore>
+        </table>
+        <table tableId="4">
+            <localPlayerNameOne>FELIX</localPlayerNameOne>
+            <localPlayerNameTwo>PILUCA</localPlayerNameTwo>
+            <localPairScore>6</localPairScore>
+            <visitingPlayerNameOne>CARLOTO</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>RAMON</visitingPlayerNameTwo>
+            <visitingPairScore>5</visitingPairScore>
+        </table>
+    </match>
+    <match roundId="3" roundDate="2016-09-19" matchId="caterebarena">
+        <localTeamId>catere</localTeamId>
+        <localTeamName>CASA TERE</localTeamName>
+        <localTeamScore>4</localTeamScore>
+        <visitingTeamId>barena</visitingTeamId>
+        <visitingTeamName>BAR LA ARENA</visitingTeamName>
+        <visitingTeamScore>0</visitingTeamScore>
+        <table tableId="1">
+            <localPlayerNameOne></localPlayerNameOne>
+            <localPlayerNameTwo></localPlayerNameTwo>
+            <localPairScore>6</localPairScore>
+            <visitingPlayerNameOne>OMAR</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>TURBO</visitingPlayerNameTwo>
+            <visitingPairScore>4</visitingPairScore>
+        </table>
+        <table tableId="2">
+            <localPlayerNameOne></localPlayerNameOne>
+            <localPlayerNameTwo></localPlayerNameTwo>
+            <localPairScore>6</localPairScore>
+            <visitingPlayerNameOne>FELIPE</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>JOACO</visitingPlayerNameTwo>
+            <visitingPairScore>3</visitingPairScore>
+        </table>
+        <table tableId="3">
+            <localPlayerNameOne></localPlayerNameOne>
+            <localPlayerNameTwo></localPlayerNameTwo>
+            <localPairScore>6</localPairScore>
+            <visitingPlayerNameOne>RODRIGO</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>LUIS</visitingPlayerNameTwo>
+            <visitingPairScore>4</visitingPairScore>
+        </table>
+        <table tableId="4">
+            <localPlayerNameOne></localPlayerNameOne>
+            <localPlayerNameTwo></localPlayerNameTwo>
+            <localPairScore>6</localPairScore>
+            <visitingPlayerNameOne>PEPE</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>JUAN</visitingPlayerNameTwo>
+            <visitingPairScore>5</visitingPairScore>
+        </table>
+    </match>
+    <match roundId="3" roundDate="2016-09-19" matchId="cgermamonchi">
+        <localTeamId>cgerma</localTeamId>
+        <localTeamName>CASA GERMÁN</localTeamName>
+        <localTeamScore>4</localTeamScore>
+        <visitingTeamId>monchi</visitingTeamId>
+        <visitingTeamName>MONCHI</visitingTeamName>
+        <visitingTeamScore>0</visitingTeamScore>
+        <table tableId="1">
+            <localPlayerNameOne>ALLENDE</localPlayerNameOne>
+            <localPlayerNameTwo>FANDI</localPlayerNameTwo>
+            <localPairScore>6</localPairScore>
+            <visitingPlayerNameOne>RABADAN</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>BERNARDO</visitingPlayerNameTwo>
+            <visitingPairScore>5</visitingPairScore>
+        </table>
+        <table tableId="2">
+            <localPlayerNameOne>JUAN</localPlayerNameOne>
+            <localPlayerNameTwo>KIKE</localPlayerNameTwo>
+            <localPairScore>6</localPairScore>
+            <visitingPlayerNameOne>MONCHI</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>JOTI</visitingPlayerNameTwo>
+            <visitingPairScore>2</visitingPairScore>
+        </table>
+        <table tableId="3">
+            <localPlayerNameOne>ESPINA</localPlayerNameOne>
+            <localPlayerNameTwo>TOÑO</localPlayerNameTwo>
+            <localPairScore>6</localPairScore>
+            <visitingPlayerNameOne>DAVID</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>ILDEFONSO</visitingPlayerNameTwo>
+            <visitingPairScore>1</visitingPairScore>
+        </table>
+        <table tableId="4">
+            <localPlayerNameOne>MORAN</localPlayerNameOne>
+            <localPlayerNameTwo>VIÑA</localPlayerNameTwo>
+            <localPairScore>6</localPairScore>
+            <visitingPlayerNameOne>PEPE</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>GAGO</visitingPlayerNameTwo>
+            <visitingPairScore>3</visitingPairScore>
+        </table>
+    </match>
+    <match roundId="3" roundDate="2016-09-19" matchId="rcarolpicosa">
+        <localTeamId>rcarol</localTeamId>
+        <localTeamName>RINCÓN DE CAROL</localTeamName>
+        <localTeamScore>2</localTeamScore>
+        <visitingTeamId>picosa</visitingTeamId>
+        <visitingTeamName>LA PICOSA</visitingTeamName>
+        <visitingTeamScore>2</visitingTeamScore>
+        <table tableId="1">
+            <localPlayerNameOne>ALFONSO</localPlayerNameOne>
+            <localPlayerNameTwo>GABI</localPlayerNameTwo>
+            <localPairScore>6</localPairScore>
+            <visitingPlayerNameOne>DAMIAN</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>KIKE</visitingPlayerNameTwo>
+            <visitingPairScore>4</visitingPairScore>
+        </table>
+        <table tableId="2">
+            <localPlayerNameOne>JOSE MIGUEL</localPlayerNameOne>
+            <localPlayerNameTwo>ISRA</localPlayerNameTwo>
+            <localPairScore>5</localPairScore>
+            <visitingPlayerNameOne>GELO</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>CARLINOS</visitingPlayerNameTwo>
+            <visitingPairScore>6</visitingPairScore>
+        </table>
+        <table tableId="3">
+            <localPlayerNameOne>TEO</localPlayerNameOne>
+            <localPlayerNameTwo>CHEMA</localPlayerNameTwo>
+            <localPairScore>3</localPairScore>
+            <visitingPlayerNameOne>PACO</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>JOSE</visitingPlayerNameTwo>
+            <visitingPairScore>6</visitingPairScore>
+        </table>
+        <table tableId="4">
+            <localPlayerNameOne>ALFREDO</localPlayerNameOne>
+            <localPlayerNameTwo>BELLO</localPlayerNameTwo>
+            <localPairScore>6</localPairScore>
+            <visitingPlayerNameOne>CHUS</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>ARSENIO</visitingPlayerNameTwo>
+            <visitingPairScore>4</visitingPairScore>
+        </table>
+    </match>
+    <match roundId="3" roundDate="2016-09-19" matchId="sagcelsagkam">
+        <localTeamId>sagcel</localTeamId>
+        <localTeamName>S. AG.-CÉLTICA</localTeamName>
+        <localTeamScore>1</localTeamScore>
+        <visitingTeamId>sagkam</visitingTeamId>
+        <visitingTeamName>S. AG.-KAME.NET</visitingTeamName>
+        <visitingTeamScore>3</visitingTeamScore>
+        <table tableId="1">
+            <localPlayerNameOne>IÑAKI</localPlayerNameOne>
+            <localPlayerNameTwo>JAVI</localPlayerNameTwo>
+            <localPairScore>4</localPairScore>
+            <visitingPlayerNameOne>PINTO</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>GAYOL</visitingPlayerNameTwo>
+            <visitingPairScore>6</visitingPairScore>
+        </table>
+        <table tableId="2">
+            <localPlayerNameOne>TRIKI</localPlayerNameOne>
+            <localPlayerNameTwo>ANDRES</localPlayerNameTwo>
+            <localPairScore>3</localPairScore>
+            <visitingPlayerNameOne>ROBERTO</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>LUIS PRIETO</visitingPlayerNameTwo>
+            <visitingPairScore>6</visitingPairScore>
+        </table>
+        <table tableId="3">
+            <localPlayerNameOne>SONIA</localPlayerNameOne>
+            <localPlayerNameTwo>JOSE</localPlayerNameTwo>
+            <localPairScore>3</localPairScore>
+            <visitingPlayerNameOne>ISIDRO</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>JUANI</visitingPlayerNameTwo>
+            <visitingPairScore>6</visitingPairScore>
+        </table>
+        <table tableId="4">
+            <localPlayerNameOne>CHEMA</localPlayerNameOne>
+            <localPlayerNameTwo>MANU</localPlayerNameTwo>
+            <localPairScore>6</localPairScore>
+            <visitingPlayerNameOne>ANGEL</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>MENOTI</visitingPlayerNameTwo>
+            <visitingPairScore>4</visitingPairScore>
+        </table>
+    </match>
+    <match roundId="3" roundDate="2016-09-19" matchId="valmuschalan">
+        <localTeamId>valmus</localTeamId>
+        <localTeamName>VALSA MUS</localTeamName>
+        <localTeamScore>4</localTeamScore>
+        <visitingTeamId>chalan</visitingTeamId>
+        <visitingTeamName>EL CHALANÍN</visitingTeamName>
+        <visitingTeamScore>0</visitingTeamScore>
+        <table tableId="1">
+            <localPlayerNameOne>JOSE LUIS</localPlayerNameOne>
+            <localPlayerNameTwo>MEDINA</localPlayerNameTwo>
+            <localPairScore>6</localPairScore>
+            <visitingPlayerNameOne>KILLO</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>GORI</visitingPlayerNameTwo>
+            <visitingPairScore>4</visitingPairScore>
+        </table>
+        <table tableId="2">
+            <localPlayerNameOne>ITO</localPlayerNameOne>
+            <localPlayerNameTwo>PABLO</localPlayerNameTwo>
+            <localPairScore>6</localPairScore>
+            <visitingPlayerNameOne>YOLI</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>CHEMA</visitingPlayerNameTwo>
+            <visitingPairScore>1</visitingPairScore>
+        </table>
+        <table tableId="3">
+            <localPlayerNameOne>JANDRO</localPlayerNameOne>
+            <localPlayerNameTwo>FERNANDO</localPlayerNameTwo>
+            <localPairScore>6</localPairScore>
+            <visitingPlayerNameOne>LUIS C</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>DIEGO</visitingPlayerNameTwo>
+            <visitingPairScore>1</visitingPairScore>
+        </table>
+        <table tableId="4">
+            <localPlayerNameOne>FELIPE</localPlayerNameOne>
+            <localPlayerNameTwo>JAVI</localPlayerNameTwo>
+            <localPairScore>6</localPairScore>
+            <visitingPlayerNameOne>SILVI</visitingPlayerNameOne>
+            <visitingPlayerNameTwo>DANI</visitingPlayerNameTwo>
+            <visitingPairScore>2</visitingPairScore>
+        </table>
+    </match>
+</season>

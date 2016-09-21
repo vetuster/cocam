@@ -2,7 +2,7 @@ COM;1;temporada;tipo liga;número jornada;fecha jornada;is Match;id peña local;pe
 INF;2;2016/17;REG;1;12/09/2016;true;bcarba;BAR CARBAYEDO ;3;1;cgerma;CASA GERMÁN;1;CHE;HOMERO;6;4;TOÑO;ESPINA;;;;;;;;;
 INF;3;2016/17;REG;1;12/09/2016;false;bcarba;BAR CARBAYEDO ;3;1;cgerma;CASA GERMÁN;2;JAVI;TOÑO;6;2;VIÑA ;MORAN;;;;;;;;;
 INF;4;2016/17;REG;1;12/09/2016;false;bcarba;BAR CARBAYEDO ;3;1;cgerma;CASA GERMÁN;3;LUIGI;ABLANEDO;6;2;GABI;JOAQUIN;;;;;;;;;
-INF;5;2016/17;REG;1;12/09/2016;false;bcarba;BAR CARBAYEDO ;3;1;cgerma;CASA GERMÁN;4;CHUS;JOSE LUIS;3;6;ALLENDE;ESPINA;;;;;;;;;
+INF;5;2016/17;REG;1;12/09/2016;false;bcarba;BAR CARBAYEDO ;3;1;cgerma;CASA GERMÁN;4;CHUS;JOSE LUIS;3;6;ALLENDE;FANDIÑO;;;;;;;;;
 COM;6;;;;;;;;;;;;;;;;;;;;;;;;;;;
 INF;7;2016/17;REG;1;12/09/2016;true;andrea;ANDREA;4;0;monchi;MONCHI;1;DANI;ISMA;6;2;RABADAN;BERNARDO;;;;;;;;;
 INF;8;2016/17;REG;1;12/09/2016;false;andrea;ANDREA;4;0;monchi;MONCHI;2;DELMI;FERRE;6;2;DAVID;JUANJO;;;;;;;;;
@@ -16,7 +16,7 @@ INF;15;2016/17;REG;1;12/09/2016;false;8villa;8 VILLAS;0;4;cvalsa;CAFETERÍA VALSA
 COM;16;;;;;;;;;;;;;;;;;;;;;;;;;;;
 INF;17;2016/17;REG;1;12/09/2016;true;catere;CASA TERE;1;3;ccelti;CAFETERÍA CELTICA;1;JAVI ;POPI;3;6;PICHINA;BUSTO;;;;;;;;;
 INF;18;2016/17;REG;1;12/09/2016;false;catere;CASA TERE;1;3;ccelti;CAFETERÍA CELTICA;2;PICHI;VILA;3;6;LUNA ;FELIX;;;;;;;;;
-INF;19;2016/17;REG;1;12/09/2016;false;catere;CASA TERE;1;3;ccelti;CAFETERÍA CELTICA;3;PEPE;CLETO;3;6;CHININ;CHINI;;;;;;;;;
+INF;19;2016/17;REG;1;12/09/2016;false;catere;CASA TERE;1;3;ccelti;CAFETERÍA CELTICA;3;PEPE;CLETO;3;6;CHININ;CHININ II;;;;;;;;;
 INF;20;2016/17;REG;1;12/09/2016;false;catere;CASA TERE;1;3;ccelti;CAFETERÍA CELTICA;4;BELLANCO;GENI;6;1;MAITE;FALO;;;;;;;;;
 COM;21;;;;;;;;;;;;;;;;;;;;;;;;;;;
 INF;22;2016/17;REG;1;12/09/2016;true;habana;HABANA;2;2;calolo;CA'LOLO;1;PANA;PANAKAS;6;3;ISIDORO;PARAMIO;;;;;;;;;
@@ -65,7 +65,7 @@ INF;64;2016/17;REG;1;12/09/2016;false;cebano;ÉBANO;4;0;chalan;EL CHALANÍN;3;ANGE
 INF;65;2016/17;REG;1;12/09/2016;false;cebano;ÉBANO;4;0;chalan;EL CHALANÍN;4;CARLON;NICO;6;5;KUKI;DIEGO;;;;;;;;;
 COM;66;;;;;;;;;;;;;;;;;;;;;;;;;;;
 COM;67;2016/17;REG;1;12/09/2016;true;picosa;LA PICOSA;n/a;n/a;zdesca;DESCANSA;;;;;;;;;;;;;;;;
-END;68;;;;;;;;;;;;;;;;;;;;;;;;;;;
+END;68;;;;;;;;;;;;;52;52;52;52;52;52;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
