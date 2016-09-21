@@ -44,12 +44,12 @@ import org.apache.logging.log4j.Logger;
     "visitingTeamName",
     "visitingTeamScore",
     "tableId",
-    "localPayerNameOne",
-    "localPayerNameTwo",
+    "localPlayerNickOne",
+    "localPlayerNickTwo",
     "localPairScore",
     "visitingPairScore",
-    "visitingPayerNameOne",
-    "visitingPayerNameTwo"
+    "visitingPlayerNickOne",
+    "visitingPlayerNickTwo"
 })
 @XmlRootElement
 public class ResultRecord implements Comparable<ResultRecord>{
@@ -91,17 +91,17 @@ public class ResultRecord implements Comparable<ResultRecord>{
     @XmlElement(required = true)
     private Integer tableId;
     @XmlElement(required = true)
-    private String localPayerNameOne;
+    private String localPlayerNickOne;
     @XmlElement(required = true)
-    private String localPayerNameTwo;
+    private String localPlayerNickTwo;
     @XmlElement(required = true)
     private Integer localPairScore;
     @XmlElement(required = true)
     private Integer visitingPairScore;
     @XmlElement(required = true)
-    private String visitingPayerNameOne;
+    private String visitingPlayerNickOne;
     @XmlElement(required = true)
-    private String visitingPayerNameTwo;
+    private String visitingPlayerNickTwo;
 
     public ResultRecord() {
     }
@@ -272,20 +272,20 @@ public class ResultRecord implements Comparable<ResultRecord>{
         }
     }
 
-    public String getLocalPayerNameOne() {
-        return localPayerNameOne;
+    public String getLocalPlayerNickOne() {
+        return localPlayerNickOne;
     }
 
-    public void setLocalPayerNameOne(String localPayerNameOne) {
-        this.localPayerNameOne = localPayerNameOne;
+    public void setLocalPlayerNickOne(String localPlayerNickOne) {
+        this.localPlayerNickOne = localPlayerNickOne;
     }
 
-    public String getLocalPayerNameTwo() {
-        return localPayerNameTwo;
+    public String getLocalPlayerNickTwo() {
+        return localPlayerNickTwo;
     }
 
-    public void setLocalPayerNameTwo(String localPayerNameTwo) {
-        this.localPayerNameTwo = localPayerNameTwo;
+    public void setLocalPlayerNickTwo(String localPlayerNickTwo) {
+        this.localPlayerNickTwo = localPlayerNickTwo;
     }
 
     public Integer getLocalPairScore() {
@@ -318,20 +318,20 @@ public class ResultRecord implements Comparable<ResultRecord>{
         }
     }
 
-    public String getVisitingPayerNameOne() {
-        return visitingPayerNameOne;
+    public String getVisitingPlayerNickOne() {
+        return visitingPlayerNickOne;
     }
 
-    public void setVisitingPayerNameOne(String visitingPayerNameOne) {
-        this.visitingPayerNameOne = visitingPayerNameOne;
+    public void setVisitingPlayerNickOne(String visitingPlayerNickOne) {
+        this.visitingPlayerNickOne = visitingPlayerNickOne;
     }
 
-    public String getVisitingPayerNameTwo() {
-        return visitingPayerNameTwo;
+    public String getVisitingPlayerNickTwo() {
+        return visitingPlayerNickTwo;
     }
 
-    public void setVisitingPayerNameTwo(String visitingPayerNameTwo) {
-        this.visitingPayerNameTwo = visitingPayerNameTwo;
+    public void setVisitingPlayerNickTwo(String visitingPlayerNickTwo) {
+        this.visitingPlayerNickTwo = visitingPlayerNickTwo;
     }
 
     public void marshall(File seasonFile) throws JAXBException {
@@ -369,7 +369,7 @@ public class ResultRecord implements Comparable<ResultRecord>{
         sb.append(StringUtil.enclose(roundId));
         sb.append(",roundDate");
         sb.append((roundDate == null?
-            "NULL"
+            StringUtil.enclose(StringUtil.NULL_LIT)
             : StringUtil.enclose(
                 CocamDatatypeConverter.printLocalDate(roundDate))));
         sb.append(",matchHead");
@@ -388,18 +388,18 @@ public class ResultRecord implements Comparable<ResultRecord>{
         sb.append(StringUtil.enclose(visitingTeamName));
         sb.append(",tableId");
         sb.append(StringUtil.enclose(tableId));
-        sb.append(",localPayerNameOne");
-        sb.append(StringUtil.enclose(localPayerNameOne));
-        sb.append(",localPayerNameTwo");
-        sb.append(StringUtil.enclose(localPayerNameTwo));
+        sb.append(",localPlayerNickOne");
+        sb.append(StringUtil.enclose(localPlayerNickOne));
+        sb.append(",localPlayerNickTwo");
+        sb.append(StringUtil.enclose(localPlayerNickTwo));
         sb.append(",localPairScore");
         sb.append(StringUtil.enclose(localPairScore));
         sb.append(",visitingPairScore");
         sb.append(StringUtil.enclose(visitingPairScore));
-        sb.append(",visitingPayerNameOne");
-        sb.append(StringUtil.enclose(visitingPayerNameOne));
-        sb.append(",visitingPayerNameTwo");
-        sb.append(StringUtil.enclose(visitingPayerNameTwo));        
+        sb.append(",visitingPlayerNickOne");
+        sb.append(StringUtil.enclose(visitingPlayerNickOne));
+        sb.append(",visitingPlayerNickTwo");
+        sb.append(StringUtil.enclose(visitingPlayerNickTwo));        
         return sb.toString();
     }
     
@@ -412,6 +412,11 @@ public class ResultRecord implements Comparable<ResultRecord>{
             String fieldValue = null;
             try {
                 fieldValue = fieldContent[fieldDesc.getFieldNo()-1].trim();
+                
+                // si está vacio se considera no presente -null-
+                if (StringUtil.isNullOrEmpty(fieldValue)) {
+                    fieldValue = null;
+                }
             } catch (ArrayIndexOutOfBoundsException aioobex) {
                 logger.fatal("record" + record);
                 logger.fatal("fieldNo" + fieldDesc.getFieldNo());

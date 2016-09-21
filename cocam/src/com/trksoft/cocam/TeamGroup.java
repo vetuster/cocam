@@ -47,8 +47,10 @@ public class TeamGroup {
     
     @Override
     public String toString() {
-        return team.stream().map(Object::toString).
-            collect(Collectors.joining("->"));
+        StringBuilder sb = new StringBuilder("TeamGroup->");
+        sb.append(team.stream().map(Object::toString).
+            collect(Collectors.joining("->")));
+        return sb.toString();
     }
     
     public static TeamGroup unmarshall(

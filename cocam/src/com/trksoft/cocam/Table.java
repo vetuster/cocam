@@ -24,11 +24,11 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "tableId",
-    "localPlayerNameOne",
-    "localPlayerNameTwo",
+    "localPlayerNickOne",
+    "localPlayerNickTwo",
     "localPairScore",
-    "visitingPlayerNameOne",
-    "visitingPlayerNameTwo",
+    "visitingPlayerNickOne",
+    "visitingPlayerNickTwo",
     "visitingPairScore"
 })
 @XmlRootElement
@@ -38,19 +38,19 @@ public class Table implements Comparable<Table> {
     private Integer tableId;
     
     @XmlElement(required = true)
-    private String localPlayerNameOne;
+    private String localPlayerNickOne;
         
     @XmlElement(required = true)
-    private String localPlayerNameTwo;
+    private String localPlayerNickTwo;
         
     @XmlElement(required = true)
     private Integer localPairScore;
     
     @XmlElement(required = true)
-    private String visitingPlayerNameOne;
+    private String visitingPlayerNickOne;
         
     @XmlElement(required = true)
-    private String visitingPlayerNameTwo;
+    private String visitingPlayerNickTwo;
         
     @XmlElement(required = true)
     private Integer visitingPairScore;
@@ -66,20 +66,20 @@ public class Table implements Comparable<Table> {
         this.tableId = tableId;
     }
 
-    public String getLocalPlayerNameOne() {
-        return localPlayerNameOne;
+    public String getLocalPlayerNickOne() {
+        return localPlayerNickOne;
     }
 
-    public void setLocalPlayerNameOne(String localPlayerNameOne) {
-        this.localPlayerNameOne = localPlayerNameOne;
+    public void setLocalPlayerNickOne(String localPlayerNickOne) {
+        this.localPlayerNickOne = localPlayerNickOne;
     }
 
-    public String getLocalPlayerNameTwo() {
-        return localPlayerNameTwo;
+    public String getLocalPlayerNickTwo() {
+        return localPlayerNickTwo;
     }
 
-    public void setLocalPlayerNameTwo(String localPlayerNameTwo) {
-        this.localPlayerNameTwo = localPlayerNameTwo;
+    public void setLocalPlayerNickTwo(String localPlayerNickTwo) {
+        this.localPlayerNickTwo = localPlayerNickTwo;
     }
 
     public Integer getLocalPairScore() {
@@ -90,20 +90,20 @@ public class Table implements Comparable<Table> {
         this.localPairScore = localPairScore;
     }
 
-    public String getVisitingPlayerNameOne() {
-        return visitingPlayerNameOne;
+    public String getVisitingPlayerNickOne() {
+        return visitingPlayerNickOne;
     }
 
-    public void setVisitingPlayerNameOne(String visitingPlayerNameOne) {
-        this.visitingPlayerNameOne = visitingPlayerNameOne;
+    public void setVisitingPlayerNickOne(String visitingPlayerNickOne) {
+        this.visitingPlayerNickOne = visitingPlayerNickOne;
     }
 
-    public String getVisitingPlayerNameTwo() {
-        return visitingPlayerNameTwo;
+    public String getVisitingPlayerNickTwo() {
+        return visitingPlayerNickTwo;
     }
 
-    public void setVisitingPlayerNameTwo(String visitingPlayerNameTwo) {
-        this.visitingPlayerNameTwo = visitingPlayerNameTwo;
+    public void setVisitingPlayerNickTwo(String visitingPlayerNickTwo) {
+        this.visitingPlayerNickTwo = visitingPlayerNickTwo;
     }
 
     public Integer getVisitingPairScore() {
@@ -126,16 +126,16 @@ public class Table implements Comparable<Table> {
         StringBuilder sb = new StringBuilder("Table->");
         sb.append("tableId");
         sb.append(StringUtil.enclose(tableId));
-        sb.append(",localPlayerNameOne");
-        sb.append(StringUtil.enclose(localPlayerNameOne));
-        sb.append(",localPlayerNameTwo");
-        sb.append(StringUtil.enclose(localPlayerNameTwo));
+        sb.append(",localPlayerNickOne");
+        sb.append(StringUtil.enclose(localPlayerNickOne));
+        sb.append(",localPlayerNickTwo");
+        sb.append(StringUtil.enclose(localPlayerNickTwo));
         sb.append(",localPairScore");
         sb.append(StringUtil.enclose(localPairScore));
-        sb.append(",visitingPlayerNameOne");
-        sb.append(StringUtil.enclose(visitingPlayerNameOne));
-        sb.append(",visitingPlayerNameTwo");
-        sb.append(StringUtil.enclose(visitingPlayerNameTwo));
+        sb.append(",visitingPlayerNickOne");
+        sb.append(StringUtil.enclose(visitingPlayerNickOne));
+        sb.append(",visitingPlayerNickTwo");
+        sb.append(StringUtil.enclose(visitingPlayerNickTwo));
         sb.append(",visitingPairScore");
         sb.append(StringUtil.enclose(visitingPairScore));
         return sb.toString();

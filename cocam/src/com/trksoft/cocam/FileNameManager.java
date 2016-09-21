@@ -21,10 +21,11 @@ public class FileNameManager {
         "resources/cocam-ResultRecordGroup.xsd";
     
     private static final String TEAM_GROUP = "TeamGroup";
+    private static final String PLAYER_GROUP = "PlayerGroup";
     private static final String RESULT_RECORD_GROUP = "ResultRecordGroup";
     private static final String SEASON = "Season";
     private static final String TEAM_STAT_GROUP = "TeamStatGroup";
-    private static final String RANKING_TEAM = "RankingTeam";
+    private static final String RANKING_TEAM = "TeamRanking";
     
     protected static String getResultRecordDescFilename() {
         return SEPCOL_RECORD_DESC_PATH;
@@ -52,6 +53,22 @@ public class FileNameManager {
         // xml ext
         teamGroupFilename.append(XML_EXT);
         return teamGroupFilename.toString();
+    }
+    
+    protected static String getPlayerGroupFilename(final int roundId) {
+        StringBuilder playerGroupFilename = new StringBuilder();
+        CocamProps cocamProps = CocamProps.getInstance();
+        //path - resources/
+        playerGroupFilename.append(cocamProps.getDataFileDir());
+        // TeamStatGroup
+        playerGroupFilename.append(PLAYER_GROUP);
+        // hypen
+        playerGroupFilename.append(HYPEN);
+        // round - jornada - R99
+        playerGroupFilename.append(Round.getRoundIdOutput(roundId));
+        // xml ext
+        playerGroupFilename.append(XML_EXT);
+        return playerGroupFilename.toString();
     }
     
     protected static String getResultRecordGroupFilename(final int roundId) {

@@ -20,21 +20,15 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "teamId",
-    "teamName",
-    "teamDenom",
-    "teamSize"
+    "playerNick"
 })
 @XmlRootElement
-public class Team implements Comparable<Team>{
+public class Player implements Comparable<Player>{
     
     @XmlAttribute(required = true)    
     private String teamId;
     @XmlAttribute(required = true)
-    private String teamName;
-    @XmlAttribute(required = true)
-    private String teamDenom;
-    @XmlAttribute(required = true)
-    private Integer teamSize;
+    private String playerNick;
 
     public String getTeamId() {
         return teamId;
@@ -44,43 +38,32 @@ public class Team implements Comparable<Team>{
         this.teamId = teamId;
     }
 
-    public String getTeamName() {
-        return teamName;
+    public String getPlayerNick() {
+        return playerNick;
     }
 
-    public void setTeamName(String teamName) {
-        this.teamName = teamName;
+    public void setPlayerNick(String playerNick) {
+        this.playerNick = playerNick;
     }
-
-    public String getTeamDenom() {
-        return teamDenom;
+    
+    public String getPlayerKey() {
+        StringBuilder playerKey = new StringBuilder(getTeamId());
+        playerKey.append(getPlayerNick());
+        return playerKey.toString();
     }
-
-    public void setTeamDenom(String teamDenom) {
-        this.teamDenom = teamDenom;
-    }
-
-    public Integer getTeamSize() {
-        return teamSize;
-    }
-
-    public void setTeamSize(Integer teamSize) {
-        this.teamSize = teamSize;
-    }
-
-
+    
     @Override
-    public int compareTo(Team otherTeam) {
-        return this.teamId.compareTo(otherTeam.getTeamId());
+    public int compareTo(Player otherTeam) {
+        int i = this.teamId.compareTo(otherTeam.getTeamId());
+        if (i!=0) return i;
+        return this.playerNick.compareTo(otherTeam.getPlayerNick());
     }
 
     @Override
     public int hashCode() {
         int hash = 7;
         hash = 79 * hash + Objects.hashCode(this.teamId);
-        hash = 79 * hash + Objects.hashCode(this.teamName);
-        hash = 79 * hash + Objects.hashCode(this.teamDenom);
-        hash = 79 * hash + Objects.hashCode(this.teamSize);
+        hash = 79 * hash + Objects.hashCode(this.playerNick);
         return hash;
     }
 
@@ -92,17 +75,11 @@ public class Team implements Comparable<Team>{
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Team other = (Team) obj;
+        final Player other = (Player) obj;
         if (!Objects.equals(this.teamId, other.teamId)) {
             return false;
         }
-        if (!Objects.equals(this.teamName, other.teamName)) {
-            return false;
-        }
-        if (!Objects.equals(this.teamDenom, other.teamDenom)) {
-            return false;
-        }
-        if (!Objects.equals(this.teamSize, other.teamSize)) {
+        if (!Objects.equals(this.playerNick, other.playerNick)) {
             return false;
         }
         return true;
@@ -110,17 +87,12 @@ public class Team implements Comparable<Team>{
 
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder("Team->");
+        StringBuilder sb = new StringBuilder("Player->");
         sb.append("teamId");
         sb.append(StringUtil.enclose(teamId));
-        sb.append(",teamName");
-        sb.append(StringUtil.enclose(teamName));
-        sb.append(",teamDenom");
-        sb.append(StringUtil.enclose(teamDenom));
-        sb.append(",teamSize");
-        sb.append(StringUtil.enclose(teamSize));
+        sb.append(",playerNick");
+        sb.append(StringUtil.enclose(playerNick));
         return sb.toString();
     }
-    
     
 }

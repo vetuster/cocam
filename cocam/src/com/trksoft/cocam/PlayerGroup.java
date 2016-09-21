@@ -6,8 +6,8 @@
 package com.trksoft.cocam;
 
 import java.io.File;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.SortedSet;
+import java.util.TreeSet;
 import java.util.stream.Collectors;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -27,71 +27,60 @@ import org.apache.logging.log4j.Logger;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "teamStat"
+    "player"
 })
 @XmlRootElement
-public class TeamStatGroup {
+public class PlayerGroup {
     @SuppressWarnings("NonConstantFieldWithUpperCaseName")
     private static final Logger logger
-        = LogManager.getLogger(TeamStatGroup.class);
+        = LogManager.getLogger(PlayerGroup.class);
     
     @XmlElement(required = true)
-    private final Map<String, TeamStat> teamStat;
+    private final SortedSet<Player> player;
 
-    public TeamStatGroup() {
-        teamStat = new HashMap<>();
+    public PlayerGroup() {
+        player = new TreeSet<>();
     }
 
-    public Map<String, TeamStat> getTeamStat() {
-        return teamStat;
+    public SortedSet<Player> getPlayer() {
+        return player;
     }
     
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder("TeamStatGroup->");
-        sb.append(teamStat.values().stream().map(Object::toString).
+        StringBuilder sb = new StringBuilder("PlayerGroup->");
+        sb.append(player.stream().map(Object::toString).
             collect(Collectors.joining("->")));
         return sb.toString();
     }
     
-    public void marshall(File teamStatGroupFile) throws JAXBException {
+    public void marshall(File playerGroupFile) throws JAXBException {
         try {
             JAXBContext jaxbContext
-                = JAXBContext.newInstance(TeamStatGroup.class);
+                = JAXBContext.newInstance(PlayerGroup.class);
             Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
             jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-            jaxbMarshaller.marshal(this, teamStatGroupFile);
+            jaxbMarshaller.marshal(this, playerGroupFile);
         } catch (JAXBException jaxbex) {
             logger.fatal(jaxbex);
             throw jaxbex;
         }
     }
     
-    public static TeamStatGroup unmarshall(
-        File fixedLengthColRecordDescFile) throws CocamException {
-        TeamStatGroup flcrd = null;
+    public static PlayerGroup unmarshall(
+        File fixedLengthColRecordDescFile) throws JAXBException {
+        PlayerGroup flcrd = null;
         try {
             JAXBContext jaxbContext = 
-                JAXBContext.newInstance(TeamStatGroup.class);
+                JAXBContext.newInstance(PlayerGroup.class);
 
             Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
-            flcrd = (TeamStatGroup)
+            flcrd = (PlayerGroup)
                 jaxbUnmarshaller.unmarshal(fixedLengthColRecordDescFile);
         } catch (JAXBException jaxbex) {
-            throw new CocamException(jaxbex);
+            logger.fatal(jaxbex);
+            throw jaxbex;
         }
         return flcrd;
-    }
-
-    public void update(final Match match) {
-        //obtener las estadisticas en curso del equipo local
-        TeamStat localTeamStat = getTeamStat().get(match.getLocalTeamId());
-        //obtener las estadisticas en curso del equipo visitante
-        TeamStat visitingTeamStat = 
-            getTeamStat().get(match.getVisitingTeamId());
-
-        //actualizar estadisticas de local y visitante
-        localTeamStat.update(match);
-        visitingTeamStat.update(match);
     }
 }

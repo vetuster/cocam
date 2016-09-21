@@ -19,7 +19,6 @@ import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.logging.Level;
 import javax.xml.bind.JAXBException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -148,7 +147,7 @@ public class ResultFileManager {
     }
     
     
-    public void setRankingTeamFile(final List<TeamStat> teamStatList,
+    public void setTeamRankingFile(final List<TeamStat> teamStatList,
         File rankingTeamFile) throws CocamException {
         CocamProps comcaProps = CocamProps.getInstance();
         String charset = comcaProps.getRankingFileCharset();

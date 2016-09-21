@@ -28,7 +28,6 @@ public class Cocam {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws Exception {
-        logger.debug("Vamos Cocam!");
         
         // carga lista de equipos
         String teamGroupFilename = FileNameManager.getTeamGroupFilename();
@@ -42,24 +41,29 @@ public class Cocam {
         // carga la temporada con los resultados de las jornadas hasta el 
         // momento (ficheros de resultado disponibles)
         SeasonManager seasonManager = new SeasonManager();
-        Season season = seasonManager.build(resultRecordList);
+        seasonManager.loadSeason(resultRecordList);
         String seasonFilename = FileNameManager.getSeasonFilename(
-            season.getLastRoundId());
-        season.marshall(new File(seasonFilename));
+            seasonManager.getSeason().getLastRoundId());
+        seasonManager.getSeason().marshall(new File(seasonFilename));
         int totalTables = 0;
-        totalTables = season.getMatch().stream().map((match) ->
+        totalTables =
+            seasonManager.getSeason().getMatch().stream().map((match) ->
             match.getTable().size()).reduce(totalTables, Integer::sum);
-        logger.info("seasonId" + StringUtil.enclose(season.getSeasonId())
-            + ",lastRoundId" + StringUtil.enclose(season.getLastRoundId())
-            + ",TOTAL matches" + StringUtil.enclose(season.getMatch().size())
-            + ",TOTAL tables" + StringUtil.enclose(totalTables)
+        logger.info("seasonId"
+            + StringUtil.enclose(seasonManager.getSeason().getSeasonId())
+            + ",lastRoundId"
+            + StringUtil.enclose(seasonManager.getSeason().getLastRoundId())
+            + ",TOTAL matches" 
+            + StringUtil.enclose(seasonManager.getSeason().getMatch().size())
+            + ",TOTAL tables"
+            + StringUtil.enclose(totalTables)
         );
         
         // cargar las estadisticas de cada equipo
-        TeamStatGroup teamStatGroup =  new TeamStatGroup();
-        teamStatGroup.load(teamGroup, season);
+        TeamStatGroup teamStatGroup =
+            seasonManager.getTeamStatGroup(teamGroup);
         String teamStatGroupFilename = FileNameManager.getTeamStatGroupFilename(
-            season.getLastRoundId());
+            seasonManager.getSeason().getLastRoundId());
         teamStatGroup.marshall(new File(teamStatGroupFilename));
         
         // ordenar las estadisticas para obtener la clasificacion ordenada
@@ -67,12 +71,24 @@ public class Cocam {
             new LinkedList<>(teamStatGroup.getTeamStat().values());
         Collections.sort(teamStatList, new TeamStatRound1Comparator());   
         for (TeamStat teamStat : teamStatList) {
-            logger.debug(teamStat);
+            logger.info(teamStat);
         }
         String rankingTeamFilename = FileNameManager.getRankingFilename(
-            season.getLastRoundId());
-        resultFileManager.setRankingTeamFile(teamStatList, 
+            seasonManager.getSeason().getLastRoundId());
+        resultFileManager.setTeamRankingFile(teamStatList, 
             new File(rankingTeamFilename));
+        
+        // No se dispone de fichero de jugadores porque se introduciran en la
+        // excel de forma escrita diferente a la que consta en las fichas
+        // los jugadores se extraen de la temporada, y se agrupan en un clase
+        // interpuesta PlayerGroup cuando lo lógico es que pertenecierana Team
+        // pero en este caso el Team se carga sin jugadores.
+        PlayerGroup playerGroup = seasonManager.getPlayerGroup();
+        logger.info("TOTAL players"
+            + StringUtil.enclose(playerGroup.getPlayer().size()));
+        String playerGroupFilename = FileNameManager.getPlayerGroupFilename(
+            seasonManager.getSeason().getLastRoundId());
+        playerGroup.marshall(new File(playerGroupFilename));
     }
     
 }

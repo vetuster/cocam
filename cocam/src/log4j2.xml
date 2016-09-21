@@ -1,14 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Configuration>
-    <Appenders>
-        <Console name="Console" target="SYSTEM_OUT">
-            <PatternLayout pattern="%d{yyyyMMdd'T'HHmmss.SSS} %level{length=3} - %C{1}:%M - %msg%n"/>
-        </Console>
-    </Appenders>
-    <Loggers>
-        <Root level="debug">
-            <AppenderRef ref="Console"/>
-        </Root>
-    </Loggers>
+<Configuration status="warn" strict="true">
+  <Properties>
+    <Property name="filename">log/cocam.log</Property>
+  </Properties>
+  
+  <Appenders>   
+    <Appender type="Console" name="STDOUT">
+      <Layout type="PatternLayout" pattern="%d{yyyyMMdd'T'HHmmss.SSS} %level{length=3} - %C{1}:%M - %msg%n" />
+    </Appender>
+    
+    <Appender type="File" name="File" fileName="${filename}">
+      <Layout type="PatternLayout" pattern="%d{yyyyMMdd'T'HHmmss.SSS} %level{length=3} - %C{1}:%M - %msg%n" />
+    </Appender>
+  </Appenders>
+  
+  <Loggers>
+    <Logger name="com.trksoft.cocam" level="info">
+      <AppenderRef ref="STDOUT"/>
+    </Logger>
+    
+    <Root level="trace">
+      <AppenderRef ref="File"/>
+    </Root>
+      
+  </Loggers>
 </Configuration>
 
