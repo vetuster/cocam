@@ -52,6 +52,12 @@ public class Player implements Comparable<Player>{
         return playerKey.toString();
     }
     
+    public static String getPlayerKey(String teamId, String playerNick) {
+        StringBuilder playerKey = new StringBuilder(teamId);
+        playerKey.append(playerNick);
+        return playerKey.toString();
+    }
+    
     @Override
     public int compareTo(Player otherTeam) {
         int i = this.teamId.compareTo(otherTeam.getTeamId());

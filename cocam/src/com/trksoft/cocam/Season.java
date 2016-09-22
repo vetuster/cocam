@@ -30,7 +30,7 @@ import org.apache.logging.log4j.Logger;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "seasonId",
-    "lastRoundId",
+    "lastDayId",
     "match"
 })
 @XmlRootElement
@@ -43,7 +43,7 @@ public class Season {
     private String seasonId;
     
     @XmlAttribute
-    private Integer lastRoundId;
+    private Integer lastDayId;
     
     @XmlElement(required = true)
     private final SortedSet<Match> match;
@@ -61,12 +61,12 @@ public class Season {
         this.seasonId = seasonId;
     }
 
-    public Integer getLastRoundId() {
-        return lastRoundId;
+    public Integer getLastDayId() {
+        return lastDayId;
     }
 
-    public void setLastRoundId(Integer lastRoundId) {
-        this.lastRoundId = lastRoundId;
+    public void setLastDayId(Integer lastDayId) {
+        this.lastDayId = lastDayId;
     }
 
     public SortedSet<Match> getMatch() {
@@ -78,8 +78,8 @@ public class Season {
         StringBuilder sb = new StringBuilder("Season->");
         sb.append("seasonId");
         sb.append(StringUtil.enclose(seasonId));
-        sb.append("lastRoundId");
-        sb.append(StringUtil.enclose(lastRoundId));
+        sb.append("lastDayId");
+        sb.append(StringUtil.enclose(lastDayId));
         sb.append(match.stream().map(Object::toString).
             collect(Collectors.joining("->")));
         return sb.toString();

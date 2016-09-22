@@ -43,7 +43,7 @@ public class Cocam {
         SeasonManager seasonManager = new SeasonManager();
         seasonManager.loadSeason(resultRecordList);
         String seasonFilename = FileNameManager.getSeasonFilename(
-            seasonManager.getSeason().getLastRoundId());
+            seasonManager.getSeason().getLastDayId());
         seasonManager.getSeason().marshall(new File(seasonFilename));
         int totalTables = 0;
         totalTables =
@@ -52,7 +52,7 @@ public class Cocam {
         logger.info("seasonId"
             + StringUtil.enclose(seasonManager.getSeason().getSeasonId())
             + ",lastRoundId"
-            + StringUtil.enclose(seasonManager.getSeason().getLastRoundId())
+            + StringUtil.enclose(seasonManager.getSeason().getLastDayId())
             + ",TOTAL matches" 
             + StringUtil.enclose(seasonManager.getSeason().getMatch().size())
             + ",TOTAL tables"
@@ -63,32 +63,54 @@ public class Cocam {
         TeamStatGroup teamStatGroup =
             seasonManager.getTeamStatGroup(teamGroup);
         String teamStatGroupFilename = FileNameManager.getTeamStatGroupFilename(
-            seasonManager.getSeason().getLastRoundId());
+            seasonManager.getSeason().getLastDayId());
         teamStatGroup.marshall(new File(teamStatGroupFilename));
         
         // ordenar las estadisticas para obtener la clasificacion ordenada
         List<TeamStat> teamStatList = 
             new LinkedList<>(teamStatGroup.getTeamStat().values());
-        Collections.sort(teamStatList, new TeamStatRound1Comparator());   
+        Collections.sort(teamStatList, new TeamStatComparator());   
         for (TeamStat teamStat : teamStatList) {
             logger.info(teamStat);
         }
-        String rankingTeamFilename = FileNameManager.getRankingFilename(
-            seasonManager.getSeason().getLastRoundId());
+        // generar CVS
+        String teamRankingFilename = FileNameManager.getTeamRankingFilename(
+            seasonManager.getSeason().getLastDayId());
         resultFileManager.setTeamRankingFile(teamStatList, 
-            new File(rankingTeamFilename));
+            new File(teamRankingFilename));
         
         // No se dispone de fichero de jugadores porque se introduciran en la
         // excel de forma escrita diferente a la que consta en las fichas
         // los jugadores se extraen de la temporada, y se agrupan en un clase
-        // interpuesta PlayerGroup cuando lo lógico es que pertenecierana Team
+        // interpuesta PlayerGroup cuando lo lógico es que pertenecieran a Team
         // pero en este caso el Team se carga sin jugadores.
         PlayerGroup playerGroup = seasonManager.getPlayerGroup();
         logger.info("TOTAL players"
             + StringUtil.enclose(playerGroup.getPlayer().size()));
         String playerGroupFilename = FileNameManager.getPlayerGroupFilename(
-            seasonManager.getSeason().getLastRoundId());
+            seasonManager.getSeason().getLastDayId());
         playerGroup.marshall(new File(playerGroupFilename));
+        
+        // cargar las estaditicas de cada jugador
+        PlayerStatGroup playerStatGroup =
+            seasonManager.getPlayerStatGroup(teamGroup, playerGroup);
+        String playerStatGroupFilename =
+            FileNameManager.getPlayerStatGroupFilename(
+                seasonManager.getSeason().getLastDayId());
+        playerStatGroup.marshall(new File(playerStatGroupFilename));
+        
+        // ordenar las estadisticas para obtener la clasificacion ordenada
+        List<PlayerStat> playerStatList = 
+            new LinkedList<>(playerStatGroup.getPlayerStat().values());
+        Collections.sort(playerStatList, new PlayerStatComparator());
+//        playerStatList.stream().forEach((playerStat) -> {
+//            logger.info(playerStat);
+//        });
+        // generar CBVS
+        String playerRankingFilename = FileNameManager.getPlayerRankingFilename(
+            seasonManager.getSeason().getLastDayId());
+        resultFileManager.setPlayerRankingFile(playerStatList,
+            new File(playerRankingFilename));
     }
-    
+
 }

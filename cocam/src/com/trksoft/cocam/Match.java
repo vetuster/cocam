@@ -29,7 +29,8 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "roundId",
-    "roundDate",
+    "dayId",
+    "dayDate",
     "matchId",
     "localTeamId",
     "localTeamName",
@@ -44,29 +45,23 @@ public class Match  implements Comparable<Match> {
     
     @XmlAttribute
     private Integer roundId;
-    
+    @XmlAttribute
+    private Integer dayId;
     @XmlAttribute
     @XmlJavaTypeAdapter(CocamAdapter.class)
-    private LocalDate roundDate;
-    
+    private LocalDate dayDate;
     @XmlAttribute
     private String matchId;
-    
     @XmlElement(required = true)
     private String localTeamId;
-        
     @XmlElement(required = true)
     private String localTeamName;
-        
     @XmlElement(required = true)
     private Integer localTeamScore;
-    
     @XmlElement(required = true)
     private String visitingTeamId;
-        
     @XmlElement(required = true)
     private String visitingTeamName;
-        
     @XmlElement(required = true)
     private Integer visitingTeamScore;
     
@@ -85,13 +80,21 @@ public class Match  implements Comparable<Match> {
     public void setRoundId(Integer roundId) {
         this.roundId = roundId;
     }
-    
-    public LocalDate getRoundDate() {
-        return roundDate;
+
+    public Integer getDayId() {
+        return dayId;
     }
 
-    public void setRoundDate(LocalDate roundDate) {
-        this.roundDate = roundDate;
+    public void setDayId(Integer dayId) {
+        this.dayId = dayId;
+    }
+    
+    public LocalDate getDayDate() {
+        return dayDate;
+    }
+
+    public void setDayDate(LocalDate dayDate) {
+        this.dayDate = dayDate;
     }
     
     public String getMatchId() {
@@ -166,9 +169,9 @@ public class Match  implements Comparable<Match> {
     
     @Override
     public int compareTo(Match match) {
-        int i = roundId.compareTo(match.getRoundId());
+        int i = dayId.compareTo(match.getDayId());
         if (i!=0) return i;
-        i = roundDate.compareTo(match.getRoundDate());
+        i = dayDate.compareTo(match.getDayDate());
         if (i!=0) return i;
         return matchId.compareTo(match.getMatchId());
     }
@@ -179,9 +182,10 @@ public class Match  implements Comparable<Match> {
         StringBuilder sb = new StringBuilder("Match->");
         sb.append("roundId");
         sb.append(StringUtil.enclose(roundId));
+        sb.append("dayId");
+        sb.append(StringUtil.enclose(dayId));
         sb.append(",roundDate");
-        sb.append(StringUtil.enclose(
-            CocamDatatypeConverter.printLocalDate(roundDate)));
+        sb.append(StringUtil.enclose(CocamDatatypeConverter.printLocalDate(dayDate)));
         sb.append("matchId");
         sb.append(StringUtil.enclose(matchId));
         sb.append(",localTeamId");

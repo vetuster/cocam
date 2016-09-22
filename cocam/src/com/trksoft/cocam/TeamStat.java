@@ -8,6 +8,8 @@ package com.trksoft.cocam;
 import com.trksoft.util.StringUtil;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 import java.util.stream.Collectors;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -43,18 +45,14 @@ import org.apache.logging.log4j.Logger;
     "tableResult13",
     "tableResult04",
     "goalsFavor",
-    "goalsAgainst"
+    "goalsAgainst",
+    "directMatch"
 })
 @XmlRootElement
 public class TeamStat {
     @SuppressWarnings("NonConstantFieldWithUpperCaseName")
     private static final Logger logger
         = LogManager.getLogger(TeamStat.class);
-    
-    private static final int ONE_POINT = 1;
-    private static final int TWO_POINTS = 2;
-    private static final int THREE_POINTS = 3;
-    private static final int FOUR_POINTS = 4;
     
     @XmlAttribute(required = true)    
     private String teamId;
@@ -95,6 +93,9 @@ public class TeamStat {
     @XmlElement(required = true)
     private Integer goalsAgainst;
     
+    @XmlElement(required = true)
+    private final Map<String, DirectMatch> directMatch;
+    
     public TeamStat() {
         this.points = 0;
         this.matchPlayed = 0;
@@ -113,6 +114,7 @@ public class TeamStat {
         this.tableResult04 = 0;
         this.goalsFavor = 0;
         this.goalsAgainst = 0;
+        this.directMatch = new HashMap<>();
     }
     
     
@@ -309,6 +311,10 @@ public class TeamStat {
     public void setGoalsAgainst(Integer goalsAgainst) {
         this.goalsAgainst = goalsAgainst;
     }
+
+    public Map<String, DirectMatch> getDirectMatch() {
+        return directMatch;
+    }
     
     
     @Override
@@ -377,6 +383,8 @@ public class TeamStat {
         sb.append(StringUtil.enclose(goalsFavor));
         sb.append(",goalsAgainst");
         sb.append(StringUtil.enclose(goalsAgainst));
+        sb.append(directMatch.values().stream().map(Object::toString).
+            collect(Collectors.joining("->")));
         return sb.toString();
     }
     
@@ -397,8 +405,10 @@ public class TeamStat {
         incMatchPlayed();
         if (local) {
             incMatchPlayedLocal();
+            setPoints(getPoints() + match.getLocalTeamScore());
         } else {
             incMatchPlayedVisiting();
+            setPoints(getPoints() + match.getVisitingTeamScore());
         }
         
         switch (match.getResultType()) {
@@ -407,12 +417,10 @@ public class TeamStat {
                     incMatchLost();
                     incMatchLostLocal();
                     incTableResult04();
-                    // 0-4 no suma puntos como local
                 } else {
                     incMatchWon();
                     incMatchWonVisiting();
                     incTableResult40();
-                    setPoints(getPoints() + FOUR_POINTS);
                 }
                 break;
             }
@@ -421,18 +429,15 @@ public class TeamStat {
                     incMatchLost();
                     incMatchLostLocal();
                     incTableResult13();
-                    setPoints(getPoints() + ONE_POINT);
                 } else {
                     incMatchWon();
                     incMatchWonVisiting();
                     incTableResult31();
-                    setPoints(getPoints() + THREE_POINTS);
                 }
                 break;
             }
             case R22: {
                 incTableResult22();
-                setPoints(getPoints() + TWO_POINTS);
                 break;
             }
             case R31: {
@@ -440,12 +445,10 @@ public class TeamStat {
                     incMatchWon();
                     incMatchWonLocal();
                     incTableResult31();
-                    setPoints(getPoints() + THREE_POINTS);
                 } else {
                     incMatchLost();
                     incMatchLostVisiting();
                     incTableResult13();
-                    setPoints(getPoints() + ONE_POINT);
                 }
                 break;
             }
@@ -454,12 +457,10 @@ public class TeamStat {
                     incMatchWon();
                     incMatchWonLocal();
                     incTableResult40();
-                    setPoints(getPoints() + FOUR_POINTS);
                 } else {
                     incMatchLost();
                     incMatchLostVisiting();
                     incTableResult04();
-                    // 4-0 no suma puntos como visitante
                 }
                 break;
             }
@@ -481,6 +482,27 @@ public class TeamStat {
                 setGoalsAgainst(getGoalsAgainst() + table.getLocalPairScore());
             }
         });
+        
+        // enfrentamientos directos
+        DirectMatch currentDirectMatch = new DirectMatch();
+        if (local) {
+            currentDirectMatch.setAdversaryTeamId(match.getVisitingTeamId());
+            currentDirectMatch.setPlayedAsLocal(true);
+            currentDirectMatch.setPointsAsLocal(match.getLocalTeamScore());
+        } else {
+            currentDirectMatch.setAdversaryTeamId(match.getLocalTeamId());
+            currentDirectMatch.setPlayedAsVisiting(true);
+            currentDirectMatch.setPointsAsVisiting(
+                match.getVisitingTeamScore());
+        }
+        if (getDirectMatch().containsKey(currentDirectMatch.getAdversaryTeamId())) {
+            String errText = "DUPLICATE DIRECT MACTH"
+                + StringUtil.enclose(currentDirectMatch.getAdversaryTeamId());
+            logger.fatal(errText);
+            throw new RuntimeException(errText);
+        }
+        getDirectMatch().put(currentDirectMatch.getAdversaryTeamId(),
+            currentDirectMatch);
     }
     
     public String getRankingRecord(final String charSep) {

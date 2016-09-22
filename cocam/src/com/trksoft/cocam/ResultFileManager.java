@@ -72,9 +72,9 @@ public class ResultFileManager {
                             ResultRecord resultRecord = new ResultRecord();
                             resultRecord = resultRecord
                                 .build(inputRecord, scrd);
-                            if (resultRecordGroup.getRoundId() == null) {
-                                resultRecordGroup.setRoundId(
-                                    resultRecord.getRoundId());
+                            if (resultRecordGroup.getDayId() == null) {
+                                resultRecordGroup.setDayId(
+                                    resultRecord.getDayId());
                             }
                             resultRecordGroup.getResultRecord()
                                 .add(resultRecord);
@@ -108,7 +108,7 @@ public class ResultFileManager {
             try {
                 String resultRecordGroupFilename =
                     FileNameManager.getResultRecordGroupFilename(
-                        resultRecordGroup.getRoundId());
+                        resultRecordGroup.getDayId());
                 resultRecordGroup.marshall(new File(resultRecordGroupFilename));
                 
                 // se valida contra schema la informacion obtenida y cargada
@@ -157,6 +157,24 @@ public class ResultFileManager {
             new PrintWriter(rankingTeamFile, charset);) {
 
             teamStatList.stream().forEach((teamStat) -> {
+                printWriter.println(teamStat.getRankingRecord(charsep));
+            });
+        } catch (FileNotFoundException | UnsupportedEncodingException fnfueex) {
+            logger.fatal(fnfueex);
+            throw new CocamException(fnfueex);
+        }
+    }
+    
+    public void setPlayerRankingFile(final List<PlayerStat> playerStatList,
+        File playerRankingFile) throws CocamException {
+        CocamProps comcaProps = CocamProps.getInstance();
+        String charset = comcaProps.getRankingFileCharset();
+        String charsep = comcaProps.getRankingFileCharsep();
+
+        try (PrintWriter printWriter = 
+            new PrintWriter(playerRankingFile, charset);) {
+
+            playerStatList.stream().forEach((teamStat) -> {
                 printWriter.println(teamStat.getRankingRecord(charsep));
             });
         } catch (FileNotFoundException | UnsupportedEncodingException fnfueex) {

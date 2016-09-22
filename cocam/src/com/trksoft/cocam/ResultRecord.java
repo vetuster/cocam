@@ -35,7 +35,8 @@ import org.apache.logging.log4j.Logger;
     "seasonId",
     "leagueType",
     "roundId",
-    "roundDate",
+    "dayId",
+    "dayDate",
     "matchHead",
     "localTeamId",
     "localTeamName",
@@ -69,11 +70,13 @@ public class ResultRecord implements Comparable<ResultRecord>{
     private String seasonId;
     @XmlElement(required = true)
     private String leagueType;
-    @XmlElement(required = false)
+    @XmlElement(required = true)
     private Integer roundId;
     @XmlElement(required = false)
+    private Integer dayId;
+    @XmlElement(required = false)
     @XmlJavaTypeAdapter(CocamAdapter.class)
-    private LocalDate roundDate;
+    private LocalDate dayDate;
     @XmlElement(required = true)
     private Boolean matchHead;
     @XmlElement(required = true)
@@ -141,10 +144,6 @@ public class ResultRecord implements Comparable<ResultRecord>{
         return leagueType;
     }
 
-    public void setLeagueType(String leagueType) {
-        this.leagueType = leagueType;
-    }
-
     public Integer getRoundId() {
         return roundId;
     }
@@ -160,22 +159,40 @@ public class ResultRecord implements Comparable<ResultRecord>{
         }
     }
     
-
-    public LocalDate getRoundDate() {
-        return roundDate;
+    public void setLeagueType(String leagueType) {
+        this.leagueType = leagueType;
     }
 
-    public void setRoundDate(LocalDate roundDate) {
-        this.roundDate = roundDate;
+    public Integer getDayId() {
+        return dayId;
     }
-    public void setRoundDate(String roundDate) {
-        if (StringUtil.isNullOrEmpty(roundDate)) {
-            this.roundDate = null;
+
+    public void setDayId(Integer dayId) {
+        this.dayId = dayId;
+    }
+    public void setDayId(String dayId) {
+        if (StringUtil.isNullOrEmpty(dayId)) {
+            this.dayId = null;
         } else {
-            setRoundDate(CocamDatatypeConverter.parseLocalDate(roundDate));
+            setDayId(Integer.valueOf(dayId));
         }
     }
     
+
+    public LocalDate getDayDate() {
+        return dayDate;
+    }
+
+    public void setDayDate(LocalDate dayDate) {
+        this.dayDate = dayDate;
+    }
+    public void setDayDate(String dayDate) {
+        if (StringUtil.isNullOrEmpty(dayDate)) {
+            this.dayDate = null;
+        } else {
+            setDayDate(CocamDatatypeConverter.parseLocalDate(dayDate));
+        }
+    }
     
     public Boolean getMatchHead() {
         return matchHead;
@@ -349,7 +366,7 @@ public class ResultRecord implements Comparable<ResultRecord>{
     
     @Override
     public int compareTo(ResultRecord other) {
-        int i = this.roundId.compareTo(other.getRoundId());
+        int i = this.dayId.compareTo(other.getDayId());
         if (i!=0) return i;
         return this.recordId.compareTo(other.getRecordId());
     }
@@ -367,11 +384,13 @@ public class ResultRecord implements Comparable<ResultRecord>{
         sb.append(StringUtil.enclose(leagueType));
         sb.append(",roundId");
         sb.append(StringUtil.enclose(roundId));
-        sb.append(",roundDate");
-        sb.append((roundDate == null?
+        sb.append(",dayId");
+        sb.append(StringUtil.enclose(dayId));
+        sb.append(",dayDate");
+        sb.append((dayDate == null?
             StringUtil.enclose(StringUtil.NULL_LIT)
             : StringUtil.enclose(
-                CocamDatatypeConverter.printLocalDate(roundDate))));
+                CocamDatatypeConverter.printLocalDate(dayDate))));
         sb.append(",matchHead");
         sb.append(StringUtil.enclose(matchHead));
         sb.append(",localTeamId");

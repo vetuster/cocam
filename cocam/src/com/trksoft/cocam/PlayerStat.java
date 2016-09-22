@@ -26,7 +26,7 @@ import org.apache.logging.log4j.Logger;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "teamId",
-    "playerDenom",
+    "playerNick",
     "tablePlayed",
     "tableWon",
     "tableLost",
@@ -48,7 +48,9 @@ public class PlayerStat {
     @XmlAttribute(required = true)    
     private String teamId;
     @XmlAttribute(required = true)    
-    private String playerDenom;
+    private String teamDenom;
+    @XmlAttribute(required = true)    
+    private String playerNick;
     @XmlElement(required = true)
     private Integer tablePlayed;
     @XmlElement(required = true)
@@ -95,12 +97,20 @@ public class PlayerStat {
         this.teamId = teamId;
     }
 
-    public String getPlayerDenom() {
-        return playerDenom;
+    public String getTeamDenom() {
+        return teamDenom;
     }
 
-    public void setPlayerDenom(String playerDenom) {
-        this.playerDenom = playerDenom;
+    public void setTeamDenom(String teamDenom) {
+        this.teamDenom = teamDenom;
+    }
+
+    public String getPlayerNick() {
+        return playerNick;
+    }
+
+    public void setPlayerNick(String playerNick) {
+        this.playerNick = playerNick;
     }
 
     public Integer getTablePlayed() {
@@ -218,12 +228,20 @@ public class PlayerStat {
         this.goalsAgainst = goalsAgainst;
     }
     
+    public Float getWonCoefficient() {
+        return tableWon.floatValue() / tablePlayed.floatValue();
+    }
+    
+    public Float getGoalsCoefficient() {
+        return goalsFavor.floatValue() / 
+            (goalsFavor.floatValue() + goalsAgainst.floatValue());
+    }
     
     @Override
     public int hashCode() {
         int hash = 5;
         hash = 37 * hash + Objects.hashCode(this.teamId);
-        hash = 37 * hash + Objects.hashCode(this.playerDenom);
+        hash = 37 * hash + Objects.hashCode(this.playerNick);
         return hash;
     }
 
@@ -242,7 +260,7 @@ public class PlayerStat {
         if (!Objects.equals(this.teamId, other.teamId)) {
             return false;
         }
-        if (!Objects.equals(this.playerDenom, other.playerDenom)) {
+        if (!Objects.equals(this.playerNick, other.playerNick)) {
             return false;
         }
         return true;
@@ -253,8 +271,10 @@ public class PlayerStat {
         StringBuilder sb = new StringBuilder("TeamStat->");
         sb.append("teamId");
         sb.append(StringUtil.enclose(teamId));
-        sb.append(",playerDenom");
-        sb.append(StringUtil.enclose(playerDenom));
+        sb.append("teamDenom");
+        sb.append(StringUtil.enclose(teamDenom));
+        sb.append(",playerNick");
+        sb.append(StringUtil.enclose(playerNick));
         sb.append(",tablePlayed");
         sb.append(StringUtil.enclose(tablePlayed));
         sb.append(",tableWon");
@@ -280,100 +300,59 @@ public class PlayerStat {
         return sb.toString();
     }
     
-    public void update(Match match) {
-        
-        
-        //*************** SIN IMPLEMENTAR ************************************
-        
-        
+    public void update(Table table) {
         // this es local
         Boolean local;
-        if (getTeamId().equals(match.getLocalTeamId())) {
+        if (getPlayerNick().equals(table.getLocalPlayerNickOne())
+          || getPlayerNick().equals(table.getLocalPlayerNickTwo())) {
             local = true;
         // es visitante
-        } else if (getTeamId().equals(match.getVisitingTeamId())) {
+        } else if (getPlayerNick().equals(table.getVisitingPlayerNickOne())
+            || getPlayerNick().equals(table.getVisitingPlayerNickTwo())) {
             local = false;
         // el partido argumento no implica a this
         } else {
-            logger.warn("MATCH ARGUMENT DONT ATTACH THIS");
+            logger.warn("TABLE ARGUMENT DONT ATTACH THIS");
             return;
         }
         
         incTablePlayed();
         if (local) {
             incTablePlayedLocal();
+            setGoalsFavor(getGoalsFavor() + table.getLocalPairScore());
+            setGoalsAgainst(getGoalsAgainst() + table.getVisitingPairScore());
+            
+            if (table.getLocalPairScore() > table.getVisitingPairScore()) {
+                incTableWon();
+                incTableWonLocal();
+            } else {
+                incTableLost();
+                incTableLostLocal();
+            }
         } else {
             incTablePlayedVisiting();
-        }
-        
-        switch (match.getResultType()) {
-            case R04: {
-                if (local) {
-                    incTableLost();
-                    incTableLostLocal();
-                } else {
-                    incTableWon();
-                    incTableWonVisiting();
-                }
-                break;
-            }
-            case R13: {
-                if (local) {
-                    incTableLost();
-                    incTableLostLocal();
-                } else {
-                    incTableWon();
-                    incTableWonVisiting();
-                }
-                break;
-            }
-            case R22: {
-                break;
-            }
-            case R31: {
-                if (local) {
-                    incTableWon();
-                    incTableWonLocal();
-                } else {
-                    incTableLost();
-                    incTableLostVisiting();
-                }
-                break;
-            }
-            case R40: {
-                if (local) {
-                    incTableWon();
-                    incTableWonLocal();
-                } else {
-                    incTableLost();
-                    incTableLostVisiting();
-                }
-                break;
-            }
-            default: {
-                String errText = "UNKNOWN RESULT TYPE"
-                    + StringUtil.enclose(match.getResultType().toString());
-                logger.fatal(errText);
-                throw new RuntimeException(errText);
-            }
-        } // switch
-        
-        match.getTable().stream().forEach((table) -> {
-            if (local) {
-                setGoalsFavor(getGoalsFavor() + table.getLocalPairScore());
-                setGoalsAgainst(getGoalsAgainst()
-                    + table.getVisitingPairScore());
+            setGoalsFavor(getGoalsFavor() + table.getVisitingPairScore());
+            setGoalsAgainst(getGoalsAgainst() + table.getLocalPairScore());
+            
+            if (table.getVisitingPairScore() > table.getLocalPairScore()) {
+                incTableWon();
+                incTableWonVisiting();
             } else {
-                setGoalsFavor(getGoalsFavor() + table.getVisitingPairScore());
-                setGoalsAgainst(getGoalsAgainst() + table.getLocalPairScore());
+                incTableLost();
+                incTableLostVisiting();
             }
-        });
+        }
     }
     
     public String getRankingRecord(final String charSep) {
         List<String> rankingField = new LinkedList<>();
-        rankingField.add(getPlayerDenom());
+        rankingField.add(getPlayerNick());
+        rankingField.add(getTeamDenom());
         rankingField.add(getTablePlayed().toString());
+        rankingField.add(getTableWon().toString());
+        rankingField.add(getTableLost().toString());
+        rankingField.add(getWonCoefficient().toString());
+        rankingField.add(getGoalsCoefficient().toString());
         
         return rankingField.stream().map(Object::toString).
             collect(Collectors.joining(charSep));

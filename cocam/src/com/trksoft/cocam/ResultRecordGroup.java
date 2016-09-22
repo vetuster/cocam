@@ -33,7 +33,7 @@ import org.xml.sax.SAXException;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "roundId",
+    "dayId",
     "resultRecord"
 })
 @XmlRootElement
@@ -43,7 +43,7 @@ public class ResultRecordGroup {
         = LogManager.getLogger(ResultRecordGroup.class);
     
     @XmlAttribute
-    private Integer roundId;
+    private Integer dayId;
     
     @XmlElement(required = true)
     private final List<ResultRecord> resultRecord;
@@ -52,12 +52,12 @@ public class ResultRecordGroup {
         resultRecord = new LinkedList<>();
     }
 
-    public Integer getRoundId() {
-        return roundId;
+    public Integer getDayId() {
+        return dayId;
     }
 
-    public void setRoundId(Integer roundId) {
-        this.roundId = roundId;
+    public void setDayId(Integer dayId) {
+        this.dayId = dayId;
     }
 
     public List<ResultRecord> getResultRecord() {
@@ -67,8 +67,8 @@ public class ResultRecordGroup {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder("ResultRecordGroup->");
-        sb.append("roundId");
-        sb.append(StringUtil.enclose(roundId));
+        sb.append("dayId");
+        sb.append(StringUtil.enclose(dayId));
         sb.append(resultRecord.stream().map(Object::toString).
             collect(Collectors.joining("->")));
         return sb.toString();
