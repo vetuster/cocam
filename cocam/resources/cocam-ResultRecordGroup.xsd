@@ -6,7 +6,7 @@
         <xs:sequence>
             <xs:element name="resultRecord" type="ResultRecordType" minOccurs="1" maxOccurs="52"/>
         </xs:sequence>
-        <xs:attribute name="roundId" type="xs:integer" use="required"/>
+        <xs:attribute name="dayId" type="xs:integer" use="required"/>
     </xs:complexType>
     </xs:element>
     
@@ -16,8 +16,9 @@
             <xs:element name="recordId"               type="xs:integer"  minOccurs="1" maxOccurs="1"/>
             <xs:element name="seasonId"               type="xs:string"   minOccurs="0" maxOccurs="1"/>
             <xs:element name="leagueType"             type="xs:string"   minOccurs="1" maxOccurs="1"/>
-            <xs:element name="roundId"                type="xs:integer"  minOccurs="0" maxOccurs="1"/>
-            <xs:element name="roundDate"              type="xs:date"     minOccurs="0" maxOccurs="1"/>
+            <xs:element name="roundId"                type="xs:integer"  minOccurs="1" maxOccurs="1"/>
+            <xs:element name="dayId"                  type="xs:integer"  minOccurs="0" maxOccurs="1"/>
+            <xs:element name="dayDate"                type="xs:date"     minOccurs="0" maxOccurs="1"/>
             <xs:element name="matchHead"              type="xs:boolean"  minOccurs="1" maxOccurs="1"/>
             <xs:element name="localTeamId"            type="xs:string"   minOccurs="1" maxOccurs="1"/>
             <xs:element name="localTeamName"          type="xs:string"   minOccurs="0" maxOccurs="1"/>
