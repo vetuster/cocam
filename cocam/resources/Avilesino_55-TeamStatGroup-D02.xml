@@ -21,6 +21,16 @@
                 <tableResult04>1</tableResult04>
                 <goalsFavor>31</goalsFavor>
                 <goalsAgainst>46</goalsAgainst>
+                <directMatch>
+                    <entry>
+                        <key>bcampy</key>
+                        <value adversaryTeamId="bcampy" playedAsLocal="true" pointsAsLocal="0" playedAsVisiting="false"/>
+                    </entry>
+                    <entry>
+                        <key>capiol</key>
+                        <value adversaryTeamId="capiol" playedAsLocal="false" playedAsVisiting="true" pointsAsVisiting="2"/>
+                    </entry>
+                </directMatch>
             </value>
         </entry>
         <entry>
@@ -43,6 +53,16 @@
                 <tableResult04>1</tableResult04>
                 <goalsFavor>32</goalsFavor>
                 <goalsAgainst>45</goalsAgainst>
+                <directMatch>
+                    <entry>
+                        <key>sagcel</key>
+                        <value adversaryTeamId="sagcel" playedAsLocal="false" playedAsVisiting="true" pointsAsVisiting="2"/>
+                    </entry>
+                    <entry>
+                        <key>acveig</key>
+                        <value adversaryTeamId="acveig" playedAsLocal="true" pointsAsLocal="0" playedAsVisiting="false"/>
+                    </entry>
+                </directMatch>
             </value>
         </entry>
         <entry>
@@ -65,6 +85,16 @@
                 <tableResult04>0</tableResult04>
                 <goalsFavor>38</goalsFavor>
                 <goalsAgainst>36</goalsAgainst>
+                <directMatch>
+                    <entry>
+                        <key>albora</key>
+                        <value adversaryTeamId="albora" playedAsLocal="true" pointsAsLocal="2" playedAsVisiting="false"/>
+                    </entry>
+                    <entry>
+                        <key>churre</key>
+                        <value adversaryTeamId="churre" playedAsLocal="false" playedAsVisiting="true" pointsAsVisiting="2"/>
+                    </entry>
+                </directMatch>
             </value>
         </entry>
         <entry>
@@ -87,6 +117,16 @@
                 <tableResult04>0</tableResult04>
                 <goalsFavor>46</goalsFavor>
                 <goalsAgainst>28</goalsAgainst>
+                <directMatch>
+                    <entry>
+                        <key>picosa</key>
+                        <value adversaryTeamId="picosa" playedAsLocal="false" playedAsVisiting="true" pointsAsVisiting="3"/>
+                    </entry>
+                    <entry>
+                        <key>chalan</key>
+                        <value adversaryTeamId="chalan" playedAsLocal="true" pointsAsLocal="4" playedAsVisiting="false"/>
+                    </entry>
+                </directMatch>
             </value>
         </entry>
         <entry>
@@ -109,6 +149,16 @@
                 <tableResult04>0</tableResult04>
                 <goalsFavor>44</goalsFavor>
                 <goalsAgainst>30</goalsAgainst>
+                <directMatch>
+                    <entry>
+                        <key>cvalsa</key>
+                        <value adversaryTeamId="cvalsa" playedAsLocal="false" playedAsVisiting="true" pointsAsVisiting="2"/>
+                    </entry>
+                    <entry>
+                        <key>monchi</key>
+                        <value adversaryTeamId="monchi" playedAsLocal="true" pointsAsLocal="4" playedAsVisiting="false"/>
+                    </entry>
+                </directMatch>
             </value>
         </entry>
         <entry>
@@ -131,6 +181,16 @@
                 <tableResult04>1</tableResult04>
                 <goalsFavor>37</goalsFavor>
                 <goalsAgainst>40</goalsAgainst>
+                <directMatch>
+                    <entry>
+                        <key>acveig</key>
+                        <value adversaryTeamId="acveig" playedAsLocal="false" playedAsVisiting="true" pointsAsVisiting="0"/>
+                    </entry>
+                    <entry>
+                        <key>capiol</key>
+                        <value adversaryTeamId="capiol" playedAsLocal="true" pointsAsLocal="2" playedAsVisiting="false"/>
+                    </entry>
+                </directMatch>
             </value>
         </entry>
         <entry>
@@ -153,6 +213,16 @@
                 <tableResult04>0</tableResult04>
                 <goalsFavor>41</goalsFavor>
                 <goalsAgainst>37</goalsAgainst>
+                <directMatch>
+                    <entry>
+                        <key>sagrib</key>
+                        <value adversaryTeamId="sagrib" playedAsLocal="false" playedAsVisiting="true" pointsAsVisiting="3"/>
+                    </entry>
+                    <entry>
+                        <key>4vient</key>
+                        <value adversaryTeamId="4vient" playedAsLocal="true" pointsAsLocal="2" playedAsVisiting="false"/>
+                    </entry>
+                </directMatch>
             </value>
         </entry>
         <entry>
@@ -175,6 +245,16 @@
                 <tableResult04>0</tableResult04>
                 <goalsFavor>36</goalsFavor>
                 <goalsAgainst>38</goalsAgainst>
+                <directMatch>
+                    <entry>
+                        <key>sagkam</key>
+                        <value adversaryTeamId="sagkam" playedAsLocal="true" pointsAsLocal="1" playedAsVisiting="false"/>
+                    </entry>
+                    <entry>
+                        <key>chalan</key>
+                        <value adversaryTeamId="chalan" playedAsLocal="false" playedAsVisiting="true" pointsAsVisiting="3"/>
+                    </entry>
+                </directMatch>
             </value>
         </entry>
         <entry>
@@ -197,6 +277,16 @@
                 <tableResult04>0</tableResult04>
                 <goalsFavor>41</goalsFavor>
                 <goalsAgainst>35</goalsAgainst>
+                <directMatch>
+                    <entry>
+                        <key>sagcel</key>
+                        <value adversaryTeamId="sagcel" playedAsLocal="true" pointsAsLocal="1" playedAsVisiting="false"/>
+                    </entry>
+                    <entry>
+                        <key>valmus</key>
+                        <value adversaryTeamId="valmus" playedAsLocal="false" playedAsVisiting="true" pointsAsVisiting="3"/>
+                    </entry>
+                </directMatch>
             </value>
         </entry>
         <entry>
@@ -219,6 +309,16 @@
                 <tableResult04>1</tableResult04>
                 <goalsFavor>29</goalsFavor>
                 <goalsAgainst>42</goalsAgainst>
+                <directMatch>
+                    <entry>
+                        <key>barena</key>
+                        <value adversaryTeamId="barena" playedAsLocal="false" playedAsVisiting="true" pointsAsVisiting="0"/>
+                    </entry>
+                    <entry>
+                        <key>calolo</key>
+                        <value adversaryTeamId="calolo" playedAsLocal="true" pointsAsLocal="2" playedAsVisiting="false"/>
+                    </entry>
+                </directMatch>
             </value>
         </entry>
         <entry>
@@ -241,6 +341,16 @@
                 <tableResult04>2</tableResult04>
                 <goalsFavor>22</goalsFavor>
                 <goalsAgainst>48</goalsAgainst>
+                <directMatch>
+                    <entry>
+                        <key>andrea</key>
+                        <value adversaryTeamId="andrea" playedAsLocal="false" playedAsVisiting="true" pointsAsVisiting="0"/>
+                    </entry>
+                    <entry>
+                        <key>bcarba</key>
+                        <value adversaryTeamId="bcarba" playedAsLocal="true" pointsAsLocal="0" playedAsVisiting="false"/>
+                    </entry>
+                </directMatch>
             </value>
         </entry>
         <entry>
@@ -263,6 +373,16 @@
                 <tableResult04>0</tableResult04>
                 <goalsFavor>47</goalsFavor>
                 <goalsAgainst>29</goalsAgainst>
+                <directMatch>
+                    <entry>
+                        <key>rcarol</key>
+                        <value adversaryTeamId="rcarol" playedAsLocal="false" playedAsVisiting="true" pointsAsVisiting="3"/>
+                    </entry>
+                    <entry>
+                        <key>valmus</key>
+                        <value adversaryTeamId="valmus" playedAsLocal="true" pointsAsLocal="4" playedAsVisiting="false"/>
+                    </entry>
+                </directMatch>
             </value>
         </entry>
         <entry>
@@ -285,6 +405,16 @@
                 <tableResult04>0</tableResult04>
                 <goalsFavor>34</goalsFavor>
                 <goalsAgainst>39</goalsAgainst>
+                <directMatch>
+                    <entry>
+                        <key>habana</key>
+                        <value adversaryTeamId="habana" playedAsLocal="false" playedAsVisiting="true" pointsAsVisiting="2"/>
+                    </entry>
+                    <entry>
+                        <key>catere</key>
+                        <value adversaryTeamId="catere" playedAsLocal="true" pointsAsLocal="1" playedAsVisiting="false"/>
+                    </entry>
+                </directMatch>
             </value>
         </entry>
         <entry>
@@ -307,6 +437,16 @@
                 <tableResult04>0</tableResult04>
                 <goalsFavor>48</goalsFavor>
                 <goalsAgainst>32</goalsAgainst>
+                <directMatch>
+                    <entry>
+                        <key>churre</key>
+                        <value adversaryTeamId="churre" playedAsLocal="true" pointsAsLocal="4" playedAsVisiting="false"/>
+                    </entry>
+                    <entry>
+                        <key>4vient</key>
+                        <value adversaryTeamId="4vient" playedAsLocal="false" playedAsVisiting="true" pointsAsVisiting="4"/>
+                    </entry>
+                </directMatch>
             </value>
         </entry>
         <entry>
@@ -329,6 +469,16 @@
                 <tableResult04>0</tableResult04>
                 <goalsFavor>46</goalsFavor>
                 <goalsAgainst>31</goalsAgainst>
+                <directMatch>
+                    <entry>
+                        <key>brenya</key>
+                        <value adversaryTeamId="brenya" playedAsLocal="false" playedAsVisiting="true" pointsAsVisiting="2"/>
+                    </entry>
+                    <entry>
+                        <key>habana</key>
+                        <value adversaryTeamId="habana" playedAsLocal="true" pointsAsLocal="4" playedAsVisiting="false"/>
+                    </entry>
+                </directMatch>
             </value>
         </entry>
         <entry>
@@ -351,6 +501,12 @@
                 <tableResult04>0</tableResult04>
                 <goalsFavor>13</goalsFavor>
                 <goalsAgainst>22</goalsAgainst>
+                <directMatch>
+                    <entry>
+                        <key>cebano</key>
+                        <value adversaryTeamId="cebano" playedAsLocal="true" pointsAsLocal="1" playedAsVisiting="false"/>
+                    </entry>
+                </directMatch>
             </value>
         </entry>
         <entry>
@@ -373,11 +529,21 @@
                 <tableResult04>1</tableResult04>
                 <goalsFavor>33</goalsFavor>
                 <goalsAgainst>45</goalsAgainst>
+                <directMatch>
+                    <entry>
+                        <key>cvalsa</key>
+                        <value adversaryTeamId="cvalsa" playedAsLocal="true" pointsAsLocal="0" playedAsVisiting="false"/>
+                    </entry>
+                    <entry>
+                        <key>ccelti</key>
+                        <value adversaryTeamId="ccelti" playedAsLocal="false" playedAsVisiting="true" pointsAsVisiting="2"/>
+                    </entry>
+                </directMatch>
             </value>
         </entry>
         <entry>
             <key>bcarba</key>
-            <value teamId="bcarba" teamDenom="BAR CARBAYEDO">
+            <value teamId="bcarba" teamDenom="PEÑA CARBAYEDO">
                 <points>7</points>
                 <matchPlayed>2</matchPlayed>
                 <matchWon>2</matchWon>
@@ -395,6 +561,16 @@
                 <tableResult04>0</tableResult04>
                 <goalsFavor>45</goalsFavor>
                 <goalsAgainst>25</goalsAgainst>
+                <directMatch>
+                    <entry>
+                        <key>monchi</key>
+                        <value adversaryTeamId="monchi" playedAsLocal="false" playedAsVisiting="true" pointsAsVisiting="4"/>
+                    </entry>
+                    <entry>
+                        <key>cgerma</key>
+                        <value adversaryTeamId="cgerma" playedAsLocal="true" pointsAsLocal="3" playedAsVisiting="false"/>
+                    </entry>
+                </directMatch>
             </value>
         </entry>
         <entry>
@@ -417,6 +593,16 @@
                 <tableResult04>1</tableResult04>
                 <goalsFavor>30</goalsFavor>
                 <goalsAgainst>43</goalsAgainst>
+                <directMatch>
+                    <entry>
+                        <key>rcarol</key>
+                        <value adversaryTeamId="rcarol" playedAsLocal="true" pointsAsLocal="1" playedAsVisiting="false"/>
+                    </entry>
+                    <entry>
+                        <key>cebano</key>
+                        <value adversaryTeamId="cebano" playedAsLocal="false" playedAsVisiting="true" pointsAsVisiting="0"/>
+                    </entry>
+                </directMatch>
             </value>
         </entry>
         <entry>
@@ -439,11 +625,21 @@
                 <tableResult04>0</tableResult04>
                 <goalsFavor>39</goalsFavor>
                 <goalsAgainst>36</goalsAgainst>
+                <directMatch>
+                    <entry>
+                        <key>albora</key>
+                        <value adversaryTeamId="albora" playedAsLocal="false" playedAsVisiting="true" pointsAsVisiting="4"/>
+                    </entry>
+                    <entry>
+                        <key>bxareu</key>
+                        <value adversaryTeamId="bxareu" playedAsLocal="false" playedAsVisiting="true" pointsAsVisiting="1"/>
+                    </entry>
+                </directMatch>
             </value>
         </entry>
         <entry>
             <key>ccelti</key>
-            <value teamId="ccelti" teamDenom="CAFETERÍA CÉLTICA">
+            <value teamId="ccelti" teamDenom="CÉLTICA">
                 <points>5</points>
                 <matchPlayed>2</matchPlayed>
                 <matchWon>1</matchWon>
@@ -461,6 +657,16 @@
                 <tableResult04>0</tableResult04>
                 <goalsFavor>40</goalsFavor>
                 <goalsAgainst>34</goalsAgainst>
+                <directMatch>
+                    <entry>
+                        <key>8villa</key>
+                        <value adversaryTeamId="8villa" playedAsLocal="true" pointsAsLocal="2" playedAsVisiting="false"/>
+                    </entry>
+                    <entry>
+                        <key>catere</key>
+                        <value adversaryTeamId="catere" playedAsLocal="false" playedAsVisiting="true" pointsAsVisiting="3"/>
+                    </entry>
+                </directMatch>
             </value>
         </entry>
         <entry>
@@ -483,6 +689,12 @@
                 <tableResult04>0</tableResult04>
                 <goalsFavor>14</goalsFavor>
                 <goalsAgainst>21</goalsAgainst>
+                <directMatch>
+                    <entry>
+                        <key>bcarba</key>
+                        <value adversaryTeamId="bcarba" playedAsLocal="false" playedAsVisiting="true" pointsAsVisiting="1"/>
+                    </entry>
+                </directMatch>
             </value>
         </entry>
         <entry>
@@ -505,6 +717,16 @@
                 <tableResult04>1</tableResult04>
                 <goalsFavor>27</goalsFavor>
                 <goalsAgainst>45</goalsAgainst>
+                <directMatch>
+                    <entry>
+                        <key>sagrib</key>
+                        <value adversaryTeamId="sagrib" playedAsLocal="true" pointsAsLocal="1" playedAsVisiting="false"/>
+                    </entry>
+                    <entry>
+                        <key>sagkam</key>
+                        <value adversaryTeamId="sagkam" playedAsLocal="false" playedAsVisiting="true" pointsAsVisiting="0"/>
+                    </entry>
+                </directMatch>
             </value>
         </entry>
         <entry>
@@ -527,6 +749,16 @@
                 <tableResult04>0</tableResult04>
                 <goalsFavor>43</goalsFavor>
                 <goalsAgainst>34</goalsAgainst>
+                <directMatch>
+                    <entry>
+                        <key>andrea</key>
+                        <value adversaryTeamId="andrea" playedAsLocal="true" pointsAsLocal="2" playedAsVisiting="false"/>
+                    </entry>
+                    <entry>
+                        <key>8villa</key>
+                        <value adversaryTeamId="8villa" playedAsLocal="false" playedAsVisiting="true" pointsAsVisiting="4"/>
+                    </entry>
+                </directMatch>
             </value>
         </entry>
         <entry>
@@ -549,6 +781,16 @@
                 <tableResult04>1</tableResult04>
                 <goalsFavor>27</goalsFavor>
                 <goalsAgainst>46</goalsAgainst>
+                <directMatch>
+                    <entry>
+                        <key>barena</key>
+                        <value adversaryTeamId="barena" playedAsLocal="true" pointsAsLocal="2" playedAsVisiting="false"/>
+                    </entry>
+                    <entry>
+                        <key>bxareu</key>
+                        <value adversaryTeamId="bxareu" playedAsLocal="true" pointsAsLocal="0" playedAsVisiting="false"/>
+                    </entry>
+                </directMatch>
             </value>
         </entry>
         <entry>
@@ -571,6 +813,16 @@
                 <tableResult04>0</tableResult04>
                 <goalsFavor>45</goalsFavor>
                 <goalsAgainst>24</goalsAgainst>
+                <directMatch>
+                    <entry>
+                        <key>brenya</key>
+                        <value adversaryTeamId="brenya" playedAsLocal="false" playedAsVisiting="true" pointsAsVisiting="4"/>
+                    </entry>
+                    <entry>
+                        <key>bcampy</key>
+                        <value adversaryTeamId="bcampy" playedAsLocal="true" pointsAsLocal="3" playedAsVisiting="false"/>
+                    </entry>
+                </directMatch>
             </value>
         </entry>
         <entry>
@@ -593,6 +845,16 @@
                 <tableResult04>0</tableResult04>
                 <goalsFavor>38</goalsFavor>
                 <goalsAgainst>35</goalsAgainst>
+                <directMatch>
+                    <entry>
+                        <key>calolo</key>
+                        <value adversaryTeamId="calolo" playedAsLocal="false" playedAsVisiting="true" pointsAsVisiting="3"/>
+                    </entry>
+                    <entry>
+                        <key>ccelti</key>
+                        <value adversaryTeamId="ccelti" playedAsLocal="true" pointsAsLocal="1" playedAsVisiting="false"/>
+                    </entry>
+                </directMatch>
             </value>
         </entry>
     </teamStat>
