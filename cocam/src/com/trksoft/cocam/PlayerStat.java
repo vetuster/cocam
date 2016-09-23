@@ -351,6 +351,14 @@ public class PlayerStat {
         rankingField.add(getTablePlayed().toString());
         rankingField.add(getTableWon().toString());
         rankingField.add(getTableLost().toString());
+        rankingField.add(getTablePlayedLocal().toString());
+        rankingField.add(getTableWonLocal().toString());
+        rankingField.add(getTableLostLocal().toString());
+        rankingField.add(getTablePlayedVisiting().toString());
+        rankingField.add(getTableWonVisiting().toString());
+        rankingField.add(getTableLostVisiting().toString());
+        rankingField.add(getGoalsFavor().toString());
+        rankingField.add(getGoalsAgainst().toString());
         rankingField.add(getWonCoefficient().toString());
         rankingField.add(getGoalsCoefficient().toString());
         
