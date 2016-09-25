@@ -266,7 +266,7 @@
         <localPairScore>6</localPairScore>
         <visitingPairScore>3</visitingPairScore>
         <visitingPlayerNickOne>NACHO</visitingPlayerNickOne>
-        <visitingPlayerNickTwo>ROSCALIN</visitingPlayerNickTwo>
+        <visitingPlayerNickTwo>MOSCALIN</visitingPlayerNickTwo>
     </resultRecord>
     <resultRecord>
         <recordType>INF</recordType>
@@ -301,7 +301,7 @@
         <visitingTeamScore>2</visitingTeamScore>
         <tableId>1</tableId>
         <localPlayerNickOne>GENI</localPlayerNickOne>
-        <localPlayerNickTwo>PUA</localPlayerNickTwo>
+        <localPlayerNickTwo>PUPI</localPlayerNickTwo>
         <localPairScore>6</localPairScore>
         <visitingPairScore>3</visitingPairScore>
         <visitingPlayerNickOne>ROSA</visitingPlayerNickOne>
@@ -601,7 +601,7 @@
         <visitingTeamId>capiol</visitingTeamId>
         <tableId>2</tableId>
         <localPlayerNickOne>ARTURO</localPlayerNickOne>
-        <localPlayerNickTwo>VICTOR</localPlayerNickTwo>
+        <localPlayerNickTwo>VITI</localPlayerNickTwo>
         <localPairScore>6</localPairScore>
         <visitingPairScore>0</visitingPairScore>
         <visitingPlayerNickOne>FELIX</visitingPlayerNickOne>
@@ -743,7 +743,7 @@
         <visitingTeamId>sagcel</visitingTeamId>
         <tableId>2</tableId>
         <localPlayerNickOne>SILVI</localPlayerNickOne>
-        <localPlayerNickTwo>KYLLO</localPlayerNickTwo>
+        <localPlayerNickTwo>KIYO</localPlayerNickTwo>
         <localPairScore>5</localPairScore>
         <visitingPairScore>6</visitingPairScore>
         <visitingPlayerNickOne>CHEMA</visitingPlayerNickOne>

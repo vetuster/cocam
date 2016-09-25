@@ -434,22 +434,6 @@
             </value>
         </entry>
         <entry>
-            <key>caterePUA</key>
-            <value teamId="catere" playerNick="PUA" teamDenom="CASA TERE">
-                <tablePlayed>1</tablePlayed>
-                <tableWon>1</tableWon>
-                <tableLost>0</tableLost>
-                <tablePlayedLocal>1</tablePlayedLocal>
-                <tableWonLocal>1</tableWonLocal>
-                <tableLostLocal>0</tableLostLocal>
-                <tablePlayedVisiting>0</tablePlayedVisiting>
-                <tableWonVisiting>0</tableWonVisiting>
-                <tableLostVisiting>0</tableLostVisiting>
-                <goalsFavor>6</goalsFavor>
-                <goalsAgainst>3</goalsAgainst>
-            </value>
-        </entry>
-        <entry>
             <key>cebanoANGEL RAMON</key>
             <value teamId="cebano" playerNick="ANGEL RAMON" teamDenom="CAFÉ BAR ÉBANO">
                 <tablePlayed>1</tablePlayed>
@@ -612,16 +596,16 @@
         <entry>
             <key>sagribVITI</key>
             <value teamId="sagrib" playerNick="VITI" teamDenom="S.AG.-RÍAS BAIXAS">
-                <tablePlayed>3</tablePlayed>
-                <tableWon>2</tableWon>
+                <tablePlayed>4</tablePlayed>
+                <tableWon>3</tableWon>
                 <tableLost>1</tableLost>
-                <tablePlayedLocal>1</tablePlayedLocal>
-                <tableWonLocal>0</tableWonLocal>
+                <tablePlayedLocal>2</tablePlayedLocal>
+                <tableWonLocal>1</tableWonLocal>
                 <tableLostLocal>1</tableLostLocal>
                 <tablePlayedVisiting>2</tablePlayedVisiting>
                 <tableWonVisiting>2</tableWonVisiting>
                 <tableLostVisiting>0</tableLostVisiting>
-                <goalsFavor>17</goalsFavor>
+                <goalsFavor>23</goalsFavor>
                 <goalsAgainst>9</goalsAgainst>
             </value>
         </entry>
@@ -1220,17 +1204,17 @@
         <entry>
             <key>8villaMOSCALIN</key>
             <value teamId="8villa" playerNick="MOSCALIN" teamDenom="8 VILLAS">
-                <tablePlayed>1</tablePlayed>
+                <tablePlayed>2</tablePlayed>
                 <tableWon>1</tableWon>
-                <tableLost>0</tableLost>
+                <tableLost>1</tableLost>
                 <tablePlayedLocal>1</tablePlayedLocal>
                 <tableWonLocal>1</tableWonLocal>
                 <tableLostLocal>0</tableLostLocal>
-                <tablePlayedVisiting>0</tablePlayedVisiting>
+                <tablePlayedVisiting>1</tablePlayedVisiting>
                 <tableWonVisiting>0</tableWonVisiting>
-                <tableLostVisiting>0</tableLostVisiting>
-                <goalsFavor>6</goalsFavor>
-                <goalsAgainst>4</goalsAgainst>
+                <tableLostVisiting>1</tableLostVisiting>
+                <goalsFavor>9</goalsFavor>
+                <goalsAgainst>10</goalsAgainst>
             </value>
         </entry>
         <entry>
@@ -1460,17 +1444,17 @@
         <entry>
             <key>monchiALFONSO</key>
             <value teamId="monchi" playerNick="ALFONSO" teamDenom="PEÑA MUS MONCHI">
-                <tablePlayed>1</tablePlayed>
+                <tablePlayed>2</tablePlayed>
                 <tableWon>0</tableWon>
-                <tableLost>1</tableLost>
-                <tablePlayedLocal>0</tablePlayedLocal>
+                <tableLost>2</tableLost>
+                <tablePlayedLocal>1</tablePlayedLocal>
                 <tableWonLocal>0</tableWonLocal>
-                <tableLostLocal>0</tableLostLocal>
+                <tableLostLocal>1</tableLostLocal>
                 <tablePlayedVisiting>1</tablePlayedVisiting>
                 <tableWonVisiting>0</tableWonVisiting>
                 <tableLostVisiting>1</tableLostVisiting>
-                <goalsFavor>3</goalsFavor>
-                <goalsAgainst>6</goalsAgainst>
+                <goalsFavor>5</goalsFavor>
+                <goalsAgainst>12</goalsAgainst>
             </value>
         </entry>
         <entry>
@@ -1684,17 +1668,17 @@
         <entry>
             <key>chalanKIYO</key>
             <value teamId="chalan" playerNick="KIYO" teamDenom="MUS EL CHALANÍN">
-                <tablePlayed>3</tablePlayed>
+                <tablePlayed>4</tablePlayed>
                 <tableWon>0</tableWon>
-                <tableLost>3</tableLost>
-                <tablePlayedLocal>1</tablePlayedLocal>
+                <tableLost>4</tableLost>
+                <tablePlayedLocal>2</tablePlayedLocal>
                 <tableWonLocal>0</tableWonLocal>
-                <tableLostLocal>1</tableLostLocal>
+                <tableLostLocal>2</tableLostLocal>
                 <tablePlayedVisiting>2</tablePlayedVisiting>
                 <tableWonVisiting>0</tableWonVisiting>
                 <tableLostVisiting>2</tableLostVisiting>
-                <goalsFavor>12</goalsFavor>
-                <goalsAgainst>18</goalsAgainst>
+                <goalsFavor>17</goalsFavor>
+                <goalsAgainst>24</goalsAgainst>
             </value>
         </entry>
         <entry>
@@ -2436,17 +2420,17 @@
         <entry>
             <key>8villaURE</key>
             <value teamId="8villa" playerNick="URE" teamDenom="8 VILLAS">
-                <tablePlayed>3</tablePlayed>
+                <tablePlayed>4</tablePlayed>
                 <tableWon>0</tableWon>
-                <tableLost>3</tableLost>
-                <tablePlayedLocal>1</tablePlayedLocal>
+                <tableLost>4</tableLost>
+                <tablePlayedLocal>2</tablePlayedLocal>
                 <tableWonLocal>0</tableWonLocal>
-                <tableLostLocal>1</tableLostLocal>
+                <tableLostLocal>2</tableLostLocal>
                 <tablePlayedVisiting>2</tablePlayedVisiting>
                 <tableWonVisiting>0</tableWonVisiting>
                 <tableLostVisiting>2</tableLostVisiting>
-                <goalsFavor>11</goalsFavor>
-                <goalsAgainst>18</goalsAgainst>
+                <goalsFavor>14</goalsFavor>
+                <goalsAgainst>24</goalsAgainst>
             </value>
         </entry>
         <entry>
@@ -2532,17 +2516,17 @@
         <entry>
             <key>caterePUPI</key>
             <value teamId="catere" playerNick="PUPI" teamDenom="CASA TERE">
-                <tablePlayed>2</tablePlayed>
-                <tableWon>0</tableWon>
+                <tablePlayed>3</tablePlayed>
+                <tableWon>1</tableWon>
                 <tableLost>2</tableLost>
-                <tablePlayedLocal>1</tablePlayedLocal>
-                <tableWonLocal>0</tableWonLocal>
+                <tablePlayedLocal>2</tablePlayedLocal>
+                <tableWonLocal>1</tableWonLocal>
                 <tableLostLocal>1</tableLostLocal>
                 <tablePlayedVisiting>1</tablePlayedVisiting>
                 <tableWonVisiting>0</tableWonVisiting>
                 <tableLostVisiting>1</tableLostVisiting>
-                <goalsFavor>8</goalsFavor>
-                <goalsAgainst>12</goalsAgainst>
+                <goalsFavor>14</goalsFavor>
+                <goalsAgainst>15</goalsAgainst>
             </value>
         </entry>
         <entry>
@@ -3215,22 +3199,6 @@
                 <tableLostVisiting>0</tableLostVisiting>
                 <goalsFavor>12</goalsFavor>
                 <goalsAgainst>5</goalsAgainst>
-            </value>
-        </entry>
-        <entry>
-            <key>chalanKYLLO</key>
-            <value teamId="chalan" playerNick="KYLLO" teamDenom="MUS EL CHALANÍN">
-                <tablePlayed>1</tablePlayed>
-                <tableWon>0</tableWon>
-                <tableLost>1</tableLost>
-                <tablePlayedLocal>1</tablePlayedLocal>
-                <tableWonLocal>0</tableWonLocal>
-                <tableLostLocal>1</tableLostLocal>
-                <tablePlayedVisiting>0</tablePlayedVisiting>
-                <tableWonVisiting>0</tableWonVisiting>
-                <tableLostVisiting>0</tableLostVisiting>
-                <goalsFavor>5</goalsFavor>
-                <goalsAgainst>6</goalsAgainst>
             </value>
         </entry>
         <entry>
@@ -4034,22 +4002,6 @@
             </value>
         </entry>
         <entry>
-            <key>sagribVICTOR</key>
-            <value teamId="sagrib" playerNick="VICTOR" teamDenom="S.AG.-RÍAS BAIXAS">
-                <tablePlayed>1</tablePlayed>
-                <tableWon>1</tableWon>
-                <tableLost>0</tableLost>
-                <tablePlayedLocal>1</tablePlayedLocal>
-                <tableWonLocal>1</tableWonLocal>
-                <tableLostLocal>0</tableLostLocal>
-                <tablePlayedVisiting>0</tablePlayedVisiting>
-                <tableWonVisiting>0</tableWonVisiting>
-                <tableLostVisiting>0</tableLostVisiting>
-                <goalsFavor>6</goalsFavor>
-                <goalsAgainst>0</goalsAgainst>
-            </value>
-        </entry>
-        <entry>
             <key>rcarolDANI</key>
             <value teamId="rcarol" playerNick="DANI" teamDenom="RINCÓN DE CAROL">
                 <tablePlayed>2</tablePlayed>
@@ -4370,22 +4322,6 @@
             </value>
         </entry>
         <entry>
-            <key>8villaAURE</key>
-            <value teamId="8villa" playerNick="AURE" teamDenom="8 VILLAS">
-                <tablePlayed>1</tablePlayed>
-                <tableWon>0</tableWon>
-                <tableLost>1</tableLost>
-                <tablePlayedLocal>1</tablePlayedLocal>
-                <tableWonLocal>0</tableWonLocal>
-                <tableLostLocal>1</tableLostLocal>
-                <tablePlayedVisiting>0</tablePlayedVisiting>
-                <tableWonVisiting>0</tableWonVisiting>
-                <tableLostVisiting>0</tableLostVisiting>
-                <goalsFavor>3</goalsFavor>
-                <goalsAgainst>6</goalsAgainst>
-            </value>
-        </entry>
-        <entry>
             <key>monchiILDEFONSO</key>
             <value teamId="monchi" playerNick="ILDEFONSO" teamDenom="PEÑA MUS MONCHI">
                 <tablePlayed>1</tablePlayed>
@@ -4514,22 +4450,6 @@
             </value>
         </entry>
         <entry>
-            <key>8villaROSCALIN</key>
-            <value teamId="8villa" playerNick="ROSCALIN" teamDenom="8 VILLAS">
-                <tablePlayed>1</tablePlayed>
-                <tableWon>0</tableWon>
-                <tableLost>1</tableLost>
-                <tablePlayedLocal>0</tablePlayedLocal>
-                <tableWonLocal>0</tableWonLocal>
-                <tableLostLocal>0</tableLostLocal>
-                <tablePlayedVisiting>1</tablePlayedVisiting>
-                <tableWonVisiting>0</tableWonVisiting>
-                <tableLostVisiting>1</tableLostVisiting>
-                <goalsFavor>3</goalsFavor>
-                <goalsAgainst>6</goalsAgainst>
-            </value>
-        </entry>
-        <entry>
             <key>churreAZA</key>
             <value teamId="churre" playerNick="AZA" teamDenom="CHURRERÍA">
                 <tablePlayed>4</tablePlayed>
@@ -4591,22 +4511,6 @@
                 <tableLostVisiting>3</tableLostVisiting>
                 <goalsFavor>23</goalsFavor>
                 <goalsAgainst>29</goalsAgainst>
-            </value>
-        </entry>
-        <entry>
-            <key>monchiFONSO</key>
-            <value teamId="monchi" playerNick="FONSO" teamDenom="PEÑA MUS MONCHI">
-                <tablePlayed>1</tablePlayed>
-                <tableWon>0</tableWon>
-                <tableLost>1</tableLost>
-                <tablePlayedLocal>1</tablePlayedLocal>
-                <tableWonLocal>0</tableWonLocal>
-                <tableLostLocal>1</tableLostLocal>
-                <tablePlayedVisiting>0</tablePlayedVisiting>
-                <tableWonVisiting>0</tableWonVisiting>
-                <tableLostVisiting>0</tableLostVisiting>
-                <goalsFavor>2</goalsFavor>
-                <goalsAgainst>6</goalsAgainst>
             </value>
         </entry>
         <entry>

@@ -11,7 +11,6 @@
     <player teamId="4vient" playerNick="RAMON"/>
     <player teamId="4vient" playerNick="VALLEDOR"/>
     <player teamId="8villa" playerNick="ALVARO"/>
-    <player teamId="8villa" playerNick="AURE"/>
     <player teamId="8villa" playerNick="CHICO"/>
     <player teamId="8villa" playerNick="CHUS"/>
     <player teamId="8villa" playerNick="HUMBERTO"/>
@@ -23,7 +22,6 @@
     <player teamId="8villa" playerNick="MOSCALIN"/>
     <player teamId="8villa" playerNick="NACHO"/>
     <player teamId="8villa" playerNick="RAFA"/>
-    <player teamId="8villa" playerNick="ROSCALIN"/>
     <player teamId="8villa" playerNick="URE"/>
     <player teamId="acveig" playerNick="ADAN"/>
     <player teamId="acveig" playerNick="ELOY"/>
@@ -147,7 +145,6 @@
     <player teamId="catere" playerNick="JAVI"/>
     <player teamId="catere" playerNick="PEPE"/>
     <player teamId="catere" playerNick="PICHI"/>
-    <player teamId="catere" playerNick="PUA"/>
     <player teamId="catere" playerNick="PUPI"/>
     <player teamId="catere" playerNick="VILA"/>
     <player teamId="ccelti" playerNick="BUSTO"/>
@@ -188,7 +185,6 @@
     <player teamId="chalan" playerNick="GORI"/>
     <player teamId="chalan" playerNick="KIYO"/>
     <player teamId="chalan" playerNick="KUKI"/>
-    <player teamId="chalan" playerNick="KYLLO"/>
     <player teamId="chalan" playerNick="LASTRA"/>
     <player teamId="chalan" playerNick="LUEJE"/>
     <player teamId="chalan" playerNick="LUIS C."/>
@@ -235,7 +231,6 @@
     <player teamId="monchi" playerNick="ALFONSO"/>
     <player teamId="monchi" playerNick="BERNARDO"/>
     <player teamId="monchi" playerNick="DAVID"/>
-    <player teamId="monchi" playerNick="FONSO"/>
     <player teamId="monchi" playerNick="GAGO"/>
     <player teamId="monchi" playerNick="ILDEFONSO"/>
     <player teamId="monchi" playerNick="JOTI"/>
@@ -306,7 +301,6 @@
     <player teamId="sagrib" playerNick="NACHO"/>
     <player teamId="sagrib" playerNick="OSCAR"/>
     <player teamId="sagrib" playerNick="TONI"/>
-    <player teamId="sagrib" playerNick="VICTOR"/>
     <player teamId="sagrib" playerNick="VITI"/>
     <player teamId="valmus" playerNick="BARCIA"/>
     <player teamId="valmus" playerNick="FELIPE"/>
