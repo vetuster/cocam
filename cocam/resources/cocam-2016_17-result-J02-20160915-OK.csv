@@ -1,5 +1,5 @@
 COM;1;temporada;tipo liga;vuelta;número jornada;fecha jornada;is Match;id peña local;peña local;peña local mesas ganadas;peña visitante mesas ganadas;id peña visitante;peña visitante;número mesa;peña local  jugador 1;peña local   jugador 2;paraje local chicos a favor;pareja visitante chicos a favor;peña visitante jugador 1;peña visitante jugador 2
-INF;2;2016/17;REG;1;2;15/09/2016;true;monchi;MONCHI;0;4;bcarba;BAR CARBAYEDO ;1;MONCHI ;FONSO;2;6;TOÑO ;JAVI 
+INF;2;2016/17;REG;1;2;15/09/2016;true;monchi;MONCHI;0;4;bcarba;BAR CARBAYEDO ;1;MONCHI ;ALFONSO;2;6;TOÑO ;JAVI 
 INF;3;;REG;1;;;false;monchi;;;;bcarba;;2;RABADAN;BERNARDO;4;6;XAVI;MIGUEL
 INF;4;;REG;1;;;false;monchi;;;;bcarba;;3;VALENTIN ;MATEOS;3;6;CHUS;JOSE LUIS
 INF;5;;REG;1;;;false;monchi;;;;bcarba;;4;JUANJO;DAVID;2;6;LUIS;ABLANEDO 
