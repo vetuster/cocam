@@ -17,6 +17,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 import javax.xml.bind.JAXBException;
@@ -47,6 +48,8 @@ public class ResultFileManager {
         CocamProps comcaProps = CocamProps.getInstance();
         String charset = comcaProps.getResultFileCharset();
         File[] fileList = getResultFileList();
+        // ordenar lor archivos, para tratar por orden de jornada
+        Arrays.sort(fileList);
         for (File inFile : fileList) {
             logger.info("In progress" + StringUtil.enclose(inFile.getName()));
             ResultRecordGroup resultRecordGroup = new ResultRecordGroup();
