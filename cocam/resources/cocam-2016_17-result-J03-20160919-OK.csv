@@ -1,7 +1,7 @@
 COM;1;temporada;tipo liga;vuelta;número jornada;fecha jornada;is Match;id peña local;peña local;peña local mesas ganadas;peña visitante mesas ganadas;id peña visitante;peña visitante;número mesa;peña local  jugador 1;peña local   jugador 2;paraje local chicos a favor;pareja visitante chicos a favor;peña visitante jugador 1;peña visitante jugador 2
 INF;2;2016/17;REG;1;3;19/09/2016;true;cgerma;CASA GERMÁN;4;0;monchi;MONCHI;1;ALLENDE;FANDIÑO;6;5;RABADAN;BERNARDO
 INF;3;;REG;1;;;false;cgerma;;;;monchi;;2;JUAN;KIKE;6;2;MONCHI;JOTI
-INF;4;;REG;1;;;false;cgerma;;;;monchi;;3;ESPINA;TOÑO;6;1;DAVID;ILDEFONSO
+INF;4;;REG;1;;;false;cgerma;;;;monchi;;3;ESPINA;TOÑO;6;1;DAVID;FONSO
 INF;5;;REG;1;;;false;cgerma;;;;monchi;;4;MORAN;VIÑA;6;3;PEPE;GAGO
 COM;6;;;;;;;;;;;;;;;;;;;
 INF;7;2016/17;REG;1;3;19/09/2016;true;bcarba;BAR CARBAYEDO ;3;1;cvalsa;CAFETERÍA VALSA;1;CHE;HOMERO;4;6;GABI;CAMPANA
@@ -15,7 +15,7 @@ INF;14;;REG;1;;;false;andrea;;;;ccelti;;3;LITRI;OCTAVIO;4;6;CHININ;CHININ II
 INF;15;;REG;1;;;false;andrea;;;;ccelti;;4;TINO;JUAN;0;6;MAITE;FALO
 COM;16;;;;;;;;;;;;;;;;;;;
 INF;17;2016/17;REG;1;3;19/09/2016;true;8villa;8 VILLAS;3;1;calolo;CA'LOLO;1;URE;KIKE;3;6;DANI;MARCOS
-INF;18;;REG;1;;;false;8villa;;;;calolo;;2;M. JESUS;CHICO;6;3;MANU;COTE
+INF;18;;REG;1;;;false;8villa;;;;calolo;;2;M. JESUS;CHICHO;6;3;MANU;COTE
 INF;19;;REG;1;;;false;8villa;;;;calolo;;3;NACHO;MOSCALIN;6;4;SOPEÑA;HUGO
 INF;20;;REG;1;;;false;8villa;;;;calolo;;4;ALVARO;HUMBERTO;6;4;ISIDORO;PARAMIO
 COM;21;;;;;;;;;;;;;;;;;;;
@@ -46,7 +46,7 @@ INF;45;;REG;1;;;false;capiol;;;;4vient;;4;FELIX;PILUCA;6;5;CARLOTO;RAMON
 COM;46;;;;;;;;;;;;;;;;;;;
 INF;47;2016/17;REG;1;3;19/09/2016;true;acveig;AC VEIGA ;1;3;sagrib;S. AG.-RÍAS BAIXAS;1;MILLAN;GUTI;6;3;TONI;ARTURO
 INF;48;;REG;1;;;false;acveig;;;;sagrib;;2;ZURDO;HERRERO;5;6;COLLADO;ALVARO
-INF;49;;REG;1;;;false;acveig;;;;sagrib;;3;ZICO;SARRY;1;6;CHEMI;VITI
+INF;49;;REG;1;;;false;acveig;;;;sagrib;;3;ZICO;SARRY;1;6;CHEMI;VICTOR
 INF;50;;REG;1;;;false;acveig;;;;sagrib;;4;TINO;ELOY;4;6;GERARDO;FRAN
 COM;51;;;;;;;;;;;;;;;;;;;
 INF;52;2016/17;REG;1;3;19/09/2016;true;sagcel;S. AG.-CÉLTICA;1;3;sagkam;S. AG.-KAME.NET;1;IÑAKI;JAVI;4;6;PINTO;GAYOL
@@ -54,7 +54,7 @@ INF;53;;REG;1;;;false;sagcel;;;;sagkam;;2;TRIKI;ANDRES;3;6;ROBERTO;LUIS PRIETO
 INF;54;;REG;1;;;false;sagcel;;;;sagkam;;3;SONIA;JOSE;3;6;ISIDRO;JUANI
 INF;55;;REG;1;;;false;sagcel;;;;sagkam;;4;CHEMA;MANU;6;4;ANGEL;MENOTI
 COM;56;;;;;;;;;;;;;;;;;;;
-INF;57;2016/17;REG;1;3;19/09/2016;true;valmus;VALSA MUS;4;0;chalan;EL CHALANÍN;1;JOSE LUIS;MEDINA;6;4;KIYO;GORI
+INF;57;2016/17;REG;1;3;19/09/2016;true;valmus;VALSA MUS;4;0;chalan;EL CHALANÍN;1;JOSE LUIS;MEDINA;6;4;KILLO;GORI
 INF;58;;REG;1;;;false;valmus;;;;chalan;;2;ITO;PABLO;6;1;YOLI;CHEMA
 INF;59;;REG;1;;;false;valmus;;;;chalan;;3;JANDRO;FERNANDO;6;1;LUIS C.;DIEGO
 INF;60;;REG;1;;;false;valmus;;;;chalan;;4;FELIPE;JAVI;6;2;SILVI;DANI

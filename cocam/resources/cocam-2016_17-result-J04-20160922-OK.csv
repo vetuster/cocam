@@ -15,7 +15,7 @@ INF;14;;REG;1;;;false;calolo;;;;andrea;;3;MARCOS;MANU;6;5;KIKE ;FERRE
 INF;15;;REG;1;;;false;calolo;;;;andrea;;4;SOPEÑA;EDU;3;6;DANI;ISMA
 COM;16;;;;;;;;;;;;;;;;;;;
 INF;17;2016/17;REG;1;4;22/09/2016;true;barena;BAR LA ARENA;3;1;8villa;8 VILLAS;1;FRAN;DAVID;6;2;URE;KIKE
-INF;18;;REG;1;;;false;barena;;;;8villa;;2;PEPE;JUAN;6;4;M. JESUS;CHICO
+INF;18;;REG;1;;;false;barena;;;;8villa;;2;PEPE;JUAN;6;4;M. JESUS;CHICHO
 INF;19;;REG;1;;;false;barena;;;;8villa;;3;LUIS;JUANMA;6;3;NACHO;MOSCALIN
 INF;20;;REG;1;;;false;barena;;;;8villa;;4;TURBO;JOACO;2;6;ALVARO;HUMBERTO
 COM;21;;;;;;;;;;;;;;;;;;;
@@ -40,7 +40,7 @@ INF;39;;REG;1;;;false;4vient;;;;bcampy;;3;GARRIDO;PERFE;3;6;PEPE;TITI
 INF;40;;REG;1;;;false;4vient;;;;bcampy;;4;PRIETO;VALLEDOR;6;5;ANTONIO;LLORENTE
 COM;41;;;;;;;;;;;;;;;;;;;
 INF;42;2016/17;REG;1;4;22/09/2016;true;sagrib;S. AG.-RÍAS BAIXAS;3;1;capiol;PIOL;1;COLLADO;ALVARO;4;6;PILI;AZU
-INF;43;;REG;1;;;false;sagrib;;;;capiol;;2;ARTURO;VITI;6;0;FELIX;PILUCA
+INF;43;;REG;1;;;false;sagrib;;;;capiol;;2;ARTURO;VICTOR;6;0;FELIX;PILUCA
 INF;44;;REG;1;;;false;sagrib;;;;capiol;;3;NACHO;JAIME;6;4;OVIES;ORTIZ
 INF;45;;REG;1;;;false;sagrib;;;;capiol;;4;GERARDO;FRAN;6;3;ESTHER;SALAS
 COM;46;;;;;;;;;;;;;;;;;;;
@@ -50,13 +50,13 @@ INF;49;;REG;1;;;false;sagkam;;;;acveig;;3;GAYOL;PINTO;6;2;ZICO;SARRY
 INF;50;;REG;1;;;false;sagkam;;;;acveig;;4;ISIDRO;JUANI;6;2;TINO;ELOY
 COM;51;;;;;;;;;;;;;;;;;;;
 INF;52;2016/17;REG;1;4;22/09/2016;true;chalan;EL CHALANÍN;1;3;sagcel;S. AG.-CÉLTICA;1;DIEGO;PABLO;3;6;TRIKI;ANDRES
-INF;53;;REG;1;;;false;chalan;;;;sagcel;;2;SILVI;KIYO;5;6;CHEMA;MANU
+INF;53;;REG;1;;;false;chalan;;;;sagcel;;2;SILVI;KILLO;5;6;CHEMA;MANU
 INF;54;;REG;1;;;false;chalan;;;;sagcel;;3;FELIPE;LUEJE;6;4;CARLOS;MENENDEZ
 INF;55;;REG;1;;;false;chalan;;;;sagcel;;4;YOLI;PI;3;6;ALICIA;FA
 COM;56;;;;;;;;;;;;;;;;;;;
 INF;57;2016/17;REG;1;4;22/09/2016;true;picosa;LA PICOSA;2;2;valmus;VALSA MUS;1;PITI;ANIA;6;4;JAVI;FELIPE
 INF;58;;REG;1;;;false;picosa;;;;valmus;;2;CARLOS;JOSE;1;6;JOSE LUIS;MEDINA
-INF;59;;REG;1;;;false;picosa;;;;valmus;;3;CHUS;ANSELMO;6;2;JANDRO;FERNANDO
+INF;59;;REG;1;;;false;picosa;;;;valmus;;3;CHUS;ARSENIO;6;2;JANDRO;FERNANDO
 INF;60;;REG;1;;;false;picosa;;;;valmus;;4;KIKE;GELO;5;6;ITO;PABLO
 COM;61;;;;;;;;;;;;;;;;;;;
 INF;62;2016/17;REG;1;4;22/09/2016;true;cebano;ÉBANO;3;1;rcarol;RINCÓN DE CAROL;1;MUÑIZ;TOÑO;5;6;GABI;DANI

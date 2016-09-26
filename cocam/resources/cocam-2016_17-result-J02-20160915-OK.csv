@@ -9,7 +9,7 @@ INF;8;;REG;1;;;false;cvalsa;;;;andrea;;2;MURAS;PEREZ;6;4;DELMI;FERRE
 INF;9;;REG;1;;;false;cvalsa;;;;andrea;;3;GABI;CAMPANA;4;6;TINO ;JUAN
 INF;10;;REG;1;;;false;cvalsa;;;;andrea;;4;IÑAKI;BENI;6;4;KIKE;OCTAVIO
 COM;11;;;;;;;;;;;;;;;;;;;
-INF;12;2016/17;REG;1;2;15/09/2016;true;ccelti;CAFETERÍA CELTICA;2;2;8villa;8 VILLAS;1;MAITE;FALO;6;4;J. ENRIQUE ;URE
+INF;12;2016/17;REG;1;2;15/09/2016;true;ccelti;CAFETERÍA CELTICA;2;2;8villa;8 VILLAS;1;MAITE;FALO;6;4;KIKE ;URE
 INF;13;;REG;1;;;false;ccelti;;;;8villa;;2;CHININ;CHININ II;5;6;NACHO;CHUS
 INF;14;;REG;1;;;false;ccelti;;;;8villa;;3;PICHINA;BUSTO;6;3;M. JESUS;HUMBERTO
 INF;15;;REG;1;;;false;ccelti;;;;8villa;;4;LUNA;FELIX;4;6;ALVARO;MANOLO
@@ -47,7 +47,7 @@ COM;46;;;;;;;;;;;;;;;;;;;
 INF;47;2016/17;REG;1;2;15/09/2016;true;sagrib;S. AG.-RÍAS BAIXAS;1;3;sagcel;S. AG.-CÉLTICA;1;COLLADO;ALVARO;4;6;TRIKI;ANDRES
 INF;48;;REG;1;;;false;sagrib;;;;sagcel;;2;GERARDO;FRAN;6;2;SONIA;JOSE
 INF;49;;REG;1;;;false;sagrib;;;;sagcel;;3;ARTURO;TONI;5;6;IÑAKI;MARIAN
-INF;50;;REG;1;;;false;sagrib;;;;sagcel;;4;CHEMI;VITI;5;6;CHEMA;MANU
+INF;50;;REG;1;;;false;sagrib;;;;sagcel;;4;CHEMI;VICTOR;5;6;CHEMA;MANU
 COM;51;;;;;;;;;;;;;;;;;;;
 INF;52;2016/17;REG;1;2;15/09/2016;true;sagkam;S. AG.-KAME.NET;4;0;valmus;VALSA MUS;1;ANGEL;MARCO;6;5;JOSE LUIS;JULIO
 INF;53;;REG;1;;;false;sagkam;;;;valmus;;2;MENOTI;ALFONSO;6;1;ITO;PABLO
@@ -57,7 +57,7 @@ COM;56;;;;;;;;;;;;;;;;;;;
 INF;57;2016/17;REG;1;2;15/09/2016;true;chalan;EL CHALANÍN;1;3;rcarol;RINCÓN DE CAROL;1;DIEGO;LUEJE;6;1;DEME;CHUS
 INF;58;;REG;1;;;false;chalan;;;;rcarol;;2;SILVI;DANI;5;6;ALFONSO;ISRA
 INF;59;;REG;1;;;false;chalan;;;;rcarol;;3;DOLO ;LASTRA;0;6;ALFREDO;BELLO
-INF;60;;REG;1;;;false;chalan;;;;rcarol;;4;KIYO;GORI;4;6;ROCIO;JAVI
+INF;60;;REG;1;;;false;chalan;;;;rcarol;;4;KILLO;GORI;4;6;ROCIO;JAVI
 COM;61;;;;;;;;;;;;;;;;;;;
 INF;62;2016/17;REG;1;2;15/09/2016;true;picosa;LA PICOSA;1;3;cebano;ÉBANO;1;PITI;ANIA;6;4;NICO;CARLON
 INF;63;;REG;1;;;false;picosa;;;;cebano;;2;CARLOS;CHORI ;3;6;FRAN;LUIS

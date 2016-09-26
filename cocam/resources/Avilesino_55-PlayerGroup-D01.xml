@@ -10,8 +10,8 @@
     <player teamId="4vient" playerNick="RAMON"/>
     <player teamId="8villa" playerNick="ALVARO"/>
     <player teamId="8villa" playerNick="HUMBERTO"/>
-    <player teamId="8villa" playerNick="J. ENRIQUE"/>
     <player teamId="8villa" playerNick="JUAN"/>
+    <player teamId="8villa" playerNick="KIKE"/>
     <player teamId="8villa" playerNick="M. JESUS"/>
     <player teamId="8villa" playerNick="NACHO"/>
     <player teamId="8villa" playerNick="RAFA"/>
@@ -133,7 +133,7 @@
     <player teamId="chalan" playerNick="DOLO"/>
     <player teamId="chalan" playerNick="FELIPE"/>
     <player teamId="chalan" playerNick="GORI"/>
-    <player teamId="chalan" playerNick="KIYO"/>
+    <player teamId="chalan" playerNick="KILLO"/>
     <player teamId="chalan" playerNick="KUKI"/>
     <player teamId="chalan" playerNick="SILVI"/>
     <player teamId="churre" playerNick="AZA"/>
@@ -160,9 +160,9 @@
     <player teamId="habana" playerNick="PANAKAS"/>
     <player teamId="habana" playerNick="PESTONI II"/>
     <player teamId="habana" playerNick="SIXTO"/>
-    <player teamId="monchi" playerNick="ALFONSO"/>
     <player teamId="monchi" playerNick="BERNARDO"/>
     <player teamId="monchi" playerNick="DAVID"/>
+    <player teamId="monchi" playerNick="FONSO"/>
     <player teamId="monchi" playerNick="JUANJO"/>
     <player teamId="monchi" playerNick="MATEOS"/>
     <player teamId="monchi" playerNick="MONCHI"/>
@@ -199,7 +199,7 @@
     <player teamId="sagrib" playerNick="GERARDO"/>
     <player teamId="sagrib" playerNick="OSCAR"/>
     <player teamId="sagrib" playerNick="TONI"/>
-    <player teamId="sagrib" playerNick="VITI"/>
+    <player teamId="sagrib" playerNick="VICTOR"/>
     <player teamId="valmus" playerNick="BARCIA"/>
     <player teamId="valmus" playerNick="FELIPE"/>
     <player teamId="valmus" playerNick="ITO"/>

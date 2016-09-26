@@ -250,7 +250,7 @@
         <localPairScore>6</localPairScore>
         <visitingPairScore>4</visitingPairScore>
         <visitingPlayerNickOne>M. JESUS</visitingPlayerNickOne>
-        <visitingPlayerNickTwo>CHICO</visitingPlayerNickTwo>
+        <visitingPlayerNickTwo>CHICHO</visitingPlayerNickTwo>
     </resultRecord>
     <resultRecord>
         <recordType>INF</recordType>
@@ -601,7 +601,7 @@
         <visitingTeamId>capiol</visitingTeamId>
         <tableId>2</tableId>
         <localPlayerNickOne>ARTURO</localPlayerNickOne>
-        <localPlayerNickTwo>VITI</localPlayerNickTwo>
+        <localPlayerNickTwo>VICTOR</localPlayerNickTwo>
         <localPairScore>6</localPairScore>
         <visitingPairScore>0</visitingPairScore>
         <visitingPlayerNickOne>FELIX</visitingPlayerNickOne>
@@ -743,7 +743,7 @@
         <visitingTeamId>sagcel</visitingTeamId>
         <tableId>2</tableId>
         <localPlayerNickOne>SILVI</localPlayerNickOne>
-        <localPlayerNickTwo>KIYO</localPlayerNickTwo>
+        <localPlayerNickTwo>KILLO</localPlayerNickTwo>
         <localPairScore>5</localPairScore>
         <visitingPairScore>6</visitingPairScore>
         <visitingPlayerNickOne>CHEMA</visitingPlayerNickOne>
@@ -830,7 +830,7 @@
         <visitingTeamId>valmus</visitingTeamId>
         <tableId>3</tableId>
         <localPlayerNickOne>CHUS</localPlayerNickOne>
-        <localPlayerNickTwo>ANSELMO</localPlayerNickTwo>
+        <localPlayerNickTwo>ARSENIO</localPlayerNickTwo>
         <localPairScore>6</localPairScore>
         <visitingPairScore>2</visitingPairScore>
         <visitingPlayerNickOne>JANDRO</visitingPlayerNickOne>
