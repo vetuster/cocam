@@ -89,22 +89,22 @@ public class PlayerStatGroup {
             PlayerStat localPlayerOneStat = getPlayerStat().
                 get(Player.getPlayerKey(match.getLocalTeamId(), 
                     table.getLocalPlayerNickOne()));
-            localPlayerOneStat.update(table);
+            localPlayerOneStat.update(table, true);
             
              PlayerStat localPlayerTwoStat = getPlayerStat().
                 get(Player.getPlayerKey(match.getLocalTeamId(), 
                     table.getLocalPlayerNickTwo()));
-             localPlayerTwoStat.update(table);
+             localPlayerTwoStat.update(table, true);
              
             PlayerStat visitingPlayerOneStat = getPlayerStat().
                 get(Player.getPlayerKey(match.getVisitingTeamId(),
                     table.getVisitingPlayerNickOne()));
-            visitingPlayerOneStat.update(table);
+            visitingPlayerOneStat.update(table, false);
             
              PlayerStat visitingPlayerTwoStat = getPlayerStat().
                 get(Player.getPlayerKey(match.getVisitingTeamId(), 
                     table.getVisitingPlayerNickTwo()));
-             visitingPlayerTwoStat.update(table);
+             visitingPlayerTwoStat.update(table, false);
         }
     }
 }

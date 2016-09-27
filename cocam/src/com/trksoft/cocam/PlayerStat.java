@@ -300,24 +300,9 @@ public class PlayerStat {
         return sb.toString();
     }
     
-    public void update(Table table) {
-        // this es local
-        Boolean local;
-        if (getPlayerNick().equals(table.getLocalPlayerNickOne())
-          || getPlayerNick().equals(table.getLocalPlayerNickTwo())) {
-            local = true;
-        // es visitante
-        } else if (getPlayerNick().equals(table.getVisitingPlayerNickOne())
-            || getPlayerNick().equals(table.getVisitingPlayerNickTwo())) {
-            local = false;
-        // el partido argumento no implica a this
-        } else {
-            logger.warn("TABLE ARGUMENT DONT ATTACH THIS");
-            return;
-        }
-        
+    public void update(Table table, boolean isLocal) {
         incTablePlayed();
-        if (local) {
+        if (isLocal) {
             incTablePlayedLocal();
             setGoalsFavor(getGoalsFavor() + table.getLocalPairScore());
             setGoalsAgainst(getGoalsAgainst() + table.getVisitingPairScore());
