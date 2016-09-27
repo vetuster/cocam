@@ -15,7 +15,8 @@ public class PlayerStatComparator implements Comparator<PlayerStat> {
 
     // por ganadas de mayor a menor
     // coeficiente de mayor a menor
-    // chico-average de mayor a menor
+    // partidas jugadas de menor a mayor
+    // chico-average de mayor a menor (se suprime 27/9)
     // apodo por orden alfabetico
     @Override
     public int compare(PlayerStat onePlayerStat, PlayerStat otherPlayerStat) {
@@ -29,10 +30,15 @@ public class PlayerStatComparator implements Comparator<PlayerStat> {
             onePlayerStat.getWonCoefficient());
         if (i!=0) return i;
         
-        // chico-average de mayor a menor
-        i = otherPlayerStat.getGoalsCoefficient().compareTo(
-            onePlayerStat.getGoalsCoefficient());
+        // partidas jugadas de menor a mayor
+        i = onePlayerStat.getTablePlayed().compareTo(
+            otherPlayerStat.getTablePlayed());
         if (i!=0) return i;
+        
+        // chico-average de mayor a menor
+        //i = otherPlayerStat.getGoalsCoefficient().compareTo(
+        //    onePlayerStat.getGoalsCoefficient());
+        //if (i!=0) return i;
         
         // orden alfabetico de apodo
         return onePlayerStat.getPlayerNick().compareTo(
