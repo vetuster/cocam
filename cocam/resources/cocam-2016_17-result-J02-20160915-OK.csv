@@ -1,11 +1,11 @@
 COM;1;temporada;tipo liga;vuelta;número jornada;fecha jornada;is Match;id peña local;peña local;peña local mesas ganadas;peña visitante mesas ganadas;id peña visitante;peña visitante;número mesa;peña local  jugador 1;peña local   jugador 2;paraje local chicos a favor;pareja visitante chicos a favor;peña visitante jugador 1;peña visitante jugador 2
-INF;2;2016/17;REG;1;2;15/09/2016;true;monchi;MONCHI;0;4;bcarba;BAR CARBAYEDO ;1;MONCHI ;ALFONSO;2;6;TOÑO ;JAVI 
+INF;2;2016/17;REG;1;2;15/09/2016;true;monchi;MONCHI;0;4;bcarba;BAR CARBAYEDO ;1;MONCHI ;FONSO;2;6;TOÑO ;JAVI 
 INF;3;;REG;1;;;false;monchi;;;;bcarba;;2;RABADAN;BERNARDO;4;6;XAVI;MIGUEL
 INF;4;;REG;1;;;false;monchi;;;;bcarba;;3;VALENTIN ;MATEOS;3;6;CHUS;JOSE LUIS
 INF;5;;REG;1;;;false;monchi;;;;bcarba;;4;JUANJO;DAVID;2;6;LUIS;ABLANEDO 
 COM;6;;;;;;;;;;;;;;;;;;;
 INF;7;2016/17;REG;1;2;15/09/2016;true;cvalsa;CAFETERÍA VALSA;2;2;andrea;ANDREA;1;PARAMIO;JOSE;3;6;DANI;ISMA
-INF;8;;REG;1;;;false;cvalsa;;;;andrea;;2;MURAS;PEREZ;6;4;DELMI;FERRE
+INF;8;;REG;1;;;false;cvalsa;;;;andrea;;2;MURAS;PEREZ;6;4;DELMI;FERRERAS
 INF;9;;REG;1;;;false;cvalsa;;;;andrea;;3;GABI;CAMPANA;4;6;TINO ;JUAN
 INF;10;;REG;1;;;false;cvalsa;;;;andrea;;4;IÑAKI;BENI;6;4;KIKE;OCTAVIO
 COM;11;;;;;;;;;;;;;;;;;;;
@@ -20,7 +20,7 @@ INF;19;;REG;1;;;false;calolo;;;;catere;;3;HUGO;ELOY;2;6;VILA;PICHI
 INF;20;;REG;1;;;false;calolo;;;;catere;;4;SOPEÑA;EDU;5;6;BELLANCO;ARNIELLA
 COM;21;;;;;;;;;;;;;;;;;;;
 INF;22;2016/17;REG;1;2;15/09/2016;true;barena;BAR LA ARENA;4;0;habana;HABANA;1;DAVID;PEPE;6;2;PANA;PANAKAS
-INF;23;;REG;1;;;false;barena;;;;habana;;2;OMAR;TURBO;6;2;SIXTO;PANCHIN
+INF;23;;REG;1;;;false;barena;;;;habana;;2;OMAR;TURBO;6;2;SIXTO;PACHIN
 INF;24;;REG;1;;;false;barena;;;;habana;;3;RODRIGO ;JUANMA;6;4;MARGA;PESTONI
 INF;25;;REG;1;;;false;barena;;;;habana;;4;JOACO;FELIPE;6;5;JOSE;MANOLO
 COM;26;;;;;;;;;;;;;;;;;;;
@@ -32,7 +32,7 @@ COM;31;;;;;;;;;;;;;;;;;;;
 INF;32;2016/17;REG;1;2;15/09/2016;true;albora;ALBORADA;0;4;bcampy;BAR CAMPY;1;GAN;GELO;2;6;J. CARLOS;JOSE
 INF;33;;REG;1;;;false;albora;;;;bcampy;;2;PABLO;LUIS;5;6;ANTONIO;LLORENTE
 INF;34;;REG;1;;;false;albora;;;;bcampy;;3;OMAR;CALVETE;5;6;TITI;PEPE
-INF;35;;REG;1;;;false;albora;;;;bcampy;;4;GUELO;JOSE;3;6;PACO;JIMI
+INF;35;;REG;1;;;false;albora;;;;bcampy;;4;GUELO;JOSE;3;6;PACO;YIMI
 COM;36;;;;;;;;;;;;;;;;;;;
 INF;37;2016/17;REG;1;2;15/09/2016;true;churre;LA CHURRERÍA;2;2;capiol;PIOL;1;JAVI ;PACO;6;1;FELIX;PILUCA
 INF;38;;REG;1;;;false;churre;;;;capiol;;2;RAMON;VIERO;6;3;PILI;AZU
@@ -52,12 +52,12 @@ COM;51;;;;;;;;;;;;;;;;;;;
 INF;52;2016/17;REG;1;2;15/09/2016;true;sagkam;S. AG.-KAME.NET;4;0;valmus;VALSA MUS;1;ANGEL;MARCO;6;5;JOSE LUIS;JULIO
 INF;53;;REG;1;;;false;sagkam;;;;valmus;;2;MENOTI;ALFONSO;6;1;ITO;PABLO
 INF;54;;REG;1;;;false;sagkam;;;;valmus;;3;GAYOL;PINTO;6;2;ROBER;FELIPE
-INF;55;;REG;1;;;false;sagkam;;;;valmus;;4;ISIDRO;JUANI;6;4;JAVI;TANO
+INF;55;;REG;1;;;false;sagkam;;;;valmus;;4;ISIDRO;JUANI;6;4;JAVI;TATO
 COM;56;;;;;;;;;;;;;;;;;;;
 INF;57;2016/17;REG;1;2;15/09/2016;true;chalan;EL CHALANÍN;1;3;rcarol;RINCÓN DE CAROL;1;DIEGO;LUEJE;6;1;DEME;CHUS
 INF;58;;REG;1;;;false;chalan;;;;rcarol;;2;SILVI;DANI;5;6;ALFONSO;ISRA
 INF;59;;REG;1;;;false;chalan;;;;rcarol;;3;DOLO ;LASTRA;0;6;ALFREDO;BELLO
-INF;60;;REG;1;;;false;chalan;;;;rcarol;;4;KILLO;GORI;4;6;ROCIO;JAVI
+INF;60;;REG;1;;;false;chalan;;;;rcarol;;4;KYLLO;GORI;4;6;ROCIO;JAVI
 COM;61;;;;;;;;;;;;;;;;;;;
 INF;62;2016/17;REG;1;2;15/09/2016;true;picosa;LA PICOSA;1;3;cebano;ÉBANO;1;PITI;ANIA;6;4;NICO;CARLON
 INF;63;;REG;1;;;false;picosa;;;;cebano;;2;CARLOS;CHORI ;3;6;FRAN;LUIS
