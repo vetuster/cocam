@@ -10,7 +10,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Objects;
 import java.util.stream.Collectors;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -29,6 +28,7 @@ import org.apache.logging.log4j.Logger;
 @XmlType(name = "", propOrder = {
     "teamId",
     "teamDenom",
+    "leagueType",
     "points",
     "matchPlayed",
     "matchWon",
@@ -58,6 +58,8 @@ public class TeamStat {
     private String teamId;
     @XmlAttribute(required = true)    
     private String teamDenom;
+    @XmlAttribute(required = true)
+    private LeagueType leagueType;
     @XmlElement(required = true)
     private Integer points;
     @XmlElement(required = true)
@@ -132,6 +134,14 @@ public class TeamStat {
 
     public void setTeamDenom(String teamDenom) {
         this.teamDenom = teamDenom;
+    }
+
+    public LeagueType getLeagueType() {
+        return leagueType;
+    }
+
+    public void setLeagueType(LeagueType leagueType) {
+        this.leagueType = leagueType;
     }
 
     public Integer getMatchPlayed() {
@@ -316,32 +326,6 @@ public class TeamStat {
         return directMatch;
     }
     
-    
-    @Override
-    public int hashCode() {
-        int hash = 5;
-        hash = 37 * hash + Objects.hashCode(this.teamId);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final TeamStat other = (TeamStat) obj;
-        if (!Objects.equals(this.teamId, other.teamId)) {
-            return false;
-        }
-        return true;
-    }
-
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder("TeamStat->");
@@ -349,6 +333,8 @@ public class TeamStat {
         sb.append(StringUtil.enclose(teamId));
         sb.append(",teamDenom");
         sb.append(StringUtil.enclose(teamDenom));
+        sb.append("leagueType");
+        sb.append(StringUtil.enclose(leagueType.toString()));
         sb.append(",points");
         sb.append(StringUtil.enclose(points));
         sb.append(",matchPlayed");
@@ -507,6 +493,7 @@ public class TeamStat {
     
     public String getRankingRecord(final String charSep) {
         List<String> rankingField = new LinkedList<>();
+        rankingField.add(getLeagueType().toString());
         rankingField.add(getTeamDenom());
         rankingField.add(getMatchPlayed().toString());
         rankingField.add(getTableResult40().toString());

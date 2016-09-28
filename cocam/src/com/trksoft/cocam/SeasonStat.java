@@ -5,7 +5,6 @@
  */
 package com.trksoft.cocam;
 
-import com.trksoft.util.StringUtil;
 import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
@@ -16,7 +15,6 @@ import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
@@ -29,43 +27,40 @@ import org.apache.logging.log4j.Logger;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "leagueType",
-    "teamStat"
+    "teamStatGroup",
+    "playerStatGroup"
 })
 @XmlRootElement
-public class TeamStatGroup {
+public class SeasonStat {
     @SuppressWarnings("NonConstantFieldWithUpperCaseName")
     private static final Logger logger
-        = LogManager.getLogger(TeamStatGroup.class);
-    
-    @XmlAttribute(required = true)
-    private LeagueType leagueType;
+        = LogManager.getLogger(SeasonStat.class);
     
     @XmlElement(required = true)
-    private final Map<String, TeamStat> teamStat;
+    private final Map<LeagueType, TeamStatGroup> teamStatGroup;
+    
+    @XmlElement(required = true)
+    private final Map<LeagueType, PlayerStatGroup> playerStatGroup;
 
-    public TeamStatGroup() {
-        teamStat = new HashMap<>();
+    public SeasonStat() {
+        teamStatGroup = new HashMap<>();
+        playerStatGroup = new HashMap<>();
     }
 
-    public LeagueType getLeagueType() {
-        return leagueType;
+    public Map<LeagueType, TeamStatGroup> getTeamStatGroup() {
+        return teamStatGroup;
     }
 
-    public void setLeagueType(LeagueType leagueType) {
-        this.leagueType = leagueType;
-    }
-
-    public Map<String, TeamStat> getTeamStat() {
-        return teamStat;
+    public Map<LeagueType, PlayerStatGroup> getPlayerStatGroup() {
+        return playerStatGroup;
     }
     
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder("TeamStatGroup->");
-        sb.append("leagueType");
-        sb.append(StringUtil.enclose(leagueType.toString()));
-        sb.append(teamStat.values().stream().map(Object::toString).
+        StringBuilder sb = new StringBuilder("SeasonStat->");
+        sb.append(teamStatGroup.values().stream().map(Object::toString).
+            collect(Collectors.joining("->")));
+        sb.append(playerStatGroup.values().stream().map(Object::toString).
             collect(Collectors.joining("->")));
         return sb.toString();
     }
@@ -73,7 +68,7 @@ public class TeamStatGroup {
     public void marshall(File teamStatGroupFile) throws JAXBException {
         try {
             JAXBContext jaxbContext
-                = JAXBContext.newInstance(TeamStatGroup.class);
+                = JAXBContext.newInstance(SeasonStat.class);
             Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
             jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
             jaxbMarshaller.marshal(this, teamStatGroupFile);
@@ -83,15 +78,15 @@ public class TeamStatGroup {
         }
     }
     
-    public static TeamStatGroup unmarshall(
+    public static SeasonStat unmarshall(
         File fixedLengthColRecordDescFile) throws CocamException {
-        TeamStatGroup flcrd = null;
+        SeasonStat flcrd = null;
         try {
             JAXBContext jaxbContext = 
-                JAXBContext.newInstance(TeamStatGroup.class);
+                JAXBContext.newInstance(SeasonStat.class);
 
             Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
-            flcrd = (TeamStatGroup)
+            flcrd = (SeasonStat)
                 jaxbUnmarshaller.unmarshal(fixedLengthColRecordDescFile);
         } catch (JAXBException jaxbex) {
             throw new CocamException(jaxbex);
@@ -99,15 +94,4 @@ public class TeamStatGroup {
         return flcrd;
     }
 
-    public void update(final Match match) {
-        //obtener las estadisticas en curso del equipo local
-        TeamStat localTeamStat = getTeamStat().get(match.getLocalTeamId());
-        //obtener las estadisticas en curso del equipo visitante
-        TeamStat visitingTeamStat = 
-            getTeamStat().get(match.getVisitingTeamId());
-
-        //actualizar estadisticas de local y visitante
-        localTeamStat.update(match);
-        visitingTeamStat.update(match);
-    }
 }

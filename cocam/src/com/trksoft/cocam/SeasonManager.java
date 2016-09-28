@@ -44,6 +44,8 @@ public class SeasonManager {
             if (resultRecord.isMatchHead()) {
                 season.setLastDayId(resultRecord.getDayId());
                 currentMatch = new Match();
+                currentMatch.setLeagueType(
+                    LeagueType.valueOf(resultRecord.getLeagueType()));
                 currentMatch.setRoundId(resultRecord.getRoundId());
                 currentMatch.setDayId(resultRecord.getDayId());
                 currentMatch.setDayDate(resultRecord.getDayDate());
@@ -81,6 +83,7 @@ public class SeasonManager {
     
     protected TeamStatGroup getTeamStatGroup(final TeamGroup teamGroup) {
         TeamStatGroup teamStatGroup =  new TeamStatGroup();
+        teamStatGroup.setLeagueType(LeagueType.REG);
 
         //carga estadísticas
         // iniciar las estadísticas - así el equipo que descansa consta con 0
@@ -89,6 +92,7 @@ public class SeasonManager {
             TeamStat initTeamStat = new TeamStat();
             initTeamStat.setTeamId(team.getTeamId());
             initTeamStat.setTeamDenom(team.getTeamDenom());
+            initTeamStat.setLeagueType(teamStatGroup.getLeagueType());
             teamStatGroup.getTeamStat().put(team.getTeamId(), initTeamStat);
         });
 
@@ -100,11 +104,11 @@ public class SeasonManager {
         return teamStatGroup;
     }
     
+    // obtener la la lista de jugadores de cada equipo a partir de los
+    // partidos disputados
     protected PlayerGroup getPlayerGroup() {
         PlayerGroup playerGroup =  new PlayerGroup();
-
-        // cargar las estadisticas de cada jugador ya precargado a cero
-        // se valida que haya 208 jugadores por jornada
+        
         season.getMatch().stream().forEach((match) -> {
             
             for (Table table : match.getTable()) {
@@ -136,6 +140,7 @@ public class SeasonManager {
     protected PlayerStatGroup getPlayerStatGroup(final TeamGroup teamGroup, 
         final PlayerGroup playerGroup) {
         PlayerStatGroup playerStatGroup =  new PlayerStatGroup();
+        playerStatGroup.setLeagueType(LeagueType.REG);
 
         // iniciar las estadísticas, así el juagdor siempre existe en la busqueda
         playerGroup.getPlayer().stream().forEach((player) -> {
@@ -151,6 +156,7 @@ public class SeasonManager {
             initPlayerStat.setTeamId(player.getTeamId());
             initPlayerStat.setTeamDenom(playerTeam.getTeamDenom());
             initPlayerStat.setPlayerNick(player.getPlayerNick());
+            initPlayerStat.setLeagueType(playerStatGroup.getLeagueType());
             playerStatGroup.getPlayerStat().put(
                 player.getPlayerKey(), initPlayerStat);
         });

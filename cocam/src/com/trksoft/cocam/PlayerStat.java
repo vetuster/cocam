@@ -8,7 +8,6 @@ package com.trksoft.cocam;
 import com.trksoft.util.StringUtil;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Objects;
 import java.util.stream.Collectors;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -26,7 +25,9 @@ import org.apache.logging.log4j.Logger;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "teamId",
+    "teamDenom",
     "playerNick",
+    "leagueType",
     "tablePlayed",
     "tableWon",
     "tableLost",
@@ -49,6 +50,8 @@ public class PlayerStat {
     private String teamId;
     @XmlAttribute(required = true)    
     private String teamDenom;
+    @XmlAttribute(required = true)
+    private LeagueType leagueType;
     @XmlAttribute(required = true)    
     private String playerNick;
     @XmlElement(required = true)
@@ -103,6 +106,14 @@ public class PlayerStat {
 
     public void setTeamDenom(String teamDenom) {
         this.teamDenom = teamDenom;
+    }
+
+    public LeagueType getLeagueType() {
+        return leagueType;
+    }
+
+    public void setLeagueType(LeagueType leagueType) {
+        this.leagueType = leagueType;
     }
 
     public String getPlayerNick() {
@@ -237,34 +248,6 @@ public class PlayerStat {
             (goalsFavor.floatValue() + goalsAgainst.floatValue());
     }
     
-    @Override
-    public int hashCode() {
-        int hash = 5;
-        hash = 37 * hash + Objects.hashCode(this.teamId);
-        hash = 37 * hash + Objects.hashCode(this.playerNick);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final PlayerStat other = (PlayerStat) obj;
-        if (!Objects.equals(this.teamId, other.teamId)) {
-            return false;
-        }
-        if (!Objects.equals(this.playerNick, other.playerNick)) {
-            return false;
-        }
-        return true;
-    }
 
     @Override
     public String toString() {
@@ -275,6 +258,8 @@ public class PlayerStat {
         sb.append(StringUtil.enclose(teamDenom));
         sb.append(",playerNick");
         sb.append(StringUtil.enclose(playerNick));
+        sb.append("leagueType");
+        sb.append(StringUtil.enclose(leagueType.toString()));
         sb.append(",tablePlayed");
         sb.append(StringUtil.enclose(tablePlayed));
         sb.append(",tableWon");
@@ -331,6 +316,7 @@ public class PlayerStat {
     
     public String getRankingRecord(final String charSep) {
         List<String> rankingField = new LinkedList<>();
+        rankingField.add(getLeagueType().toString());
         rankingField.add(getPlayerNick());
         rankingField.add(getTeamDenom());
         rankingField.add(getTablePlayed().toString());

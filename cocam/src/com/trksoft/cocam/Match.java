@@ -28,6 +28,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
+    "leagueType",
     "roundId",
     "dayId",
     "dayDate",
@@ -43,14 +44,16 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 @XmlRootElement
 public class Match  implements Comparable<Match> {
     
-    @XmlAttribute
+    @XmlAttribute(required = true)
+    private LeagueType leagueType;
+    @XmlAttribute(required = true)    
     private Integer roundId;
-    @XmlAttribute
+    @XmlAttribute(required = true)    
     private Integer dayId;
-    @XmlAttribute
+    @XmlAttribute(required = true)    
     @XmlJavaTypeAdapter(CocamAdapter.class)
     private LocalDate dayDate;
-    @XmlAttribute
+    @XmlAttribute(required = true)    
     private String matchId;
     @XmlElement(required = true)
     private String localTeamId;
@@ -71,6 +74,14 @@ public class Match  implements Comparable<Match> {
     
     public Match() {
         table = new TreeSet<>();
+    }
+
+    public LeagueType getLeagueType() {
+        return leagueType;
+    }
+
+    public void setLeagueType(LeagueType leagueType) {
+        this.leagueType = leagueType;
     }
 
     public Integer getRoundId() {
@@ -169,7 +180,9 @@ public class Match  implements Comparable<Match> {
     
     @Override
     public int compareTo(Match match) {
-        int i = dayId.compareTo(match.getDayId());
+        int i = leagueType.compareTo(match.getLeagueType());
+        if (i!=0) return i;
+        i = dayId.compareTo(match.getDayId());
         if (i!=0) return i;
         i = dayDate.compareTo(match.getDayDate());
         if (i!=0) return i;
@@ -180,6 +193,8 @@ public class Match  implements Comparable<Match> {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder("Match->");
+        sb.append("leagueType");
+        sb.append(StringUtil.enclose(leagueType.toString()));
         sb.append("roundId");
         sb.append(StringUtil.enclose(roundId));
         sb.append("dayId");
