@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:element name="resultEntity">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element name="result" type="ResulType" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    </xs:element>
+    
+    <xs:complexType name="ResulType">
+        <xs:sequence>
+            <xs:element name="recordType"             type="xs:string"   minOccurs="1" maxOccurs="1"/>
+            <xs:element name="recordId"               type="xs:integer"  minOccurs="1" maxOccurs="1"/>
+            <xs:element name="seasonId"               type="xs:string"   minOccurs="0" maxOccurs="1"/>
+            <xs:element name="leagueType"             type="xs:string"   minOccurs="1" maxOccurs="1"/>
+            <xs:element name="roundId"                type="xs:integer"  minOccurs="1" maxOccurs="1"/>
+            <xs:element name="dayId"                  type="xs:integer"  minOccurs="0" maxOccurs="1"/>
+            <xs:element name="dayDate"                type="xs:date"     minOccurs="0" maxOccurs="1"/>
+            <xs:element name="matchHead"              type="xs:boolean"  minOccurs="1" maxOccurs="1"/>
+            <xs:element name="localTeamId"            type="xs:string"   minOccurs="1" maxOccurs="1"/>
+            <xs:element name="localTeamName"          type="xs:string"   minOccurs="0" maxOccurs="1"/>
+            <xs:element name="localTeamScore"         type="xs:integer"  minOccurs="0" maxOccurs="1"/>
+            <xs:element name="visitingTeamId"         type="xs:string"   minOccurs="1" maxOccurs="1"/>
+            <xs:element name="visitingTeamName"       type="xs:string"   minOccurs="0" maxOccurs="1"/>
+            <xs:element name="visitingTeamScore"      type="xs:integer"  minOccurs="0" maxOccurs="1"/>
+            <xs:element name="tableId"                type="xs:integer"  minOccurs="1" maxOccurs="1"/>
+            <xs:element name="localPlayerNickOne"     type="xs:string"   minOccurs="1" maxOccurs="1"/>
+            <xs:element name="localPlayerNickTwo"     type="xs:string"   minOccurs="1" maxOccurs="1"/>
+            <xs:element name="localPairScore"         type="xs:integer"  minOccurs="1" maxOccurs="1"/>
+            <xs:element name="visitingPairScore"      type="xs:integer"  minOccurs="1" maxOccurs="1"/>
+            <xs:element name="visitingPlayerNickOne"  type="xs:string"   minOccurs="1" maxOccurs="1"/>
+            <xs:element name="visitingPlayerNickTwo"  type="xs:string"   minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
