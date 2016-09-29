@@ -39,10 +39,10 @@ public class Season {
     private static final Logger logger
         = LogManager.getLogger(Season.class);
     
-    @XmlAttribute
+    @XmlAttribute (required = true)
     private String seasonId;
     
-    @XmlAttribute
+    @XmlAttribute (required = true)
     private Integer lastDayId;
     
     @XmlElement(required = true)

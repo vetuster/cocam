@@ -5,6 +5,7 @@
  */
 package com.trksoft.cocam;
 
+import com.trksoft.util.StringUtil;
 import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
@@ -15,6 +16,7 @@ import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
@@ -27,6 +29,7 @@ import org.apache.logging.log4j.Logger;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
+    "seasonId",
     "teamStatGroup",
     "playerStatGroup"
 })
@@ -35,6 +38,9 @@ public class SeasonStat {
     @SuppressWarnings("NonConstantFieldWithUpperCaseName")
     private static final Logger logger
         = LogManager.getLogger(SeasonStat.class);
+    
+    @XmlAttribute (required = true)
+    private String seasonId;
     
     @XmlElement(required = true)
     private final Map<LeagueType, TeamStatGroup> teamStatGroup;
@@ -45,6 +51,14 @@ public class SeasonStat {
     public SeasonStat() {
         teamStatGroup = new HashMap<>();
         playerStatGroup = new HashMap<>();
+    }
+
+    public String getSeasonId() {
+        return seasonId;
+    }
+
+    public void setSeasonId(String seasonId) {
+        this.seasonId = seasonId;
     }
 
     public Map<LeagueType, TeamStatGroup> getTeamStatGroup() {
@@ -58,6 +72,8 @@ public class SeasonStat {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder("SeasonStat->");
+        sb.append("seasonId");
+        sb.append(StringUtil.enclose(seasonId));
         sb.append(teamStatGroup.values().stream().map(Object::toString).
             collect(Collectors.joining("->")));
         sb.append(playerStatGroup.values().stream().map(Object::toString).

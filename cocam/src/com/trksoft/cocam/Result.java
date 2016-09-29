@@ -53,10 +53,10 @@ import org.apache.logging.log4j.Logger;
     "visitingPlayerNickTwo"
 })
 @XmlRootElement
-public class ResultRecord implements Comparable<ResultRecord>{
+public class Result implements Comparable<Result>{
     @SuppressWarnings("NonConstantFieldWithUpperCaseName")
     private static final Logger logger
-        = LogManager.getLogger(ResultRecord.class);
+        = LogManager.getLogger(Result.class);
 
     public static final String END_TYPE = "END";
     public static final String COMMENT_TYPE = "COM";
@@ -106,7 +106,7 @@ public class ResultRecord implements Comparable<ResultRecord>{
     @XmlElement(required = true)
     private String visitingPlayerNickTwo;
 
-    public ResultRecord() {
+    public Result() {
     }
     
     public String getRecordType() {
@@ -351,13 +351,13 @@ public class ResultRecord implements Comparable<ResultRecord>{
         this.visitingPlayerNickTwo = visitingPlayerNickTwo;
     }
 
-    public void marshall(File seasonFile) throws JAXBException {
+    public void marshall(File resultFile) throws JAXBException {
         try {
             JAXBContext jaxbContext
-                = JAXBContext.newInstance(ResultRecord.class);
+                = JAXBContext.newInstance(Result.class);
             Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
             jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-            jaxbMarshaller.marshal(this, seasonFile);
+            jaxbMarshaller.marshal(this, resultFile);
         } catch (JAXBException jaxbex) {
             logger.fatal(jaxbex);
             throw jaxbex;
@@ -365,7 +365,7 @@ public class ResultRecord implements Comparable<ResultRecord>{
     }
     
     @Override
-    public int compareTo(ResultRecord other) {
+    public int compareTo(Result other) {
         int i = this.dayId.compareTo(other.getDayId());
         if (i!=0) return i;
         return this.recordId.compareTo(other.getRecordId());
@@ -373,7 +373,7 @@ public class ResultRecord implements Comparable<ResultRecord>{
     
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder("ResultRecord->");
+        StringBuilder sb = new StringBuilder("Result->");
         sb.append("recordType");
         sb.append(StringUtil.enclose(recordType));
         sb.append(",recordId");
@@ -422,8 +422,9 @@ public class ResultRecord implements Comparable<ResultRecord>{
         return sb.toString();
     }
     
-    public ResultRecord build(String record,
-        SepColRecordDesc sepColRecordDesc) throws CocamException {
+    public static Result parse(String record, SepColRecordDesc sepColRecordDesc) 
+        throws CocamException {
+        Result result = new Result();
         String[] fieldContent = record.split(sepColRecordDesc.getCharSep());
         for (FieldDesc fieldDesc : sepColRecordDesc.getFieldDesc()) {
             String fieldName = fieldDesc.getFieldName();
@@ -440,11 +441,11 @@ public class ResultRecord implements Comparable<ResultRecord>{
                 logger.fatal("record" + record);
                 logger.fatal("fieldNo" + fieldDesc.getFieldNo());
                 logger.fatal(aioobex);
-                throw new CocamException(aioobex);
+                throw aioobex;
             }
             Method method = null;
             try {
-                method = getClass().getMethod(methodName, String.class);
+                method = Result.class.getMethod(methodName, String.class);
             } catch (NoSuchMethodException nsmex) {
                 logger.fatal(nsmex);
                 throw new CocamException(nsmex);
@@ -453,7 +454,7 @@ public class ResultRecord implements Comparable<ResultRecord>{
                 + ",method" + StringUtil.enclose(method.getName())
                 + ",value->" + StringUtil.enclose(fieldValue));
             try {
-                method.invoke(this, fieldValue);
+                method.invoke(result, fieldValue);
             } catch(IllegalAccessException | InvocationTargetException iatex) {
                 logger.fatal("field" + StringUtil.enclose(fieldName)
                     + ",method" + StringUtil.enclose(method.getName())
@@ -462,7 +463,7 @@ public class ResultRecord implements Comparable<ResultRecord>{
                 throw new CocamException(iatex);
             }
         }
-        return this;
+        return result;
     }
 
 }

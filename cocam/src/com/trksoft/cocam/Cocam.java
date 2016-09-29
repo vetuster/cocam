@@ -29,19 +29,34 @@ public class Cocam {
      */
     public static void main(String[] args) throws Exception {
         
-        // carga lista de equipos
-        String teamGroupFilename = FileNameManager.getTeamGroupFilename();
-        TeamGroup teamGroup = TeamGroup.unmarshall(new File(teamGroupFilename));
+        // carga de los ficheros CSV de resultados en archivo XML persistente
+        // de Result -> ResultEntity
+        ResultFileManager resultFileManager = ResultFileManager.getInstance();
+        resultFileManager.loadXmlResultEntityFile();
         
-        ResultFileManager resultFileManager = new ResultFileManager();
+        // obtención de las listas de datos a manejar
+        EntityManager entityManager = EntityManager.getInstance();
+        List<Team> teamList = entityManager.findAllTeam();
+        
+        // carga lista de equipos
+//        String teamGroupFilename = FileNameManager.getTeamEntityFilename();
+//        TeamEntity teamGroup = TeamEntity.unmarshall(new File(teamGroupFilename));
+//        logger.info("teamGroup LOADED"
+//            + "->TOTAL teams"
+//            + StringUtil.enclose(teamGroup.getTeam().size())
+//        );
+        
+        
         // cargar los registros de los archivos de resultados
-        List<ResultRecord> resultRecordList = 
-            resultFileManager.getResultRecord();
+        List<Result> resultList = entityManager.findAllResult();
+        
+        // Al no tener un modelo serializado en bd, se cargarn los datos
+        // a partir de ficheros de resultados mediante el SeasonManager
+        SeasonManager seasonManager = new SeasonManager();
         
         // carga la temporada con los resultados de las jornadas hasta el 
         // momento (ficheros de resultado disponibles)
-        SeasonManager seasonManager = new SeasonManager();
-        seasonManager.loadSeason(resultRecordList);
+        seasonManager.loadResults(resultList);
         String seasonFilename = FileNameManager.getSeasonFilename(
             seasonManager.getSeason().getLastDayId());
         seasonManager.getSeason().marshall(new File(seasonFilename));
@@ -49,7 +64,8 @@ public class Cocam {
         totalTables =
             seasonManager.getSeason().getMatch().stream().map((match) ->
             match.getTable().size()).reduce(totalTables, Integer::sum);
-        logger.info("seasonId"
+        logger.info("season LOADED"
+            + "->seasonId"
             + StringUtil.enclose(seasonManager.getSeason().getSeasonId())
             + ",lastRoundId"
             + StringUtil.enclose(seasonManager.getSeason().getLastDayId())
@@ -58,10 +74,29 @@ public class Cocam {
             + ",TOTAL tables"
             + StringUtil.enclose(totalTables)
         );
+
+        // No se dispone de fichero de jugadores porque se introduciran en la
+        // excel de forma escrita diferente a la que consta en las fichas
+        // los jugadores se extraen de los resultados de la temporada, y se
+        // agrupan en un clase interpuesta PlayerGroup cuando lo lógico es
+        // que pertenecieran a Team pero en este caso el Team se
+        // carga sin jugadores.
+        PlayerGroup playerGroup = seasonManager.getPlayerGroup();
+        logger.info("playerGroup LOADED"
+            + "->TOTAL players"
+            + StringUtil.enclose(playerGroup.getPlayer().size()));
+        String playerGroupFilename = FileNameManager.getPlayerGroupFilename(
+            seasonManager.getSeason().getLastDayId());
+        playerGroup.marshall(new File(playerGroupFilename));
+        
+        
+        // cargar las estadisticas de cada equipo de equipos y jugadores
+        seasonManager.loadStats(teamList, playerGroup);
+        
         
         // cargar las estadisticas de cada equipo
         TeamStatGroup teamStatGroup =
-            seasonManager.getTeamStatGroup(teamGroup);
+            seasonManager.getTeamStatGroup(teamList);
         String teamStatGroupFilename = FileNameManager.getTeamStatGroupFilename(
             seasonManager.getSeason().getLastDayId());
         teamStatGroup.marshall(new File(teamStatGroupFilename));
@@ -73,27 +108,19 @@ public class Cocam {
         for (TeamStat teamStat : teamStatList) {
             logger.info(teamStat);
         }
+        
+        RankingFileManager rankingFileManager = new RankingFileManager();
+        
         // generar CVS
         String teamRankingFilename = FileNameManager.getTeamRankingFilename(
             seasonManager.getSeason().getLastDayId());
-        resultFileManager.setTeamRankingFile(teamStatList, 
+        rankingFileManager.writeTeamRankingFile(teamStatList, 
             new File(teamRankingFilename));
         
-        // No se dispone de fichero de jugadores porque se introduciran en la
-        // excel de forma escrita diferente a la que consta en las fichas
-        // los jugadores se extraen de la temporada, y se agrupan en un clase
-        // interpuesta PlayerGroup cuando lo lógico es que pertenecieran a Team
-        // pero en este caso el Team se carga sin jugadores.
-        PlayerGroup playerGroup = seasonManager.getPlayerGroup();
-        logger.info("TOTAL players"
-            + StringUtil.enclose(playerGroup.getPlayer().size()));
-        String playerGroupFilename = FileNameManager.getPlayerGroupFilename(
-            seasonManager.getSeason().getLastDayId());
-        playerGroup.marshall(new File(playerGroupFilename));
         
         // cargar las estaditicas de cada jugador
         PlayerStatGroup playerStatGroup =
-            seasonManager.getPlayerStatGroup(teamGroup, playerGroup);
+            seasonManager.getPlayerStatGroup(teamList, playerGroup);
         String playerStatGroupFilename =
             FileNameManager.getPlayerStatGroupFilename(
                 seasonManager.getSeason().getLastDayId());
@@ -109,7 +136,7 @@ public class Cocam {
         // generar CBVS
         String playerRankingFilename = FileNameManager.getPlayerRankingFilename(
             seasonManager.getSeason().getLastDayId());
-        resultFileManager.setPlayerRankingFile(playerStatList,
+        rankingFileManager.writePlayerRankingFile(playerStatList,
             new File(playerRankingFilename));
     }
 

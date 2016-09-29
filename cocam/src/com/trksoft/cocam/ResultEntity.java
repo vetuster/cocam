@@ -5,7 +5,6 @@
  */
 package com.trksoft.cocam;
 
-import com.trksoft.util.StringUtil;
 import java.io.File;
 import java.util.LinkedList;
 import java.util.List;
@@ -17,7 +16,6 @@ import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
@@ -33,95 +31,99 @@ import org.xml.sax.SAXException;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "dayId",
-    "resultRecord"
+    "result"
 })
 @XmlRootElement
-public class ResultRecordGroup {
+public class ResultEntity {
     @SuppressWarnings("NonConstantFieldWithUpperCaseName")
     private static final Logger logger
-        = LogManager.getLogger(ResultRecordGroup.class);
-    
-    @XmlAttribute
-    private Integer dayId;
+        = LogManager.getLogger(ResultEntity.class);
     
     @XmlElement(required = true)
-    private final List<ResultRecord> resultRecord;
+    private final List<Result> result;
 
-    public ResultRecordGroup() {
-        resultRecord = new LinkedList<>();
+    public ResultEntity() {
+        result = new LinkedList<>();
     }
 
-    public Integer getDayId() {
-        return dayId;
-    }
-
-    public void setDayId(Integer dayId) {
-        this.dayId = dayId;
-    }
-
-    public List<ResultRecord> getResultRecord() {
-        return resultRecord;
+    public List<Result> getResult() {
+        return result;
     }
     
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder("ResultRecordGroup->");
-        sb.append("dayId");
-        sb.append(StringUtil.enclose(dayId));
-        sb.append(resultRecord.stream().map(Object::toString).
+        StringBuilder sb = new StringBuilder("ResultEntityGroup->");
+        sb.append(result.stream().map(Object::toString).
             collect(Collectors.joining("->")));
         return sb.toString();
     }
     
-    public void marshall(File resultRecordGroupFile) throws JAXBException {
+    public void marshall(File resultEntityFile) throws JAXBException {
         try {
             JAXBContext jaxbContext
-                = JAXBContext.newInstance(ResultRecordGroup.class);
+                = JAXBContext.newInstance(ResultEntity.class);
             Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
             jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-            jaxbMarshaller.marshal(this, resultRecordGroupFile);
+            jaxbMarshaller.marshal(this, resultEntityFile);
         } catch (JAXBException jaxbex) {
             logger.fatal(jaxbex);
             throw jaxbex;
         }
     }
     
-    public static ResultRecordGroup unmarshall(
-        File resultRecordGroupFile) throws JAXBException {
-        ResultRecordGroup resultRecordGroup = null;
+    public void marshall(File resultEntityFile, File resultEntitySchema)
+        throws JAXBException, SAXException {
+        try {
+            JAXBContext jaxbContext
+                = JAXBContext.newInstance(ResultEntity.class);
+            Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
+            SchemaFactory schemaFactory = SchemaFactory.newInstance(
+                XMLConstants.W3C_XML_SCHEMA_NS_URI); 
+            Schema schema = schemaFactory.newSchema(resultEntitySchema); 
+            jaxbMarshaller.setSchema(schema);
+            jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+            jaxbMarshaller.marshal(this, resultEntityFile);
+        } catch (JAXBException jaxbex) {
+            logger.fatal(jaxbex);
+            throw jaxbex;
+        }
+    }
+    
+    public static ResultEntity unmarshall(
+        File resultEntityFile) throws JAXBException {
+        ResultEntity resultEntity = null;
         try {
             JAXBContext jaxbContext = 
-                JAXBContext.newInstance(ResultRecordGroup.class);
+                JAXBContext.newInstance(ResultEntity.class);
 
             Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
-            resultRecordGroup = (ResultRecordGroup)
-                jaxbUnmarshaller.unmarshal(resultRecordGroupFile);
+            resultEntity = (ResultEntity)
+                jaxbUnmarshaller.unmarshal(resultEntityFile);
         } catch (JAXBException jaxbex) {
             logger.fatal(jaxbex);
             throw jaxbex;
         }
-        return resultRecordGroup;
+        return resultEntity;
     }
     
-    public static ResultRecordGroup unmarshall(File resultRecordGroupFile,
-        File resultRecordGroupSchema) throws JAXBException, SAXException {
-        ResultRecordGroup resultRecordGroup = null;
+    public static ResultEntity unmarshall(File resultEntityFile,
+        File resultEntitySchema) throws JAXBException, SAXException {
+        ResultEntity resultEntity = null;
         try {
             JAXBContext jaxbContext = 
-                JAXBContext.newInstance(ResultRecordGroup.class);
+                JAXBContext.newInstance(ResultEntity.class);
 
             Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
             SchemaFactory schemaFactory = SchemaFactory.newInstance(
                 XMLConstants.W3C_XML_SCHEMA_NS_URI); 
-            Schema schema = schemaFactory.newSchema(resultRecordGroupSchema); 
+            Schema schema = schemaFactory.newSchema(resultEntitySchema); 
             jaxbUnmarshaller.setSchema(schema);
-            resultRecordGroup = (ResultRecordGroup)
-                jaxbUnmarshaller.unmarshal(resultRecordGroupFile);
+            resultEntity = (ResultEntity)
+                jaxbUnmarshaller.unmarshal(resultEntityFile);
         } catch (JAXBException | SAXException jaxbex) {
             logger.fatal(jaxbex);
             throw jaxbex;
         }
-        return resultRecordGroup;
+        return resultEntity;
     }
 }

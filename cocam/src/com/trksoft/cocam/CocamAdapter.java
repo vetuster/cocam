@@ -7,24 +7,27 @@ package com.trksoft.cocam;
 
 import java.time.LocalDate;
 import javax.xml.bind.annotation.adapters.XmlAdapter;
+import javax.xml.datatype.DatatypeConfigurationException;
+import javax.xml.datatype.XMLGregorianCalendar;
 
 /**
  *
  * @author PSUANZES
  */
-public class CocamAdapter extends XmlAdapter<String, LocalDate> {
+public class CocamAdapter extends XmlAdapter<XMLGregorianCalendar, LocalDate> {
 
     @Override
-    public LocalDate unmarshal(String value) {
+    public LocalDate unmarshal(XMLGregorianCalendar value) {
         return (CocamDatatypeConverter.parseLocalDate(value));
     }
 
     @Override
-    public String marshal(LocalDate value) {
+    public XMLGregorianCalendar marshal(LocalDate value)
+        throws DatatypeConfigurationException {
         if (value == null) {
             return null;
         }
-        return (CocamDatatypeConverter.printLocalDate(value));
+        return (CocamDatatypeConverter.toXMLGC(value));
     }
 
 }

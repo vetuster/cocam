@@ -17,12 +17,12 @@ public class FileNameManager {
     
     private static final String SEPCOL_RECORD_DESC_PATH = 
         "resources/cocam-result_record-desc.xml";
-    private static final String RESULT_RECORD_GROUP_SCHEMA_PATH = 
-        "resources/cocam-ResultRecordGroup.xsd";
+    private static final String RESULT_ENTITY_SCHEMA_PATH = 
+        "resources/cocam-ResultEntity.xsd";
     
-    private static final String TEAM_GROUP = "TeamGroup";
+    private static final String TEAM_ENTITY = "TeamEntity";
     private static final String PLAYER_GROUP = "PlayerGroup";
-    private static final String RESULT_RECORD_GROUP = "ResultRecordGroup";
+    private static final String RESULT_ENTITY = "ResultEntity";
     private static final String SEASON = "Season";
     private static final String TEAM_STAT_GROUP = "TeamStatGroup";
     private static final String TEAM_RANKING = "TeamRanking";
@@ -33,11 +33,11 @@ public class FileNameManager {
         return SEPCOL_RECORD_DESC_PATH;
     }
     
-    protected static String getResultRecordGroupSchemaFilename() {
-        return RESULT_RECORD_GROUP_SCHEMA_PATH;
+    protected static String getResultEntitySchemaFilename() {
+        return RESULT_ENTITY_SCHEMA_PATH;
     }
     
-    protected static String getTeamGroupFilename() {
+    protected static String getTeamEntityFilename() {
         StringBuilder teamGroupFilename = new StringBuilder();
         CocamProps cocamProps = CocamProps.getInstance();
         //path - resources/
@@ -51,7 +51,7 @@ public class FileNameManager {
         // hypen
         teamGroupFilename.append(HYPEN);
         // TeamGroup
-        teamGroupFilename.append(TEAM_GROUP);
+        teamGroupFilename.append(TEAM_ENTITY);
         // xml ext
         teamGroupFilename.append(XML_EXT);
         return teamGroupFilename.toString();
@@ -73,17 +73,13 @@ public class FileNameManager {
         return playerGroupFilename.toString();
     }
     
-    protected static String getResultRecordGroupFilename(final int dayId) {
+    protected static String getResultEntityFilename() {
         StringBuilder seasonFilename = new StringBuilder();
         CocamProps cocamProps = CocamProps.getInstance();
         //path - resources/
         seasonFilename.append(cocamProps.getDataFileDir());
         // Season
-        seasonFilename.append(RESULT_RECORD_GROUP);
-        // hypen
-        seasonFilename.append(HYPEN);
-        // day - jornada - R99
-        seasonFilename.append(Day.getDayIdOutput(dayId));
+        seasonFilename.append(RESULT_ENTITY);
         // xml ext
         seasonFilename.append(XML_EXT);
         return seasonFilename.toString();

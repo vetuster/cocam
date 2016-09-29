@@ -11,15 +11,10 @@ import com.trksoft.util.StringUtil;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FilenameFilter;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.PrintWriter;
-import java.io.UnsupportedEncodingException;
 import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
 import javax.xml.bind.JAXBException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -34,8 +29,19 @@ public class ResultFileManager {
     private static final Logger logger
         = LogManager.getLogger(ResultFileManager.class);
     
+    //Bill Pugh Solution for singleton pattern
+    private ResultFileManager() {
+    }
+
+    private static class LazyHolder {
+        private static final ResultFileManager INSTANCE = new ResultFileManager();
+    }
+
+    protected static ResultFileManager getInstance() {
+        return ResultFileManager.LazyHolder.INSTANCE;
+    }
     
-    public List<ResultRecord> getResultRecord() throws CocamException {
+    protected void loadXmlResultEntityFile() throws CocamException {
         SepColRecordDesc scrd = null;
         try {
             scrd = SepColRecordDesc.unmarshall(
@@ -44,15 +50,14 @@ public class ResultFileManager {
             logger.fatal(ffex);
             throw new CocamException(ffex);
         }
-        List<ResultRecord> resultRecordList = new LinkedList<>();
         CocamProps comcaProps = CocamProps.getInstance();
         String charset = comcaProps.getResultFileCharset();
         File[] fileList = getResultFileList();
+        ResultEntity resultEntity = new ResultEntity();
         // ordenar lor archivos, para tratar por orden de jornada
         Arrays.sort(fileList);
         for (File inFile : fileList) {
             logger.info("In progress" + StringUtil.enclose(inFile.getName()));
-            ResultRecordGroup resultRecordGroup = new ResultRecordGroup();
             int recordCount = 0;
             try (BufferedReader bufferedReader
                 //= new BufferedReader(new FileReader(inFile));)
@@ -71,24 +76,17 @@ public class ResultFileManager {
                     String recordType = inputRecord.substring(0, 3);
                     logger.trace("recordType" + StringUtil.enclose(recordType));
                     switch (recordType) {
-                        case ResultRecord.INFO_TYPE: {
-                            ResultRecord resultRecord = new ResultRecord();
-                            resultRecord = resultRecord
-                                .build(inputRecord, scrd);
-                            if (resultRecordGroup.getDayId() == null) {
-                                resultRecordGroup.setDayId(
-                                    resultRecord.getDayId());
-                            }
-                            resultRecordGroup.getResultRecord()
-                                .add(resultRecord);
+                        case Result.INFO_TYPE: {
+                            resultEntity.getResult().add(
+                                Result.parse(inputRecord, scrd));
                             break;
                         }
                             
-                        case ResultRecord.COMMENT_TYPE:
+                        case Result.COMMENT_TYPE:
                             // nada, es un registro-comentario
                             break;
                             
-                        case ResultRecord.END_TYPE:
+                        case Result.END_TYPE:
                             hasContent = false;
                             break;
                             
@@ -101,36 +99,29 @@ public class ResultFileManager {
                     } //switch
                 } //while
             } catch (IOException ioex) {
+                logger.fatal("Procesing"
+                    + StringUtil.enclose(inFile.getName()));
                 logger.fatal(ioex);
                 throw new CocamException(ioex);
             } // try
             logger.info("Processed" + StringUtil.enclose(inFile.getName())
             + ",registros" + StringUtil.enclose(recordCount)
             + ",partidas" + StringUtil.enclose(
-                resultRecordGroup.getResultRecord().size()));
-            try {
-                String resultRecordGroupFilename =
-                    FileNameManager.getResultRecordGroupFilename(
-                        resultRecordGroup.getDayId());
-                resultRecordGroup.marshall(new File(resultRecordGroupFilename));
-                
-                // se valida contra schema la informacion obtenida y cargada
-                // de los ficheros de entrada
-                String resultRecordGroupSchemaFilename =
-                    FileNameManager.getResultRecordGroupSchemaFilename();
-                ResultRecordGroup.unmarshall(
-                    new File(resultRecordGroupFilename),
-                    new File(resultRecordGroupSchemaFilename));
-            } catch (JAXBException | SAXException jaxbex) {
-                logger.fatal(jaxbex);
-                throw new CocamException(jaxbex);
-            }
-
-            // se incorpora la lista de la jornada a la lista global de registros
-            resultRecordList.addAll(resultRecordGroup.getResultRecord());
-            
+                resultEntity.getResult().size()));
         } //for ficheros de entrada con resultados
-        return resultRecordList;
+        
+        // se general el fichero xml y se valida contra xsd
+        try {
+            String resultEntityFilename
+                = FileNameManager.getResultEntityFilename();
+            String resultEntitySchemaFilename
+                = FileNameManager.getResultEntitySchemaFilename();
+            resultEntity.marshall(new File(resultEntityFilename),
+                new File(resultEntitySchemaFilename));
+        } catch (JAXBException | SAXException jaxbex) {
+            logger.fatal(jaxbex);
+            throw new CocamException(jaxbex);
+        }
     }
     
     
@@ -147,42 +138,5 @@ public class ResultFileManager {
         });
         logger.info("fileList->length"+ StringUtil.enclose(fileList.length));
         return fileList;
-    }
-    
-    
-    public void setTeamRankingFile(final List<TeamStat> teamStatList,
-        File rankingTeamFile) throws CocamException {
-        CocamProps comcaProps = CocamProps.getInstance();
-        String charset = comcaProps.getRankingFileCharset();
-        String charsep = comcaProps.getRankingFileCharsep();
-
-        try (PrintWriter printWriter = 
-            new PrintWriter(rankingTeamFile, charset);) {
-
-            teamStatList.stream().forEach((teamStat) -> {
-                printWriter.println(teamStat.getRankingRecord(charsep));
-            });
-        } catch (FileNotFoundException | UnsupportedEncodingException fnfueex) {
-            logger.fatal(fnfueex);
-            throw new CocamException(fnfueex);
-        }
-    }
-    
-    public void setPlayerRankingFile(final List<PlayerStat> playerStatList,
-        File playerRankingFile) throws CocamException {
-        CocamProps comcaProps = CocamProps.getInstance();
-        String charset = comcaProps.getRankingFileCharset();
-        String charsep = comcaProps.getRankingFileCharsep();
-
-        try (PrintWriter printWriter = 
-            new PrintWriter(playerRankingFile, charset);) {
-
-            playerStatList.stream().forEach((teamStat) -> {
-                printWriter.println(teamStat.getRankingRecord(charsep));
-            });
-        } catch (FileNotFoundException | UnsupportedEncodingException fnfueex) {
-            logger.fatal(fnfueex);
-            throw new CocamException(fnfueex);
-        }
     }
 }

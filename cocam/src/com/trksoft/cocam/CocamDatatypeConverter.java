@@ -7,7 +7,13 @@ package com.trksoft.cocam;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+import javax.xml.datatype.DatatypeConfigurationException;
+import javax.xml.datatype.DatatypeFactory;
+import javax.xml.datatype.XMLGregorianCalendar;
 
 /**
  *
@@ -19,18 +25,31 @@ public final class CocamDatatypeConverter {
     
     public static final String COCAM_HOUR_PATTERN = "HH:mm:ss";
     
-    // marshall
+    // marshall - LocalDate vs String
     public static LocalDate parseLocalDate(String dateString) {
         DateTimeFormatter formatter = 
             DateTimeFormatter.ofPattern(COCAM_DATE_PATTERN_PARSE);
         return LocalDate.parse(dateString, formatter);
     }
     
-    //unmarshall
+    //unmarshall - LocalDate vs String
     public static String printLocalDate(LocalDate localDate) {
         DateTimeFormatter formatter = 
             DateTimeFormatter.ofPattern(COCAM_DATE_PATTERN_PRINT);
         return formatter.format(localDate);
+    }
+    
+    // marshall - LocalDate vs XMLGregorianCalendar
+    public static LocalDate parseLocalDate(XMLGregorianCalendar xmlGC) {
+        return xmlGC.toGregorianCalendar().toZonedDateTime().toLocalDate();
+    }
+    
+    //unmarshall - LocalDate vs XMLGregorianCalendar
+    public static XMLGregorianCalendar toXMLGC(LocalDate localDate)
+        throws DatatypeConfigurationException {
+        String lexicalDateRepresentation = printLocalDate(localDate);
+        return DatatypeFactory.newInstance().
+            newXMLGregorianCalendar(lexicalDateRepresentation);
     }
     
             

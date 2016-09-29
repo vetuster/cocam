@@ -20,10 +20,13 @@ public class SeasonManager {
         = LogManager.getLogger(SeasonManager.class);
     
     
-    private Season season;
+    private final Season season;
+    
+    private final SeasonStat seasonStat;
 
     protected SeasonManager() {
         this.season = new Season();
+        this.seasonStat = new SeasonStat();
     }
     
     protected final Season getSeason() {
@@ -31,64 +34,60 @@ public class SeasonManager {
     }
     
     
-    protected void loadSeason(final List<ResultRecord> resultRecordList)
+    protected void loadResults(final List<Result> resultList)
         throws CocamException {
         Match currentMatch = null;
-        for (ResultRecord resultRecord : resultRecordList) {
-            logger.debug("loading->" + resultRecord);
+        for (Result result : resultList) {
+            logger.debug("loading->" + result);
             
             if (season.getSeasonId() == null) {
-                season.setSeasonId(resultRecord.getSeasonId());
+                season.setSeasonId(result.getSeasonId());
             }
             
-            if (resultRecord.isMatchHead()) {
-                season.setLastDayId(resultRecord.getDayId());
+            if (result.isMatchHead()) {
+                season.setLastDayId(result.getDayId());
                 currentMatch = new Match();
                 currentMatch.setLeagueType(
-                    LeagueType.valueOf(resultRecord.getLeagueType()));
-                currentMatch.setRoundId(resultRecord.getRoundId());
-                currentMatch.setDayId(resultRecord.getDayId());
-                currentMatch.setDayDate(resultRecord.getDayDate());
-                currentMatch.setMatchId(resultRecord.getLocalTeamId()
-                    + resultRecord.getVisitingTeamId());
-                currentMatch.setLocalTeamId(resultRecord.getLocalTeamId());
-                currentMatch.setLocalTeamName(resultRecord.getLocalTeamName());
-                currentMatch.setLocalTeamScore(
-                    resultRecord.getLocalTeamScore());
-                currentMatch.setVisitingTeamId(
-                    resultRecord.getVisitingTeamId());
-                currentMatch.setVisitingTeamName(
-                    resultRecord.getVisitingTeamName());
-                currentMatch.setVisitingTeamScore(
-                    resultRecord.getVisitingTeamScore());
+                    LeagueType.valueOf(result.getLeagueType()));
+                currentMatch.setRoundId(result.getRoundId());
+                currentMatch.setDayId(result.getDayId());
+                currentMatch.setDayDate(result.getDayDate());
+                currentMatch.setMatchId(result.getLocalTeamId()
+                    + result.getVisitingTeamId());
+                currentMatch.setLocalTeamId(result.getLocalTeamId());
+                currentMatch.setLocalTeamName(result.getLocalTeamName());
+                currentMatch.setLocalTeamScore(result.getLocalTeamScore());
+                currentMatch.setVisitingTeamId(result.getVisitingTeamId());
+                currentMatch.setVisitingTeamName(result.getVisitingTeamName());
+                currentMatch.setVisitingTeamScore(result.getVisitingTeamScore());
                 season.getMatch().add(currentMatch);
             }
             
             Table currentTable = new Table();
-            currentTable.setTableId(resultRecord.getTableId());
-            currentTable.setLocalPlayerNickOne(
-                resultRecord.getLocalPlayerNickOne());
-            currentTable.setLocalPlayerNickTwo(
-                resultRecord.getLocalPlayerNickTwo());
-            currentTable.setLocalPairScore(resultRecord.getLocalPairScore());
-            currentTable.setVisitingPlayerNickOne(
-                resultRecord.getVisitingPlayerNickOne());
-            currentTable.setVisitingPlayerNickTwo(
-                resultRecord.getVisitingPlayerNickTwo());
-            currentTable.setVisitingPairScore(
-                resultRecord.getVisitingPairScore());
+            currentTable.setTableId(result.getTableId());
+            currentTable.setLocalPlayerNickOne(result.getLocalPlayerNickOne());
+            currentTable.setLocalPlayerNickTwo(result.getLocalPlayerNickTwo());
+            currentTable.setLocalPairScore(result.getLocalPairScore());
+            currentTable.setVisitingPlayerNickOne(result.getVisitingPlayerNickOne());
+            currentTable.setVisitingPlayerNickTwo(result.getVisitingPlayerNickTwo());
+            currentTable.setVisitingPairScore(result.getVisitingPairScore());
             currentMatch.getTable().add(currentTable);
         }
     }
     
-    protected TeamStatGroup getTeamStatGroup(final TeamGroup teamGroup) {
+    protected void loadStats(final List<Team> teamList,
+        final PlayerGroup playerGroup) {
+        seasonStat.setSeasonId(season.getSeasonId());
+    }
+    
+    protected TeamStatGroup getTeamStatGroup(final List<Team> teamList) {
         TeamStatGroup teamStatGroup =  new TeamStatGroup();
         teamStatGroup.setLeagueType(LeagueType.REG);
 
         //carga estadísticas
         // iniciar las estadísticas - así el equipo que descansa consta con 0
         // y siempre existe el equipo en la busqueda
-        teamGroup.getTeam().stream().forEach((team) -> {
+        teamList.stream().forEach((team) -> {
             TeamStat initTeamStat = new TeamStat();
             initTeamStat.setTeamId(team.getTeamId());
             initTeamStat.setTeamDenom(team.getTeamDenom());
@@ -137,7 +136,7 @@ public class SeasonManager {
         return playerGroup;
     }
     
-    protected PlayerStatGroup getPlayerStatGroup(final TeamGroup teamGroup, 
+    protected PlayerStatGroup getPlayerStatGroup(final List<Team> teamList, 
         final PlayerGroup playerGroup) {
         PlayerStatGroup playerStatGroup =  new PlayerStatGroup();
         playerStatGroup.setLeagueType(LeagueType.REG);
@@ -146,7 +145,7 @@ public class SeasonManager {
         playerGroup.getPlayer().stream().forEach((player) -> {
             
             // buscamos el equipo del jugador
-            Optional<Team> optional = teamGroup.getTeam().stream().
+            Optional<Team> optional = teamList.stream().
                 filter(team -> team.getTeamId().equals(player.getTeamId())).
                 findFirst();
             Team playerTeam = optional.get();

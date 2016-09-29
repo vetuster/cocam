@@ -6,7 +6,7 @@
 package com.trksoft.cocam;
 
 import java.io.File;
-import java.util.SortedSet;
+import java.util.Set;
 import java.util.TreeSet;
 import java.util.stream.Collectors;
 import javax.xml.bind.JAXBContext;
@@ -29,44 +29,44 @@ import org.apache.logging.log4j.Logger;
     "team"
 })
 @XmlRootElement
-public class TeamGroup {
+public class TeamEntity {
     @SuppressWarnings("NonConstantFieldWithUpperCaseName")
     private static final Logger logger
-        = LogManager.getLogger(TeamGroup.class);
+        = LogManager.getLogger(TeamEntity.class);
     
     @XmlElement(required = true)
-    private final SortedSet<Team> team;
+    private final Set<Team> team;
 
-    public TeamGroup() {
-        team = new TreeSet<>();
+    public TeamEntity() {
+       team = new TreeSet<>();
     }
 
-    public SortedSet<Team> getTeam() {
+    public Set<Team> getTeam() {
         return team;
     }
     
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder("TeamGroup->");
+        StringBuilder sb = new StringBuilder("TeamEntity->");
         sb.append(team.stream().map(Object::toString).
             collect(Collectors.joining("->")));
         return sb.toString();
     }
     
-    public static TeamGroup unmarshall(
-        File fixedLengthColRecordDescFile) throws JAXBException {
-        TeamGroup flcrd = null;
+    public static TeamEntity unmarshall(File teamEntityFile) 
+        throws JAXBException {
+        TeamEntity teamEntity = null;
         try {
             JAXBContext jaxbContext = 
-                JAXBContext.newInstance(TeamGroup.class);
+                JAXBContext.newInstance(TeamEntity.class);
 
             Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
-            flcrd = (TeamGroup)
-                jaxbUnmarshaller.unmarshal(fixedLengthColRecordDescFile);
+            teamEntity = (TeamEntity)
+                jaxbUnmarshaller.unmarshal(teamEntityFile);
         } catch (JAXBException jaxbex) {
             logger.fatal(jaxbex);
             throw jaxbex;
         }
-        return flcrd;
+        return teamEntity;
     }
 }
