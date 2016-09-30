@@ -12,7 +12,7 @@ import java.text.DecimalFormat;
  *
  * @author jasuarez
  */
-public class Day {
+public class SeasonDay {
     private static final String DAY_OUTPUT_PREFIX = "D";
     private static final String DAY_OUTPUT_PATTERN = "00";
     

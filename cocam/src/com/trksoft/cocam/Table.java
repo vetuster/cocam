@@ -153,4 +153,16 @@ public class Table implements Comparable<Table> {
         }
         return table;
     }
+    
+    public static Table build(Result result) {
+        Table table = new Table();
+        table.setTableId(result.getTableId());
+        table.setLocalPlayerNickOne(result.getLocalPlayerNickOne());
+        table.setLocalPlayerNickTwo(result.getLocalPlayerNickTwo());
+        table.setLocalPairScore(result.getLocalPairScore());
+        table.setVisitingPlayerNickOne(result.getVisitingPlayerNickOne());
+        table.setVisitingPlayerNickTwo(result.getVisitingPlayerNickTwo());
+        table.setVisitingPairScore(result.getVisitingPairScore());
+        return table;
+    }
 }

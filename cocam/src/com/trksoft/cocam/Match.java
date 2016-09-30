@@ -115,6 +115,12 @@ public class Match  implements Comparable<Match> {
     public void setMatchId(String matchId) {
         this.matchId = matchId;
     }
+    
+    public void setMatchId(String localTeamId, String visitingTeamId) {
+        StringBuilder sb = new StringBuilder(localTeamId);
+        sb.append(visitingTeamId);
+        setMatchId(sb.toString());
+    }
 
     public String getLocalTeamId() {
         return localTeamId;
@@ -169,12 +175,12 @@ public class Match  implements Comparable<Match> {
     }
     
     
-    public ResultType getResultType() {
+    public MatchScoreType getResultType() {
         if (localTeamScore == null || visitingTeamScore == null) {
             return null;
         }
         // devuelve el tipo de resultado correspondiente
-        return ResultType.valueOf(localTeamScore * 10 + visitingTeamScore);
+        return MatchScoreType.valueOf(localTeamScore * 10 + visitingTeamScore);
     }
     
     
@@ -233,26 +239,19 @@ public class Match  implements Comparable<Match> {
         return match;
     }
     
-    public enum ResultType {
-        R04(4), R13(13), R22(22), R31(31), R40(40);
-
-        private int resultTypeNo;
-
-        private static final java.util.Map<Integer, ResultType> map
-            = new java.util.HashMap<>();
-
-        static {
-            for (ResultType resultType : ResultType.values()) {
-                map.put(resultType.resultTypeNo, resultType);
-            }
-        }
-
-        private ResultType(final int resultTypeNo) {
-            this.resultTypeNo = resultTypeNo;
-        }
-
-        public static ResultType valueOf(final int resultTypeNo) {
-            return map.get(resultTypeNo);
-        }
+    public static Match build(Result result) {
+        Match match = new Match();
+        match.setLeagueType(LeagueType.valueOf(result.getLeagueType()));
+        match.setRoundId(result.getRoundId());
+        match.setDayId(result.getDayId());
+        match.setDayDate(result.getDayDate());
+        match.setMatchId(result.getLocalTeamId(), result.getVisitingTeamId());
+        match.setLocalTeamId(result.getLocalTeamId());
+        match.setLocalTeamName(result.getLocalTeamName());
+        match.setLocalTeamScore(result.getLocalTeamScore());
+        match.setVisitingTeamId(result.getVisitingTeamId());
+        match.setVisitingTeamName(result.getVisitingTeamName());
+        match.setVisitingTeamScore(result.getVisitingTeamScore());
+        return match;
     }
 }

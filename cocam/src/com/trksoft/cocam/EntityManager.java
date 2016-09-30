@@ -23,6 +23,7 @@ public class EntityManager {
         = LogManager.getLogger(EntityManager.class);
     
     private static TeamEntity teamEntity = new TeamEntity();
+    private static PlayerEntity playerEntity = new PlayerEntity();
     private static ResultEntity resultEntity = new ResultEntity();
     
 
@@ -39,7 +40,7 @@ public class EntityManager {
     }
     
     
-    protected List<Team> findAllTeam() {
+    protected List<Team> findAllTeam() throws CocamException {
         if (teamEntity.getTeam().isEmpty()) {
             // carga el conjunto de equipos
             try {
@@ -47,7 +48,7 @@ public class EntityManager {
                     new File(FileNameManager.getTeamEntityFilename()));
             } catch (JAXBException jaxbex) {
                 logger.fatal(jaxbex);
-                throw new RuntimeException(jaxbex);
+                throw new CocamException(jaxbex);
             }
             logger.info("teamEntity LOADED"
                 + "->TOTAL teams"
@@ -57,8 +58,25 @@ public class EntityManager {
         return new LinkedList(teamEntity.getTeam());
     }
     
+    protected List<Player> findAllPlayer() throws CocamException {
+        if (playerEntity.getPlayer().isEmpty()) {
+            // carga el conjunto de equipos
+            try {
+                playerEntity = PlayerEntity.unmarshall(
+                    new File(FileNameManager.getPlayerEntityFilename()));
+            } catch (JAXBException jaxbex) {
+                logger.fatal(jaxbex);
+                throw new CocamException(jaxbex);
+            }
+            logger.info("playerEntity LOADED"
+                + "->TOTAL players"
+                + StringUtil.enclose(playerEntity.getPlayer().size())
+            );
+        }
+        return new LinkedList(playerEntity.getPlayer());
+    }
     
-    protected List<Result> findAllResult() {
+    protected List<Result> findAllResult() throws CocamException {
         if (resultEntity.getResult().isEmpty()) {
             // carga el conjunto de resultados
             try {
@@ -66,7 +84,7 @@ public class EntityManager {
                     new File(FileNameManager.getResultEntityFilename()));
             } catch (JAXBException jaxbex) {
                 logger.fatal(jaxbex);
-                throw new RuntimeException(jaxbex);
+                throw new CocamException(jaxbex);
             }
             logger.info("resultEntity LOADED"
                 + "->TOTAL results"

@@ -58,7 +58,7 @@ public class TeamStat {
     private String teamId;
     @XmlAttribute(required = true)    
     private String teamDenom;
-    @XmlAttribute(required = true)
+    @XmlAttribute(required = true)    
     private LeagueType leagueType;
     @XmlElement(required = true)
     private Integer points;
@@ -326,6 +326,19 @@ public class TeamStat {
         return directMatch;
     }
     
+    public String getTeamStatKey() {
+        StringBuilder teamStatKey = 
+            new StringBuilder(getLeagueType().toString());
+        teamStatKey.append(getTeamId());
+        return teamStatKey.toString();
+    }
+    
+    public static String getTeamStatKey(LeagueType leagueType, String teamId) {
+        StringBuilder teamStatKey = new StringBuilder(leagueType.toString());
+        teamStatKey.append(teamId);
+        return teamStatKey.toString();
+    }
+    
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder("TeamStat->");
@@ -333,7 +346,7 @@ public class TeamStat {
         sb.append(StringUtil.enclose(teamId));
         sb.append(",teamDenom");
         sb.append(StringUtil.enclose(teamDenom));
-        sb.append("leagueType");
+        sb.append(",leagueType");
         sb.append(StringUtil.enclose(leagueType.toString()));
         sb.append(",points");
         sb.append(StringUtil.enclose(points));
@@ -494,7 +507,6 @@ public class TeamStat {
     public String getRankingRecord(final String charSep) {
         List<String> rankingField = new LinkedList<>();
         rankingField.add(getLeagueType().toString());
-        rankingField.add(getTeamDenom());
         rankingField.add(getMatchPlayed().toString());
         rankingField.add(getTableResult40().toString());
         rankingField.add(getTableResult31().toString());

@@ -30,15 +30,15 @@ import org.apache.logging.log4j.Logger;
     "player"
 })
 @XmlRootElement
-public class PlayerGroup {
+public class PlayerEntity {
     @SuppressWarnings("NonConstantFieldWithUpperCaseName")
     private static final Logger logger
-        = LogManager.getLogger(PlayerGroup.class);
+        = LogManager.getLogger(PlayerEntity.class);
     
     @XmlElement(required = true)
     private final SortedSet<Player> player;
 
-    public PlayerGroup() {
+    public PlayerEntity() {
         player = new TreeSet<>();
     }
 
@@ -48,39 +48,39 @@ public class PlayerGroup {
     
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder("PlayerGroup->");
+        StringBuilder sb = new StringBuilder("PlayerEntity->");
         sb.append(player.stream().map(Object::toString).
             collect(Collectors.joining("->")));
         return sb.toString();
     }
     
-    public void marshall(File playerGroupFile) throws JAXBException {
+    public void marshall(File playerEntityFile) throws JAXBException {
         try {
             JAXBContext jaxbContext
-                = JAXBContext.newInstance(PlayerGroup.class);
+                = JAXBContext.newInstance(PlayerEntity.class);
             Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
             jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-            jaxbMarshaller.marshal(this, playerGroupFile);
+            jaxbMarshaller.marshal(this, playerEntityFile);
         } catch (JAXBException jaxbex) {
             logger.fatal(jaxbex);
             throw jaxbex;
         }
     }
     
-    public static PlayerGroup unmarshall(
-        File fixedLengthColRecordDescFile) throws JAXBException {
-        PlayerGroup flcrd = null;
+    public static PlayerEntity unmarshall(File playerEntityFile) 
+        throws JAXBException {
+        PlayerEntity playerEntiry = null;
         try {
             JAXBContext jaxbContext = 
-                JAXBContext.newInstance(PlayerGroup.class);
+                JAXBContext.newInstance(PlayerEntity.class);
 
             Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
-            flcrd = (PlayerGroup)
-                jaxbUnmarshaller.unmarshal(fixedLengthColRecordDescFile);
+            playerEntiry = (PlayerEntity)
+                jaxbUnmarshaller.unmarshal(playerEntityFile);
         } catch (JAXBException jaxbex) {
             logger.fatal(jaxbex);
             throw jaxbex;
         }
-        return flcrd;
+        return playerEntiry;
     }
 }

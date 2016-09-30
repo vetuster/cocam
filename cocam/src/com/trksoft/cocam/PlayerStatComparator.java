@@ -13,6 +13,7 @@ import java.util.Comparator;
  */
 public class PlayerStatComparator implements Comparator<PlayerStat> {
 
+    // alfabetico por tipo de liga: REGular PEdro Menendez, CArreño Miranda
     // por ganadas de mayor a menor
     // coeficiente de mayor a menor
     // partidas jugadas de menor a mayor
@@ -20,8 +21,14 @@ public class PlayerStatComparator implements Comparator<PlayerStat> {
     // apodo por orden alfabetico
     @Override
     public int compare(PlayerStat onePlayerStat, PlayerStat otherPlayerStat) {
+        
+        // alfabetico por tipo de liga: REGular PEdro Menendez, CArreño Miranda
+        int i = onePlayerStat.getLeagueType().compareTo(
+            otherPlayerStat.getLeagueType());
+        if (i!=0) return i;
+    
         // ganadas de mayor a menor
-        int i = otherPlayerStat.getTableWon().compareTo(
+        i = otherPlayerStat.getTableWon().compareTo(
             onePlayerStat.getTableWon());
         if (i!=0) return i;
         

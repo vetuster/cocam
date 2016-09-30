@@ -248,6 +248,22 @@ public class PlayerStat {
             (goalsFavor.floatValue() + goalsAgainst.floatValue());
     }
     
+    public String getPlayerStatKey() {
+        StringBuilder playerStatKey = 
+            new StringBuilder(getLeagueType().toString());
+        playerStatKey.append(getTeamId());
+        playerStatKey.append(getPlayerNick());
+        return playerStatKey.toString();
+    }
+    
+    public static String getPlayerStatKey(LeagueType leagueType, String teamId,
+        String playerNick) {
+        StringBuilder playerStatKey = 
+            new StringBuilder(leagueType.toString());
+        playerStatKey.append(teamId);
+        playerStatKey.append(playerNick);
+        return playerStatKey.toString();
+    }
 
     @Override
     public String toString() {

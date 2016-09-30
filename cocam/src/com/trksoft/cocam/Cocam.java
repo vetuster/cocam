@@ -34,108 +34,82 @@ public class Cocam {
         ResultFileManager resultFileManager = ResultFileManager.getInstance();
         resultFileManager.loadXmlResultEntityFile();
         
-        // obtención de las listas de datos a manejar
+        
+        // obtención de la lista de equipos
         EntityManager entityManager = EntityManager.getInstance();
         List<Team> teamList = entityManager.findAllTeam();
         
-        // carga lista de equipos
-//        String teamGroupFilename = FileNameManager.getTeamEntityFilename();
-//        TeamEntity teamGroup = TeamEntity.unmarshall(new File(teamGroupFilename));
-//        logger.info("teamGroup LOADED"
-//            + "->TOTAL teams"
-//            + StringUtil.enclose(teamGroup.getTeam().size())
-//        );
+        // obtención de la lista de jugadores
+        List<Player> playerList = entityManager.findAllPlayer();
         
-        
-        // cargar los registros de los archivos de resultados
+        // obtención de la lista de resultados
         List<Result> resultList = entityManager.findAllResult();
         
-        // Al no tener un modelo serializado en bd, se cargarn los datos
-        // a partir de ficheros de resultados mediante el SeasonManager
-        SeasonManager seasonManager = new SeasonManager();
+        // Cargar la temporada con los resultados
+        Season season = Season.build(resultList);
         
-        // carga la temporada con los resultados de las jornadas hasta el 
-        // momento (ficheros de resultado disponibles)
-        seasonManager.loadResults(resultList);
+        // generar XML con la temporada
         String seasonFilename = FileNameManager.getSeasonFilename(
-            seasonManager.getSeason().getLastDayId());
-        seasonManager.getSeason().marshall(new File(seasonFilename));
+            season.getLastDayId());
+        season.marshall(new File(seasonFilename));
         int totalTables = 0;
         totalTables =
-            seasonManager.getSeason().getMatch().stream().map((match) ->
+            season.getMatch().stream().map((match) ->
             match.getTable().size()).reduce(totalTables, Integer::sum);
         logger.info("season LOADED"
             + "->seasonId"
-            + StringUtil.enclose(seasonManager.getSeason().getSeasonId())
+            + StringUtil.enclose(season.getSeasonId())
             + ",lastRoundId"
-            + StringUtil.enclose(seasonManager.getSeason().getLastDayId())
+            + StringUtil.enclose(season.getLastDayId())
             + ",TOTAL matches" 
-            + StringUtil.enclose(seasonManager.getSeason().getMatch().size())
+            + StringUtil.enclose(season.getMatch().size())
             + ",TOTAL tables"
             + StringUtil.enclose(totalTables)
         );
 
-        // No se dispone de fichero de jugadores porque se introduciran en la
-        // excel de forma escrita diferente a la que consta en las fichas
-        // los jugadores se extraen de los resultados de la temporada, y se
-        // agrupan en un clase interpuesta PlayerGroup cuando lo lógico es
-        // que pertenecieran a Team pero en este caso el Team se
-        // carga sin jugadores.
-        PlayerGroup playerGroup = seasonManager.getPlayerGroup();
-        logger.info("playerGroup LOADED"
-            + "->TOTAL players"
-            + StringUtil.enclose(playerGroup.getPlayer().size()));
-        String playerGroupFilename = FileNameManager.getPlayerGroupFilename(
-            seasonManager.getSeason().getLastDayId());
-        playerGroup.marshall(new File(playerGroupFilename));
         
-        
-        // cargar las estadisticas de cada equipo de equipos y jugadores
-        seasonManager.loadStats(teamList, playerGroup);
-        
-        
-        // cargar las estadisticas de cada equipo
-        TeamStatGroup teamStatGroup =
-            seasonManager.getTeamStatGroup(teamList);
-        String teamStatGroupFilename = FileNameManager.getTeamStatGroupFilename(
-            seasonManager.getSeason().getLastDayId());
-        teamStatGroup.marshall(new File(teamStatGroupFilename));
-        
-        // ordenar las estadisticas para obtener la clasificacion ordenada
-        List<TeamStat> teamStatList = 
-            new LinkedList<>(teamStatGroup.getTeamStat().values());
-        Collections.sort(teamStatList, new TeamStatComparator());   
-        for (TeamStat teamStat : teamStatList) {
+        // obtener y ordenar las estadisticas de los equipos 
+        // para obtener la clasificacion ordenada
+        List<TeamStat> teamStatList = season.getTeamStat(teamList);
+        Collections.sort(teamStatList, new TeamStatComparator());  
+        logger.info("Team Stats OBTAINED"
+            + ",TOTAL teamStat" 
+            + StringUtil.enclose(teamStatList.size())
+        );
+        teamStatList.stream().forEach((teamStat) -> {
             logger.info(teamStat);
-        }
+        });
+        
         
         RankingFileManager rankingFileManager = new RankingFileManager();
         
-        // generar CVS
+        
+        // generar CVS con clasificacion de equipos
         String teamRankingFilename = FileNameManager.getTeamRankingFilename(
-            seasonManager.getSeason().getLastDayId());
+            season.getLastDayId());
         rankingFileManager.writeTeamRankingFile(teamStatList, 
             new File(teamRankingFilename));
         
         
-        // cargar las estaditicas de cada jugador
-        PlayerStatGroup playerStatGroup =
-            seasonManager.getPlayerStatGroup(teamList, playerGroup);
-        String playerStatGroupFilename =
-            FileNameManager.getPlayerStatGroupFilename(
-                seasonManager.getSeason().getLastDayId());
-        playerStatGroup.marshall(new File(playerStatGroupFilename));
         
-        // ordenar las estadisticas para obtener la clasificacion ordenada
+        // obtener y ordenar las estadisticas de los jugadores 
+        // para obtener la clasificacion ordenada
         List<PlayerStat> playerStatList = 
-            new LinkedList<>(playerStatGroup.getPlayerStat().values());
+            season.getPlayerStat(teamList, playerList);
         Collections.sort(playerStatList, new PlayerStatComparator());
-//        playerStatList.stream().forEach((playerStat) -> {
-//            logger.info(playerStat);
-//        });
-        // generar CBVS
+        logger.info("Player Stats OBTAINED"
+            + ",TOTAL playerStat" 
+            + StringUtil.enclose(playerStatList.size())
+        );
+        if (logger.isTraceEnabled()) {
+            playerStatList.stream().forEach((playerStat) -> {
+                logger.trace(playerStat);
+            });
+        }
+        
+        // generar CSV con clasificacion de jugadores
         String playerRankingFilename = FileNameManager.getPlayerRankingFilename(
-            seasonManager.getSeason().getLastDayId());
+            season.getLastDayId());
         rankingFileManager.writePlayerRankingFile(playerStatList,
             new File(playerRankingFilename));
     }
