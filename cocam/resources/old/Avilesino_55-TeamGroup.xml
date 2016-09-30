@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<teamGroup>
+    <team teamId="4vient" teamName="4 Vientos" teamDenom="4 VIENTOS" teamSize="13"/>
+    <team teamId="8villa" teamName="8 Villas" teamDenom="8 VILLAS" teamSize="10"/>
+    <team teamId="acveig" teamName="AC Mus Veiga" teamDenom="AC MUS VEIGA" teamSize="12"/>
+    <team teamId="bcampy" teamName="Bar Campy" teamDenom="BAR CAMPY" teamSize="13"/>
+    <team teamId="andrea" teamName="Bar D'Andrea" teamDenom="BAR D'ANDREA" teamSize="11"/>
+    <team teamId="habana" teamName="Bar Habana" teamDenom="BAR HABANA" teamSize="12"/>
+    <team teamId="barena" teamName="Bar La Arena" teamDenom="BAR LA ARENA" teamSize="14"/>
+    <team teamId="calolo" teamName="C'Lolo" teamDenom="C'LOLO" teamSize="13"/>
+    <team teamId="cvalsa" teamName="Cafetería Valsa" teamDenom="CAFETERÍA VALSA" teamSize="13"/>
+    <team teamId="picosa" teamName="Café Bar La Picosa" teamDenom="LA PICOSA" teamSize="12"/>
+    <team teamId="capiol" teamName="Café Bar Piol" teamDenom="CAFÉ BAR PIOL" teamSize="12"/>
+    <team teamId="cebano" teamName="Café Bar Ébano" teamDenom="CAFÉ BAR ÉBANO" teamSize="11"/>
+    <team teamId="cgerma" teamName="Casa Germán" teamDenom="CASA GERMÁN" teamSize="11"/>
+    <team teamId="catere" teamName="Casa Tere" teamDenom="CASA TERE" teamSize="13"/>
+    <team teamId="churre" teamName="Churrería" teamDenom="CHURRERÍA" teamSize="12"/>
+    <team teamId="ccelti" teamName="Céltica" teamDenom="CÉLTICA" teamSize="10"/>
+    <team teamId="rcarol" teamName="El Rincón de Carol" teamDenom="RINCÓN DE CAROL" teamSize="14"/>
+    <team teamId="brenya" teamName="La Breña" teamDenom="LA BREÑA" teamSize="12"/>
+    <team teamId="chalan" teamName="Mus El Chalanín" teamDenom="MUS EL CHALANÍN" teamSize="18"/>
+    <team teamId="bcarba" teamName="Peña Carbayedo" teamDenom="PEÑA CARBAYEDO" teamSize="13"/>
+    <team teamId="monchi" teamName="Peña de Mus Monchi" teamDenom="PEÑA MUS MONCHI" teamSize="12"/>
+    <team teamId="sagcel" teamName="San Agustín - Céltica" teamDenom="S.AG.-CÉLTICA" teamSize="12"/>
+    <team teamId="sagkam" teamName="San Agustín - Kame.Net" teamDenom="S.AG.-KAME.NET" teamSize="12"/>
+    <team teamId="sagrib" teamName="San Agustín - Rías Baixas" teamDenom="S.AG.-RÍAS BAIXAS" teamSize="16"/>
+    <team teamId="albora" teamName="Sidrería Alborada" teamDenom="SIDRERÍA ALBORADA" teamSize="11"/>
+    <team teamId="valmus" teamName="Valsa Mus" teamDenom="VALSA MUS" teamSize="13"/>
+    <team teamId="bxareu" teamName="Xareu Bar Nacional" teamDenom="XAREU" teamSize="12"/>
+</teamGroup>
