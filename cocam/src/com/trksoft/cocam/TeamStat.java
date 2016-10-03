@@ -507,6 +507,7 @@ public class TeamStat {
     public String getRankingRecord(final String charSep) {
         List<String> rankingField = new LinkedList<>();
         rankingField.add(getLeagueType().toString());
+        rankingField.add(getTeamDenom());
         rankingField.add(getMatchPlayed().toString());
         rankingField.add(getTableResult40().toString());
         rankingField.add(getTableResult31().toString());
