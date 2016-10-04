@@ -523,7 +523,7 @@ public class TeamStat {
     protected static String getRankingRecordHead(final String charSep) {
         List<String> rankingField = new LinkedList<>();
         rankingField.add("LeagueType");
-        rankingField.add("TeamDenom");
+        rankingField.add("Team");
         rankingField.add("Played");
         rankingField.add("Result40");
         rankingField.add("Result31");

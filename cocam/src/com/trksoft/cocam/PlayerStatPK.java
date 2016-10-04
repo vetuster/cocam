@@ -26,7 +26,7 @@ import org.apache.logging.log4j.Logger;
     "leagueType"
 })
 @XmlRootElement
-public class PlayerStatPK implements Cloneable {
+public class PlayerStatPK {
     @SuppressWarnings("NonConstantFieldWithUpperCaseName")
     private static final Logger logger
         = LogManager.getLogger(PlayerStatPK.class);
@@ -47,6 +47,10 @@ public class PlayerStatPK implements Cloneable {
         this.teamId = teamId;
         this.playerNick = playerNick;
         this.leagueType = leagueType;
+    }
+    
+    public PlayerStatPK copy() {
+        return new PlayerStatPK(getTeamId(),getPlayerNick(), getLeagueType());
     }
     
     public String getTeamId() {

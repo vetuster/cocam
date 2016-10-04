@@ -72,14 +72,6 @@ public class PlayerStat {
     
     
     public PlayerStat() {
-    }
-    
-    
-    public PlayerStat(PlayerStatPK playerStatPK) {
-        this.playerStatPK = new PlayerStatPK(
-            playerStatPK.getTeamId(),
-            playerStatPK.getPlayerNick(),
-            playerStatPK.getLeagueType());
         this.tablePlayed = 0;
         this.tableWon = 0;
         this.tableLost = 0;
@@ -91,6 +83,12 @@ public class PlayerStat {
         this.tableLostVisiting = 0;
         this.goalsFavor = 0;
         this.goalsAgainst = 0;
+    }
+    
+    
+    public PlayerStat(PlayerStatPK playerStatPK) {
+        this();
+        this.playerStatPK = playerStatPK.copy();
     }
     
     
@@ -306,6 +304,29 @@ public class PlayerStat {
         rankingField.add(getWonCoefficient().toString());
         rankingField.add(getGoalsCoefficient().toString());
         
+        return rankingField.stream().map(Object::toString).
+            collect(Collectors.joining(charSep));
+    }
+    
+    protected static String getRankingRecordHead(final String charSep) {
+        List<String> rankingField = new LinkedList<>();
+        rankingField.add("LeagueType");
+        rankingField.add("Nick");
+        rankingField.add("Team");
+        rankingField.add("J");
+        rankingField.add("G");
+        rankingField.add("P");
+        rankingField.add("JL");
+        rankingField.add("GL");
+        rankingField.add("PL");
+        rankingField.add("JV");
+        rankingField.add("GV");
+        rankingField.add("PV");
+        rankingField.add("Chicos F");
+        rankingField.add("Chicos C");
+        rankingField.add("Coef");
+        rankingField.add("Chico AVG");
+
         return rankingField.stream().map(Object::toString).
             collect(Collectors.joining(charSep));
     }

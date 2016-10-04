@@ -33,6 +33,7 @@ public class RankingFileManager {
         String charsep = comcaProps.getRankingFileCharsep();
         try (final PrintWriter printWriter = 
             new PrintWriter(playerRankingFile, charset)) {
+            printWriter.println(PlayerStat.getRankingRecordHead(charsep));
             playerStatList.stream().forEach((PlayerStat playerStat) -> {
                 // buscamos el equipo del jugador, para obtener el Denom
                 Optional<Team> optional = teamList.stream().

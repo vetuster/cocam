@@ -24,6 +24,7 @@ import javax.xml.bind.annotation.XmlType;
 })
 @XmlRootElement
 public class Player implements Comparable<Player>{
+    protected static final String ABSENT_PLAYER_NICK_PREFIX = "_NO_PRESENTADO";
     protected static final String ABSENT_PLAYER_ONE_NICK = "_NO_PRESENTADO_1";
     protected static final String ABSENT_PLAYER_TWO_NICK = "_NO_PRESENTADO_2";
     
@@ -99,6 +100,10 @@ public class Player implements Comparable<Player>{
         sb.append(",playerNick");
         sb.append(StringUtil.enclose(playerNick));
         return sb.toString();
+    }
+
+    public static Boolean isWO(String playerNick) {
+        return playerNick.startsWith(Player.ABSENT_PLAYER_NICK_PREFIX);
     }
     
 }

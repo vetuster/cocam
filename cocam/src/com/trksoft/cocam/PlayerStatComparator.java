@@ -14,6 +14,7 @@ import java.util.Comparator;
 public class PlayerStatComparator implements Comparator<PlayerStat> {
 
     // alfabetico por tipo de liga: REGular PEdro Menendez, CArreño Miranda
+    // los NO PRESENTADOS al final
     // por ganadas de mayor a menor
     // coeficiente de mayor a menor
     // partidas jugadas de menor a mayor
@@ -25,6 +26,12 @@ public class PlayerStatComparator implements Comparator<PlayerStat> {
         // alfabetico por tipo de liga: REGular PEdro Menendez, CArreño Miranda
         int i = onePlayerStat.getPlayerStatPK().getLeagueType().compareTo(
             otherPlayerStat.getPlayerStatPK().getLeagueType());
+        if (i!=0) return i;
+    
+        // los NO PRESENTADOS al final
+        i = Player.isWO(onePlayerStat.getPlayerStatPK().getPlayerNick())
+            .compareTo(
+            Player.isWO(otherPlayerStat.getPlayerStatPK().getPlayerNick()));
         if (i!=0) return i;
     
         // ganadas de mayor a menor
