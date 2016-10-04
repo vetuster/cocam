@@ -197,59 +197,6 @@ public class Season {
             }
         }
         
-        // se incorporan de forma artificial y para que cuadren las estadisticas
-        // los jugadores NO PRESENTADOS
-        for (Match match : getMatch()) {
-            for (Table table : match.getTable()) {
-                // si hay PAREJA LOCAL NO PRESENTADA se incorporan ambos a
-                // la tabla hash de estadsiticas de jugadores
-                if (table.isLocalWO()) {
-                    // jugador local ONE
-                    PlayerStatPK playerStatPK = new PlayerStatPK(
-                        match.getLocalTeamId(),
-                        table.getLocalPlayerNickOne(),
-                        match.getLeagueType());
-                    if (!playerStatHash.containsKey(playerStatPK)) {
-                        playerStatHash.put(playerStatPK, 
-                            new PlayerStat(playerStatPK));
-                    }
-                    // jugador local TWO
-                    playerStatPK = new PlayerStatPK(
-                        match.getLocalTeamId(),
-                        table.getLocalPlayerNickTwo(),
-                        match.getLeagueType());
-                    if (!playerStatHash.containsKey(playerStatPK)) {
-                        playerStatHash.put(playerStatPK,
-                            new PlayerStat(playerStatPK));
-                    }
-                } // localWO
-                
-                // si hay PAREJA VISITANTE NO PRESENTADA se incorporan ambos a
-                // la tabla hash de estadsiticas de jugadores
-                if (table.isVisitingWO()) {
-                    // jugador local ONE
-                    PlayerStatPK playerStatPK = new PlayerStatPK(
-                        match.getVisitingTeamId(),
-                        table.getVisitingPlayerNickOne(),
-                        match.getLeagueType());
-                    if (!playerStatHash.containsKey(playerStatPK)) {
-                        playerStatHash.put(playerStatPK,
-                            new PlayerStat(playerStatPK));
-                    }
-                    // jugador local TWO
-                   playerStatPK = new PlayerStatPK(
-                        match.getVisitingTeamId(),
-                        table.getVisitingPlayerNickTwo(),
-                        match.getLeagueType());
-                    if (!playerStatHash.containsKey(playerStatPK)) {
-                        playerStatHash.put(playerStatPK,
-                            new PlayerStat(playerStatPK));
-                    }
-                } // visitingWO
-                
-            } // for table
-        } // for match
-
         // para cada mesa de cada encuentro
         for (Match match : getMatch()) {
             for (Table table : match.getTable()) {
