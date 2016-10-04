@@ -180,7 +180,7 @@ public class Season {
     
     public List<PlayerStat> getPlayerStat(final List<Team> teamList,
         final List<Player> playerList) {
-        Map<String, PlayerStat> playerStatHash = new java.util.HashMap<>();
+        Map<PlayerStatPK, PlayerStat> playerStatHash = new java.util.HashMap<>();
         
         // partiendo de la lista de juagdores iniciamos las de estadisticas
         // para cada tipo de liga y para cada jugador.
@@ -188,81 +188,161 @@ public class Season {
         // y asegurando que las busquedas en el hash siempre encuentran
         for (LeagueType leagueType : LeagueType.values()) {
             for (Player player : playerList) {
-                PlayerStat playerStat = new PlayerStat();
-                playerStat.setTeamId(player.getTeamId());
-
-                // buscamos el equipo del jugador, para obtener el Denom
-                Optional<Team> optional = teamList.stream().
-                    filter(team -> team.getTeamId().equals(player.getTeamId())).
-                    findFirst();
-                playerStat.setTeamDenom(optional.get().getTeamDenom());
-                playerStat.setPlayerNick(player.getPlayerNick());
-                playerStat.setLeagueType(leagueType);
-                playerStatHash.put(playerStat.getPlayerStatKey(), playerStat);
+                PlayerStatPK playerStatPK = 
+                    new PlayerStatPK(player.getTeamId(),
+                        player.getPlayerNick(),
+                        leagueType);
+                PlayerStat playerStat = new PlayerStat(playerStatPK);
+                playerStatHash.put(playerStatPK, playerStat);
             }
         }
+        
+        // se incorporan de forma artificial y para que cuadren las estadisticas
+        // los jugadores NO PRESENTADOS
+        for (Match match : getMatch()) {
+            for (Table table : match.getTable()) {
+                // si hay PAREJA LOCAL NO PRESENTADA se incorporan ambos a
+                // la tabla hash de estadsiticas de jugadores
+                if (table.isLocalWO()) {
+                    // jugador local ONE
+                    PlayerStatPK playerStatPK = new PlayerStatPK(
+                        match.getLocalTeamId(),
+                        table.getLocalPlayerNickOne(),
+                        match.getLeagueType());
+                    if (!playerStatHash.containsKey(playerStatPK)) {
+                        playerStatHash.put(playerStatPK, 
+                            new PlayerStat(playerStatPK));
+                    }
+                    // jugador local TWO
+                    playerStatPK = new PlayerStatPK(
+                        match.getLocalTeamId(),
+                        table.getLocalPlayerNickTwo(),
+                        match.getLeagueType());
+                    if (!playerStatHash.containsKey(playerStatPK)) {
+                        playerStatHash.put(playerStatPK,
+                            new PlayerStat(playerStatPK));
+                    }
+                } // localWO
+                
+                // si hay PAREJA VISITANTE NO PRESENTADA se incorporan ambos a
+                // la tabla hash de estadsiticas de jugadores
+                if (table.isVisitingWO()) {
+                    // jugador local ONE
+                    PlayerStatPK playerStatPK = new PlayerStatPK(
+                        match.getVisitingTeamId(),
+                        table.getVisitingPlayerNickOne(),
+                        match.getLeagueType());
+                    if (!playerStatHash.containsKey(playerStatPK)) {
+                        playerStatHash.put(playerStatPK,
+                            new PlayerStat(playerStatPK));
+                    }
+                    // jugador local TWO
+                   playerStatPK = new PlayerStatPK(
+                        match.getVisitingTeamId(),
+                        table.getVisitingPlayerNickTwo(),
+                        match.getLeagueType());
+                    if (!playerStatHash.containsKey(playerStatPK)) {
+                        playerStatHash.put(playerStatPK,
+                            new PlayerStat(playerStatPK));
+                    }
+                } // visitingWO
+                
+            } // for table
+        } // for match
 
         // para cada mesa de cada encuentro
         for (Match match : getMatch()) {
             for (Table table : match.getTable()) {
                 // jugador LOCAL ONE
-                String playerStatKey = PlayerStat.getPlayerStatKey(
-                    match.getLeagueType(), match.getLocalTeamId(),
-                    table.getLocalPlayerNickOne());
-                if (!playerStatHash.containsKey(playerStatKey)) {
-                    StringBuilder sb = 
-                        new StringBuilder("LOCAL PLAYER ONE DOES NOT EXISTS");
-                    sb.append(StringUtil.enclose(playerStatKey));
-                    logger.fatal(sb.toString());
-                    throw new RuntimeException(sb.toString());
+                PlayerStatPK playerStatPK = new PlayerStatPK(
+                    match.getLocalTeamId(),
+                    table.getLocalPlayerNickOne(),
+                    match.getLeagueType());
+                if (!playerStatHash.containsKey(playerStatPK)) {
+                    // si es NO PRESENTADO, se incorpora jugador "virtual" 
+                    // para que cuadren las estadísticas
+                    if (table.isLocalWO()) {
+                        playerStatHash.put(playerStatPK,
+                            new PlayerStat(playerStatPK));
+                    } else {
+                        StringBuilder sb
+                            = new StringBuilder("LOCAL PLAYER ONE DOES NOT EXISTS");
+                        sb.append(playerStatPK.toString());
+                        logger.fatal(sb.toString());
+                        throw new RuntimeException(sb.toString());
+                    }
                 }
                 PlayerStat localPlayerOneStat
-                    = playerStatHash.get(playerStatKey);
+                    = playerStatHash.get(playerStatPK);
                 localPlayerOneStat.update(table, true);
 
                 // jugador LOCAL TWO
-                playerStatKey = PlayerStat.getPlayerStatKey(
-                    match.getLeagueType(), match.getLocalTeamId(),
-                    table.getLocalPlayerNickTwo());
-                if (!playerStatHash.containsKey(playerStatKey)) {
-                    StringBuilder sb = 
-                        new StringBuilder("LOCAL PLAYER TWO DOES NOT EXISTS");
-                    sb.append(StringUtil.enclose(playerStatKey));
-                    logger.fatal(sb.toString());
-                    throw new RuntimeException(sb.toString());
+                playerStatPK = new PlayerStatPK(
+                    match.getLocalTeamId(),
+                    table.getLocalPlayerNickTwo(),
+                    match.getLeagueType());
+                if (!playerStatHash.containsKey(playerStatPK)) {
+                    // si es NO PRESENTADO, se incorpora jugador "virtual" 
+                    // para que cuadren las estadísticas
+                    if (table.isLocalWO()) {
+                        playerStatHash.put(playerStatPK,
+                            new PlayerStat(playerStatPK));
+                    } else {
+                        StringBuilder sb
+                            = new StringBuilder("LOCAL PLAYER TWO DOES NOT EXISTS");
+                        sb.append(playerStatPK.toString());
+                        logger.fatal(sb.toString());
+                        throw new RuntimeException(sb.toString());
+                    }
                 }
                 PlayerStat localPlayerTwoStat
-                    = playerStatHash.get(playerStatKey);
+                    = playerStatHash.get(playerStatPK);
                 localPlayerTwoStat.update(table, true);
 
                 // jugador VISITING ONE
-                playerStatKey = PlayerStat.getPlayerStatKey(
-                    match.getLeagueType(), match.getVisitingTeamId(),
-                    table.getVisitingPlayerNickOne());
-                if (!playerStatHash.containsKey(playerStatKey)) {
-                    StringBuilder sb = 
-                        new StringBuilder("VISITING PLAYER ONE DOES NOT EXISTS");
-                    sb.append(StringUtil.enclose(playerStatKey));
-                    logger.fatal(sb.toString());
-                    throw new RuntimeException(sb.toString());
+                playerStatPK = new PlayerStatPK(
+                    match.getVisitingTeamId(),
+                    table.getVisitingPlayerNickOne(),
+                    match.getLeagueType());
+                if (!playerStatHash.containsKey(playerStatPK)) {
+                    // si es NO PRESENTADO, se incorpora jugador "virtual" 
+                    // para que cuadren las estadísticas
+                    if (table.isVisitingWO()) {
+                        playerStatHash.put(playerStatPK,
+                            new PlayerStat(playerStatPK));
+                    } else {
+                        StringBuilder sb
+                            = new StringBuilder("VISITING PLAYER ONE DOES NOT EXISTS");
+                        sb.append(playerStatPK.toString());
+                        logger.fatal(sb.toString());
+                        throw new RuntimeException(sb.toString());
+                    }
                 }
                 PlayerStat visitingPlayerOneStat
-                    = playerStatHash.get(playerStatKey);
+                    = playerStatHash.get(playerStatPK);
                 visitingPlayerOneStat.update(table, false);
 
                 // jugador VISITING TWO
-                playerStatKey = PlayerStat.getPlayerStatKey(
-                    match.getLeagueType(), match.getVisitingTeamId(),
-                    table.getVisitingPlayerNickTwo());
-                if (!playerStatHash.containsKey(playerStatKey)) {
-                    StringBuilder sb = 
-                        new StringBuilder("VISITING PLAYER TWO DOES NOT EXISTS");
-                    sb.append(StringUtil.enclose(playerStatKey));
-                    logger.fatal(sb.toString());
-                    throw new RuntimeException(sb.toString());
+                  playerStatPK = new PlayerStatPK(
+                        match.getVisitingTeamId(),
+                        table.getVisitingPlayerNickTwo(),
+                        match.getLeagueType());
+                if (!playerStatHash.containsKey(playerStatPK)) {
+                    // si es NO PRESENTADO, se incorpora jugador "virtual" 
+                    // para que cuadren las estadísticas
+                    if (table.isVisitingWO()) {
+                        playerStatHash.put(playerStatPK,
+                            new PlayerStat(playerStatPK));
+                    } else {
+                        StringBuilder sb
+                            = new StringBuilder("VISITING PLAYER TWO DOES NOT EXISTS");
+                        sb.append(playerStatPK.toString());
+                        logger.fatal(sb.toString());
+                        throw new RuntimeException(sb.toString());
+                    }
                 }
                 PlayerStat visitingPlayerTwoStat
-                    = playerStatHash.get(playerStatKey);
+                    = playerStatHash.get(playerStatPK);
                 visitingPlayerTwoStat.update(table, false);
             } // for table
         } // for match

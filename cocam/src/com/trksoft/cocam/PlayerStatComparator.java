@@ -23,8 +23,8 @@ public class PlayerStatComparator implements Comparator<PlayerStat> {
     public int compare(PlayerStat onePlayerStat, PlayerStat otherPlayerStat) {
         
         // alfabetico por tipo de liga: REGular PEdro Menendez, CArreño Miranda
-        int i = onePlayerStat.getLeagueType().compareTo(
-            otherPlayerStat.getLeagueType());
+        int i = onePlayerStat.getPlayerStatPK().getLeagueType().compareTo(
+            otherPlayerStat.getPlayerStatPK().getLeagueType());
         if (i!=0) return i;
     
         // ganadas de mayor a menor
@@ -48,8 +48,8 @@ public class PlayerStatComparator implements Comparator<PlayerStat> {
         //if (i!=0) return i;
         
         // orden alfabetico de apodo
-        return onePlayerStat.getPlayerNick().compareTo(
-            otherPlayerStat.getPlayerNick());
+        return onePlayerStat.getPlayerStatPK().getPlayerNick().compareTo(
+            otherPlayerStat.getPlayerStatPK().getPlayerNick());
     }
     
 }

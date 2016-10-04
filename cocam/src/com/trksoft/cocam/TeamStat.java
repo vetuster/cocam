@@ -504,7 +504,7 @@ public class TeamStat {
             currentDirectMatch);
     }
     
-    public String getRankingRecord(final String charSep) {
+    protected String getRankingRecord(final String charSep) {
         List<String> rankingField = new LinkedList<>();
         rankingField.add(getLeagueType().toString());
         rankingField.add(getTeamDenom());
@@ -515,6 +515,22 @@ public class TeamStat {
         rankingField.add(getTableResult13().toString());
         rankingField.add(getTableResult04().toString());
         rankingField.add(getPoints().toString());
+        
+        return rankingField.stream().map(Object::toString).
+            collect(Collectors.joining(charSep));
+    }
+    
+    protected static String getRankingRecordHead(final String charSep) {
+        List<String> rankingField = new LinkedList<>();
+        rankingField.add("LeagueType");
+        rankingField.add("TeamDenom");
+        rankingField.add("Played");
+        rankingField.add("Result40");
+        rankingField.add("Result31");
+        rankingField.add("Result22");
+        rankingField.add("Result13");
+        rankingField.add("Result04");
+        rankingField.add("Points");
         
         return rankingField.stream().map(Object::toString).
             collect(Collectors.joining(charSep));

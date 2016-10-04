@@ -24,8 +24,7 @@ import org.apache.logging.log4j.Logger;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "teamId",
-    "teamDenom",
+    "playerStatPK",
     "playerNick",
     "leagueType",
     "tablePlayed",
@@ -47,13 +46,7 @@ public class PlayerStat {
         = LogManager.getLogger(PlayerStat.class);
     
     @XmlAttribute(required = true)    
-    private String teamId;
-    @XmlAttribute(required = true)    
-    private String teamDenom;
-    @XmlAttribute(required = true)
-    private LeagueType leagueType;
-    @XmlAttribute(required = true)    
-    private String playerNick;
+    private PlayerStatPK playerStatPK;
     @XmlElement(required = true)
     private Integer tablePlayed;
     @XmlElement(required = true)
@@ -77,7 +70,16 @@ public class PlayerStat {
     @XmlElement(required = true)
     private Integer goalsAgainst;
     
+    
     public PlayerStat() {
+    }
+    
+    
+    public PlayerStat(PlayerStatPK playerStatPK) {
+        this.playerStatPK = new PlayerStatPK(
+            playerStatPK.getTeamId(),
+            playerStatPK.getPlayerNick(),
+            playerStatPK.getLeagueType());
         this.tablePlayed = 0;
         this.tableWon = 0;
         this.tableLost = 0;
@@ -92,36 +94,12 @@ public class PlayerStat {
     }
     
     
-    public String getTeamId() {
-        return teamId;
+    public PlayerStatPK getPlayerStatPK() {
+        return playerStatPK;
     }
 
-    public void setTeamId(String teamId) {
-        this.teamId = teamId;
-    }
-
-    public String getTeamDenom() {
-        return teamDenom;
-    }
-
-    public void setTeamDenom(String teamDenom) {
-        this.teamDenom = teamDenom;
-    }
-
-    public LeagueType getLeagueType() {
-        return leagueType;
-    }
-
-    public void setLeagueType(LeagueType leagueType) {
-        this.leagueType = leagueType;
-    }
-
-    public String getPlayerNick() {
-        return playerNick;
-    }
-
-    public void setPlayerNick(String playerNick) {
-        this.playerNick = playerNick;
+    public void setPlayerStatPK(PlayerStatPK playerStatPK) {
+        this.playerStatPK = playerStatPK;
     }
 
     public Integer getTablePlayed() {
@@ -248,34 +226,11 @@ public class PlayerStat {
             (goalsFavor.floatValue() + goalsAgainst.floatValue());
     }
     
-    public String getPlayerStatKey() {
-        StringBuilder playerStatKey = 
-            new StringBuilder(getLeagueType().toString());
-        playerStatKey.append(getTeamId());
-        playerStatKey.append(getPlayerNick());
-        return playerStatKey.toString();
-    }
-    
-    public static String getPlayerStatKey(LeagueType leagueType, String teamId,
-        String playerNick) {
-        StringBuilder playerStatKey = 
-            new StringBuilder(leagueType.toString());
-        playerStatKey.append(teamId);
-        playerStatKey.append(playerNick);
-        return playerStatKey.toString();
-    }
-
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder("TeamStat->");
-        sb.append("teamId");
-        sb.append(StringUtil.enclose(teamId));
-        sb.append("teamDenom");
-        sb.append(StringUtil.enclose(teamDenom));
-        sb.append(",playerNick");
-        sb.append(StringUtil.enclose(playerNick));
-        sb.append("leagueType");
-        sb.append(StringUtil.enclose(leagueType.toString()));
+        sb.append("playerStatPK");
+        sb.append(playerStatPK);
         sb.append(",tablePlayed");
         sb.append(StringUtil.enclose(tablePlayed));
         sb.append(",tableWon");
@@ -300,6 +255,7 @@ public class PlayerStat {
         sb.append(StringUtil.enclose(goalsAgainst));
         return sb.toString();
     }
+
     
     public void update(Table table, boolean isLocal) {
         incTablePlayed();
@@ -330,11 +286,12 @@ public class PlayerStat {
         }
     }
     
-    public String getRankingRecord(final String charSep) {
+    public String getRankingRecord(final String teamDenom, 
+        final String charSep) {
         List<String> rankingField = new LinkedList<>();
-        rankingField.add(getLeagueType().toString());
-        rankingField.add(getPlayerNick());
-        rankingField.add(getTeamDenom());
+        rankingField.add(getPlayerStatPK().getLeagueType().toString());
+        rankingField.add(getPlayerStatPK().getPlayerNick());
+        rankingField.add(teamDenom);
         rankingField.add(getTablePlayed().toString());
         rankingField.add(getTableWon().toString());
         rankingField.add(getTableLost().toString());

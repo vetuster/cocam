@@ -110,7 +110,7 @@ public class Cocam {
         // generar CSV con clasificacion de jugadores
         String playerRankingFilename = FileNameManager.getPlayerRankingFilename(
             season.getLastDayId());
-        rankingFileManager.writePlayerRankingFile(playerStatList,
+        rankingFileManager.writePlayerRankingFile(teamList, playerStatList,
             new File(playerRankingFilename));
     }
 

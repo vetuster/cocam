@@ -116,6 +116,7 @@ public class ResultFileManager {
                 = FileNameManager.getResultEntityFilename();
             String resultEntitySchemaFilename
                 = FileNameManager.getResultEntitySchemaFilename();
+            //resultEntity.marshall(new File("resources/TRK-ResultEntity.xml"));
             resultEntity.marshall(new File(resultEntityFilename),
                 new File(resultEntitySchemaFilename));
         } catch (JAXBException | SAXException jaxbex) {

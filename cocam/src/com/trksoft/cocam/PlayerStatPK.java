@@ -12,6 +12,8 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 /**
  *
@@ -20,27 +22,32 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
     "teamId",
-    "playerNick"
+    "playerNick",
+    "leagueType"
 })
 @XmlRootElement
-public class Player implements Comparable<Player>{
-    protected static final String ABSENT_PLAYER_ONE_NICK = "_NO_PRESENTADO_1";
-    protected static final String ABSENT_PLAYER_TWO_NICK = "_NO_PRESENTADO_2";
+public class PlayerStatPK implements Cloneable {
+    @SuppressWarnings("NonConstantFieldWithUpperCaseName")
+    private static final Logger logger
+        = LogManager.getLogger(PlayerStatPK.class);
     
     @XmlAttribute(required = true)    
     private String teamId;
-    @XmlAttribute(required = true)
+    @XmlAttribute(required = true)    
     private String playerNick;
-
+    @XmlAttribute(required = true)
+    private LeagueType leagueType;
     
-    public Player() {
+    
+    public PlayerStatPK() {
     }
     
-    public Player(String teamId, String playerNick) {
+    public PlayerStatPK(String teamId, String playerNick,
+        LeagueType leagueType) {
         this.teamId = teamId;
         this.playerNick = playerNick;
+        this.leagueType = leagueType;
     }
-
     
     public String getTeamId() {
         return teamId;
@@ -50,6 +57,14 @@ public class Player implements Comparable<Player>{
         this.teamId = teamId;
     }
 
+    public LeagueType getLeagueType() {
+        return leagueType;
+    }
+
+    public void setLeagueType(LeagueType leagueType) {
+        this.leagueType = leagueType;
+    }
+
     public String getPlayerNick() {
         return playerNick;
     }
@@ -57,35 +72,35 @@ public class Player implements Comparable<Player>{
     public void setPlayerNick(String playerNick) {
         this.playerNick = playerNick;
     }
-    
-    @Override
-    public int compareTo(Player otherTeam) {
-        int i = this.teamId.compareTo(otherTeam.getTeamId());
-        if (i!=0) return i;
-        return this.playerNick.compareTo(otherTeam.getPlayerNick());
-    }
 
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 79 * hash + Objects.hashCode(this.teamId);
-        hash = 79 * hash + Objects.hashCode(this.playerNick);
+        hash = 71 * hash + Objects.hashCode(this.teamId);
+        hash = 71 * hash + Objects.hashCode(this.playerNick);
+        hash = 71 * hash + Objects.hashCode(this.leagueType);
         return hash;
     }
 
     @Override
     public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
         if (obj == null) {
             return false;
         }
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Player other = (Player) obj;
+        final PlayerStatPK other = (PlayerStatPK) obj;
         if (!Objects.equals(this.teamId, other.teamId)) {
             return false;
         }
         if (!Objects.equals(this.playerNick, other.playerNick)) {
+            return false;
+        }
+        if (this.leagueType != other.leagueType) {
             return false;
         }
         return true;
@@ -93,12 +108,13 @@ public class Player implements Comparable<Player>{
 
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder("Player->");
+        StringBuilder sb = new StringBuilder("PlayerStatPK->");
         sb.append("teamId");
         sb.append(StringUtil.enclose(teamId));
         sb.append(",playerNick");
         sb.append(StringUtil.enclose(playerNick));
+        sb.append("leagueType");
+        sb.append(StringUtil.enclose(leagueType.toString()));
         return sb.toString();
     }
-    
 }

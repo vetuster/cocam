@@ -62,6 +62,7 @@ public class Result implements Comparable<Result>{
     public static final String COMMENT_TYPE = "COM";
     public static final String INFO_TYPE = "INF";
 
+
     @XmlElement(required = true)
     private String recordType;
     @XmlElement(required = true)
@@ -463,6 +464,7 @@ public class Result implements Comparable<Result>{
                 throw new CocamException(iatex);
             }
         }
+
         return result;
     }
 
