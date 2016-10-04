@@ -26,12 +26,12 @@
             <xs:element name="visitingTeamName"       type="xs:string"   minOccurs="0" maxOccurs="1"/>
             <xs:element name="visitingTeamScore"      type="xs:integer"  minOccurs="0" maxOccurs="1"/>
             <xs:element name="tableId"                type="xs:integer"  minOccurs="1" maxOccurs="1"/>
-            <xs:element name="localPlayerNickOne"     type="xs:string"   minOccurs="1" maxOccurs="1"/>
-            <xs:element name="localPlayerNickTwo"     type="xs:string"   minOccurs="1" maxOccurs="1"/>
+            <xs:element name="localPlayerNickOne"     type="xs:string"   minOccurs="0" maxOccurs="1"/>
+            <xs:element name="localPlayerNickTwo"     type="xs:string"   minOccurs="0" maxOccurs="1"/>
             <xs:element name="localPairScore"         type="xs:integer"  minOccurs="1" maxOccurs="1"/>
             <xs:element name="visitingPairScore"      type="xs:integer"  minOccurs="1" maxOccurs="1"/>
-            <xs:element name="visitingPlayerNickOne"  type="xs:string"   minOccurs="1" maxOccurs="1"/>
-            <xs:element name="visitingPlayerNickTwo"  type="xs:string"   minOccurs="1" maxOccurs="1"/>
+            <xs:element name="visitingPlayerNickOne"  type="xs:string"   minOccurs="0" maxOccurs="1"/>
+            <xs:element name="visitingPlayerNickTwo"  type="xs:string"   minOccurs="0" maxOccurs="1"/>
         </xs:sequence>
     </xs:complexType>
 </xs:schema>

@@ -10,7 +10,6 @@
     <player teamId="4vient" playerNick="PERFE"/>
     <player teamId="4vient" playerNick="PRIETO"/>
     <player teamId="4vient" playerNick="RAMON"/>
-    <player teamId="4vient" playerNick="ROBLES"/>
     <player teamId="4vient" playerNick="VALLEDOR"/>
     <player teamId="8villa" playerNick="ALVARO"/>
     <player teamId="8villa" playerNick="CHICHO"/>
@@ -37,7 +36,6 @@
     <player teamId="albora" playerNick="ALBARIÑO"/>
     <player teamId="albora" playerNick="CALVETE"/>
     <player teamId="albora" playerNick="FALO"/>
-    <player teamId="albora" playerNick="FERNANDO"/>
     <player teamId="albora" playerNick="GAN"/>
     <player teamId="albora" playerNick="GELO"/>
     <player teamId="albora" playerNick="GUELO"/>
@@ -46,7 +44,6 @@
     <player teamId="albora" playerNick="MARIANO"/>
     <player teamId="albora" playerNick="OMAR"/>
     <player teamId="albora" playerNick="PABLO"/>
-    <player teamId="albora" playerNick="PADILLA"/>
     <player teamId="andrea" playerNick="DANI"/>
     <player teamId="andrea" playerNick="DELMI"/>
     <player teamId="andrea" playerNick="FERRERAS"/>
@@ -142,7 +139,6 @@
     <player teamId="capiol" playerNick="PILI"/>
     <player teamId="capiol" playerNick="PILUCA"/>
     <player teamId="capiol" playerNick="SALAS"/>
-    <player teamId="catere" playerNick="ANTONIO"/>
     <player teamId="catere" playerNick="ARNIELLA"/>
     <player teamId="catere" playerNick="BELLANCO"/>
     <player teamId="catere" playerNick="CESAR"/>
@@ -169,7 +165,6 @@
     <player teamId="cebano" playerNick="BARREIROS"/>
     <player teamId="cebano" playerNick="CARLON"/>
     <player teamId="cebano" playerNick="FRAN"/>
-    <player teamId="cebano" playerNick="JUAN LUIS"/>
     <player teamId="cebano" playerNick="JULIO"/>
     <player teamId="cebano" playerNick="LUIS"/>
     <player teamId="cebano" playerNick="LUPI"/>
@@ -182,7 +177,6 @@
     <player teamId="cgerma" playerNick="ESPINA"/>
     <player teamId="cgerma" playerNick="FANDIÑO"/>
     <player teamId="cgerma" playerNick="GABI"/>
-    <player teamId="cgerma" playerNick="JANEL"/>
     <player teamId="cgerma" playerNick="JAVIER"/>
     <player teamId="cgerma" playerNick="JOAQUIN"/>
     <player teamId="cgerma" playerNick="JUAN"/>
@@ -215,7 +209,6 @@
     <player teamId="churre" playerNick="PACO"/>
     <player teamId="churre" playerNick="RAMON"/>
     <player teamId="churre" playerNick="RICHARD"/>
-    <player teamId="churre" playerNick="ROBERTO"/>
     <player teamId="churre" playerNick="VIERO"/>
     <player teamId="cvalsa" playerNick="BENI"/>
     <player teamId="cvalsa" playerNick="CAMPANA"/>
@@ -309,7 +302,6 @@
     <player teamId="sagkam" playerNick="ROBERTO"/>
     <player teamId="sagrib" playerNick="ALVARO"/>
     <player teamId="sagrib" playerNick="ARTURO"/>
-    <player teamId="sagrib" playerNick="BENJA"/>
     <player teamId="sagrib" playerNick="CHEMI"/>
     <player teamId="sagrib" playerNick="COLLADO"/>
     <player teamId="sagrib" playerNick="CUERVO"/>
