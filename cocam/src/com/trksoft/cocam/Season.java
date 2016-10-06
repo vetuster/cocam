@@ -213,7 +213,7 @@ public class Season {
                             new PlayerStat(playerStatPK));
                     } else {
                         StringBuilder sb
-                            = new StringBuilder("LOCAL PLAYER ONE DOES NOT EXISTS");
+                            = new StringBuilder("LOCAL PLAYER ONE DOES NOT EXISTS->");
                         sb.append(playerStatPK.toString());
                         logger.fatal(sb.toString());
                         throw new RuntimeException(sb.toString());
@@ -236,7 +236,7 @@ public class Season {
                             new PlayerStat(playerStatPK));
                     } else {
                         StringBuilder sb
-                            = new StringBuilder("LOCAL PLAYER TWO DOES NOT EXISTS");
+                            = new StringBuilder("LOCAL PLAYER TWO DOES NOT EXISTS->");
                         sb.append(playerStatPK.toString());
                         logger.fatal(sb.toString());
                         throw new RuntimeException(sb.toString());
@@ -259,7 +259,7 @@ public class Season {
                             new PlayerStat(playerStatPK));
                     } else {
                         StringBuilder sb
-                            = new StringBuilder("VISITING PLAYER ONE DOES NOT EXISTS");
+                            = new StringBuilder("VISITING PLAYER ONE DOES NOT EXISTS->");
                         sb.append(playerStatPK.toString());
                         logger.fatal(sb.toString());
                         throw new RuntimeException(sb.toString());
@@ -282,7 +282,7 @@ public class Season {
                             new PlayerStat(playerStatPK));
                     } else {
                         StringBuilder sb
-                            = new StringBuilder("VISITING PLAYER TWO DOES NOT EXISTS");
+                            = new StringBuilder("VISITING PLAYER TWO DOES NOT EXISTS->");
                         sb.append(playerStatPK.toString());
                         logger.fatal(sb.toString());
                         throw new RuntimeException(sb.toString());
