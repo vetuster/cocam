@@ -57,6 +57,7 @@
     <player teamId="andrea" playerNick="LITRI"/>
     <player teamId="andrea" playerNick="OCTAVIO"/>
     <player teamId="andrea" playerNick="TINO"/>
+    <player teamId="barena" playerNick="ANTONIO"/>
     <player teamId="barena" playerNick="DAVID"/>
     <player teamId="barena" playerNick="FELIPE"/>
     <player teamId="barena" playerNick="FERMIN"/>
@@ -118,12 +119,15 @@
     <player teamId="bxareu" playerNick="LOLO"/>
     <player teamId="bxareu" playerNick="MARAVILLAS"/>
     <player teamId="bxareu" playerNick="NANDO"/>
+    <player teamId="bxareu" playerNick="OVIDIO"/>
     <player teamId="bxareu" playerNick="ROSA"/>
     <player teamId="calolo" playerNick="COTE"/>
     <player teamId="calolo" playerNick="DANI"/>
     <player teamId="calolo" playerNick="EDU"/>
     <player teamId="calolo" playerNick="ELOY"/>
     <player teamId="calolo" playerNick="HUGO"/>
+    <player teamId="calolo" playerNick="FER"/>
+    <player teamId="calolo" playerNick="GUILLER"/>
     <player teamId="calolo" playerNick="ISIDORO"/>
     <player teamId="calolo" playerNick="JUSTO"/>
     <player teamId="calolo" playerNick="MANU"/>
@@ -171,6 +175,7 @@
     <player teamId="cebano" playerNick="FRAN"/>
     <player teamId="cebano" playerNick="JUAN LUIS"/>
     <player teamId="cebano" playerNick="JULIO"/>
+    <player teamId="cebano" playerNick="LOZANO"/>
     <player teamId="cebano" playerNick="LUIS"/>
     <player teamId="cebano" playerNick="LUPI"/>
     <player teamId="cebano" playerNick="MIGUEL"/>
@@ -245,6 +250,7 @@
     <player teamId="monchi" playerNick="BERNARDO"/>
     <player teamId="monchi" playerNick="DAVID"/>
     <player teamId="monchi" playerNick="FONSO"/>
+    <player teamId="monchi" playerNick="FRAN"/>
     <player teamId="monchi" playerNick="GAGO"/>
     <player teamId="monchi" playerNick="JOTI"/>
     <player teamId="monchi" playerNick="JUANJO"/>
@@ -265,6 +271,7 @@
     <player teamId="picosa" playerNick="JOSE"/>
     <player teamId="picosa" playerNick="KIKE"/>
     <player teamId="picosa" playerNick="PACO"/>
+    <player teamId="picosa" playerNick="PEPE"/>
     <player teamId="picosa" playerNick="PITI"/>
     <player teamId="rcarol" playerNick="ALFONSO"/>
     <player teamId="rcarol" playerNick="ALFREDO"/>
@@ -306,6 +313,7 @@
     <player teamId="sagkam" playerNick="MARCO"/>
     <player teamId="sagkam" playerNick="MENOTI"/>
     <player teamId="sagkam" playerNick="PINTO"/>
+    <player teamId="sagkam" playerNick="PRIETO"/>
     <player teamId="sagkam" playerNick="ROBERTO"/>
     <player teamId="sagrib" playerNick="ALVARO"/>
     <player teamId="sagrib" playerNick="ARTURO"/>
