@@ -12,6 +12,7 @@
     <player teamId="4vient" playerNick="RAMON"/>
     <player teamId="4vient" playerNick="ROBLES"/>
     <player teamId="4vient" playerNick="VALLEDOR"/>
+    <player teamId="4vient" playerNick="VELOSO"/>
     <player teamId="8villa" playerNick="ALVARO"/>
     <player teamId="8villa" playerNick="CHICHO"/>
     <player teamId="8villa" playerNick="CHUS"/>
@@ -25,8 +26,10 @@
     <player teamId="8villa" playerNick="RAFA"/>
     <player teamId="8villa" playerNick="URE"/>
     <player teamId="acveig" playerNick="ADAN"/>
+    <player teamId="acveig" playerNick="ANSELMO"/>
     <player teamId="acveig" playerNick="ELOY"/>
     <player teamId="acveig" playerNick="EMILIO"/>
+    <player teamId="acveig" playerNick="FAILDE"/>
     <player teamId="acveig" playerNick="GUTI"/>
     <player teamId="acveig" playerNick="HERRERO"/>
     <player teamId="acveig" playerNick="MILLAN"/>
@@ -55,6 +58,7 @@
     <player teamId="andrea" playerNick="JUAN"/>
     <player teamId="andrea" playerNick="KIKE"/>
     <player teamId="andrea" playerNick="LITRI"/>
+    <player teamId="andrea" playerNick="LOLO"/>
     <player teamId="andrea" playerNick="OCTAVIO"/>
     <player teamId="andrea" playerNick="TINO"/>
     <player teamId="barena" playerNick="ANTONIO"/>
@@ -62,6 +66,8 @@
     <player teamId="barena" playerNick="FELIPE"/>
     <player teamId="barena" playerNick="FERMIN"/>
     <player teamId="barena" playerNick="FRAN"/>
+    <player teamId="barena" playerNick="HUGO"/>
+    <player teamId="barena" playerNick="ISMA"/>
     <player teamId="barena" playerNick="JOACO"/>
     <player teamId="barena" playerNick="JUAN"/>
     <player teamId="barena" playerNick="JUANMA"/>
@@ -70,6 +76,7 @@
     <player teamId="barena" playerNick="PEPE"/>
     <player teamId="barena" playerNick="RODRIGO"/>
     <player teamId="barena" playerNick="TURBO"/>
+    <player teamId="bcampy" playerNick="ALFREDO"/>
     <player teamId="bcampy" playerNick="ANTONIO"/>
     <player teamId="bcampy" playerNick="CAO"/>
     <player teamId="bcampy" playerNick="CASTILLO"/>
@@ -132,6 +139,7 @@
     <player teamId="calolo" playerNick="MANU"/>
     <player teamId="calolo" playerNick="MARCOS"/>
     <player teamId="calolo" playerNick="PARAMIO"/>
+    <player teamId="calolo" playerNick="SILVIA"/>
     <player teamId="calolo" playerNick="SOPEÑA"/>
     <player teamId="capiol" playerNick="ANTONIO"/>
     <player teamId="capiol" playerNick="AZU"/>
@@ -147,6 +155,7 @@
     <player teamId="capiol" playerNick="SALAS"/>
     <player teamId="catere" playerNick="ANTONIO"/>
     <player teamId="catere" playerNick="ARNIELLA"/>
+    <player teamId="catere" playerNick="BARRANCO"/>
     <player teamId="catere" playerNick="BELLANCO"/>
     <player teamId="catere" playerNick="CESAR"/>
     <player teamId="catere" playerNick="CLETO"/>
@@ -194,12 +203,16 @@
     <player teamId="cgerma" playerNick="MORAN"/>
     <player teamId="cgerma" playerNick="TOÑO"/>
     <player teamId="cgerma" playerNick="VIÑA"/>
+    <player teamId="chalan" playerNick="CARLITOS"/>
     <player teamId="chalan" playerNick="CHEMA"/>
+    <player teamId="chalan" playerNick="CHEMOS"/>
     <player teamId="chalan" playerNick="DANI"/>
     <player teamId="chalan" playerNick="DIEGO"/>
     <player teamId="chalan" playerNick="DOLO"/>
     <player teamId="chalan" playerNick="FELIPE"/>
     <player teamId="chalan" playerNick="GORI"/>
+    <player teamId="chalan" playerNick="ISABEL"/>
+    <player teamId="chalan" playerNick="JUANIN"/>
     <player teamId="chalan" playerNick="KUKI"/>
     <player teamId="chalan" playerNick="KYLLO"/>
     <player teamId="chalan" playerNick="LASTRA"/>
@@ -207,6 +220,7 @@
     <player teamId="chalan" playerNick="LUIS C."/>
     <player teamId="chalan" playerNick="PI"/>
     <player teamId="chalan" playerNick="SILVI"/>
+    <player teamId="chalan" playerNick="SUSANA"/>
     <player teamId="chalan" playerNick="YOLI"/>
     <player teamId="churre" playerNick="AZA"/>
     <player teamId="churre" playerNick="DIONI"/>
@@ -220,6 +234,7 @@
     <player teamId="churre" playerNick="RICHARD"/>
     <player teamId="churre" playerNick="ROBERTO"/>
     <player teamId="churre" playerNick="VIERO"/>
+    <player teamId="churre" playerNick="YONI"/>    
     <player teamId="cvalsa" playerNick="BENI"/>
     <player teamId="cvalsa" playerNick="CAMPANA"/>
     <player teamId="cvalsa" playerNick="FERNANDO"/>
@@ -245,6 +260,7 @@
     <player teamId="habana" playerNick="PESTONI II"/>
     <player teamId="habana" playerNick="RAMON"/>
     <player teamId="habana" playerNick="SIXTO"/>
+    <player teamId="monchi" playerNick="ALFONSO"/>
     <player teamId="monchi" playerNick="BERNARDO"/>
     <player teamId="monchi" playerNick="DAVID"/>
     <player teamId="monchi" playerNick="FONSO"/>
@@ -317,6 +333,7 @@
     <player teamId="sagrib" playerNick="ARTURO"/>
     <player teamId="sagrib" playerNick="BENJA"/>
     <player teamId="sagrib" playerNick="CHEMI"/>
+    <player teamId="sagrib" playerNick="CHUS"/>
     <player teamId="sagrib" playerNick="COLLADO"/>
     <player teamId="sagrib" playerNick="CUERVO"/>
     <player teamId="sagrib" playerNick="FRAN"/>
@@ -324,9 +341,12 @@
     <player teamId="sagrib" playerNick="JAIME"/>
     <player teamId="sagrib" playerNick="NACHO"/>
     <player teamId="sagrib" playerNick="OSCAR"/>
+    <player teamId="sagrib" playerNick="RIVERA"/>
     <player teamId="sagrib" playerNick="TONI"/>
+    <player teamId="sagrib" playerNick="VAZQUEZ"/>
     <player teamId="sagrib" playerNick="VICTOR"/>
     <player teamId="valmus" playerNick="ARTURO"/>
+    <player teamId="valmus" playerNick="ALFREDO"/>
     <player teamId="valmus" playerNick="BARCIA"/>
     <player teamId="valmus" playerNick="FELIPE"/>
     <player teamId="valmus" playerNick="FERNANDO"/>
@@ -335,9 +355,11 @@
     <player teamId="valmus" playerNick="JAVI"/>
     <player teamId="valmus" playerNick="JOSE LUIS"/>
     <player teamId="valmus" playerNick="JULIO"/>
+    <player teamId="valmus" playerNick="JUSTO"/>
     <player teamId="valmus" playerNick="MEDINA"/>
     <player teamId="valmus" playerNick="MIGUEL"/>
     <player teamId="valmus" playerNick="PABLO"/>
+    <player teamId="valmus" playerNick="PACO"/>
     <player teamId="valmus" playerNick="ROBER"/>
     <player teamId="valmus" playerNick="TATO"/>
 </playerEntity>
