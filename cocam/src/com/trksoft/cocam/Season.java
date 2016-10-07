@@ -138,22 +138,22 @@ public class Season {
     }
     
     
-    public List<TeamStat> getTeamStat(final List<Team> teamList) {
+    public List<TeamStat> getTeamStat(final List<Team> teamList,
+        LeagueType leagueType) {
         Map<String, TeamStat> teamStatHash = new java.util.HashMap<>();
-        
+
         // partiendo de la lista de equipo iniciamos las de estadisticas
         // para cada tipo de liga y para cada equipo.
         // Aprovechando para informar la Denom y asegurando
         // que las busquedas en el hash siempre encuentran
-        for (LeagueType leagueType : LeagueType.values()) {
-            teamList.stream().forEach((team) -> {
-                TeamStat teamStat = new TeamStat();
-                teamStat.setTeamId(team.getTeamId());
-                teamStat.setTeamDenom(team.getTeamDenom());
-                teamStat.setLeagueType(leagueType);
-                teamStatHash.put(teamStat.getTeamStatKey(), teamStat);
-            });
-        }
+        teamList.stream().forEach((team) -> {
+            TeamStat teamStat = new TeamStat();
+            teamStat.setTeamId(team.getTeamId());
+            teamStat.setTeamDenom(team.getTeamDenom());
+            teamStat.setLeagueType(leagueType);
+            teamStatHash.put(teamStat.getTeamStatKey(), teamStat);
+        });
+
 
         for (Match match : getMatch()) {
             // equipo local
@@ -179,22 +179,20 @@ public class Season {
     
     
     public List<PlayerStat> getPlayerStat(final List<Team> teamList,
-        final List<Player> playerList) {
+        final List<Player> playerList, LeagueType leagueType) {
         Map<PlayerStatPK, PlayerStat> playerStatHash = new java.util.HashMap<>();
-        
+
         // partiendo de la lista de juagdores iniciamos las de estadisticas
         // para cada tipo de liga y para cada jugador.
         // Aprovechando para informar el NIck del jugaor, la Denom del equipo
         // y asegurando que las busquedas en el hash siempre encuentran
-        for (LeagueType leagueType : LeagueType.values()) {
-            for (Player player : playerList) {
-                PlayerStatPK playerStatPK = 
-                    new PlayerStatPK(player.getTeamId(),
-                        player.getPlayerNick(),
-                        leagueType);
-                PlayerStat playerStat = new PlayerStat(playerStatPK);
-                playerStatHash.put(playerStatPK, playerStat);
-            }
+        for (Player player : playerList) {
+            PlayerStatPK playerStatPK
+                = new PlayerStatPK(player.getTeamId(),
+                    player.getPlayerNick(),
+                    leagueType);
+            PlayerStat playerStat = new PlayerStat(playerStatPK);
+            playerStatHash.put(playerStatPK, playerStat);
         }
         
         // para cada mesa de cada encuentro
@@ -212,8 +210,8 @@ public class Season {
                         playerStatHash.put(playerStatPK,
                             new PlayerStat(playerStatPK));
                     } else {
-                        StringBuilder sb
-                            = new StringBuilder("LOCAL PLAYER ONE DOES NOT EXISTS->");
+                        StringBuilder sb = new StringBuilder(
+                            "LOCAL PLAYER ONE DOES NOT EXISTS->");
                         sb.append(playerStatPK.toString());
                         logger.fatal(sb.toString());
                         throw new RuntimeException(sb.toString());
@@ -235,8 +233,8 @@ public class Season {
                         playerStatHash.put(playerStatPK,
                             new PlayerStat(playerStatPK));
                     } else {
-                        StringBuilder sb
-                            = new StringBuilder("LOCAL PLAYER TWO DOES NOT EXISTS->");
+                        StringBuilder sb = new StringBuilder(
+                            "LOCAL PLAYER TWO DOES NOT EXISTS->");
                         sb.append(playerStatPK.toString());
                         logger.fatal(sb.toString());
                         throw new RuntimeException(sb.toString());
@@ -258,8 +256,8 @@ public class Season {
                         playerStatHash.put(playerStatPK,
                             new PlayerStat(playerStatPK));
                     } else {
-                        StringBuilder sb
-                            = new StringBuilder("VISITING PLAYER ONE DOES NOT EXISTS->");
+                        StringBuilder sb = new StringBuilder(
+                            "VISITING PLAYER ONE DOES NOT EXISTS->");
                         sb.append(playerStatPK.toString());
                         logger.fatal(sb.toString());
                         throw new RuntimeException(sb.toString());
@@ -281,8 +279,8 @@ public class Season {
                         playerStatHash.put(playerStatPK,
                             new PlayerStat(playerStatPK));
                     } else {
-                        StringBuilder sb
-                            = new StringBuilder("VISITING PLAYER TWO DOES NOT EXISTS->");
+                        StringBuilder sb = new StringBuilder(
+                            "VISITING PLAYER TWO DOES NOT EXISTS->");
                         sb.append(playerStatPK.toString());
                         logger.fatal(sb.toString());
                         throw new RuntimeException(sb.toString());

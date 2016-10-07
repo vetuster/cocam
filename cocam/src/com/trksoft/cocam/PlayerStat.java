@@ -6,8 +6,10 @@
 package com.trksoft.cocam;
 
 import com.trksoft.util.StringUtil;
+import java.text.NumberFormat;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Locale;
 import java.util.stream.Collectors;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -224,6 +226,10 @@ public class PlayerStat {
             (goalsFavor.floatValue() + goalsAgainst.floatValue());
     }
     
+    public Boolean hasPlayed() {
+        return (tablePlayed != 0);
+    }
+    
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder("TeamStat->");
@@ -284,7 +290,7 @@ public class PlayerStat {
         }
     }
     
-    public String getRankingRecord(final String teamDenom, 
+    public String getRankingRecord(final String teamDenom,
         final String charSep) {
         List<String> rankingField = new LinkedList<>();
         rankingField.add(getPlayerStatPK().getLeagueType().toString());
@@ -301,9 +307,16 @@ public class PlayerStat {
         rankingField.add(getTableLostVisiting().toString());
         rankingField.add(getGoalsFavor().toString());
         rankingField.add(getGoalsAgainst().toString());
-        rankingField.add(getWonCoefficient().toString());
-        rankingField.add(getGoalsCoefficient().toString());
+
+        // formateo de cifras
+        CocamProps comcaProps = CocamProps.getInstance();
+        Locale defaultLocale = comcaProps.getDefaultLocale();
+        NumberFormat nf = NumberFormat.getInstance(defaultLocale);
         
+        rankingField.add(nf.format(getWonCoefficient()));
+        
+        rankingField.add(nf.format(getGoalsCoefficient()));
+
         return rankingField.stream().map(Object::toString).
             collect(Collectors.joining(charSep));
     }

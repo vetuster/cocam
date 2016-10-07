@@ -54,6 +54,8 @@ public class TeamStat {
     private static final Logger logger
         = LogManager.getLogger(TeamStat.class);
     
+    private static float TABLES_PER_MATCH = 4.0F;
+    
     @XmlAttribute(required = true)    
     private String teamId;
     @XmlAttribute(required = true)    
@@ -337,6 +339,10 @@ public class TeamStat {
         StringBuilder teamStatKey = new StringBuilder(leagueType.toString());
         teamStatKey.append(teamId);
         return teamStatKey.toString();
+    }
+    
+    public Float getWonCoefficient() {
+        return (getMatchPlayed() * TABLES_PER_MATCH) / getPoints();
     }
     
     @Override

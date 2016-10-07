@@ -6,6 +6,7 @@
 package com.trksoft.cocam;
 
 import com.trksoft.util.AbstractProps;
+import java.util.Locale;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -27,6 +28,8 @@ public class CocamProps extends AbstractProps {
     private static final String RESULT_FILE_PREFIX_KEY = "result.file.prefix";
     private static final String RANKING_FILE_CHARSET_KEY = "ranking.file.charset";
     private static final String RANKING_FILE_CHARSEP_KEY = "ranking.file.charsep";
+    private static final String LOCALE_LANGUAGE_DEFAULT = "locale.language.default";
+    private static final String LOCALE_COUNTRY_DEFAULT = "locale.country.default";
     
     
     private CocamProps() {
@@ -77,5 +80,11 @@ public class CocamProps extends AbstractProps {
     
     public String getRankingFileCharsep() {
         return getString(RANKING_FILE_CHARSEP_KEY);
+    }
+    
+    public Locale getDefaultLocale() {
+        String language = getString(LOCALE_LANGUAGE_DEFAULT);
+        String country = getString(LOCALE_COUNTRY_DEFAULT);
+        return new Locale(language,country);
     }
 }

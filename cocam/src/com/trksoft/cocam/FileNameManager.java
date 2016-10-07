@@ -24,9 +24,7 @@ public class FileNameManager {
     private static final String PLAYER_ENTITY = "PlayerEntity";
     private static final String RESULT_ENTITY = "ResultEntity";
     private static final String SEASON = "Season";
-    private static final String TEAM_STAT_GROUP = "TeamStatGroup";
     private static final String TEAM_RANKING = "TeamRanking";
-    private static final String PLAYER_STAT_GROUP = "PlayerStatGroup";
     private static final String PLAYER_RANKING = "PlayerRanking";
     
     protected static String getResultRecordDescFilename() {
@@ -105,29 +103,17 @@ public class FileNameManager {
         return filename.toString();
     }
     
-    protected static String getTeamStatGroupFilename(final int dayId) {
+    protected static String getTeamRankingFilename(final int dayId,
+        LeagueType leagueType) {
         StringBuilder filename = new StringBuilder();
         CocamProps cocamProps = CocamProps.getInstance();
         //path - resources/
         filename.append(cocamProps.getDataFileDir());
-        // TeamStatGroup
-        filename.append(TEAM_STAT_GROUP);
+        // LeagueType
+        filename.append(leagueType.toString());
         // hypen
         filename.append(HYPEN);
-        // day - jornada - R99
-        filename.append(SeasonDay.getDayIdOutput(dayId));
-        // xml ext
-        filename.append(XML_EXT);
-        return filename.toString();
-    }
-    
-    
-    protected static String getTeamRankingFilename(final int dayId) {
-        StringBuilder filename = new StringBuilder();
-        CocamProps cocamProps = CocamProps.getInstance();
-        //path - resources/
-        filename.append(cocamProps.getDataFileDir());
-        // TeamStatGroup
+        // Team Ranking
         filename.append(TEAM_RANKING);
         // hypen
         filename.append(HYPEN);
@@ -138,28 +124,17 @@ public class FileNameManager {
         return filename.toString();
     }
     
-    protected static String getPlayerStatGroupFilename(final int dayId) {
+    protected static String getPlayerRankingFilename(final int dayId,
+        LeagueType leagueType) {
         StringBuilder filename = new StringBuilder();
         CocamProps cocamProps = CocamProps.getInstance();
         //path - resources/
         filename.append(cocamProps.getDataFileDir());
-        // TeamStatGroup
-        filename.append(PLAYER_STAT_GROUP);
+        // LeagueType
+        filename.append(leagueType.toString());
         // hypen
         filename.append(HYPEN);
-        // day - jornada - R99
-        filename.append(SeasonDay.getDayIdOutput(dayId));
-        // xml ext
-        filename.append(XML_EXT);
-        return filename.toString();
-    }
-    
-    protected static String getPlayerRankingFilename(final int dayId) {
-        StringBuilder filename = new StringBuilder();
-        CocamProps cocamProps = CocamProps.getInstance();
-        //path - resources/
-        filename.append(cocamProps.getDataFileDir());
-        // TeamStatGroup
+        // Team Ranking
         filename.append(PLAYER_RANKING);
         // hypen
         filename.append(HYPEN);

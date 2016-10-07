@@ -14,8 +14,11 @@ import java.util.Comparator;
 public class TeamStatComparator implements Comparator<TeamStat> {
 
     // por tipo de liga: REGular PEdro Menendez, CArreño Miranda
-    // por puntos
-    // por enfrentamiento directo
+    // por puntos, descendente
+    // por enfrentamiento directo, ciando existan ambos resultados
+    // por coeficiente (ganadas), descendente (es < 1)
+    //   solo tiene utilidad cuando hay distindo númeto de partidas disputadas
+    //   es decir, al final de vuelta no decide, es inocuo
     // por orden alfabetico
     // si persiste el empate habra que ver que se hace (desempate)
     @Override
@@ -52,6 +55,11 @@ public class TeamStatComparator implements Comparator<TeamStat> {
             }
         }
         
+        // por coeficiente (ganadas), descendente (es < 1)
+        i = oneTeamStat.getWonCoefficient().compareTo(
+            otherTeamStat.getWonCoefficient());
+        if (i!=0) return i;
+            
         // orden alfabetico de denominacionde de peña
         return oneTeamStat.getTeamDenom().compareTo(
             otherTeamStat.getTeamDenom());

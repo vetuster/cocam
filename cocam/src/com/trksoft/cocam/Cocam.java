@@ -68,9 +68,11 @@ public class Cocam {
         );
 
         
+        // LIGA REGULAR
         // obtener y ordenar las estadisticas de los equipos 
         // para obtener la clasificacion ordenada
-        List<TeamStat> teamStatList = season.getTeamStat(teamList);
+        List<TeamStat> teamStatList = season.getTeamStat(teamList,
+            LeagueType.REG);
         Collections.sort(teamStatList, new TeamStatComparator());  
         logger.info("Team Stats OBTAINED"
             + ",TOTAL teamStat" 
@@ -86,16 +88,16 @@ public class Cocam {
         
         // generar CVS con clasificacion de equipos
         String teamRankingFilename = FileNameManager.getTeamRankingFilename(
-            season.getLastDayId());
+            season.getLastDayId(), LeagueType.REG);
         rankingFileManager.writeTeamRankingFile(teamStatList, 
             new File(teamRankingFilename));
         
         
-        
+        // LIGA REGULAR
         // obtener y ordenar las estadisticas de los jugadores 
         // para obtener la clasificacion ordenada
         List<PlayerStat> playerStatList = 
-            season.getPlayerStat(teamList, playerList);
+            season.getPlayerStat(teamList, playerList, LeagueType.REG);
         Collections.sort(playerStatList, new PlayerStatComparator());
         logger.info("Player Stats OBTAINED"
             + ",TOTAL playerStat" 
@@ -109,7 +111,7 @@ public class Cocam {
         
         // generar CSV con clasificacion de jugadores
         String playerRankingFilename = FileNameManager.getPlayerRankingFilename(
-            season.getLastDayId());
+            season.getLastDayId(), LeagueType.REG);
         rankingFileManager.writePlayerRankingFile(teamList, playerStatList,
             new File(playerRankingFilename));
     }

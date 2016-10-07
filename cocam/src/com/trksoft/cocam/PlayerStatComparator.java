@@ -14,7 +14,8 @@ import java.util.Comparator;
 public class PlayerStatComparator implements Comparator<PlayerStat> {
 
     // alfabetico por tipo de liga: REGular PEdro Menendez, CArreño Miranda
-    // los NO PRESENTADOS al final
+    // los que NO HANJUGADO al final
+    // los NO PRESENTADOS al final, antes de anteriores
     // por ganadas de mayor a menor
     // coeficiente de mayor a menor
     // partidas jugadas de menor a mayor
@@ -26,28 +27,32 @@ public class PlayerStatComparator implements Comparator<PlayerStat> {
         // alfabetico por tipo de liga: REGular PEdro Menendez, CArreño Miranda
         int i = onePlayerStat.getPlayerStatPK().getLeagueType().compareTo(
             otherPlayerStat.getPlayerStatPK().getLeagueType());
-        if (i!=0) return i;
-    
+        if (i != 0) return i;
+        
+        // los que NO HAN JUGADO al final, mesas jugadas descendente
+        i = otherPlayerStat.hasPlayed().compareTo(onePlayerStat.hasPlayed());
+        if (i != 0) return i;
+        
         // los NO PRESENTADOS al final
         i = Player.isWO(onePlayerStat.getPlayerStatPK().getPlayerNick())
             .compareTo(
             Player.isWO(otherPlayerStat.getPlayerStatPK().getPlayerNick()));
-        if (i!=0) return i;
+        if (i != 0) return i;
     
         // ganadas de mayor a menor
         i = otherPlayerStat.getTableWon().compareTo(
             onePlayerStat.getTableWon());
-        if (i!=0) return i;
+        if (i != 0) return i;
         
         // coeficiente de ganadas de mayor (mas proximo a 100%) a menor
         i = otherPlayerStat.getWonCoefficient().compareTo(
             onePlayerStat.getWonCoefficient());
-        if (i!=0) return i;
+        if (i != 0) return i;
         
         // partidas jugadas de menor a mayor
         i = onePlayerStat.getTablePlayed().compareTo(
             otherPlayerStat.getTablePlayed());
-        if (i!=0) return i;
+        if (i != 0) return i;
         
         // chico-average de mayor a menor
         //i = otherPlayerStat.getGoalsCoefficient().compareTo(
