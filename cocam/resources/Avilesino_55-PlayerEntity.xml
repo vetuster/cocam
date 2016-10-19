@@ -24,6 +24,7 @@
     <player teamId="8villa" playerNick="MOSCALIN"/>
     <player teamId="8villa" playerNick="NACHO"/>
     <player teamId="8villa" playerNick="RAFA"/>
+    <player teamId="8villa" playerNick="TOÑO"/>
     <player teamId="8villa" playerNick="URE"/>
     <player teamId="acveig" playerNick="ADAN"/>
     <player teamId="acveig" playerNick="ANSELMO"/>
@@ -101,6 +102,7 @@
     <player teamId="bcarba" playerNick="LUIS"/>
     <player teamId="bcarba" playerNick="MIGUEL"/>
     <player teamId="bcarba" playerNick="TOÑO"/>
+    <player teamId="bcarba" playerNick="URCULO"/>
     <player teamId="bcarba" playerNick="XAVI"/>
     <player teamId="brenya" playerNick="BERTO"/>
     <player teamId="brenya" playerNick="CARY"/>
@@ -172,6 +174,7 @@
     <player teamId="ccelti" playerNick="CHININ II"/>
     <player teamId="ccelti" playerNick="FALO"/>
     <player teamId="ccelti" playerNick="FELIX"/>
+    <player teamId="ccelti" playerNick="JUAN"/>
     <player teamId="ccelti" playerNick="LUNA"/>
     <player teamId="ccelti" playerNick="MAITE"/>
     <player teamId="ccelti" playerNick="MERO"/>
@@ -217,6 +220,7 @@
     <player teamId="chalan" playerNick="LUEJE"/>
     <player teamId="chalan" playerNick="LUIS C."/>
     <player teamId="chalan" playerNick="PI"/>
+    <player teamId="chalan" playerNick="SAM"/>
     <player teamId="chalan" playerNick="SILVI"/>
     <player teamId="chalan" playerNick="SUSANA"/>
     <player teamId="chalan" playerNick="YOLI"/>
@@ -224,6 +228,7 @@
     <player teamId="churre" playerNick="DIONI"/>
     <player teamId="churre" playerNick="JANO"/>
     <player teamId="churre" playerNick="JAVI"/>
+    <player teamId="churre" playerNick="JAVIER"/>
     <player teamId="churre" playerNick="JOSE"/>
     <player teamId="churre" playerNick="JUAN"/>
     <player teamId="churre" playerNick="LUIS"/>
@@ -231,8 +236,6 @@
     <player teamId="churre" playerNick="RAMON"/>
     <player teamId="churre" playerNick="RICHARD"/>
     <player teamId="churre" playerNick="ROBERTO"/>
-    <player teamId="churre" playerNick="VIERO"/>
-    <player teamId="churre" playerNick="YONI"/>    
     <player teamId="cvalsa" playerNick="BENI"/>
     <player teamId="cvalsa" playerNick="CAMPANA"/>
     <player teamId="cvalsa" playerNick="FERNANDO"/>
