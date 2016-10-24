@@ -243,8 +243,8 @@ public class Match  implements Comparable<Match> {
         Match match = new Match();
         match.setLeagueType(LeagueType.valueOf(result.getLeagueType()));
         match.setRoundId(result.getRoundId());
-        match.setDayId(result.getDayId());
-        match.setDayDate(result.getDayDate());
+        match.setDayId(result.getSeasonDayId());
+        match.setDayDate(result.getSeasonDayDate());
         match.setMatchId(result.getLocalTeamId(), result.getVisitingTeamId());
         match.setLocalTeamId(result.getLocalTeamId());
         match.setLocalTeamName(result.getLocalTeamName());

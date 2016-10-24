@@ -42,6 +42,25 @@ public class ResultFileManager {
     }
     
     protected void loadXmlResultEntityFile() throws CocamException {
+        ResultEntity resultEntity = loadResultEntityFile();
+        
+        // se general el fichero xml y se valida contra xsd
+        try {
+            String resultEntityFilename
+                = FileNameManager.getResultEntityFilename();
+            String resultEntitySchemaFilename
+                = FileNameManager.getResultEntitySchemaFilename();
+            //resultEntity.marshall(new File("resources/TRK-ResultEntity.xml"));
+            resultEntity.marshall(new File(resultEntityFilename),
+                new File(resultEntitySchemaFilename));
+        } catch (JAXBException | SAXException jaxbex) {
+            logger.fatal(jaxbex);
+            throw new CocamException(jaxbex);
+        }
+    }
+    
+    
+    private ResultEntity loadResultEntityFile() throws CocamException {
         SepColRecordDesc scrd = null;
         try {
             scrd = SepColRecordDesc.unmarshall(
@@ -110,20 +129,9 @@ public class ResultFileManager {
                 resultEntity.getResult().size()));
         } //for ficheros de entrada con resultados
         
-        // se general el fichero xml y se valida contra xsd
-        try {
-            String resultEntityFilename
-                = FileNameManager.getResultEntityFilename();
-            String resultEntitySchemaFilename
-                = FileNameManager.getResultEntitySchemaFilename();
-            //resultEntity.marshall(new File("resources/TRK-ResultEntity.xml"));
-            resultEntity.marshall(new File(resultEntityFilename),
-                new File(resultEntitySchemaFilename));
-        } catch (JAXBException | SAXException jaxbex) {
-            logger.fatal(jaxbex);
-            throw new CocamException(jaxbex);
-        }
+        return resultEntity;
     }
+    
     
     
     private File[] getResultFileList() {

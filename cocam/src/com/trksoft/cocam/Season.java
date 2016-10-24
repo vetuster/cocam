@@ -10,7 +10,6 @@ import java.io.File;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
 import java.util.SortedSet;
 import java.util.TreeSet;
 import java.util.stream.Collectors;
@@ -127,7 +126,7 @@ public class Season {
             }
             
             if (result.isMatchHead()) {
-                season.setLastDayId(result.getDayId());
+                season.setLastDayId(result.getSeasonDayId());
                 match = Match.build(result);
                 season.getMatch().add(match);
             }
@@ -179,7 +178,7 @@ public class Season {
     
     
     public List<PlayerStat> getPlayerStat(final List<Team> teamList,
-        final List<Player> playerList, LeagueType leagueType) {
+        final List<Player> playerList, LeagueType leagueType) throws CocamException {
         Map<PlayerStatPK, PlayerStat> playerStatHash = new java.util.HashMap<>();
 
         // partiendo de la lista de juagdores iniciamos las de estadisticas
@@ -214,12 +213,23 @@ public class Season {
                             "LOCAL PLAYER ONE DOES NOT EXISTS->");
                         sb.append(playerStatPK.toString());
                         logger.fatal(sb.toString());
-                        throw new RuntimeException(sb.toString());
+                        throw new CocamException(sb.toString());
                     }
                 }
                 PlayerStat localPlayerOneStat
                     = playerStatHash.get(playerStatPK);
                 localPlayerOneStat.update(table, true);
+                if (localPlayerOneStat.getTablePlayed() > getLastDayId()) {
+                    StringBuilder sb = new StringBuilder(
+                        "LOCAL PLAYER ONE PLAYED MORE THA POSSIBLE->");
+                    sb.append(localPlayerOneStat.getPlayerStatPK().toString());
+                    sb.append(",played");
+                    sb.append(StringUtil.enclose(localPlayerOneStat.toString()));
+                    sb.append(",last season day");
+                    sb.append(StringUtil.enclose(getLastDayId()));
+                    logger.fatal(sb.toString());
+                    throw new CocamException(sb.toString());
+                }
 
                 // jugador LOCAL TWO
                 playerStatPK = new PlayerStatPK(
@@ -243,6 +253,17 @@ public class Season {
                 PlayerStat localPlayerTwoStat
                     = playerStatHash.get(playerStatPK);
                 localPlayerTwoStat.update(table, true);
+                if (localPlayerTwoStat.getTablePlayed() > getLastDayId()) {
+                    StringBuilder sb = new StringBuilder(
+                        "LOCAL PLAYER TWO PLAYED MORE THA POSSIBLE->");
+                    sb.append(localPlayerTwoStat.getPlayerStatPK().toString());
+                    sb.append(",played");
+                    sb.append(StringUtil.enclose(localPlayerTwoStat.toString()));
+                    sb.append(",last season day");
+                    sb.append(StringUtil.enclose(getLastDayId()));
+                    logger.fatal(sb.toString());
+                    throw new CocamException(sb.toString());
+                }
 
                 // jugador VISITING ONE
                 playerStatPK = new PlayerStatPK(
@@ -260,12 +281,23 @@ public class Season {
                             "VISITING PLAYER ONE DOES NOT EXISTS->");
                         sb.append(playerStatPK.toString());
                         logger.fatal(sb.toString());
-                        throw new RuntimeException(sb.toString());
+                        throw new CocamException(sb.toString());
                     }
                 }
                 PlayerStat visitingPlayerOneStat
                     = playerStatHash.get(playerStatPK);
                 visitingPlayerOneStat.update(table, false);
+                if (visitingPlayerOneStat.getTablePlayed() > getLastDayId()) {
+                    StringBuilder sb = new StringBuilder(
+                        "VISITING PLAYER ONE PLAYED MORE THA POSSIBLE->");
+                    sb.append(visitingPlayerOneStat.getPlayerStatPK().toString());
+                    sb.append(",played");
+                    sb.append(StringUtil.enclose(visitingPlayerOneStat.toString()));
+                    sb.append(",last season day");
+                    sb.append(StringUtil.enclose(getLastDayId()));
+                    logger.fatal(sb.toString());
+                    throw new CocamException(sb.toString());
+                }
 
                 // jugador VISITING TWO
                   playerStatPK = new PlayerStatPK(
@@ -283,12 +315,23 @@ public class Season {
                             "VISITING PLAYER TWO DOES NOT EXISTS->");
                         sb.append(playerStatPK.toString());
                         logger.fatal(sb.toString());
-                        throw new RuntimeException(sb.toString());
+                        throw new CocamException(sb.toString());
                     }
                 }
                 PlayerStat visitingPlayerTwoStat
                     = playerStatHash.get(playerStatPK);
                 visitingPlayerTwoStat.update(table, false);
+                if (visitingPlayerTwoStat.getTablePlayed() > getLastDayId()) {
+                    StringBuilder sb = new StringBuilder(
+                        "VISITING PLAYER TWO PLAYED MORE THA POSSIBLE->");
+                    sb.append(visitingPlayerTwoStat.getPlayerStatPK().toString());
+                    sb.append(",played");
+                    sb.append(StringUtil.enclose(visitingPlayerTwoStat.toString()));
+                    sb.append(",last season day");
+                    sb.append(StringUtil.enclose(getLastDayId()));
+                    logger.fatal(sb.toString());
+                    throw new CocamException(sb.toString());
+                }
             } // for table
         } // for match
         return new LinkedList(playerStatHash.values());

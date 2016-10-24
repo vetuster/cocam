@@ -35,8 +35,8 @@ import org.apache.logging.log4j.Logger;
     "seasonId",
     "leagueType",
     "roundId",
-    "dayId",
-    "dayDate",
+    "seasonDayId",
+    "seasonDayDate",
     "matchHead",
     "localTeamId",
     "localTeamName",
@@ -74,10 +74,10 @@ public class Result implements Comparable<Result>{
     @XmlElement(required = true)
     private Integer roundId;
     @XmlElement(required = false)
-    private Integer dayId;
+    private Integer seasonDayId;
     @XmlElement(required = false)
     @XmlJavaTypeAdapter(CocamAdapter.class)
-    private LocalDate dayDate;
+    private LocalDate seasonDayDate;
     @XmlElement(required = true)
     private Boolean matchHead;
     @XmlElement(required = true)
@@ -164,34 +164,34 @@ public class Result implements Comparable<Result>{
         this.leagueType = leagueType;
     }
 
-    public Integer getDayId() {
-        return dayId;
+    public Integer getSeasonDayId() {
+        return seasonDayId;
     }
 
-    public void setDayId(Integer dayId) {
-        this.dayId = dayId;
+    public void setSeasonDayId(Integer seasonDayId) {
+        this.seasonDayId = seasonDayId;
     }
     public void setDayId(String dayId) {
         if (StringUtil.isNullOrEmpty(dayId)) {
-            this.dayId = null;
+            this.seasonDayId = null;
         } else {
-            setDayId(Integer.valueOf(dayId));
+            setSeasonDayId(Integer.valueOf(dayId));
         }
     }
     
 
-    public LocalDate getDayDate() {
-        return dayDate;
+    public LocalDate getSeasonDayDate() {
+        return seasonDayDate;
     }
 
-    public void setDayDate(LocalDate dayDate) {
-        this.dayDate = dayDate;
+    public void setSeasonDayDate(LocalDate seasonDayDate) {
+        this.seasonDayDate = seasonDayDate;
     }
     public void setDayDate(String dayDate) {
         if (StringUtil.isNullOrEmpty(dayDate)) {
-            this.dayDate = null;
+            this.seasonDayDate = null;
         } else {
-            setDayDate(CocamDatatypeConverter.parseLocalDate(dayDate));
+            setSeasonDayDate(CocamDatatypeConverter.parseLocalDate(dayDate));
         }
     }
     
@@ -367,7 +367,7 @@ public class Result implements Comparable<Result>{
     
     @Override
     public int compareTo(Result other) {
-        int i = this.dayId.compareTo(other.getDayId());
+        int i = this.seasonDayId.compareTo(other.getSeasonDayId());
         if (i!=0) return i;
         return this.recordId.compareTo(other.getRecordId());
     }
@@ -386,12 +386,11 @@ public class Result implements Comparable<Result>{
         sb.append(",roundId");
         sb.append(StringUtil.enclose(roundId));
         sb.append(",dayId");
-        sb.append(StringUtil.enclose(dayId));
+        sb.append(StringUtil.enclose(seasonDayId));
         sb.append(",dayDate");
-        sb.append((dayDate == null?
+        sb.append((seasonDayDate == null?
             StringUtil.enclose(StringUtil.NULL_LIT)
-            : StringUtil.enclose(
-                CocamDatatypeConverter.printLocalDate(dayDate))));
+            : StringUtil.enclose(CocamDatatypeConverter.printLocalDate(seasonDayDate))));
         sb.append(",matchHead");
         sb.append(StringUtil.enclose(matchHead));
         sb.append(",localTeamId");
@@ -439,8 +438,11 @@ public class Result implements Comparable<Result>{
                     fieldValue = null;
                 }
             } catch (ArrayIndexOutOfBoundsException aioobex) {
-                logger.fatal("record" + record);
-                logger.fatal("fieldNo" + fieldDesc.getFieldNo());
+                logger.fatal("record->" + record);
+                logger.fatal("fieldNo"
+                    + StringUtil.enclose(fieldDesc.getFieldNo()-1));
+                logger.fatal("fieldName"
+                    + StringUtil.enclose(fieldName));
                 logger.fatal(aioobex);
                 throw aioobex;
             }

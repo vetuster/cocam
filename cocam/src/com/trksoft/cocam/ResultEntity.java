@@ -5,6 +5,7 @@
  */
 package com.trksoft.cocam;
 
+import com.trksoft.util.StringUtil;
 import java.io.File;
 import java.util.LinkedList;
 import java.util.List;
@@ -52,13 +53,13 @@ public class ResultEntity {
     
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder("ResultEntityGroup->");
+        StringBuilder sb = new StringBuilder("ResultEntity->");
         sb.append(result.stream().map(Object::toString).
             collect(Collectors.joining("->")));
         return sb.toString();
     }
     
-    public void marshall(File resultEntityFile) throws JAXBException {
+    protected void marshall(File resultEntityFile) throws JAXBException {
         try {
             JAXBContext jaxbContext
                 = JAXBContext.newInstance(ResultEntity.class);
@@ -71,7 +72,7 @@ public class ResultEntity {
         }
     }
     
-    public void marshall(File resultEntityFile, File resultEntitySchema)
+    protected void marshall(File resultEntityFile, File resultEntitySchema)
         throws JAXBException, SAXException {
         try {
             JAXBContext jaxbContext
@@ -89,7 +90,7 @@ public class ResultEntity {
         }
     }
     
-    public static ResultEntity unmarshall(
+    protected static ResultEntity unmarshall(
         File resultEntityFile) throws JAXBException {
         ResultEntity resultEntity = null;
         try {
@@ -106,7 +107,7 @@ public class ResultEntity {
         return resultEntity;
     }
     
-    public static ResultEntity unmarshall(File resultEntityFile,
+    protected static ResultEntity unmarshall(File resultEntityFile,
         File resultEntitySchema) throws JAXBException, SAXException {
         ResultEntity resultEntity = null;
         try {

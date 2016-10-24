@@ -93,4 +93,22 @@ public class EntityManager {
         }
         return new LinkedList(resultEntity.getResult());
     }
+    
+    protected static ResultEntity getResultEntity() throws CocamException {
+        if (resultEntity == null) {
+            // carga el conjunto de resultados
+            try {
+                resultEntity = ResultEntity.unmarshall(
+                    new File(FileNameManager.getResultEntityFilename()));
+            } catch (JAXBException jaxbex) {
+                logger.fatal(jaxbex);
+                throw new CocamException(jaxbex);
+            }
+            logger.info("resultEntity LOADED"
+                + "->TOTAL results"
+                + StringUtil.enclose(resultEntity.getResult().size())
+            );
+        }
+        return resultEntity;
+    }
 }
