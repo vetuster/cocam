@@ -51,6 +51,7 @@
     <player teamId="albora" playerNick="OMAR"/>
     <player teamId="albora" playerNick="PABLO"/>
     <player teamId="albora" playerNick="PADILLA"/>
+    <player teamId="albora" playerNick="PEPITO"/>
     <player teamId="andrea" playerNick="DANI"/>
     <player teamId="andrea" playerNick="DELMI"/>
     <player teamId="andrea" playerNick="FERRERAS"/>
@@ -106,6 +107,7 @@
     <player teamId="bcarba" playerNick="XAVI"/>
     <player teamId="brenya" playerNick="BERTO"/>
     <player teamId="brenya" playerNick="CARY"/>
+    <player teamId="brenya" playerNick="DIEGO"/>
     <player teamId="brenya" playerNick="FRANCISCO"/>
     <player teamId="brenya" playerNick="GLORIA"/>
     <player teamId="brenya" playerNick="KARLOS"/>
@@ -212,7 +214,7 @@
     <player teamId="chalan" playerNick="DOLO"/>
     <player teamId="chalan" playerNick="FELIPE"/>
     <player teamId="chalan" playerNick="GORI"/>
-    <player teamId="chalan" playerNick="ISABEL"/>
+    <player teamId="chalan" playerNick="ISAEL"/>
     <player teamId="chalan" playerNick="JUANIN"/>
     <player teamId="chalan" playerNick="KUKI"/>
     <player teamId="chalan" playerNick="KYLLO"/>
@@ -277,6 +279,7 @@
     <player teamId="monchi" playerNick="YONATAN"/>
     <player teamId="picosa" playerNick="ANIA"/>
     <player teamId="picosa" playerNick="ARSENIO"/>
+    <player teamId="picosa" playerNick="BELARMINO"/>
     <player teamId="picosa" playerNick="CARLINOS"/>
     <player teamId="picosa" playerNick="CARLOS"/>
     <player teamId="picosa" playerNick="CHORI"/>
