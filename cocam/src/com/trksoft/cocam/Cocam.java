@@ -8,7 +8,6 @@ package com.trksoft.cocam;
 import com.trksoft.util.StringUtil;
 import java.io.File;
 import java.util.Collections;
-import java.util.LinkedList;
 import java.util.List;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -33,10 +32,13 @@ public class Cocam {
         // de Result -> ResultEntity
         ResultFileManager resultFileManager = ResultFileManager.getInstance();
         resultFileManager.loadXmlResultEntityFile();
+
+        
+        // entity adm
+        EntityManager entityManager = EntityManager.getInstance();
         
         
         // obtención de la lista de equipos
-        EntityManager entityManager = EntityManager.getInstance();
         List<Team> teamList = entityManager.findAllTeam();
         
         // obtención de la lista de jugadores
