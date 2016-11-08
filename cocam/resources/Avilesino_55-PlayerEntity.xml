@@ -16,6 +16,7 @@
     <player teamId="8villa" playerNick="ALVARO"/>
     <player teamId="8villa" playerNick="CHICHO"/>
     <player teamId="8villa" playerNick="CHUS"/>
+    <player teamId="8villa" playerNick="ELIAS"/>
     <player teamId="8villa" playerNick="HUMBERTO"/>
     <player teamId="8villa" playerNick="JUAN"/>
     <player teamId="8villa" playerNick="KIKE"/>
@@ -103,6 +104,7 @@
     <player teamId="bcarba" playerNick="LUIGI"/>
     <player teamId="bcarba" playerNick="LUIS"/>
     <player teamId="bcarba" playerNick="MIGUEL"/>
+    <player teamId="bcarba" playerNick="PEDRO"/>
     <player teamId="bcarba" playerNick="TOÑO"/>
     <player teamId="bcarba" playerNick="URCULO"/>
     <player teamId="bcarba" playerNick="XAVI"/>
@@ -114,6 +116,7 @@
     <player teamId="brenya" playerNick="KARLOS"/>
     <player teamId="brenya" playerNick="MANOLITO"/>
     <player teamId="brenya" playerNick="MORA"/>
+    <player teamId="brenya" playerNick="POLI"/>
     <player teamId="brenya" playerNick="SALVA"/>
     <player teamId="brenya" playerNick="SERA"/>
     <player teamId="brenya" playerNick="TRUJILLO"/>
@@ -277,6 +280,7 @@
     <player teamId="monchi" playerNick="MONCHI"/>
     <player teamId="monchi" playerNick="PEPE"/>
     <player teamId="monchi" playerNick="RABADAN"/>
+    <player teamId="monchi" playerNick="REGUERO"/>
     <player teamId="monchi" playerNick="SALOME"/>
     <player teamId="monchi" playerNick="VALENTIN"/>
     <player teamId="monchi" playerNick="YONATAN"/>
