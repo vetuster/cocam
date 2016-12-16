@@ -489,25 +489,51 @@ public class TeamStat {
         });
         
         // enfrentamientos directos
-        DirectMatch currentDirectMatch = new DirectMatch();
+        // se almacenan las mesas conseguidas por el equipo en curso tanto
+        // como local como visitante
+        String adversaryTeamId = null;
         if (local) {
-            currentDirectMatch.setAdversaryTeamId(match.getVisitingTeamId());
-            currentDirectMatch.setPlayedAsLocal(true);
-            currentDirectMatch.setPointsAsLocal(match.getLocalTeamScore());
-        } else {
-            currentDirectMatch.setAdversaryTeamId(match.getLocalTeamId());
-            currentDirectMatch.setPlayedAsVisiting(true);
-            currentDirectMatch.setPointsAsVisiting(
-                match.getVisitingTeamScore());
+            adversaryTeamId = match.getVisitingTeamId();
+        } else { // visitante
+            adversaryTeamId = match.getLocalTeamId();
         }
+        // si se almaceno el resultado de la primera vuelta el enfrentamiento
+        // ya existe
+        if (getDirectMatch().containsKey(adversaryTeamId)) {
+            DirectMatch currentDirectMatch = 
+                getDirectMatch().get(adversaryTeamId);
+            if (local) {
+                currentDirectMatch.setPlayedAsLocal(true);
+                currentDirectMatch.setPointsAsLocal(match.getLocalTeamScore());
+            } else {
+                currentDirectMatch.setPlayedAsVisiting(true);
+                currentDirectMatch.setPointsAsVisiting(
+                    match.getVisitingTeamScore());
+            }
+            
+        } else { // no existe enfrentamiento previo, se inserta
+            DirectMatch currentDirectMatch = new DirectMatch();
+            currentDirectMatch.setAdversaryTeamId(adversaryTeamId);
+            if (local) {
+                currentDirectMatch.setPlayedAsLocal(true);
+                currentDirectMatch.setPointsAsLocal(match.getLocalTeamScore());
+            } else {
+                currentDirectMatch.setPlayedAsVisiting(true);
+                currentDirectMatch.setPointsAsVisiting(
+                    match.getVisitingTeamScore());
+            }
+            getDirectMatch().put(adversaryTeamId, currentDirectMatch);
+        }
+        
+        /* PDTE revision, parece que ya no tiene sentido
         if (getDirectMatch().containsKey(currentDirectMatch.getAdversaryTeamId())) {
             String errText = "DUPLICATE DIRECT MACTH"
                 + StringUtil.enclose(currentDirectMatch.getAdversaryTeamId());
+            logger.fatal(toString());
             logger.fatal(errText);
             throw new RuntimeException(errText);
-        }
-        getDirectMatch().put(currentDirectMatch.getAdversaryTeamId(),
-            currentDirectMatch);
+        }*/
+
     }
     
     protected String getRankingRecord(final String charSep) {
