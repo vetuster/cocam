@@ -132,6 +132,10 @@ public class Season {
             }
             
             match.getTable().add(Table.build(result));
+            
+            // verificar que no hay jugadores duplicados
+            // ni locales, ni visitantes
+            // if (match.getTable().size() = COnstante.4)...
         }
         return season;
     }
