@@ -1,70 +1,70 @@
 COM;1;temporada;tipo liga;vuelta;número jornada;fecha jornada;is Match;id peña local;peña local;peña local mesas ganadas;peña visitante mesas ganadas;id peña visitante;peña visitante;número mesa;peña local  jugador 1;peña local   jugador 2;paraje local chicos a favor;pareja visitante chicos a favor;peña visitante jugador 1;peña visitante jugador 2;;NUEVO peña local  jugador 1;NUEVO peña local   jugador 2;NUEVO peña local  jugador 1;NUEVO peña local   jugador 2
-INF;2;2016/17;REG;1;7;10/03/2016;true;cvalsa;CAFETERÍA VALSA;3;1;ccelti;CÉLTICA;1;PARAMIO;JENARO;6;4;FALO;BUSTO;;;;;
+INF;2;2016/17;REG;1;7;03/10/2016;true;cvalsa;CAFETERÍA VALSA;3;1;ccelti;CÉLTICA;1;PARAMIO;JENARO;6;4;FALO;BUSTO;;;;;
 INF;3;;REG;1;;;false;cvalsa;;;;ccelti;;2;FERNANDO;MURAS;6;2;CHININ;CHININ II;;;;;
 INF;4;;REG;1;;;false;cvalsa;;;;ccelti;;3;PEREZ;JOSE;5;6;LUNA;ZELUAN;;;;;
 INF;5;;REG;1;;;false;cvalsa;;;;ccelti;;4;LUIS;IÑAKI;6;4;FELIX;MERO;;;;;
 COM;6;;;;;;;;;;;;;;;;;;;;;;;;
-INF;7;2016/17;REG;1;7;10/03/2016;true;monchi;PEÑA MUS MONCHI;3;1;calolo;C'LOLO;1;MONCHI;FONSO;6;3;ISIDORO;HUGO;;;;;
+INF;7;2016/17;REG;1;7;03/10/2016;true;monchi;PEÑA MUS MONCHI;3;1;calolo;C'LOLO;1;MONCHI;FONSO;6;3;ISIDORO;HUGO;;;;;
 INF;8;;REG;1;;;false;monchi;;;;calolo;;2;RABADAN;BERNARDO;6;2;MARCOS;DANI;;;;;
 INF;9;;REG;1;;;false;monchi;;;;calolo;;3;YONATAN;JOTI;4;6;COTE;MANU;;;;;
 INF;10;;REG;1;;;false;monchi;;;;calolo;;4;DAVID;JUANJO;6;5;SOPEÑA;EDU;;;;;
 COM;11;;;;;;;;;;;;;;;;;;;;;;;;
-INF;12;2016/17;REG;1;7;10/03/2016;true;cgerma;CASA GERMÁN;2;2;barena;BAR LA ARENA ;1;ALLENDE;FANDIÑO;5;6;JUANMA;LUIS;;;;;
+INF;12;2016/17;REG;1;7;03/10/2016;true;cgerma;CASA GERMÁN;2;2;barena;BAR LA ARENA ;1;ALLENDE;FANDIÑO;5;6;JUANMA;LUIS;;;;;
 INF;13;;REG;1;;;false;cgerma;;;;barena;;2;JUAN;MORAN;3;6;PEPE;JUAN;;;;;
 INF;14;;REG;1;;;false;cgerma;;;;barena;;3;ESPINA;TOÑO;6;2;JOACO;FELIPE;;;;;
 INF;15;;REG;1;;;false;cgerma;;;;barena;;4;JANEL;GABI;6;2;OMAR;DAVID;;JANEL;;;
 COM;16;;;;;;;;;;;;;;;;;;;;;;;;
-INF;17;2016/17;REG;1;7;10/03/2016;true;bxareu;XAREU;1;3;bcarba;PEÑA CARBAYEDO;1;ROSA;BAO;3;6;CHE;HOMERO;;;;;
+INF;17;2016/17;REG;1;7;03/10/2016;true;bxareu;XAREU;1;3;bcarba;PEÑA CARBAYEDO;1;ROSA;BAO;3;6;CHE;HOMERO;;;;;
 INF;18;;REG;1;;;false;bxareu;;;;bcarba;;2;ARIAS;EULOGIO;1;6;LUIGI;ABLANEDO;;;;;
 INF;19;;REG;1;;;false;bxareu;;;;bcarba;;3;NANDO;GASPAR;1;6;CHUS;LUIS;;;;;
 INF;20;;REG;1;;;false;bxareu;;;;bcarba;;4;CARLOS;LOLO;6;4;JAVI;JOSE LUIS;;;;;
 COM;21;;;;;;;;;;;;;;;;;;;;;;;;
-INF;22;2016/17;REG;1;7;10/03/2016;true;andrea;BAR D'ANDREA;3;1;albora;SIDRERÍA ALBORADA ;1;LITRI;DANI;5;6;OMAR;FALO;;;;;
+INF;22;2016/17;REG;1;7;03/10/2016;true;andrea;BAR D'ANDREA;3;1;albora;SIDRERÍA ALBORADA ;1;LITRI;DANI;5;6;OMAR;FALO;;;;;
 INF;23;;REG;1;;;false;andrea;;;;albora;;2;FERRERAS;ISMA;6;4;GAN;GELO;;;;;
 INF;24;;REG;1;;;false;andrea;;;;albora;;3;KIKE;OCTAVIO;6;1;PADILLA;FERNANDO;;;;PADILLA;FERNANDO
 INF;25;;REG;1;;;false;andrea;;;;albora;;4;TINO;JUAN;6;5;GUELO;JOSE;;;;;
 COM;26;;;;;;;;;;;;;;;;;;;;;;;;
-INF;27;2016/17;REG;1;7;10/03/2016;true;8villa;8 VILLAS;4;0;churre;CHURRERÍA;1;KIKE;URE;6;5;RAMON;LUIS;;;;;
+INF;27;2016/17;REG;1;7;03/10/2016;true;8villa;8 VILLAS;4;0;churre;CHURRERÍA;1;KIKE;URE;6;5;RAMON;LUIS;;;;;
 INF;28;;REG;1;;;false;8villa;;;;churre;;2;M. JESUS;CHICHO;6;2;PACO;JAVI;;;;;
 INF;29;;REG;1;;;false;8villa;;;;churre;;3;NACHO;JUAN;6;2;JANO;ROBERTO;;;;;ROBERTO
 INF;30;;REG;1;;;false;8villa;;;;churre;;4;MOSCALIN;HUMBERTO;6;2;JOSE;JUAN;;;;;
 COM;31;;;;;;;;;;;;;;;;;;;;;;;;
-INF;32;2016/17;REG;1;7;10/03/2016;true;catere;CASA TERE;3;1;4vient;4 VIENTOS;1;GENI;PUPI;5;6;GARRIDO;PERFE;;;;;
+INF;32;2016/17;REG;1;7;03/10/2016;true;catere;CASA TERE;3;1;4vient;4 VIENTOS;1;GENI;PUPI;5;6;GARRIDO;PERFE;;;;;
 INF;33;;REG;1;;;false;catere;;;;4vient;;2;PICHI;VILA;6;5;KIRIKI;ANTONIO;;;;;
 INF;34;;REG;1;;;false;catere;;;;4vient;;3;PEPE;JAVI;6;4;PRIETO;JOSE LUIS;;;;;
 INF;35;;REG;1;;;false;catere;;;;4vient;;4;CLETO;ANTONIO;6;3;VALLEDOR;ROBLES;;;ANTONIO;;ROBLES
 COM;36;;;;;;;;;;;;;;;;;;;;;;;;
-INF;37;2016/17;REG;1;7;10/03/2016;true;habana;BAR HABANA;1;3;sagrib;S.AG.-RÍAS BAIXAS;1;PANA;JUANJO;5;6;ARTURO;TONI;;;;;
+INF;37;2016/17;REG;1;7;03/10/2016;true;habana;BAR HABANA;1;3;sagrib;S.AG.-RÍAS BAIXAS;1;PANA;JUANJO;5;6;ARTURO;TONI;;;;;
 INF;38;;REG;1;;;false;habana;;;;sagrib;;2;PANAKAS;SIXTO;6;4;COLLADO;BENJA;;;;;BENJA
 INF;39;;REG;1;;;false;habana;;;;sagrib;;3;MANOLO;JOSE;4;6;CUERVO;JAIME;;;;;
 INF;40;;REG;1;;;false;habana;;;;sagrib;;4;MARGA;PESTONI II;2;6;VICTOR;CHEMI;;;;;
 COM;41;;;;;;;;;;;;;;;;;;;;;;;;
-INF;42;2016/17;REG;1;7;10/03/2016;true;brenya;LA BREÑA ;2;2;sagkam;S.AG.-KAME.NET;1;GLORIA;VIGIL;1;6;GAYOL;PINTO;;;;;
+INF;42;2016/17;REG;1;7;03/10/2016;true;brenya;LA BREÑA ;2;2;sagkam;S.AG.-KAME.NET;1;GLORIA;VIGIL;1;6;GAYOL;PINTO;;;;;
 INF;43;;REG;1;;;false;brenya;;;;sagkam;;2;TRUJILLO;ZANCAS;6;5;ARTURO;ALFONSO;;;;;
 INF;44;;REG;1;;;false;brenya;;;;sagkam;;3;SERA;SALVA;3;6;ISIDRO;JUANI;;;;;
 INF;45;;REG;1;;;false;brenya;;;;sagkam;;4;KARLOS;BERTO;6;5;ESTRELLA;JAVI;;;;;
 COM;46;;;;;;;;;;;;;;;;;;;;;;;;
-INF;47;2016/17;REG;1;7;10/03/2016;true;bcampy;BAR CAMPY;3;1;chalan;MUS EL CHALANÍN;1;LLORENTE;ANTONIO;6;2;PI;DIEGO;;;;;
+INF;47;2016/17;REG;1;7;03/10/2016;true;bcampy;BAR CAMPY;3;1;chalan;MUS EL CHALANÍN;1;LLORENTE;ANTONIO;6;2;PI;DIEGO;;;;;
 INF;48;;REG;1;;;false;bcampy;;;;chalan;;2;PACO;YIMI;2;6;YOLI;SILVI;;;;;
 INF;49;;REG;1;;;false;bcampy;;;;chalan;;3;PEPE;TITI;6;3;KYLLO;FELIPE;;;;;
 INF;50;;REG;1;;;false;bcampy;;;;chalan;;4;SERGIO;JOSE;6;0;;;;;;NO PRES;NO PRES
 COM;51;;;;;;;;;;;;;;;;;;;;;;;;
-INF;52;2016/17;REG;1;7;10/03/2016;true;capiol;CAFÉ BAR PIOL;2;2;picosa;LA PICOSA;1;NINO;ANTONIO;4;6;CHUS;ARSENIO;;;;;
+INF;52;2016/17;REG;1;7;03/10/2016;true;capiol;CAFÉ BAR PIOL;2;2;picosa;LA PICOSA;1;NINO;ANTONIO;4;6;CHUS;ARSENIO;;;;;
 INF;53;;REG;1;;;false;capiol;;;;picosa;;2;PILUCA;ESTHER;2;6;KIKE;CARLINOS;;;;;
 INF;54;;REG;1;;;false;capiol;;;;picosa;;3;PILI;AZU;6;2;ANIA;PACO;;;;;
 INF;55;;REG;1;;;false;capiol;;;;picosa;;4;CARMEN;OVIES;6;5;CARLOS;JOSE;;;;;
 COM;56;;;;;;;;;;;;;;;;;;;;;;;;
-INF;57;2016/17;REG;1;7;10/03/2016;true;acveig;AC MUS VEIGA;2;2;cebano;CAFÉ BAR ÉBANO;1;MILLAN;GUTI;2;6;BARREIROS;MIGUEL;;;;;
+INF;57;2016/17;REG;1;7;03/10/2016;true;acveig;AC MUS VEIGA;2;2;cebano;CAFÉ BAR ÉBANO;1;MILLAN;GUTI;2;6;BARREIROS;MIGUEL;;;;;
 INF;58;;REG;1;;;false;acveig;;;;cebano;;2;ZURDO;HERRERO;6;1;JULIO;ANGEL RAMON;;;;;
 INF;59;;REG;1;;;false;acveig;;;;cebano;;3;ZICO;SARRY;5;6;FRAN;JUAN LUIS;;;;;JUAN LUIS
 INF;60;;REG;1;;;false;acveig;;;;cebano;;4;EMILIO;ADAN;6;3;TOÑO;MUÑIZ;;;;;
 COM;61;;;;;;;;;;;;;;;;;;;;;;;;
-INF;62;2016/17;REG;1;7;10/03/2016;true;sagcel;S.AG.-CÉLTICA;1;3;rcarol;RINCÓN DE CAROL;1;IÑAKI;JAVI;6;1;DEME;TEO;;;;;
+INF;62;2016/17;REG;1;7;03/10/2016;true;sagcel;S.AG.-CÉLTICA;1;3;rcarol;RINCÓN DE CAROL;1;IÑAKI;JAVI;6;1;DEME;TEO;;;;;
 INF;63;;REG;1;;;false;sagcel;;;;rcarol;;2;TRIKI;ANDRES;3;6;GABI;CHEMA;;;;;
 INF;64;;REG;1;;;false;sagcel;;;;rcarol;;3;MANU;EDU;2;6;ALFONSO;ISRA;;;;;
 INF;65;;REG;1;;;false;sagcel;;;;rcarol;;4;CARLOS;FA;4;6;BELLO;ALFREDO;;;;;
 COM;66;;;;;;;;;;;;;;;;;;;;;;;;
-COM;67;2016/17;REG;1;7;10/03/2016;true;valmus;VALSA MUS;;;zdesca;DESCANSA;;;;;;;;;;;;
+COM;67;2016/17;REG;1;7;03/10/2016;true;valmus;VALSA MUS;;;zdesca;DESCANSA;;;;;;;;;;;;
 END;68;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;
