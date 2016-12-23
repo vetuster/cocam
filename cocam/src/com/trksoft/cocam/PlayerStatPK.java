@@ -117,7 +117,7 @@ public class PlayerStatPK {
         sb.append(StringUtil.enclose(teamId));
         sb.append(",playerNick");
         sb.append(StringUtil.enclose(playerNick));
-        sb.append("leagueType");
+        sb.append(",leagueType");
         sb.append(StringUtil.enclose(leagueType.toString()));
         return sb.toString();
     }
