@@ -322,7 +322,10 @@ public class TeamStat {
     public void setPoints(Integer points) {
         this.points = points;
     }
-
+    public void sumPoints(Integer points) {
+        this.points += points;
+    }
+    
     public Integer getGoalsFavor() {
         return goalsFavor;
     }
@@ -428,13 +431,13 @@ public class TeamStat {
         if (local) {
             incMatchPlayedLocal();
             sumPenaltyPoint(match.getLocalTeamPenaltyPoint());
-            setPoints(getPenaltyPoint() + getPoints()
+            sumPoints(match.getLocalTeamPenaltyPoint()
                 + match.getLocalTeamScore());
         } else {
             incMatchPlayedVisiting();
             sumPenaltyPoint(match.getVisitingTeamPenaltyPoint());
-            setPoints(getPenaltyPoint()
-                + getPoints() + match.getVisitingTeamScore());
+            sumPoints(match.getVisitingTeamPenaltyPoint() +
+                + match.getVisitingTeamScore());
         }
         
         switch (match.getResultType()) {
