@@ -12,6 +12,7 @@ import java.io.File;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.time.LocalDate;
+import java.util.Arrays;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
@@ -50,7 +51,9 @@ import org.apache.logging.log4j.Logger;
     "localPairScore",
     "visitingPairScore",
     "visitingPlayerNickOne",
-    "visitingPlayerNickTwo"
+    "visitingPlayerNickTwo",
+    "localTeamPenaltyPoint",
+    "visitingTeamPenaltyPoint"
 })
 @XmlRootElement
 public class Result implements Comparable<Result>{
@@ -106,6 +109,10 @@ public class Result implements Comparable<Result>{
     private String visitingPlayerNickOne;
     @XmlElement(required = true)
     private String visitingPlayerNickTwo;
+    @XmlElement(required = false)
+    private Integer localTeamPenaltyPoint;
+    @XmlElement(required = false)
+    private Integer visitingTeamPenaltyPoint;
 
     public Result() {
     }
@@ -352,6 +359,39 @@ public class Result implements Comparable<Result>{
         this.visitingPlayerNickTwo = visitingPlayerNickTwo;
     }
 
+    public Integer getLocalTeamPenaltyPoint() {
+        return localTeamPenaltyPoint;
+    }
+
+    public void setLocalTeamPenaltyPoint(Integer localTeamPenaltyPoint) {
+        this.localTeamPenaltyPoint = localTeamPenaltyPoint;
+    }
+    public void setLocalTeamPenaltyPoint(String localTeamPenaltyPoint) {
+        if (StringUtil.isNullOrEmpty(localTeamPenaltyPoint)) {
+            this.localTeamPenaltyPoint = null;
+        } else {
+            setLocalTeamPenaltyPoint(Integer.valueOf(localTeamPenaltyPoint));
+        }
+    }
+
+    public Integer getVisitingTeamPenaltyPoint() {
+        return visitingTeamPenaltyPoint;
+    }
+
+    public void setVisitingTeamPenaltyPoint(Integer visitingTeamPenaltyPoint) {
+        this.visitingTeamPenaltyPoint = visitingTeamPenaltyPoint;
+    }
+    public void setVisitingTeamPenaltyPoint(String visitingTeamPenaltyPoint) {
+        if (StringUtil.isNullOrEmpty(visitingTeamPenaltyPoint)) {
+            this.visitingTeamPenaltyPoint = null;
+        } else {
+            setVisitingTeamPenaltyPoint(Integer.valueOf(
+                    visitingTeamPenaltyPoint));
+        }
+    }
+
+    
+    
     public void marshall(File resultFile) throws JAXBException {
         try {
             JAXBContext jaxbContext
@@ -418,7 +458,11 @@ public class Result implements Comparable<Result>{
         sb.append(",visitingPlayerNickOne");
         sb.append(StringUtil.enclose(visitingPlayerNickOne));
         sb.append(",visitingPlayerNickTwo");
-        sb.append(StringUtil.enclose(visitingPlayerNickTwo));        
+        sb.append(StringUtil.enclose(visitingPlayerNickTwo));
+        sb.append(",localTeamPenaltyPoint");
+        sb.append(StringUtil.enclose(localTeamPenaltyPoint));        
+        sb.append(",visitingTeamPenaltyPoint");
+        sb.append(StringUtil.enclose(visitingTeamPenaltyPoint));
         return sb.toString();
     }
     
@@ -443,6 +487,8 @@ public class Result implements Comparable<Result>{
                     + StringUtil.enclose(fieldDesc.getFieldNo()-1));
                 logger.fatal("fieldName"
                     + StringUtil.enclose(fieldName));
+                logger.fatal("fieldContent("
+                    + StringUtil.enclose(Arrays.toString(fieldContent)));
                 logger.fatal(aioobex);
                 throw aioobex;
             }

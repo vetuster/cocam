@@ -39,6 +39,7 @@ import org.apache.logging.log4j.Logger;
     "matchPlayedVisiting",
     "matchWonVisiting",
     "matchLostVisiting",
+    "penaltyPoint",
     "tableResult40",
     "tableResult31",
     "tableResult22",
@@ -54,7 +55,7 @@ public class TeamStat {
     private static final Logger logger
         = LogManager.getLogger(TeamStat.class);
     
-    private static float TABLES_PER_MATCH = 4.0F;
+    private static final float TABLES_PER_MATCH = 4.0F;
     
     @XmlAttribute(required = true)    
     private String teamId;
@@ -82,6 +83,8 @@ public class TeamStat {
     private Integer matchWonVisiting;
     @XmlElement(required = true)
     private Integer matchLostVisiting;
+    @XmlElement(required = true)
+    private Integer penaltyPoint;
     @XmlElement(required = true)
     private Integer tableResult40;
     @XmlElement(required = true)
@@ -111,6 +114,7 @@ public class TeamStat {
         this.matchPlayedVisiting = 0;
         this.matchWonVisiting = 0;
         this.matchLostVisiting = 0;
+        this.penaltyPoint = 0;
         this.tableResult40 = 0;
         this.tableResult31 = 0;
         this.tableResult22 = 0;
@@ -245,6 +249,17 @@ public class TeamStat {
         ++this.matchLostVisiting;
     }
 
+    public Integer getPenaltyPoint() {
+        return penaltyPoint;
+    }
+
+    public void setPenaltyPoint(Integer penaltyPoint) {
+        this.penaltyPoint = penaltyPoint;
+    }
+    public void sumPenaltyPoint(Integer penaltyPoint) {
+        this.penaltyPoint += penaltyPoint;
+    }
+
     public Integer getTableResult40() {
         return tableResult40;
     }
@@ -374,6 +389,8 @@ public class TeamStat {
         sb.append(StringUtil.enclose(matchWonVisiting));
         sb.append(",matchLostVisiting");
         sb.append(StringUtil.enclose(matchLostVisiting));
+        sb.append(",penaltyPoint");
+        sb.append(StringUtil.enclose(penaltyPoint));
         sb.append(",tableResult40");
         sb.append(StringUtil.enclose(tableResult40));
         sb.append(",tableResult31");
@@ -410,10 +427,14 @@ public class TeamStat {
         incMatchPlayed();
         if (local) {
             incMatchPlayedLocal();
-            setPoints(getPoints() + match.getLocalTeamScore());
+            sumPenaltyPoint(match.getLocalTeamPenaltyPoint());
+            setPoints(getPenaltyPoint() + getPoints()
+                + match.getLocalTeamScore());
         } else {
             incMatchPlayedVisiting();
-            setPoints(getPoints() + match.getVisitingTeamScore());
+            sumPenaltyPoint(match.getVisitingTeamPenaltyPoint());
+            setPoints(getPenaltyPoint()
+                + getPoints() + match.getVisitingTeamScore());
         }
         
         switch (match.getResultType()) {
@@ -546,6 +567,7 @@ public class TeamStat {
         rankingField.add(getTableResult22().toString());
         rankingField.add(getTableResult13().toString());
         rankingField.add(getTableResult04().toString());
+        rankingField.add(getPenaltyPoint().toString());
         rankingField.add(getPoints().toString());
         
         return rankingField.stream().map(Object::toString).
@@ -562,6 +584,7 @@ public class TeamStat {
         rankingField.add("Result22");
         rankingField.add("Result13");
         rankingField.add("Result04");
+        rankingField.add("Penalty");
         rankingField.add("Points");
         
         return rankingField.stream().map(Object::toString).

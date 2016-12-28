@@ -36,9 +36,11 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
     "localTeamId",
     "localTeamName",
     "localTeamScore",
+    "localTeamPenaltyPoint",
     "visitingTeamId",
     "visitingTeamName",
     "visitingTeamScore",
+    "visitingTeamPenaltyPoint",
     "table"
 })
 @XmlRootElement
@@ -62,11 +64,15 @@ public class Match  implements Comparable<Match> {
     @XmlElement(required = true)
     private Integer localTeamScore;
     @XmlElement(required = true)
+    private Integer localTeamPenaltyPoint;
+    @XmlElement(required = true)
     private String visitingTeamId;
     @XmlElement(required = true)
     private String visitingTeamName;
     @XmlElement(required = true)
     private Integer visitingTeamScore;
+    @XmlElement(required = true)
+    private Integer visitingTeamPenaltyPoint;
     
     @XmlElement(required = true)
     private final SortedSet<Table> table;
@@ -146,6 +152,14 @@ public class Match  implements Comparable<Match> {
         this.localTeamScore = localTeamScore;
     }
 
+    public Integer getLocalTeamPenaltyPoint() {
+        return localTeamPenaltyPoint;
+    }
+
+    public void setLocalTeamPenaltyPoint(Integer localTeamPenaltyPoint) {
+        this.localTeamPenaltyPoint = localTeamPenaltyPoint;
+    }
+
     public String getVisitingTeamId() {
         return visitingTeamId;
     }
@@ -168,6 +182,14 @@ public class Match  implements Comparable<Match> {
 
     public void setVisitingTeamScore(Integer visitingTeamScore) {
         this.visitingTeamScore = visitingTeamScore;
+    }
+
+    public Integer getVisitingTeamPenaltyPoint() {
+        return visitingTeamPenaltyPoint;
+    }
+
+    public void setVisitingTeamPenaltyPoint(Integer visitingTeamPenaltyPoint) {
+        this.visitingTeamPenaltyPoint = visitingTeamPenaltyPoint;
     }
     
     public SortedSet<Table> getTable() {
@@ -214,13 +236,17 @@ public class Match  implements Comparable<Match> {
         sb.append(",localTeamName");
         sb.append(StringUtil.enclose(localTeamName));
         sb.append(",localTeamScore");
-        sb.append(StringUtil.enclose(localTeamScore));
+        sb.append(StringUtil.enclose(localTeamName));
+        sb.append(",localTeamPenaltyPoint");
+        sb.append(StringUtil.enclose(localTeamPenaltyPoint));
         sb.append(",visitingTeamId");
         sb.append(StringUtil.enclose(visitingTeamId));
         sb.append(",visitingTeamName");
         sb.append(StringUtil.enclose(visitingTeamName));
         sb.append(",visitingTeamScore");
         sb.append(StringUtil.enclose(visitingTeamScore));
+        sb.append(",visitingTeamPenaltyPoint");
+        sb.append(StringUtil.enclose(visitingTeamPenaltyPoint));
         sb.append(table.stream().map(Object::toString).
             collect(Collectors.joining("->")));
         return sb.toString();
@@ -249,9 +275,15 @@ public class Match  implements Comparable<Match> {
         match.setLocalTeamId(result.getLocalTeamId());
         match.setLocalTeamName(result.getLocalTeamName());
         match.setLocalTeamScore(result.getLocalTeamScore());
+        match.setLocalTeamPenaltyPoint(
+            (result.getLocalTeamPenaltyPoint() == null?
+                0 : result.getLocalTeamPenaltyPoint()));
         match.setVisitingTeamId(result.getVisitingTeamId());
         match.setVisitingTeamName(result.getVisitingTeamName());
         match.setVisitingTeamScore(result.getVisitingTeamScore());
+        match.setVisitingTeamPenaltyPoint(
+            (result.getVisitingTeamPenaltyPoint() == null?
+                0: result.getVisitingTeamPenaltyPoint()));
         return match;
     }
 }
