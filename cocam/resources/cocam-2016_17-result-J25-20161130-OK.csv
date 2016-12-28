@@ -1,8 +1,8 @@
 COM;1;temporada;tipo liga;vuelta;jornada;fecha jornada;is Match;id peña local;peña local;local mesas ganadas;visitante mesas ganadas;id peña visitante;peña visitante;número mesa;peña local  jugador 1;peña local   jugador 2;local chicos a favor;visitante chicos a favor;peña visitante jugador 1;peña visitante jugador 2;;NUEVO peña local  jugador 1;NUEVO peña local   jugador 2;NUEVO peña visitante  jugador 1;NUEVO peña visitante  jugador 2;
-INF;7;2016/17;REG;1;25;28/11/2016;true;sagrib;S.AG.-RÍAS BAIXAS;3;1;picosa;LA PICOSA;1;FRAN;JAIME;6;1;PITI;ANIA;;;;;;
-INF;8;;REG;1;;;false;sagrib;;;;picosa;;2;GERARDO;OSCAR;6;5;CHUS;ARSENIO;;;;;;
-INF;9;;REG;1;;;false;sagrib;;;;picosa;;3;VICTOR;CHEMI;3;6;JOSE;PEPE;;;;;;
-INF;10;;REG;1;;;false;sagrib;;;;picosa;;4;COLLADO;BENJA;6;5;DAMIAN;KIKE;;;;;;
+INF;7;2016/17;REG;1;25;28/11/2016;true;sagrib;S.AG.-RÍAS BAIXAS;3;1;picosa;LA PICOSA;1;FRAN;JAIME;6;1;PITI;ANIA;;;ENDL;;;
+INF;8;;REG;1;;;false;sagrib;;;;picosa;;2;GERARDO;OSCAR;6;5;CHUS;ARSENIO;;;ENDL;;;
+INF;9;;REG;1;;;false;sagrib;;;;picosa;;3;VICTOR;CHEMI;3;6;JOSE;PEPE;;;ENDL;;;
+INF;10;;REG;1;;;false;sagrib;;;;picosa;;4;COLLADO;BENJA;6;5;DAMIAN;KIKE;;;ENDL;;;
 COM;11;;;;;;;;;;;;;;;;;;;;;;;;;
 END;68;;;;;;;;1;1;1;;1;;4;4;4;4;4;4;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;

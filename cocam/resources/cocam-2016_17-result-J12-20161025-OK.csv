@@ -1,9 +1,9 @@
 COM;1;temporada;tipo liga;vuelta;jornada;fecha jornada;is Match;id peña local;peña local;local mesas ganadas;visitante mesas ganadas;id peña visitante;peña visitante;número mesa;peña local  jugador 1;peña local   jugador 2;local chicos a favor;visitante chicos a favor;peña visitante jugador 1;peña visitante jugador 2;;NUEVO peña local  jugador 1;NUEVO peña local   jugador 2;NUEVO peña visitante  jugador 1;NUEVO peña visitante  jugador 2
 COM;46;;;;;;;;;;;;;;;;;;;;;;;;
-INF;47;2016/17;REG;1;12;13/10/2016;true;rcarol;RINCÓN DE CAROL;0;4;habana;BAR HABANA;1;GABI;ANIBAL;4;6;MARGA;PESTONI II;;;;;
-INF;48;;REG;1;;;false;rcarol;;;;habana;;2;JAVI;CHUS;3;6;JUANJO;PACHIN;;;;;
-INF;49;;REG;1;;;false;rcarol;;;;habana;;3;DEME;DANI;5;6;PANA;PANAKAS;;;;;
-INF;50;;REG;1;;;false;rcarol;;;;habana;;4;ALFREDO;BELLO;3;6;JOSE;SIXTO;;;;;
+INF;47;2016/17;REG;1;12;13/10/2016;true;rcarol;RINCÓN DE CAROL;0;4;habana;BAR HABANA;1;GABI;ANIBAL;4;6;MARGA;PESTONI II;;;ENDL;;
+INF;48;;REG;1;;;false;rcarol;;;;habana;;2;JAVI;CHUS;3;6;JUANJO;PACHIN;;;ENDL;;
+INF;49;;REG;1;;;false;rcarol;;;;habana;;3;DEME;DANI;5;6;PANA;PANAKAS;;;ENDL;;
+INF;50;;REG;1;;;false;rcarol;;;;habana;;4;ALFREDO;BELLO;3;6;JOSE;SIXTO;;;ENDL;;
 COM;51;;;;;;;;;;;;;;;;;;;;;;;;
 END;68;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;
