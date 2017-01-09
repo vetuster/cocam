@@ -27,7 +27,9 @@
     <player teamId="8villa" playerNick="MANOLO"/>
     <player teamId="8villa" playerNick="MOSCALIN"/>
     <player teamId="8villa" playerNick="NACHO"/>
+    <player teamId="8villa" playerNick="PEDRO"/>
     <player teamId="8villa" playerNick="RAFA"/>
+    <player teamId="8villa" playerNick="TINTO"/>
     <player teamId="8villa" playerNick="TOÑO"/>
     <player teamId="8villa" playerNick="URE"/>
     <player teamId="acveig" playerNick="ADAN"/>
@@ -51,6 +53,7 @@
     <player teamId="albora" playerNick="GUELO"/>
     <player teamId="albora" playerNick="JOSE"/>
     <player teamId="albora" playerNick="LUIS"/>
+    <player teamId="albora" playerNick="MANOLO"/>
     <player teamId="albora" playerNick="MARIANO"/>
     <player teamId="albora" playerNick="OMAR"/>
     <player teamId="albora" playerNick="PABLO"/>
@@ -83,6 +86,7 @@
     <player teamId="barena" playerNick="RODRIGO"/>
     <player teamId="barena" playerNick="ROMAN"/>
     <player teamId="barena" playerNick="TURBO"/>
+    <player teamId="barena" playerNick="VITIN"/>
     <player teamId="bcampy" playerNick="ALFREDO"/>
     <player teamId="bcampy" playerNick="ANTONIO"/>
     <player teamId="bcampy" playerNick="CAO"/>
@@ -217,6 +221,7 @@
     <player teamId="cgerma" playerNick="MORAN"/>
     <player teamId="cgerma" playerNick="TOÑO"/>
     <player teamId="cgerma" playerNick="VIÑA"/>
+    <player teamId="cgerma" playerNick="YONI"/>
     <player teamId="chalan" playerNick="CHEMA"/>
     <player teamId="chalan" playerNick="DANI"/>
     <player teamId="chalan" playerNick="DIEGO"/>
