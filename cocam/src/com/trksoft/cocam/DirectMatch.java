@@ -127,7 +127,7 @@ public class DirectMatch {
 
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder("TeamStat->");
+        StringBuilder sb = new StringBuilder("DirectMatch->");
         sb.append("adversaryTeamId");
         sb.append(StringUtil.enclose(adversaryTeamId));
         sb.append(",playedAsLocal");
