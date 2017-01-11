@@ -402,14 +402,16 @@ public class TeamStat {
         sb.append(StringUtil.enclose(tableResult22));
         sb.append(",tableResult13");
         sb.append(StringUtil.enclose(tableResult13));
-        sb.append("tableResult04");
+        sb.append(",tableResult04");
         sb.append(StringUtil.enclose(tableResult04));
         sb.append(",goalsFavor");
         sb.append(StringUtil.enclose(goalsFavor));
         sb.append(",goalsAgainst");
         sb.append(StringUtil.enclose(goalsAgainst));
+        sb.append(",");
         sb.append(directMatch.values().stream().map(Object::toString).
             collect(Collectors.joining("->")));
+        sb.append(System.getProperty("line.separator"));
         return sb.toString();
     }
     
