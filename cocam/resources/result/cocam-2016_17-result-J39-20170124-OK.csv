@@ -1,0 +1,11 @@
+COM;1;temporada;tipo liga;vuelta;jornada;fecha jornada;is Match;id peña local;peña local;local mesas ganadas;visitante mesas ganadas;id peña visitante;peña visitante;número mesa;peña local  jugador 1;peña local   jugador 2;local chicos a favor;visitante chicos a favor;peña visitante jugador 1;peña visitante jugador 2;puntos sanción peña local;puntos sanción peña visitante;fin líena;;NUEVO peña local  jugador 1;NUEVO peña local   jugador 2;NUEVO peña visitante  jugador 1;NUEVO peña visitante  jugador 2;
+INF;62;2016/17;REG;2;39;19/01/2017;true;capiol;CAFÉ BAR PIOL;0;4;acveig;AC MUS VEIGA;1;NINO;ANTONIO;5;6;EMILIO;ZURDO;;;ENDL;;;;;;
+INF;63;;REG;2;;;false;capiol;;;;acveig;;2;AZU;PILI;4;6;MILLAN;GUTI;;;ENDL;;;;;;
+INF;64;;REG;2;;;false;capiol;;;;acveig;;3;ESTHER;SALAS;2;6;ELOY;HERRERO;;;ENDL;;;;;;
+INF;65;;REG;2;;;false;capiol;;;;acveig;;4;FELIX;PILUCA;3;6;ZICO;ADAN;;;ENDL;;;;;;
+COM;66;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+END;68;1;4;4;1;1;4;4;1;1;1;;1;;4;4;4;4;4;4;0;0;;;0;0;0;0;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
