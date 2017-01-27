@@ -1,0 +1,10 @@
+COM;1;temporada;tipo liga;vuelta;jornada;fecha jornada;is Match;id peña local;peña local;local mesas ganadas;visitante mesas ganadas;id peña visitante;peña visitante;número mesa;peña local  jugador 1;peña local   jugador 2;local chicos a favor;visitante chicos a favor;peña visitante jugador 1;peña visitante jugador 2;puntos sanción peña local;puntos sanción peña visitante;fin líena;;NUEVO peña local  jugador 1;NUEVO peña local   jugador 2;NUEVO peña visitante  jugador 1;NUEVO peña visitante  jugador 2;
+INF;37;2016/17;REG;2;40;23/01/2017;true;picosa;LA PICOSA;3;1;andrea;BAR D'ANDREA;1;PITI;ANIA;6;2;LITRI;DANI;;;ENDL;;;;;;
+INF;38;;REG;2;;;false;picosa;;;;andrea;;2;CHORI;CHUS;6;5;KIKE;ISMA;;;ENDL;;;;;;
+INF;39;;REG;2;;;false;picosa;;;;andrea;;3;CARLOS;PACO;6;1;TINO;JUAN;;;ENDL;;;;;;
+INF;40;;REG;2;;;false;picosa;;;;andrea;;4;IÑAQUI;DAMIAN;3;6;FERRERAS;DELMI;;;ENDL;;;;;;
+END;68;1;4;4;1;1;4;4;1;1;1;;1;;4;4;4;4;4;4;0;0;;;0;0;0;0;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
