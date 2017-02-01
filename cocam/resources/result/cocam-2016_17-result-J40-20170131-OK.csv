@@ -1,0 +1,10 @@
+COM;1;temporada;tipo liga;vuelta;jornada;fecha jornada;is Match;id peña local;peña local;local mesas ganadas;visitante mesas ganadas;id peña visitante;peña visitante;número mesa;peña local  jugador 1;peña local   jugador 2;local chicos a favor;visitante chicos a favor;peña visitante jugador 1;peña visitante jugador 2;puntos sanción peña local;puntos sanción peña visitante;fin líena;;NUEVO peña local  jugador 1;NUEVO peña local   jugador 2;NUEVO peña visitante  jugador 1;NUEVO peña visitante  jugador 2;
+INF;32;2016/17;REG;2;40;23/01/2017;true;chalan;MUS EL CHALANÍN;;;bcarba;PEÑA CARBAYEDO;1;MARIO;LASTRA;6;0;HOMERO;LUIGI;;;ENDL;;;;;;
+INF;33;;REG;2;;;false;chalan;;;;bcarba;;2;POPE;CHEMA;0;6;ABLANEDO;LUIS;;;ENDL;;;;;;
+INF;34;;REG;2;;;false;chalan;;;;bcarba;;3;SILVI;SAM;2;6;TOÑO;JAVI;;;ENDL;;;;;;
+INF;35;;REG;2;;;false;chalan;;;;bcarba;;4;DOLO;KYLLO;5;6;CHUS;JOSE LUIS;;;ENDL;;;;;;
+END;68;1;4;4;1;1;4;4;1;0;0;;1;;4;4;4;4;4;4;0;0;;;0;0;0;0;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
