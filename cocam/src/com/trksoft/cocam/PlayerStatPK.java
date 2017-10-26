@@ -49,10 +49,6 @@ public class PlayerStatPK {
         this.leagueType = leagueType;
     }
     
-    public PlayerStatPK copy() {
-        return new PlayerStatPK(getTeamId(),getPlayerNick(), getLeagueType());
-    }
-    
     public String getTeamId() {
         return teamId;
     }
