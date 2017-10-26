@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playerEntity>
+    <player teamId="8villa" playerNick="ALFONSO"/>
+    <player teamId="8villa" playerNick="ALVARO"/>
+    <player teamId="8villa" playerNick="ANGEL"/>
+    <player teamId="8villa" playerNick="CHICHO"/>
+    <player teamId="8villa" playerNick="ELIAS"/>
+    <player teamId="8villa" playerNick="FARRAGUS"/>
+    <player teamId="8villa" playerNick="HUMBERTO"/>
+    <player teamId="8villa" playerNick="JUAN"/>
+    <player teamId="8villa" playerNick="KIKE"/>
+    <player teamId="8villa" playerNick="M. JESUS"/>
+    <player teamId="8villa" playerNick="MORALES"/>
+    <player teamId="8villa" playerNick="MOSCALIN"/>
+    <player teamId="8villa" playerNick="NACHO"/>
+    <player teamId="8villa" playerNick="NANDO"/>
+    <player teamId="8villa" playerNick="PEDRO"/>
+    <player teamId="8villa" playerNick="TOÑO"/>
+    <player teamId="8villa" playerNick="URE"/>
+
+    <player teamId="acveig" playerNick="ADAN"/>
+    <player teamId="acveig" playerNick="ANSELMO"/>
+    <player teamId="acveig" playerNick="EMILIO"/>
+    <player teamId="acveig" playerNick="FAILDE"/>
+    <player teamId="acveig" playerNick="GUTI"/>
+    <player teamId="acveig" playerNick="HERRERO"/>
+    <player teamId="acveig" playerNick="JUANBE"/>
+    <player teamId="acveig" playerNick="MILLAN"/>
+    <player teamId="acveig" playerNick="SARRY"/>
+    <player teamId="acveig" playerNick="TINO"/>
+    <player teamId="acveig" playerNick="ZICO"/>
+    <player teamId="acveig" playerNick="ZURDO"/>
+
+    <player teamId="anfora" playerNick="ANDRESON"/>
+    <player teamId="anfora" playerNick="ANTONIO"/>
+    <player teamId="anfora" playerNick="DAVID"/>
+    <player teamId="anfora" playerNick="FELIPE"/>
+    <player teamId="anfora" playerNick="FERMIN"/>
+    <player teamId="anfora" playerNick="FIDALGO"/>
+    <player teamId="anfora" playerNick="FRAN"/>
+    <player teamId="anfora" playerNick="ISMA"/>
+    <player teamId="anfora" playerNick="JOSE"/>
+    <player teamId="anfora" playerNick="JUAN"/>
+    <player teamId="anfora" playerNick="JUANMA"/>
+    <player teamId="anfora" playerNick="LUIS"/>
+    <player teamId="anfora" playerNick="MONI"/>
+    <player teamId="anfora" playerNick="OMAR"/>
+    <player teamId="anfora" playerNick="PEPE"/>
+    <player teamId="anfora" playerNick="RODRI"/>
+    <player teamId="anfora" playerNick="ROMAN"/>
+
+    <player teamId="babaut" playerNick="CALVO"/>
+    <player teamId="babaut" playerNick="CARLOTO"/>
+    <player teamId="babaut" playerNick="CHEMA"/>
+    <player teamId="babaut" playerNick="DANI"/>
+    <player teamId="babaut" playerNick="DIEGO"/>
+    <player teamId="babaut" playerNick="DOLO"/>
+    <player teamId="babaut" playerNick="GORIX"/>
+    <player teamId="babaut" playerNick="J. LUIS I"/>
+    <player teamId="babaut" playerNick="J. LUIS II"/>
+    <player teamId="babaut" playerNick="JULIO"/>
+    <player teamId="babaut" playerNick="KYLLO"/>
+    <player teamId="babaut" playerNick="LASTRA"/>
+    <player teamId="babaut" playerNick="MARIO"/>
+    <player teamId="babaut" playerNick="POPE"/>
+    <player teamId="babaut" playerNick="SERANTES"/>
+    <player teamId="babaut" playerNick="SILVI"/>
+    <player teamId="babaut" playerNick="YOLI"/>
+    <player teamId="babaut" playerNick="YONATAN"/>
+
+    <player teamId="bcampy" playerNick="ALFREDO"/>
+    <player teamId="bcampy" playerNick="ANTONIO"/>
+    <player teamId="bcampy" playerNick="CAO"/>
+    <player teamId="bcampy" playerNick="CASTILLO"/>
+    <player teamId="bcampy" playerNick="J. CARLOS"/>
+    <player teamId="bcampy" playerNick="JULIAN"/>
+    <player teamId="bcampy" playerNick="MARI"/>
+    <player teamId="bcampy" playerNick="PACO"/>
+    <player teamId="bcampy" playerNick="PEPE"/>
+    <player teamId="bcampy" playerNick="RUBIO"/>
+    <player teamId="bcampy" playerNick="SERGIO"/>
+    <player teamId="bcampy" playerNick="TITI"/>
+    <player teamId="bcampy" playerNick="YIMI"/>
+
+    <player teamId="andrea" playerNick="ANDRES"/>
+    <player teamId="andrea" playerNick="DANI"/>
+    <player teamId="andrea" playerNick="DELMI"/>
+    <player teamId="andrea" playerNick="FERRE"/>
+    <player teamId="andrea" playerNick="GIL"/>
+    <player teamId="andrea" playerNick="ISMA"/>
+    <player teamId="andrea" playerNick="JUAN"/>
+    <player teamId="andrea" playerNick="KIKE"/>
+    <player teamId="andrea" playerNick="LITRI"/>
+    <player teamId="andrea" playerNick="LOLO"/>
+    <player teamId="andrea" playerNick="PANIS"/>
+    <player teamId="andrea" playerNick="QUIROS"/>
+    <player teamId="andrea" playerNick="SANTON"/>
+
+    <player teamId="habana" playerNick="BORJA"/>
+    <player teamId="habana" playerNick="EVA"/>
+    <player teamId="habana" playerNick="JOSE"/>
+    <player teamId="habana" playerNick="JUANIN"/>
+    <player teamId="habana" playerNick="JUANJO"/>
+    <player teamId="habana" playerNick="MANOLO"/>
+    <player teamId="habana" playerNick="MARGA"/>
+    <player teamId="habana" playerNick="MERCHAN"/>
+    <player teamId="habana" playerNick="PABLO"/>
+    <player teamId="habana" playerNick="PACHIN"/>
+    <player teamId="habana" playerNick="PANA"/>
+    <player teamId="habana" playerNick="PESTONI"/>
+    <player teamId="habana" playerNick="RAMON"/>
+    <player teamId="habana" playerNick="SIXTO"/>
+
+    <player teamId="calolo" playerNick="COTE"/>
+    <player teamId="calolo" playerNick="DANI"/>
+    <player teamId="calolo" playerNick="EDU"/>
+    <player teamId="calolo" playerNick="ELOY"/>
+    <player teamId="calolo" playerNick="HUGO"/>
+    <player teamId="calolo" playerNick="JAVI"/>
+    <player teamId="calolo" playerNick="JUAN"/>
+    <player teamId="calolo" playerNick="JUANMA"/>
+    <player teamId="calolo" playerNick="JUSTO"/>
+    <player teamId="calolo" playerNick="LUIS"/>
+    <player teamId="calolo" playerNick="MANU"/>
+    <player teamId="calolo" playerNick="MARCOS"/>
+    <player teamId="calolo" playerNick="PARAMIO"/>
+    <player teamId="calolo" playerNick="PIKO"/>
+    <player teamId="calolo" playerNick="SILVIA"/>
+    <player teamId="calolo" playerNick="SOPEÑA"/>
+    <player teamId="calolo" playerNick="TURBO"/>
+
+    <player teamId="cebano" playerNick="ANGEL RAMON"/>
+    <player teamId="cebano" playerNick="BARREIRO"/>
+    <player teamId="cebano" playerNick="CARLON"/>
+    <player teamId="cebano" playerNick="FRAN"/>
+    <player teamId="cebano" playerNick="GONZALEZ"/>
+    <player teamId="cebano" playerNick="JULIO"/>
+    <player teamId="cebano" playerNick="LOZANO"/>
+    <player teamId="cebano" playerNick="LUIS"/>
+    <player teamId="cebano" playerNick="LUPI"/>
+    <player teamId="cebano" playerNick="MIGUEL ANGEL"/>
+    <player teamId="cebano" playerNick="NICO"/>
+    <player teamId="cebano" playerNick="VICTOR"/>
+
+    <player teamId="lubian" playerNick="ALBA"/>
+    <player teamId="lubian" playerNick="ALVARO"/>
+    <player teamId="lubian" playerNick="BASILIO"/>
+    <player teamId="lubian" playerNick="CANTERO"/>
+    <player teamId="lubian" playerNick="CARLOS"/>
+    <player teamId="lubian" playerNick="CERNUDA"/>
+    <player teamId="lubian" playerNick="CHAMORRO"/>
+    <player teamId="lubian" playerNick="CHACHI"/>
+    <player teamId="lubian" playerNick="CHUS"/>
+    <player teamId="lubian" playerNick="COSTALES"/>
+    <player teamId="lubian" playerNick="DANI"/>
+    <player teamId="lubian" playerNick="FONSO"/>
+    <player teamId="lubian" playerNick="JOSE"/>
+    <player teamId="lubian" playerNick="J. ANTONIO"/>
+    <player teamId="lubian" playerNick="LUBIAN"/>
+    <player teamId="lubian" playerNick="PITI"/>
+
+    <player teamId="capiol" playerNick="ANTONIO"/>
+    <player teamId="capiol" playerNick="AZU"/>
+    <player teamId="capiol" playerNick="CARMEN"/>
+    <player teamId="capiol" playerNick="ELOY"/>
+    <player teamId="capiol" playerNick="ESTHER"/>
+    <player teamId="capiol" playerNick="FELIX"/>
+    <player teamId="capiol" playerNick="J. G."/>
+    <player teamId="capiol" playerNick="NINO"/>
+    <player teamId="capiol" playerNick="ORTIZ"/>
+    <player teamId="capiol" playerNick="OSCAR"/>
+    <player teamId="capiol" playerNick="PILI"/>
+    <player teamId="capiol" playerNick="PILUCA"/>
+    <player teamId="capiol" playerNick="SALAS"/>
+
+    <player teamId="cvalsa" playerNick="BENI"/>
+    <player teamId="cvalsa" playerNick="CAMPANA"/>
+    <player teamId="cvalsa" playerNick="CHAMPI"/>
+    <player teamId="cvalsa" playerNick="FERNANDO"/>
+    <player teamId="cvalsa" playerNick="GABI"/>
+    <player teamId="cvalsa" playerNick="IÑAKI"/>
+    <player teamId="cvalsa" playerNick="JENARO"/>
+    <player teamId="cvalsa" playerNick="J. OVIEDO"/>
+    <player teamId="cvalsa" playerNick="MARCOS"/>
+    <player teamId="cvalsa" playerNick="MERO"/>
+    <player teamId="cvalsa" playerNick="MURAS"/>
+    <player teamId="cvalsa" playerNick="NACHO"/>
+    <player teamId="cvalsa" playerNick="PARAMIO"/>
+    <player teamId="cvalsa" playerNick="PICHINA"/>
+
+    <player teamId="cgerma" playerNick="ALLENDE"/>
+    <player teamId="cgerma" playerNick="DAMIAN"/>
+    <player teamId="cgerma" playerNick="ESPINA"/>
+    <player teamId="cgerma" playerNick="FANDI"/>
+    <player teamId="cgerma" playerNick="GABI"/>
+    <player teamId="cgerma" playerNick="JANEL"/>
+    <player teamId="cgerma" playerNick="JOAQUIN"/>
+    <player teamId="cgerma" playerNick="KIKE"/>
+    <player teamId="cgerma" playerNick="MARCE"/>
+    <player teamId="cgerma" playerNick="MORAN"/>
+    <player teamId="cgerma" playerNick="TOÑO"/>
+    <player teamId="cgerma" playerNick="VILA"/>
+    <player teamId="cgerma" playerNick="VIÑA"/>
+    <player teamId="cgerma" playerNick="YONI"/>
+
+    <player teamId="capabl" playerNick="ANTONIO"/>
+    <player teamId="capabl" playerNick="CHARO"/>
+    <player teamId="capabl" playerNick="GARRIDO"/>
+    <player teamId="capabl" playerNick="JAVI"/>
+    <player teamId="capabl" playerNick="JESUS"/>
+    <player teamId="capabl" playerNick="JUAN"/>
+    <player teamId="capabl" playerNick="KIRIKI"/>
+    <player teamId="capabl" playerNick="LELO"/>
+    <player teamId="capabl" playerNick="MALAGA"/>
+    <player teamId="capabl" playerNick="MIGUEL"/>
+    <player teamId="capabl" playerNick="PERFE"/>
+    <player teamId="capabl" playerNick="PRIETO"/>
+    <player teamId="capabl" playerNick="RAMON"/>
+    <player teamId="capabl" playerNick="VALLEDOR"/>
+
+    <player teamId="catere" playerNick="AGUADO"/>
+    <player teamId="catere" playerNick="ARNIELLA"/>
+    <player teamId="catere" playerNick="BARRANCO"/>
+    <player teamId="catere" playerNick="BELLANCO"/>
+    <player teamId="catere" playerNick="CAMPORRO I"/>
+    <player teamId="catere" playerNick="CAMPORRO II"/>
+    <player teamId="catere" playerNick="CESAR"/>
+    <player teamId="catere" playerNick="CHAN"/>
+    <player teamId="catere" playerNick="ELICIO"/>
+    <player teamId="catere" playerNick="HIGINIO"/>
+    <player teamId="catere" playerNick="JAVI"/>
+    <player teamId="catere" playerNick="PANCHO"/>
+    <player teamId="catere" playerNick="PEDRO"/>
+    <player teamId="catere" playerNick="POLA"/>
+    <player teamId="catere" playerNick="PUPI"/>
+    <player teamId="catere" playerNick="TOLADA"/>
+    <player teamId="catere" playerNick="VINCINI"/>
+
+    <player teamId="ccelti" playerNick="BUSTO"/>
+    <player teamId="ccelti" playerNick="CHININ"/>
+    <player teamId="ccelti" playerNick="CHININ II"/>
+    <player teamId="ccelti" playerNick="FALO"/>
+    <player teamId="ccelti" playerNick="FELIX"/>
+    <player teamId="ccelti" playerNick="JUAN"/>
+    <player teamId="ccelti" playerNick="LUNA"/>
+    <player teamId="ccelti" playerNick="MAITE"/>
+    <player teamId="ccelti" playerNick="PEREZ"/>
+    <player teamId="ccelti" playerNick="RICHARD"/>
+    <player teamId="ccelti" playerNick="ZELUAN"/>
+
+    <player teamId="churre" playerNick="AZA"/>
+    <player teamId="churre" playerNick="DIONI"/>
+    <player teamId="churre" playerNick="FERMIN"/>
+    <player teamId="churre" playerNick="GURI"/>
+    <player teamId="churre" playerNick="JANO"/>
+    <player teamId="churre" playerNick="JAVI"/>
+    <player teamId="churre" playerNick="JAVIER"/>
+    <player teamId="churre" playerNick="JOSE"/>
+    <player teamId="churre" playerNick="JUANIN"/>
+    <player teamId="churre" playerNick="LUIS"/>
+    <player teamId="churre" playerNick="PACO"/>
+    <player teamId="churre" playerNick="RAMON"/>
+    <player teamId="churre" playerNick="RICHARD"/>
+    <player teamId="churre" playerNick="ROBER"/>
+
+    <player teamId="brenya" playerNick="BERTO"/>
+    <player teamId="brenya" playerNick="CLETO"/>
+    <player teamId="brenya" playerNick="DANI"/>
+    <player teamId="brenya" playerNick="FRANCISCO"/>
+    <player teamId="brenya" playerNick="GLORIA"/>
+    <player teamId="brenya" playerNick="KARLOS"/>
+    <player teamId="brenya" playerNick="MANOLITO"/>
+    <player teamId="brenya" playerNick="MENDO"/>
+    <player teamId="brenya" playerNick="MORA"/>
+    <player teamId="brenya" playerNick="PANAKAS"/>
+    <player teamId="brenya" playerNick="PICHI"/>
+    <player teamId="brenya" playerNick="POLI"/>
+    <player teamId="brenya" playerNick="SALVA"/>
+    <player teamId="brenya" playerNick="VAQUERO"/>
+    <player teamId="brenya" playerNick="VAQUERO II"/>
+    <player teamId="brenya" playerNick="VIGIL"/>
+    <player teamId="brenya" playerNick="ZANCAS"/>
+
+    <player teamId="picosa" playerNick="ANIA"/>
+    <player teamId="picosa" playerNick="ARSEN"/>
+    <player teamId="picosa" playerNick="CARLINOS"/>
+    <player teamId="picosa" playerNick="CHORI"/>
+    <player teamId="picosa" playerNick="CHUS"/>
+    <player teamId="picosa" playerNick="GELO"/>
+    <player teamId="picosa" playerNick="IÑAKI"/>
+    <player teamId="picosa" playerNick="KIKE"/>
+    <player teamId="picosa" playerNick="MANZANAL"/>
+    <player teamId="picosa" playerNick="MONCHI"/>
+    <player teamId="picosa" playerNick="PEPE"/>
+    <player teamId="picosa" playerNick="PESTONI"/>
+    <player teamId="picosa" playerNick="VILCHES"/>
+
+    <player teamId="bcarba" playerNick="ABLANEDO"/>
+    <player teamId="bcarba" playerNick="CHE"/>
+    <player teamId="bcarba" playerNick="CHUS"/>
+    <player teamId="bcarba" playerNick="HOMERO"/>
+    <player teamId="bcarba" playerNick="ISMA"/>
+    <player teamId="bcarba" playerNick="JAVI"/>
+    <player teamId="bcarba" playerNick="JAVI LITO"/>
+    <player teamId="bcarba" playerNick="JOSE LUIS"/>
+    <player teamId="bcarba" playerNick="LUIGI"/>
+    <player teamId="bcarba" playerNick="LUIS"/>
+    <player teamId="bcarba" playerNick="MIGUEL"/>
+    <player teamId="bcarba" playerNick="PEDRO"/>
+    <player teamId="bcarba" playerNick="TOÑO"/>
+    <player teamId="bcarba" playerNick="URCULO"/>
+
+    <player teamId="monchi" playerNick="BERNARDO"/>
+    <player teamId="monchi" playerNick="DAVID"/>
+    <player teamId="monchi" playerNick="FONSO"/>
+    <player teamId="monchi" playerNick="FRAN"/>
+    <player teamId="monchi" playerNick="JUANJO"/>
+    <player teamId="monchi" playerNick="MANOLO"/>
+    <player teamId="monchi" playerNick="MATEOS"/>
+    <player teamId="monchi" playerNick="MONCHI"/>
+    <player teamId="monchi" playerNick="PACO"/>
+    <player teamId="monchi" playerNick="PEPE"/>
+    <player teamId="monchi" playerNick="RABADAN"/>
+    <player teamId="monchi" playerNick="SALOME"/>
+
+    <player teamId="rcarol" playerNick="ALFONSO"/>
+    <player teamId="rcarol" playerNick="ALFREDO"/>
+    <player teamId="rcarol" playerNick="ANIBAL"/>
+    <player teamId="rcarol" playerNick="BELLO"/>
+    <player teamId="rcarol" playerNick="CHEMA"/>
+    <player teamId="rcarol" playerNick="CHUS"/>
+    <player teamId="rcarol" playerNick="CHUSETE"/>
+    <player teamId="rcarol" playerNick="DANI"/>
+    <player teamId="rcarol" playerNick="DEME"/>
+    <player teamId="rcarol" playerNick="GABI"/>
+    <player teamId="rcarol" playerNick="ISRA"/>
+    <player teamId="rcarol" playerNick="JOAQUIN"/>
+    <player teamId="rcarol" playerNick="MIGUEL"/>
+    <player teamId="rcarol" playerNick="RAFA"/>
+    <player teamId="rcarol" playerNick="TEO"/>
+
+    <player teamId="sagcel" playerNick="ALICIA"/>
+    <player teamId="sagcel" playerNick="ANDRES"/>
+    <player teamId="sagcel" playerNick="CARLOS"/>
+    <player teamId="sagcel" playerNick="CHEMA"/>
+    <player teamId="sagcel" playerNick="FA"/>
+    <player teamId="sagcel" playerNick="IÑAKI"/>
+    <player teamId="sagcel" playerNick="JAVI"/>
+    <player teamId="sagcel" playerNick="JOSE"/>
+    <player teamId="sagcel" playerNick="MANU"/>
+    <player teamId="sagcel" playerNick="MARIAN"/>
+    <player teamId="sagcel" playerNick="MENENDEZ"/>
+    <player teamId="sagcel" playerNick="PINTO"/>
+    <player teamId="sagcel" playerNick="SONIA"/>
+    <player teamId="sagcel" playerNick="TRIKI"/>
+
+    <player teamId="sagkam" playerNick="ALFONSO"/>
+    <player teamId="sagkam" playerNick="ANGEL"/>
+    <player teamId="sagkam" playerNick="ARTURO"/>
+    <player teamId="sagkam" playerNick="ESTRELLA"/>
+    <player teamId="sagkam" playerNick="GAYOL"/>
+    <player teamId="sagkam" playerNick="ISIDRO"/>
+    <player teamId="sagkam" playerNick="JAVI"/>
+    <player teamId="sagkam" playerNick="JUANI"/>
+    <player teamId="sagkam" playerNick="LUIS PRIETO"/>
+    <player teamId="sagkam" playerNick="MENOTI"/>
+    <player teamId="sagkam" playerNick="PRIETO"/>
+    <player teamId="sagkam" playerNick="ROBERTO"/>
+
+    <player teamId="sagrib" playerNick="ALVARO"/>
+    <player teamId="sagrib" playerNick="ARTURO"/>
+    <player teamId="sagrib" playerNick="BENJA"/>
+    <player teamId="sagrib" playerNick="CHEMI"/>
+    <player teamId="sagrib" playerNick="CHUS"/>
+    <player teamId="sagrib" playerNick="COLLADO"/>
+    <player teamId="sagrib" playerNick="CUERVO"/>
+    <player teamId="sagrib" playerNick="FRAN"/>
+    <player teamId="sagrib" playerNick="GERARDO"/>
+    <player teamId="sagrib" playerNick="JAIME"/>
+    <player teamId="sagrib" playerNick="NACHO"/>
+    <player teamId="sagrib" playerNick="OSCAR"/>
+    <player teamId="sagrib" playerNick="RIVERA"/>
+    <player teamId="sagrib" playerNick="TONI"/>
+    <player teamId="sagrib" playerNick="VICTOR"/>
+
+    <player teamId="albora" playerNick="CALVETE"/>
+    <player teamId="albora" playerNick="FALO"/>
+    <player teamId="albora" playerNick="GAN"/>
+    <player teamId="albora" playerNick="GELO"/>
+    <player teamId="albora" playerNick="GUELO"/>
+    <player teamId="albora" playerNick="JOSE"/>
+    <player teamId="albora" playerNick="LUIS"/>
+    <player teamId="albora" playerNick="MARIANO"/>
+    <player teamId="albora" playerNick="OMAR"/>
+    <player teamId="albora" playerNick="PABLO"/>
+    <player teamId="albora" playerNick="PADILLA"/>
+    <player teamId="albora" playerNick="PEPITO"/>
+
+    <player teamId="valmus" playerNick="ALFREDO"/>
+    <player teamId="valmus" playerNick="ARTURO"/>
+    <player teamId="valmus" playerNick="BARCIA"/>
+    <player teamId="valmus" playerNick="FELIPE"/>
+    <player teamId="valmus" playerNick="ITO"/>
+    <player teamId="valmus" playerNick="JANDRO"/>
+    <player teamId="valmus" playerNick="JAVI"/>
+    <player teamId="valmus" playerNick="JOSE LUIS"/>
+    <player teamId="valmus" playerNick="JULIO"/>
+    <player teamId="valmus" playerNick="JUSTO"/>
+    <player teamId="valmus" playerNick="MEDINA"/>
+    <player teamId="valmus" playerNick="MIGUEL"/>
+    <player teamId="valmus" playerNick="PABLO"/>
+    <player teamId="valmus" playerNick="PACO"/>
+    <player teamId="valmus" playerNick="ROBER"/>
+    <player teamId="valmus" playerNick="TATO"/>
+
+    <player teamId="bxareu" playerNick="ARIAS"/>
+    <player teamId="bxareu" playerNick="BAO"/>
+    <player teamId="bxareu" playerNick="CARBAJAL"/>
+    <player teamId="bxareu" playerNick="CARLOS"/>
+    <player teamId="bxareu" playerNick="EULOGIO"/>
+    <player teamId="bxareu" playerNick="FRANCISCO"/>
+    <player teamId="bxareu" playerNick="GASPAR"/>
+    <player teamId="bxareu" playerNick="LOLO"/>
+    <player teamId="bxareu" playerNick="MARAVILLAS"/>
+    <player teamId="bxareu" playerNick="NANDO"/>
+    <player teamId="bxareu" playerNick="OVIDIO"/>
+    <player teamId="bxareu" playerNick="ROSA"/>
+</playerEntity>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<teamEntity>
+    <team teamId="8villa" teamName="8 Villas" teamDenom="8 VILLAS" />
+    <team teamId="acveig" teamName="AC Mus Veiga" teamDenom="AC MUS VEIGA" />
+    <team teamId="anfora" teamName="Bar Ánfora" teamDenom="BAR ÁNFORA" />
+    <team teamId="babaut" teamName="Bar Bautista" teamDenom="BAR BAUTISTA" />
+    <team teamId="bcampy" teamName="Bar Campy" teamDenom="BAR CAMPY" />
+    <team teamId="andrea" teamName="Bar D'Andrea" teamDenom="BAR D'ANDREA" />
+    <team teamId="habana" teamName="Bar Habana" teamDenom="BAR HABANA" />
+    <team teamId="calolo" teamName="Ca Lolo" teamDenom="CA LOLO" />
+    <team teamId="cebano" teamName="Café Bar Ébano" teamDenom="CAFÉ BAR ÉBANO" />
+    <team teamId="lubian" teamName="Café Bar Lubián" teamDenom="CAFÉ BAR LUBIÁN" />
+    <team teamId="capiol" teamName="Café Bar Piol" teamDenom="CAFÉ BAR PIOL" />
+    <team teamId="cvalsa" teamName="Cafetería Valsa" teamDenom="CAFETERÍA VALSA" />
+    <team teamId="cgerma" teamName="Casa Germán" teamDenom="CASA GERMÁN" />
+    <team teamId="capabl" teamName="Casa Pablo" teamDenom="CASA PABLO" />
+    <team teamId="catere" teamName="Casa Tere" teamDenom="CASA TERE" />
+    <team teamId="ccelti" teamName="Céltica" teamDenom="CÉLTICA" />
+    <team teamId="churre" teamName="Churrería" teamDenom="CHURRERÍA" />
+    <team teamId="brenya" teamName="La Breña" teamDenom="LA BREÑA" />
+    <team teamId="picosa" teamName="Café Bar La Picosa" teamDenom="LA PICOSA" />
+    <team teamId="bcarba" teamName="Peña Carbayedo" teamDenom="PEÑA CARBAYEDO" />
+    <team teamId="monchi" teamName="Peña de Mus Monchi" teamDenom="PEÑA MUS MONCHI" />
+    <team teamId="rcarol" teamName="El Rincón de Carol" teamDenom="RINCÓN DE CAROL" />
+    <team teamId="sagcel" teamName="San Agustín - Céltica" teamDenom="S.AG.-CÉLTICA" />
+    <team teamId="sagkam" teamName="San Agustín - Kame.Net" teamDenom="S.AG.-KAME.NET" />
+    <team teamId="sagrib" teamName="San Agustín - Rías Baixas" teamDenom="S.AG.-RÍAS BAIXAS" />
+    <team teamId="albora" teamName="Sidrería Alborada" teamDenom="SIDRERÍA ALBORADA" />
+    <team teamId="valmus" teamName="Valsa Mus" teamDenom="VALSA MUS" />
+    <team teamId="bxareu" teamName="Xareu Bar Nacional" teamDenom="XAREU" />
+</teamEntity>
