@@ -17,12 +17,12 @@ public class FileNameManager {
     
     private static final String SEPCOL_RECORD_DESC_PATH = 
         "resources/cocam-result_record-desc.xml";
-    private static final String RESULT_ENTITY_SCHEMA_PATH = 
-        "resources/cocam-ResultEntity.xsd";
+    private static final String RESULT_RECORD_ENTITY_SCHEMA_PATH = 
+        "resources/cocam-ResultRecordEntity.xsd";
     
     private static final String TEAM_ENTITY = "TeamEntity";
     private static final String PLAYER_ENTITY = "PlayerEntity";
-    private static final String RESULT_ENTITY = "ResultEntity";
+    private static final String RESULT_RECORD_ENTITY = "ResultRecordEntity";
     private static final String SEASON = "Season";
     private static final String TEAM_RANKING = "TeamRanking";
     private static final String PLAYER_RANKING = "PlayerRanking";
@@ -31,8 +31,8 @@ public class FileNameManager {
         return SEPCOL_RECORD_DESC_PATH;
     }
     
-    protected static String getResultEntitySchemaFilename() {
-        return RESULT_ENTITY_SCHEMA_PATH;
+    protected static String getResultRecordEntitySchemaFilename() {
+        return RESULT_RECORD_ENTITY_SCHEMA_PATH;
     }
     
     protected static String getTeamEntityFilename() {
@@ -75,13 +75,13 @@ public class FileNameManager {
         return filename.toString();
     }
     
-    protected static String getResultEntityFilename() {
+    protected static String getResultRecordEntityFilename() {
         StringBuilder filename = new StringBuilder();
         CocamProps cocamProps = CocamProps.getInstance();
         //path - resources/
         filename.append(cocamProps.getDataFileDir());
         // Season
-        filename.append(RESULT_ENTITY);
+        filename.append(RESULT_RECORD_ENTITY);
         // xml ext
         filename.append(XML_EXT);
         return filename.toString();
@@ -142,6 +142,27 @@ public class FileNameManager {
         filename.append(SeasonDay.getDayIdOutput(dayId));
         // xml ext
         filename.append(CSV_EXT);
+        return filename.toString();
+    }
+    
+    protected static String getPlayerRankingFilenameXML(final int dayId,
+        LeagueType leagueType) {
+        StringBuilder filename = new StringBuilder();
+        CocamProps cocamProps = CocamProps.getInstance();
+        //path - resources/
+        filename.append(cocamProps.getDataFileDir());
+        // LeagueType
+        filename.append(leagueType.toString());
+        // hypen
+        filename.append(HYPEN);
+        // Team Ranking
+        filename.append(PLAYER_RANKING);
+        // hypen
+        filename.append(HYPEN);
+        // day - jornada - R99
+        filename.append(SeasonDay.getDayIdOutput(dayId));
+        // xml ext
+        filename.append(XML_EXT);
         return filename.toString();
     }
 }
