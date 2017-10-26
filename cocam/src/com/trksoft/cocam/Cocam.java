@@ -25,15 +25,10 @@ public class Cocam {
     
     /**
      * @param args the command line arguments
+     * @throws java.lang.Exception
      */
     public static void main(String[] args) throws Exception {
-        
-        // carga de los ficheros CSV de resultados en archivo XML persistente
-        // de Result -> ResultEntity
-        ResultFileManager resultFileManager = ResultFileManager.getInstance();
-        resultFileManager.loadXmlResultEntityFile();
-
-        
+                       
         // entity adm
         EntityManager entityManager = EntityManager.getInstance();
         
@@ -44,11 +39,8 @@ public class Cocam {
         // obtención de la lista de jugadores
         List<Player> playerList = entityManager.findAllPlayer();
         
-        // obtención de la lista de resultados
-        List<Result> resultList = entityManager.findAllResult();
-        
-        // Cargar la temporada con los resultados
-        Season season = Season.build(resultList);
+        // obtencion resultados de la temporada
+        Season season = entityManager.findSeason();
         
         // generar XML con la temporada
         String seasonFilename = FileNameManager.getSeasonFilename(
@@ -116,6 +108,14 @@ public class Cocam {
             season.getLastDayId(), LeagueType.REG);
         rankingFileManager.writePlayerRankingFile(teamList, playerStatList,
             new File(playerRankingFilename));
+        // generar XML
+        String playerRankingFilenameXML = 
+            FileNameManager.getPlayerRankingFilenameXML(
+                season.getLastDayId(), LeagueType.REG);
+        entityManager.marshallPlayerStat(playerStatList,
+            playerRankingFilenameXML);
+        
+        
     }
 
 }
