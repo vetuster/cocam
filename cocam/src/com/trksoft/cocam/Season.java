@@ -114,33 +114,7 @@ public class Season {
         return season;
     }
    
-    public static Season build(final List<Result> resultList)
-        throws CocamException {
-        Season season = new Season();
-        Match match = null;
-        for (Result result : resultList) {
-            logger.debug("loading->" + result);
-            
-            if (season.getSeasonId() == null) {
-                season.setSeasonId(result.getSeasonId());
-            }
-            
-            if (result.isMatchHead()) {
-                season.setLastDayId(result.getSeasonDayId());
-                match = Match.build(result);
-                season.getMatch().add(match);
-            }
-            
-            match.getTable().add(Table.build(result));
-            
-            // verificar que no hay jugadores duplicados
-            // ni locales, ni visitantes
-            // if (match.getTable().size() = COnstante.4)...
-        }
-        return season;
-    }
-    
-    
+   
     public List<TeamStat> getTeamStat(final List<Team> teamList,
         LeagueType leagueType) {
         Map<String, TeamStat> teamStatHash = new java.util.HashMap<>();
@@ -182,8 +156,10 @@ public class Season {
     
     
     public List<PlayerStat> getPlayerStat(final List<Team> teamList,
-        final List<Player> playerList, LeagueType leagueType) throws CocamException {
-        Map<PlayerStatPK, PlayerStat> playerStatHash = new java.util.HashMap<>();
+        final List<Player> playerList, LeagueType leagueType)
+        throws CocamException {
+        Map<PlayerStatPK, PlayerStat> playerStatHash = 
+            new java.util.HashMap<>();
 
         // partiendo de la lista de juagdores iniciamos las de estadisticas
         // para cada tipo de liga y para cada jugador.

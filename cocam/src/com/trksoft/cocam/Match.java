@@ -8,6 +8,7 @@ package com.trksoft.cocam;
 import com.trksoft.util.StringUtil;
 import java.io.File;
 import java.time.LocalDate;
+import java.util.Set;
 import java.util.SortedSet;
 import java.util.TreeSet;
 import java.util.stream.Collectors;
@@ -28,11 +29,11 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
+    "seasonId",
     "leagueType",
     "roundId",
     "dayId",
     "dayDate",
-    "matchId",
     "localTeamId",
     "localTeamName",
     "localTeamScore",
@@ -44,8 +45,12 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
     "table"
 })
 @XmlRootElement
-public class Match  implements Comparable<Match> {
+public class Match implements Comparable<Match> {
     
+    private static final int TABLES_NUM = 4;
+    
+    @XmlAttribute(required = true)
+    private String seasonId;
     @XmlAttribute(required = true)
     private LeagueType leagueType;
     @XmlAttribute(required = true)    
@@ -55,9 +60,7 @@ public class Match  implements Comparable<Match> {
     @XmlAttribute(required = true)    
     @XmlJavaTypeAdapter(CocamAdapter.class)
     private LocalDate dayDate;
-    @XmlAttribute(required = true)    
-    private String matchId;
-    @XmlElement(required = true)
+    @XmlAttribute(required = true)
     private String localTeamId;
     @XmlElement(required = true)
     private String localTeamName;
@@ -65,7 +68,7 @@ public class Match  implements Comparable<Match> {
     private Integer localTeamScore;
     @XmlElement(required = true)
     private Integer localTeamPenaltyPoint;
-    @XmlElement(required = true)
+    @XmlAttribute(required = true)
     private String visitingTeamId;
     @XmlElement(required = true)
     private String visitingTeamName;
@@ -80,6 +83,14 @@ public class Match  implements Comparable<Match> {
     
     public Match() {
         table = new TreeSet<>();
+    }
+
+    public String getSeasonId() {
+        return seasonId;
+    }
+
+    public void setSeasonId(String seasonId) {
+        this.seasonId = seasonId;
     }
 
     public LeagueType getLeagueType() {
@@ -114,20 +125,6 @@ public class Match  implements Comparable<Match> {
         this.dayDate = dayDate;
     }
     
-    public String getMatchId() {
-        return matchId;
-    }
-
-    public void setMatchId(String matchId) {
-        this.matchId = matchId;
-    }
-    
-    public void setMatchId(String localTeamId, String visitingTeamId) {
-        StringBuilder sb = new StringBuilder(localTeamId);
-        sb.append(visitingTeamId);
-        setMatchId(sb.toString());
-    }
-
     public String getLocalTeamId() {
         return localTeamId;
     }
@@ -206,37 +203,114 @@ public class Match  implements Comparable<Match> {
     }
     
     
+    public Set<String> getLocalPlayerSet() {
+        Set<String> localPlayerSet = new TreeSet<>();
+        for (Table table : getTable()) {
+            localPlayerSet.add(table.getLocalPlayerNickOne());
+            localPlayerSet.add(table.getLocalPlayerNickTwo());
+        }
+        return localPlayerSet;
+    }
+    
+    public Set<String> getVisitingPlayerSet() {
+        Set<String> visitingPlayerSet = new TreeSet<>();
+        for (Table table : getTable()) {
+            visitingPlayerSet.add(table.getVisitingPlayerNickOne());
+            visitingPlayerSet.add(table.getVisitingPlayerNickTwo());
+        }
+        return visitingPlayerSet;
+    }
+    
+    
+    public void addTable(Table newTable) throws CocamException {
+        // verificaciones previas a incorporar una nueva mesa
+        
+        // ya consta de las mesas por encuentro reglamentadas
+        if (getTable().size() == TABLES_NUM) {
+            StringBuilder sb = 
+                new StringBuilder("Match max num tables EXCEEDED ");
+                sb.append(this.toString());
+            throw new CocamException(toString());
+        }
+        
+        // resultado erroneo, alguna de las partes no llego a 6 chicos
+        // o se excede el máximo posible de chicos
+        int totalChicos = newTable.getLocalPairScore() +
+            newTable.getVisitingPairScore();
+        if (totalChicos <  Table.MIN_CHICOS || totalChicos > Table.MAX_CHICOS) {
+            StringBuilder sb = new StringBuilder("Table Score ERROR ");
+            sb.append(StringUtil.enclose(newTable.toString()));
+            throw new CocamException(sb.toString());
+        }
+        
+        // Verificar NO duplicidad de jugadores locales
+        for (String localPlayerNick : getLocalPlayerSet()) {
+            if (localPlayerNick.equals(newTable.getLocalPlayerNickOne())
+                || localPlayerNick.equals(newTable.getLocalPlayerNickTwo())) {
+                StringBuilder sb =
+                    new StringBuilder("Local Player DUPLICATED ");
+                sb.append(StringUtil.enclose(localPlayerNick));
+                sb.append(this.toString());
+                throw new CocamException(sb.toString());
+            }
+        }
+        
+        // Verificar NO duplicidad de jugadores visitantes
+        for (String visitingPlayerNick : getVisitingPlayerSet()) {
+            if (visitingPlayerNick.equals(newTable.getVisitingPlayerNickOne())
+                || visitingPlayerNick.equals(
+                    newTable.getVisitingPlayerNickTwo())) {
+                StringBuilder sb =
+                    new StringBuilder("Visiting Player DUPLICATED ");
+                sb.append(StringUtil.enclose(visitingPlayerNick));
+                sb.append(this.toString());
+                throw new CocamException(sb.toString());
+            }
+        }
+        
+        // añadir la nueva Table (partida) al Match (encuentro)
+        getTable().add(newTable);
+   }
+    
+    
     @Override
     public int compareTo(Match match) {
-        int i = leagueType.compareTo(match.getLeagueType());
+        int i = seasonId.compareTo(match.getSeasonId());
+        if (i!=0) return i;
+        i = leagueType.compareTo(match.getLeagueType());
+        if (i!=0) return i;
+        i = roundId.compareTo(match.getRoundId());
         if (i!=0) return i;
         i = dayId.compareTo(match.getDayId());
         if (i!=0) return i;
         i = dayDate.compareTo(match.getDayDate());
         if (i!=0) return i;
-        return matchId.compareTo(match.getMatchId());
+        i = localTeamId.compareTo(match.getLocalTeamId());
+        if (i!=0) return i;
+        return visitingTeamId.compareTo(match.getVisitingTeamId());
     }
     
     
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder("Match->");
-        sb.append("leagueType");
+        sb.append("seasonId");
+        sb.append(StringUtil.enclose(seasonId));
+        sb.append(",leagueType");
         sb.append(StringUtil.enclose(leagueType.toString()));
-        sb.append("roundId");
+        sb.append(",roundId");
         sb.append(StringUtil.enclose(roundId));
-        sb.append("dayId");
+        sb.append(",dayId");
         sb.append(StringUtil.enclose(dayId));
         sb.append(",roundDate");
-        sb.append(StringUtil.enclose(CocamDatatypeConverter.printLocalDate(dayDate)));
-        sb.append("matchId");
-        sb.append(StringUtil.enclose(matchId));
+        sb.append(StringUtil.enclose(
+            CocamDatatypeConverter.printLocalDate(dayDate)));
         sb.append(",localTeamId");
         sb.append(StringUtil.enclose(localTeamId));
         sb.append(",localTeamName");
         sb.append(StringUtil.enclose(localTeamName));
         sb.append(",localTeamScore");
-        sb.append(StringUtil.enclose(localTeamName));
+        sb.append(StringUtil.enclose(localTeamScore));
         sb.append(",localTeamPenaltyPoint");
         sb.append(StringUtil.enclose(localTeamPenaltyPoint));
         sb.append(",visitingTeamId");
@@ -265,25 +339,4 @@ public class Match  implements Comparable<Match> {
         return match;
     }
     
-    public static Match build(Result result) {
-        Match match = new Match();
-        match.setLeagueType(LeagueType.valueOf(result.getLeagueType()));
-        match.setRoundId(result.getRoundId());
-        match.setDayId(result.getSeasonDayId());
-        match.setDayDate(result.getSeasonDayDate());
-        match.setMatchId(result.getLocalTeamId(), result.getVisitingTeamId());
-        match.setLocalTeamId(result.getLocalTeamId());
-        match.setLocalTeamName(result.getLocalTeamName());
-        match.setLocalTeamScore(result.getLocalTeamScore());
-        match.setLocalTeamPenaltyPoint(
-            (result.getLocalTeamPenaltyPoint() == null?
-                0 : result.getLocalTeamPenaltyPoint()));
-        match.setVisitingTeamId(result.getVisitingTeamId());
-        match.setVisitingTeamName(result.getVisitingTeamName());
-        match.setVisitingTeamScore(result.getVisitingTeamScore());
-        match.setVisitingTeamPenaltyPoint(
-            (result.getVisitingTeamPenaltyPoint() == null?
-                0: result.getVisitingTeamPenaltyPoint()));
-        return match;
-    }
 }

@@ -35,8 +35,11 @@ import javax.xml.bind.annotation.XmlType;
 })
 @XmlRootElement
 public class Table implements Comparable<Table> {
-    private static final boolean ABSENT_WO = Boolean.TRUE;
-    private static final boolean PRESENT_WO = Boolean.FALSE;
+    public static final int MAX_CHICOS = 11; // 6 - 4
+    public static final int MIN_CHICOS = 6;  // 6 - 0
+    
+    public static final boolean ABSENT_WO = Boolean.TRUE;
+    public static final boolean PRESENT_WO = Boolean.FALSE;
     
     @XmlAttribute
     private Integer tableId;
@@ -191,34 +194,4 @@ public class Table implements Comparable<Table> {
         return table;
     }
     
-    public static Table build(Result result) {
-        Table table = new Table();
-        table.setTableId(result.getTableId());
-        
-        if (StringUtil.isNullOrEmpty(result.getLocalPlayerNickOne())
-            && StringUtil.isNullOrEmpty(result.getLocalPlayerNickTwo())) {
-            table.setLocalWO(ABSENT_WO); // no presentado
-            table.setLocalPlayerNickOne(Player.ABSENT_PLAYER_ONE_NICK);
-            table.setLocalPlayerNickTwo(Player.ABSENT_PLAYER_TWO_NICK);
-        } else {
-            table.setLocalWO(PRESENT_WO);
-            table.setLocalPlayerNickOne(result.getLocalPlayerNickOne());
-            table.setLocalPlayerNickTwo(result.getLocalPlayerNickTwo());
-        }
-        table.setLocalPairScore(result.getLocalPairScore());
-        
-        if (StringUtil.isNullOrEmpty(result.getVisitingPlayerNickOne())
-            && StringUtil.isNullOrEmpty(result.getVisitingPlayerNickTwo())) {
-            table.setVisitingWO(ABSENT_WO); // no presentado
-            table.setVisitingPlayerNickOne(Player.ABSENT_PLAYER_ONE_NICK);
-            table.setVisitingPlayerNickTwo(Player.ABSENT_PLAYER_TWO_NICK);
-        } else {
-            table.setVisitingWO(PRESENT_WO);
-            table.setVisitingPlayerNickOne(result.getVisitingPlayerNickOne());
-            table.setVisitingPlayerNickTwo(result.getVisitingPlayerNickTwo());
-        }
-        table.setVisitingPairScore(result.getVisitingPairScore());
-        
-        return table;
-    }
 }

@@ -7,8 +7,10 @@ package com.trksoft.cocam;
 
 import com.trksoft.util.StringUtil;
 import java.io.File;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import javax.xml.bind.JAXBException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -24,7 +26,8 @@ public class EntityManager {
     
     private static TeamEntity teamEntity = new TeamEntity();
     private static PlayerEntity playerEntity = new PlayerEntity();
-    private static ResultEntity resultEntity = new ResultEntity();
+    private static ResultRecordEntity resultRecordEntity = 
+        new ResultRecordEntity();
     
 
     //Bill Pugh Solution for singleton pattern
@@ -50,8 +53,9 @@ public class EntityManager {
                 logger.fatal(jaxbex);
                 throw new CocamException(jaxbex);
             }
-            logger.info("teamEntity LOADED"
-                + "->TOTAL teams"
+            logger.info("teamEntity LOADED ("
+                + FileNameManager.getTeamEntityFilename()
+                + ")->TOTAL teams"
                 + StringUtil.enclose(teamEntity.getTeam().size())
             );
         }
@@ -76,39 +80,80 @@ public class EntityManager {
         return new LinkedList(playerEntity.getPlayer());
     }
     
-    protected List<Result> findAllResult() throws CocamException {
-        if (resultEntity.getResult().isEmpty()) {
-            // carga el conjunto de resultados
-            try {
-                resultEntity = ResultEntity.unmarshall(
-                    new File(FileNameManager.getResultEntityFilename()));
-            } catch (JAXBException jaxbex) {
-                logger.fatal(jaxbex);
-                throw new CocamException(jaxbex);
+    
+    protected Season findSeason() throws CocamException {
+        // carga los resultados que conforman la temporada
+        loadResultRecordEntity();
+        
+        Season season = new Season();
+
+        Map<MatchPK, Match> matchHash = new HashMap<>();
+        for (ResultRecord resultRecord : resultRecordEntity.getResultRecord()) {
+            logger.debug("loading->" + resultRecord);
+            
+            if (season.getSeasonId() == null) {
+                season.setSeasonId(resultRecord.getSeasonId());
             }
-            logger.info("resultEntity LOADED"
-                + "->TOTAL results"
-                + StringUtil.enclose(resultEntity.getResult().size())
-            );
+            
+            if (resultRecord.isMatchHead()) {
+                season.setLastDayId(resultRecord.getSeasonDayId());
+            }
+            
+            MatchPK matchPK = resultRecord.getMatchPK();
+            Match match;
+            if (matchHash.containsKey(matchPK)) {
+                match = matchHash.get(matchPK);
+            } else {
+                match = resultRecord.getMatch();
+                matchHash.put(matchPK, match);
+            }
+            match.addTable(resultRecord.getTable());
+            
         }
-        return new LinkedList(resultEntity.getResult());
+        season.getMatch().addAll(matchHash.values());
+        return season;
     }
     
-    protected static ResultEntity getResultEntity() throws CocamException {
-        if (resultEntity == null) {
-            // carga el conjunto de resultados
+    private void loadResultRecordEntity() throws CocamException {
+        if (resultRecordEntity.getResultRecord().isEmpty()) {
+            
+            // convierte los archivos de resultados procedentes del excel (.CSV)
+            // a un archivo xml de tipo ResultRecord
+            ResultRecordFileManager resultRecordFileManager
+                = new ResultRecordFileManager();
+            resultRecordFileManager.loadXmlResultRecordEntityFile();
+            
+            // carga el conjunto de resultados a partir del archivo XML
             try {
-                resultEntity = ResultEntity.unmarshall(
-                    new File(FileNameManager.getResultEntityFilename()));
+                resultRecordEntity = ResultRecordEntity.unmarshall(
+                    new File(FileNameManager.getResultRecordEntityFilename()));
             } catch (JAXBException jaxbex) {
                 logger.fatal(jaxbex);
                 throw new CocamException(jaxbex);
             }
-            logger.info("resultEntity LOADED"
+            logger.info("resultRecordEntity LOADED"
                 + "->TOTAL results"
-                + StringUtil.enclose(resultEntity.getResult().size())
+                + StringUtil.enclose(
+                    resultRecordEntity.getResultRecord().size())
             );
         }
-        return resultEntity;
     }
+    
+    protected void marshallPlayerStat(List<PlayerStat> playerStatList,
+        String fileName) throws CocamException {
+        PlayerStatEntity pse = new PlayerStatEntity();
+        pse.getPlayerStat().addAll(playerStatList);
+        // graba el conjunto de estadisticas
+        try {
+            pse.marshall(new File(fileName));
+        } catch (JAXBException jaxbex) {
+            logger.fatal(jaxbex);
+            throw new CocamException(jaxbex);
+        }
+        logger.info("playerStatEntity CREATED"
+            + "->TOTAL playerStat"
+            + StringUtil.enclose(pse.getPlayerStat().size())
+        );
+    }
+    
 }
