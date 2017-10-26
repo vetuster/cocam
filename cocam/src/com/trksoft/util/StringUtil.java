@@ -48,4 +48,11 @@ public class StringUtil {
         }
         return enclose(value.toString());
     }
+    
+    public static String enclose(final Float value) {
+        if (value == null) {
+            return enclose(NULL_LIT);
+        }
+        return enclose(value.toString());
+    }
 }
