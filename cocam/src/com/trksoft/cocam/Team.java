@@ -21,8 +21,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "", propOrder = {
     "teamId",
     "teamName",
-    "teamDenom",
-    "teamSize"
+    "teamDenom"
 })
 @XmlRootElement
 public class Team implements Comparable<Team>{
@@ -33,8 +32,8 @@ public class Team implements Comparable<Team>{
     private String teamName;
     @XmlAttribute(required = true)
     private String teamDenom;
-    @XmlAttribute(required = true)
-    private Integer teamSize;
+//    @XmlAttribute(required = true)
+//    private Integer teamSize;
 
     public String getTeamId() {
         return teamId;
@@ -60,13 +59,13 @@ public class Team implements Comparable<Team>{
         this.teamDenom = teamDenom;
     }
 
-    public Integer getTeamSize() {
-        return teamSize;
-    }
+//    public Integer getTeamSize() {
+//        return teamSize;
+//    }
 
-    public void setTeamSize(Integer teamSize) {
-        this.teamSize = teamSize;
-    }
+//    public void setTeamSize(Integer teamSize) {
+//        this.teamSize = teamSize;
+//    }
 
 
     @Override
@@ -80,7 +79,7 @@ public class Team implements Comparable<Team>{
         hash = 79 * hash + Objects.hashCode(this.teamId);
         hash = 79 * hash + Objects.hashCode(this.teamName);
         hash = 79 * hash + Objects.hashCode(this.teamDenom);
-        hash = 79 * hash + Objects.hashCode(this.teamSize);
+//        hash = 79 * hash + Objects.hashCode(this.teamSize);
         return hash;
     }
 
@@ -102,9 +101,9 @@ public class Team implements Comparable<Team>{
         if (!Objects.equals(this.teamDenom, other.teamDenom)) {
             return false;
         }
-        if (!Objects.equals(this.teamSize, other.teamSize)) {
-            return false;
-        }
+//        if (!Objects.equals(this.teamSize, other.teamSize)) {
+//            return false;
+//        }
         return true;
     }
 
@@ -117,8 +116,8 @@ public class Team implements Comparable<Team>{
         sb.append(StringUtil.enclose(teamName));
         sb.append(",teamDenom");
         sb.append(StringUtil.enclose(teamDenom));
-        sb.append(",teamSize");
-        sb.append(StringUtil.enclose(teamSize));
+//        sb.append(",teamSize");
+//        sb.append(StringUtil.enclose(teamSize));
         return sb.toString();
     }
     
