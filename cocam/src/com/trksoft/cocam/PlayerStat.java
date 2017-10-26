@@ -26,7 +26,7 @@ import org.apache.logging.log4j.Logger;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "playerStatPK",
+    "teamId",
     "playerNick",
     "leagueType",
     "tablePlayed",
@@ -39,7 +39,9 @@ import org.apache.logging.log4j.Logger;
     "tableWonVisiting",
     "tableLostVisiting",
     "goalsFavor",
-    "goalsAgainst"
+    "goalsAgainst",
+    "wonCoefficient",
+    "goalsCoefficient"
 })
 @XmlRootElement
 public class PlayerStat {
@@ -47,8 +49,15 @@ public class PlayerStat {
     private static final Logger logger
         = LogManager.getLogger(PlayerStat.class);
     
+    private static Float NO_STATS = -1.0f;
+    private static String NO_STATS_PRN = "-";
+    
     @XmlAttribute(required = true)    
-    private PlayerStatPK playerStatPK;
+    private String teamId;
+    @XmlAttribute(required = true)    
+    private String playerNick;
+    @XmlAttribute(required = true)
+    private LeagueType leagueType;
     @XmlElement(required = true)
     private Integer tablePlayed;
     @XmlElement(required = true)
@@ -71,6 +80,10 @@ public class PlayerStat {
     private Integer goalsFavor;
     @XmlElement(required = true)
     private Integer goalsAgainst;
+    @XmlElement(required = true)
+    private Float wonCoefficient;
+    @XmlElement(required = true)
+    private Float goalsCoefficient;
     
     
     public PlayerStat() {
@@ -85,23 +98,47 @@ public class PlayerStat {
         this.tableLostVisiting = 0;
         this.goalsFavor = 0;
         this.goalsAgainst = 0;
+        this.wonCoefficient = NO_STATS;
+        this.goalsCoefficient = NO_STATS;
     }
     
     
     public PlayerStat(PlayerStatPK playerStatPK) {
         this();
-        this.playerStatPK = playerStatPK.copy();
+        this.teamId = playerStatPK.getTeamId();
+        this.playerNick = playerStatPK.getPlayerNick();
+        this.leagueType = playerStatPK.getLeagueType();
     }
     
     
     public PlayerStatPK getPlayerStatPK() {
-        return playerStatPK;
+        return new PlayerStatPK(getTeamId(), getPlayerNick(), getLeagueType());
     }
 
-    public void setPlayerStatPK(PlayerStatPK playerStatPK) {
-        this.playerStatPK = playerStatPK;
+    public String getTeamId() {
+        return teamId;
     }
 
+    public void setTeamId(String teamId) {
+        this.teamId = teamId;
+    }
+
+    public String getPlayerNick() {
+        return playerNick;
+    }
+
+    public void setPlayerNick(String playerNick) {
+        this.playerNick = playerNick;
+    }
+
+    public LeagueType getLeagueType() {
+        return leagueType;
+    }
+
+    public void setLeagueType(LeagueType leagueType) {
+        this.leagueType = leagueType;
+    }    
+    
     public Integer getTablePlayed() {
         return tablePlayed;
     }
@@ -218,12 +255,36 @@ public class PlayerStat {
     }
     
     public Float getWonCoefficient() {
-        return tableWon.floatValue() / tablePlayed.floatValue();
+        return wonCoefficient;
+    }
+
+    public void setWonCoefficient(Float wonCoefficient) {
+        this.wonCoefficient = wonCoefficient;
+    }
+    
+    private void updateWonCoefficient() {
+        if (hasPlayed()) {
+            setWonCoefficient(tableWon.floatValue() / tablePlayed.floatValue());
+        } else {
+            setWonCoefficient(NO_STATS);
+        }
     }
     
     public Float getGoalsCoefficient() {
-        return goalsFavor.floatValue() / 
-            (goalsFavor.floatValue() + goalsAgainst.floatValue());
+        return goalsCoefficient;
+    }
+
+    public void setGoalsCoefficient(Float goalsCoefficient) {
+        this.goalsCoefficient = goalsCoefficient;
+    }
+    
+    private void updateGoalsCoefficient() {
+        if (hasPlayed()) {
+            setGoalsCoefficient(goalsFavor.floatValue() / 
+                (goalsFavor.floatValue() + goalsAgainst.floatValue()));
+        } else {
+            setGoalsCoefficient(NO_STATS);
+        }
     }
     
     public Boolean hasPlayed() {
@@ -233,8 +294,12 @@ public class PlayerStat {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder("TeamStat->");
-        sb.append("playerStatPK");
-        sb.append(playerStatPK);
+        sb.append("teamId");
+        sb.append(StringUtil.enclose(teamId));
+        sb.append(",playerNick");
+        sb.append(StringUtil.enclose(playerNick));
+        sb.append(",leagueType");
+        sb.append(StringUtil.enclose(leagueType.toString()));
         sb.append(",tablePlayed");
         sb.append(StringUtil.enclose(tablePlayed));
         sb.append(",tableWon");
@@ -256,7 +321,11 @@ public class PlayerStat {
         sb.append(",goalsFavor");
         sb.append(StringUtil.enclose(goalsFavor));
         sb.append(",goalsAgainst");
-        sb.append(StringUtil.enclose(goalsAgainst));
+        sb.append(StringUtil.enclose(goalsFavor));
+        sb.append(",wonCoefficient");
+        sb.append(StringUtil.enclose(wonCoefficient));
+        sb.append(",goalsCoefficient");
+        sb.append(StringUtil.enclose(goalsCoefficient));
         return sb.toString();
     }
 
@@ -288,6 +357,8 @@ public class PlayerStat {
                 incTableLostVisiting();
             }
         }
+        updateWonCoefficient();
+        updateGoalsCoefficient();
     }
     
     public String getRankingRecord(final String teamDenom,
@@ -299,6 +370,7 @@ public class PlayerStat {
         rankingField.add(getTablePlayed().toString());
         rankingField.add(getTableWon().toString());
         rankingField.add(getTableLost().toString());
+        /*
         rankingField.add(getTablePlayedLocal().toString());
         rankingField.add(getTableWonLocal().toString());
         rankingField.add(getTableLostLocal().toString());
@@ -307,15 +379,26 @@ public class PlayerStat {
         rankingField.add(getTableLostVisiting().toString());
         rankingField.add(getGoalsFavor().toString());
         rankingField.add(getGoalsAgainst().toString());
-
+        */
+        
         // formateo de cifras
         CocamProps comcaProps = CocamProps.getInstance();
         Locale defaultLocale = comcaProps.getDefaultLocale();
         NumberFormat nf = NumberFormat.getInstance(defaultLocale);
         
-        rankingField.add(nf.format(getWonCoefficient()));
+        if (getWonCoefficient().equals(NO_STATS)) {
+            rankingField.add(NO_STATS_PRN);
+        } else {
+            rankingField.add(nf.format(getWonCoefficient()));
+        }
         
-        rankingField.add(nf.format(getGoalsCoefficient()));
+        /*
+        if (getGoalsCoefficient().equals(NO_STATS)) {
+            rankingField.add(NO_STATS_PRN);
+        } else {
+            rankingField.add(nf.format(getGoalsCoefficient()));
+        }
+        */
 
         return rankingField.stream().map(Object::toString).
             collect(Collectors.joining(charSep));
@@ -329,6 +412,7 @@ public class PlayerStat {
         rankingField.add("J");
         rankingField.add("G");
         rankingField.add("P");
+        /*
         rankingField.add("JL");
         rankingField.add("GL");
         rankingField.add("PL");
@@ -337,8 +421,9 @@ public class PlayerStat {
         rankingField.add("PV");
         rankingField.add("Chicos F");
         rankingField.add("Chicos C");
+        */
         rankingField.add("Coef");
-        rankingField.add("Chico AVG");
+        //rankingField.add("Chico AVG");
 
         return rankingField.stream().map(Object::toString).
             collect(Collectors.joining(charSep));
